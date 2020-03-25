@@ -1,124 +1,68 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { Container, Navbar, NavDropdown, Nav, Row, Col } from "react-bootstrap";
+import { Container, Navbar, Nav, Row, Col } from "react-bootstrap";
 // import {} from "prop-types";
 
 import "./decoration.css";
+import MajorNavbar from "./MajorNavbar";
+import ProgramType from "./ProgramType";
 
 class Home extends Component {
   render() {
     return (
       <div>
-        <Navbar bg="light">
-          <Container>
-            <NavDropdown className="major" title="Information Technology">
-              <NavDropdown.Item>Information Technology</NavDropdown.Item>
-              <NavDropdown.Item>Business Administration</NavDropdown.Item>
-              <NavDropdown.Item>Electrical Engineering</NavDropdown.Item>
-            </NavDropdown>
-          </Container>
-          <Nav className="justify-content-end">
-            <Nav.Item className="sub-major">Computer Science</Nav.Item>
-            <Nav.Item className="sub-major">Network Engineering</Nav.Item>
-            <Nav.Item className="sub-major border-bottom border-dark">Data Science</Nav.Item>
-          </Nav>
-        </Navbar>
-        <Row>
-          <Col xl={2}>
-            <Navbar>
-              <Nav className="flex-column">
-                <Nav.Item>(IU) International University</Nav.Item>
-                <Nav.Item>(WE) West of England University</Nav.Item>
-                <Nav.Item>(UN) Nottinghan University</Nav.Item>
-                <Nav.Item>(SB) Suny Binghamton University</Nav.Item>
-              </Nav>
-            </Navbar>
-          </Col>
-          <Col xl={10}>
-            <div>
-              <div>
-                <div
-                  style={{
-                    backgroundColor: "#3D8BCD",
-                    paddingTop: "40px",
-                    paddingBottom: "40px"
-                  }}
-                >
-                  <Row className="align-items-center">
-                    <Col>
-                      <div className="english-logo">
-                        <span
-                          className="english-logo-title"
-                          style={{ color: "#3D8BCD" }}
-                        >
-                          IE1
-                        </span>
-                      </div>
-                    </Col>
-                    <Col className="text-white text-center">
-                      <h2>English entrance level 1</h2>
-                      <b>{`6.5 <= IELTS <= 9.0   or   500 <= TOELF <= 500`}</b>
-                    </Col>
-                    <Col>
-                      <Nav className="justify-content-end">Print Edit</Nav>
-                    </Col>
-                  </Row>
-                </div>
+        <MajorNavbar />
+        <div>
+          <Container
+            fluid={true}
+            style={{ paddingLeft: "0px", paddingRight: "0px" }}
+          >
+            <Row className="mr-auto overflow-hidden" noGutters={true}>
+              <Col xl={2} className="bg-secondary">
+                <Navbar style={{ top: "0", position: "sticky" }}>
+                  <Nav className="flex-column">
+                    <Nav.Link>(IU) International University</Nav.Link>
+                    <Nav.Link>(WE) West of England University</Nav.Link>
+                    <Nav.Link>(UN) Nottingham University</Nav.Link>
+                    <Nav.Link>(SB) Suny Binghamton University</Nav.Link>
+                  </Nav>
+                </Navbar>
+              </Col>
+              <Col xl={10} style={{ paddingLeft: "0px", paddingRight: "0px" }}>
                 <div>
-                  MAIN CONTENT
+                  <ProgramType
+                    englishEntrance="IE1"
+                    titleColor="#3D8BCD"
+                    contentColor="#DAE8FC"
+                  />
+                  <ProgramType
+                    englishEntrance="IE2"
+                    titleColor="#58B957"
+                    contentColor="#D5E8D4"
+                  />
+                  <ProgramType
+                    englishEntrance="AE1"
+                    titleColor="#DB524C"
+                    contentColor="#F8CECC"
+                  />
                 </div>
-              </div>
-            </div>
-          </Col>
-        </Row>
-        <div>123456</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
-        <div>YEEEEEEEEEEEEEEET</div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <div>
+          <div>123456</div>
+          <div>YEEEEEEEEEEEEEEET</div>
+          <div>YEEEEEEEEEEEEEEET</div>
+          <div>YEEEEEEEEEEEEEEET</div>
+          <div>YEEEEEEEEEEEEEEET</div>
+          <div>YEEEEEEEEEEEEEEET</div>
+          <div>YEEEEEEEEEEEEEEET</div>
+          <div>YEEEEEEEEEEEEEEET</div>
+          <div>YEEEEEEEEEEEEEEET</div>
+          <div>YEEEEEEEEEEEEEEET</div>
+          <div>YEEEEEEEEEEEEEEET</div>
+        </div>
       </div>
     );
   }
