@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-// import state from '../../data/reduxState'
+// import * as data from '../../data/json/testData.json'
+
+// const subMajorList = data.subMajors;
 
 export default class EditCurriculum extends Component {
     render() {
         return (
             <div className='container-fluid d-flex flex-column border' style={{height:'700px'}}>
+                {/* {subMajorList.map(subMajor => (<li>{subMajor.name}</li>))} */}
                 <div className="submajor-breadcrumb row m-1">
                     <div className="col-md border"><span className='active m-1'>Computer Science</span></div>
                     <div className="col-md border"><span className='m-1'>Computer Engineering</span></div>
