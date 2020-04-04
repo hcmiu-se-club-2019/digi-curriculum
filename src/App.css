@@ -44,3 +44,9 @@ footer {
   border-bottom: 0;
   margin: 20px 0 0;
 }
+
+.active {
+  display: inline-flex;
+  background-color: lawngreen;
+  padding: 0px 2px;
+}
