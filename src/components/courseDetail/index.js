@@ -62,7 +62,7 @@ export default class CourseDetail extends Component {
         } = this.state
 
         return (
-            <div className='container_wrap'>
+            <div className='container_wrap mt-4'>
                 <section className='content-header'>
                     <div className='container-fluid'>
                         <div className='tabs'>
@@ -90,7 +90,7 @@ export default class CourseDetail extends Component {
                 </section>
                 {activeTab === '1' && (
                     <CourseGeneralTab 
-                        initValues={course}
+                        initialValues={course}
                     />
                 )}
             </div>
