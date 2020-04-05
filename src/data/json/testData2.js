@@ -133,35 +133,32 @@ const state = {
     },
     // Another curriculum
   ],
-  courses: {
-    byId: {
-      "IT101IU": {
-        id: "IT101IU",
-        name: "Data Structures and Algorithms",
-        credit: 4,
-        prerequisties: []
-      },
-      "IT102IU": {
-        id: "IT102IU",
-        name: "Web Application",
-        credit: 4,
-        prerequisties: ["IT101IU", "IT103IU"]
-      },
-      "IT103IU": {
-        id: "IT103IU",
-        name: "C/C++ programming",
-        credit: 4,
-        prerequisties: []
-      },
-      "FFFFFFF": {
-        id: "FFFFFFF",
-        name: "Testing course",
-        credit: 1,
-        prerequisties: ["IT102IU"]
-      }
+  courses: [
+    {
+      id: "IT101IU",
+      name: "Data Structures and Algorithms",
+      credit: 4,
+      prerequisties: []
     },
-    allIds: ["IT101IU", "IT102IU", "IT103IU", "FFFFFFF"]
-  },
+    {
+      id: "IT102IU",
+      name: "Web Application",
+      credit: 4,
+      prerequisties: ["IT101IU", "IT103IU"]
+    },
+    {
+      id: "IT103IU",
+      name: "C/C++ programming",
+      credit: 4,
+      prerequisties: []
+    },
+    {
+      id: "FFFFFFF",
+      name: "Testing course",
+      credit: 1,
+      prerequisties: ["IT102IU"]
+    }
+  ],
   externalLinks: [
     {
       id:'linkedin',

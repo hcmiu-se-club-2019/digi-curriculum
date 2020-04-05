@@ -15,8 +15,8 @@ function App() {
       <div className="text-center">
         <Header />
         <Switch>
-          <Route path='/course/:courseId'><CourseDetail /></Route>
-          <Route path='/curriculum/:curriId'><EditCurriculum /></Route>
+          <Route path='/course/:courseId' component={CourseDetail}></Route>
+          <Route path='/curriculum/:curriId/edit'><EditCurriculum /></Route>
           <Route exact path='/'><ProgramDisplay /></Route>
         </Switch>
         <Footer />
