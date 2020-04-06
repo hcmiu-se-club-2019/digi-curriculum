@@ -1,4 +1,5 @@
-import { GET_PROGRAM_TYPES } from "./action";
+// import { StateFromReducersMapObject } from "redux";
+import { GET_PROGRAM_TYPES, GET_PROGRAM_TYPES_BY_SUB_MAJOR } from "./action";
 
 const initState = [];
 const fetchState = [
@@ -24,6 +25,17 @@ export default function programType(state = initState, action) {
   switch (action.type) {
     case GET_PROGRAM_TYPES: {
       return Object.assign({}, fetchState);
+    }
+    case GET_PROGRAM_TYPES_BY_SUB_MAJOR: {
+      // console.log(action.payload);
+      const inputList = [...action.payload];
+      const getSelectedProgramTypes = inputList.map(subMajorId =>
+        fetchState.find(programType => programType.id === subMajorId)
+      );
+      // console.log(getSelectedProgramTypes);
+
+      // return Object.assign([], getSelectedProgramTypes);
+      return getSelectedProgramTypes
     }
     default:
       return state;

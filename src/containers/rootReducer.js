@@ -1,17 +1,21 @@
 import { combineReducers } from "redux";
 
+import majors from "./Majors/reducer";
 import subMajors from "./SubMajors/reducer";
-import programType from "./ProgramType/reducer";
-import englishEntrance from "./EnglishEntrance/reducer";
+import programTypes from "./ProgramType/reducer";
+import englishEntrances from "./EnglishEntrances/reducer";
 import curriculums from "./Curriculums/reducer";
-import course from "./Courses/reducer";
+import courses from "./Courses/reducer";
+import components from "./components/reducer";
 
 const rootReducer = combineReducers({
+  majors,
   subMajors,
-  programType,
-  englishEntrance,
+  programTypes,
+  englishEntrances,
   curriculums,
-  course
+  courses,
+  components
 });
 
 export default rootReducer;
