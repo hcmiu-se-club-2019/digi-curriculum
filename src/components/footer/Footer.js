@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import { SocialIcon } from 'react-social-icons';
+import state from '../../data/json/testData2';
+
+const externalLinks = state.externalLinks;
 
 export default class Footer extends Component {
     render() {
@@ -6,15 +10,9 @@ export default class Footer extends Component {
             <div class="footer-basic" style={{backgroundColor: "white", color: "black"}}>
                 <footer>
                     <div class="social">
-                        <a href="https://www.linkedin.com/school/international-university-vnu/">
-                            <i class="icon ion-social-linkedin"></i> Linkedin
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCTBixlLRDIIlpmR_Y7wmI3w">
-                            <i class="icon ion-social-youtube"></i> Youtube
-                        </a>
-                        <a href="https://www.facebook.com/IUVNUHCMC">
-                            <i class="icon ion-social-facebook"></i> Facebook
-                        </a>
+                        {externalLinks.map(link => (
+                            <SocialIcon url={link.url} className='m-1'/>
+                        ))}
                     </div>
                     <ul class="list-inline">
                         <li class="list-inline-item"><a href="/">Home</a></li>
