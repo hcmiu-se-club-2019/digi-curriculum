@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 import { Nav, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
@@ -15,9 +15,6 @@ class Curriculum extends Component {
     if (this.props.curriculum) {
       const { level, titleColor, contentColor } = this.props;
       const {
-        majorId,
-        subMajorId,
-        ProgramTypeId,
         englishEntranceId,
         years,
       } = this.props.curriculum;
@@ -130,19 +127,19 @@ class Curriculum extends Component {
   }
 }
 
-// Curriculum.propTypes = {
-//   subMajorId: PropTypes.string,
-//   programTypeId: PropTypes.string,
-//   englishEntranceId: PropTypes.string,
-//   years: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       sem1: PropTypes.array,
-//       sem2: PropTypes.array,
-//       sem3: PropTypes.array,
-//     })
-//   ),
-//   electiveCourses: PropTypes.array,
-// };
+Curriculum.propTypes = {
+  subMajorId: PropTypes.string,
+  programTypeId: PropTypes.string,
+  englishEntranceId: PropTypes.string,
+  years: PropTypes.arrayOf(
+    PropTypes.shape({
+      sem1: PropTypes.array,
+      sem2: PropTypes.array,
+      sem3: PropTypes.array,
+    })
+  ),
+  electiveCourses: PropTypes.array,
+};
 
 // const mapStateToProps = (state) => {
 //   const {

@@ -4,8 +4,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./components/Home";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import Header from "./components/Layout/Header";
+import Footer from "./components/Footer";
 import EditCurriculum from "./components/editCurriculum/index";
 import ProgramDisplay from "./components/programDisplay/index";
 import CourseDetail from "./components/courseDetail";
@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="text-center">
+        <div>
           <Header />
           {/* <div className="text-left">
             <p>Example Links</p>
@@ -35,17 +35,13 @@ class App extends Component {
           </div> */}
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/program">
-              <ProgramDisplay />
-            </Route>
+            <Route exact path="/program" component={ProgramDisplay} />
+            <Route exact path="/course/:courseId" component={CourseDetail} />
             <Route
               exact
-              path="/course/:courseId"
-              component={CourseDetail}
-            ></Route>
-            <Route exact path="/curriculum/:curriId/edit">
-              <EditCurriculum />
-            </Route>
+              path="/curriculum/:curriId/edit"
+              component={EditCurriculum}
+            />
           </Switch>
           <Footer />
         </div>

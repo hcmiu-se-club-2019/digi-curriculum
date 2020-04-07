@@ -18,8 +18,6 @@ class ProgramType extends Component {
 
   async selectProgramType(id) {
     await this.props.selectProgramType(id);
-    console.log("SELECTED PROGRAM: " + id);
-
     await this.props.getEnglishEntrances();
     await this.props.getCourses();
     const {
@@ -34,17 +32,7 @@ class ProgramType extends Component {
     );
   }
 
-  // componentDidUpdate() {
-  //   if (this.props.selectedSubMajorId) {
-  //     console.log("Hello");
-  //     this.props.getProgramTypesBySubMajor(this.props.selectedSubMajorId);
-  //   }
-  // }
-
   render() {
-    // console.log("PROGRAM TYPE: " + this.props.selectedSubMajorId);
-    // console.log(this.props.programTypes);
-
     return (
       <Navbar style={{ top: "0", position: "sticky" }}>
         <Nav className="flex-column">
