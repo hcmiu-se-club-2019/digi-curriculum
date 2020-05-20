@@ -11,7 +11,8 @@ class CourseTile extends Component {
           borderRadius: "10px",
           width: "102px",
           height: "82px",
-          marginBottom: "20px"
+          marginBottom: "20px",
+          overflow: false
         }}
       >
         {this.props.courseId ? (
