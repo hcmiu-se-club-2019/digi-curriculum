@@ -23,6 +23,9 @@ class Header extends Component {
             <Link to="/" className="text-white">
               DigiCurri
             </Link>
+            <Link to="/curriculum" className="text-white">
+              Curriculum
+            </Link>
             <Link to="/program" className="text-white">
               Program Display
             </Link>
