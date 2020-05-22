@@ -5,32 +5,48 @@ const fetchState = [
   {
     id: "IT101IU",
     name: "Data Structures and Algorithms",
+    majors: "IT",
     credit: 4,
-    prerequisties: [],
+    prerequisites: [],
+    selected: false
   },
   {
     id: "IT102IU",
     name: "Web Application",
+    majors: "IT",
     credit: 4,
-    prerequisties: ["IT101IU", "IT103IU"],
+    prerequisites: ["IT101IU", "IT103IU"],
+    selected: false
   },
   {
     id: "IT103IU",
     name: "C/C++ Programming",
+    majors: "BA",
     credit: 4,
-    prerequisties: [],
+    prerequisites: [],
+    selected: false
   },
   {
     id: "IT104IU",
-    name: "Revolutionary Lines of Vietnamese Commuist Party",
+    name: "Revolutionary Lines of Vietnamese Communist Party",
+    majors: "EE",
     credit: 2,
-    prerequisties: [],
+    prerequisites: [],
+    selected: false
+  },
+  {
+    id: "IT104IU",
+    name: "Revolutionary Lines of Vietnamese Communist Party",
+    credit: 2,
+    prerequisites: [],
+    selected: false
   },
   {
     id: "IT105IT",
     name: "Military Education",
     credit: 0,
-    prerequisties: [],
+    prerequisites: [],
+    selected: false
   },
 ];
 

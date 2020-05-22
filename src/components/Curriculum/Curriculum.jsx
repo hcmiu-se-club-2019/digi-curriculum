@@ -14,10 +14,7 @@ class Curriculum extends Component {
   render() {
     if (this.props.curriculum) {
       const { level, titleColor, contentColor } = this.props;
-      const {
-        englishEntranceId,
-        years,
-      } = this.props.curriculum;
+      const { englishEntranceId, years } = this.props.curriculum;
       const {
         ieltsFrom,
         ieltsTo,
@@ -30,8 +27,8 @@ class Curriculum extends Component {
           <div
             style={{
               backgroundColor: titleColor,
-              paddingTop: "40px",
-              paddingBottom: "40px",
+              paddingTop: "30px",
+              paddingBottom: "30px",
             }}
           >
             <Row className="align-items-center" noGutters={true}>
@@ -67,7 +64,7 @@ class Curriculum extends Component {
           </div>
           <div
             style={{
-              padding: "20px 0px 60px 0px",
+              padding: "20px -20px 60px -20px",
               backgroundColor: contentColor,
             }}
           >
@@ -81,11 +78,12 @@ class Curriculum extends Component {
                   style={{
                     minWidth: "346px",
                     maxWidth: "346px",
-                    margin: "0px 20px 0px 20px",
+                    margin: "10px",
+                    backgroundColor: "lightgrey",
                   }}
                 >
                   <h5 className="border-bottom border-dark">Year {i + 1}</h5>
-                  <Row className="justify-content-center" noGutters={true}>
+                  <Row noGutters>
                     <Col className="semester">
                       Sem 1
                       {year.sem1.map((course) => (
@@ -95,10 +93,7 @@ class Curriculum extends Component {
                         />
                       ))}
                     </Col>
-                    <Col
-                      className="semester"
-                      style={{ margin: "0px 20px 0px 20px" }}
-                    >
+                    <Col className="semester">
                       Sem 2
                       {year.sem2.map((course) => (
                         <CourseTile

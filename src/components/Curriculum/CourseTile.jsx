@@ -1,63 +1,46 @@
-import React, { Component } from "react";
+import React from "react";
+import styled from "styled-components";
 
-import "bootstrap/dist/css/bootstrap.css";
+const Container = styled.div`
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 102px;
+  height: 82px;
+  overflow: false;
+  text-align: center;
+  margin: 10px;
+`;
 
-class CourseTile extends Component {
-  render() {
-    return (
-      <div
-        style={{
-          border: "1px solid black",
-          borderRadius: "10px",
-          width: "102px",
-          height: "82px",
-          marginBottom: "20px",
-          overflow: false
-        }}
-      >
-        {this.props.courseId ? (
-          <div>
-            <div
-              className="justify-content-center"
-              style={{
-                height: "60px",
-                fontSize: "11px",
-                fontWeight: "bold",
-                lineHeight: "1em",
-                display: "flex",
-                alignItems: "center"
-              }}
-            >
-              {this.props.name.length <= 50
-                ? this.props.name
-                : this.props.name.substring(0, 50) + "..."}
-            </div>
-            <div
-              style={{
-                height: "20px",
-                fontSize: "14px"
-              }}
-            >
-              {this.props.courseId}
-            </div>
-          </div>
-        ) : (
-          <div
-            className="justify-content-center"
-            style={{
-              height: "80px",
-              fontSize: "14px",
-              fontWeight: "bold",
-              display: "flex",
-              alignItems: "center"
-            }}
-          >
-            Elective
-          </div>
-        )}
-      </div>
-    );
-  }
+const CourseName = styled.div`
+  height: ${(props) => (props.id ? "60px" : "80px")};
+  font-size: ${(props) => (props.id ? "11px" : "14px")};
+  font-weight: bold;
+  line-height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CourseId = styled.div`
+  height: 20px;
+  font-size: 14px;
+`;
+
+function CourseTile(props) {
+  return (
+    <Container>
+      <CourseName id={props.courseId}>
+        {props.courseId
+          ? props.name
+            ? props.name.length <= 50
+              ? props.name
+              : props.name.substring(0, 50) + "..."
+            : "(No Name)"
+          : "Elective"}
+      </CourseName>
+      {props.courseId ? <CourseId>{props.courseId}</CourseId> : ""}
+    </Container>
+  );
 }
 
 export default CourseTile;

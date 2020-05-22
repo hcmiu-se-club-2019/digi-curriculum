@@ -1,7 +1,33 @@
-import React from "react";
+import React, { Component } from "react";
+import styled from "styled-components";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function CurriculumEdit() {
-  return <div>This is Edit Curriculum site</div>;
+import CourseDragSource from "./CourseDragSource";
+
+const Container = styled.div`
+  /* padding-top: 350px;
+  padding-bottom: 350px; */
+`;
+
+const DragSource = styled.div`
+  /* padding: 15px 10px 15px 10px; */
+`;
+
+const DropSource = styled.div`
+  background-color: lightgreen;
+`;
+
+class CurriculumEdit extends Component {
+  render() {
+    return (
+      <Container className="row no-gutters">
+        <DragSource className="col-3">
+          <CourseDragSource />
+        </DragSource>
+        <DropSource className="col-9">Drop Source</DropSource>
+      </Container>
+    );
+  }
 }
 
 export default CurriculumEdit;
