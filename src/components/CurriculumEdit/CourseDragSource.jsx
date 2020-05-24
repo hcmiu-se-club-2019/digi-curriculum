@@ -84,6 +84,7 @@ const CourseToolbar = styled(Container)`
 const CourseSource = styled(Container)`
   padding-top: 15px;
   padding-bottom: 15px;
+  border-bottom: 1px solid grey;
 `;
 
 class CourseDragSource extends Component {

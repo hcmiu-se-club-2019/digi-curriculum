@@ -3,6 +3,7 @@ import styled from "styled-components";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import CourseDragSource from "./CourseDragSource";
+import CurriculumDropPanel from "./CurriculumDropPanel";
 
 const Container = styled.div`
   /* padding-top: 350px;
@@ -24,7 +25,7 @@ class CurriculumEdit extends Component {
         <DragSource className="col-3">
           <CourseDragSource />
         </DragSource>
-        <DropSource className="col-9">Drop Source</DropSource>
+        <DropSource className="col-9"><CurriculumDropPanel /></DropSource>
       </Container>
     );
   }
