@@ -6,6 +6,7 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: white;
 `
 
 const Toolbar = styled.div`
@@ -20,11 +21,10 @@ const InfoDisp = styled.div`
 `
 
 const Info = styled.div`
-  padding-top: 5px;
+  padding-top: 3px;
   flex-basis: 100%;
-  font-size: x-small;
+  font-size: small;
   text-align: center;
-  border-right: 1px solid blue;
 `
 
 const BtnGroup = styled.div`
@@ -50,6 +50,10 @@ export default class CurriculumDropPanel extends Component {
             <Info>
                 <h6>Program</h6>
                 <p>International University</p>              
+            </Info>
+            <Info>
+                <h6>English Entrance</h6>
+                <p>Academic English 1</p>              
             </Info>
           </InfoDisp>
           <BtnGroup>

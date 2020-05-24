@@ -20,13 +20,13 @@ class Header extends Component {
                 alt="logo"
               />
             </a>
-            <Link to="/" className="text-white">
+            <Link to="/" className="text-white mr-2">
               DigiCurri
             </Link>
-            <Link to="/curriculum" className="text-white">
+            <Link to="/curriculum" className="text-white mr-2">
               Curriculum
             </Link>
-            <Link to="/program" className="text-white">
+            <Link to="/program" className="text-white mr-2">
               Program Display
             </Link>
 
@@ -89,14 +89,17 @@ class Header extends Component {
                   ></i>
                 </div>
               </form>
-              <span className="navbar-text">
-                <a className="login" href="/" style={{ paddingRight: "10px" }}>
+              {/*TODO Make Login float right*/}
+              <div className=''>
+                <span className="navbar-text">
+                  <a className="login" href="/" style={{ paddingRight: "10px" }}>
+                    Sign Up
+                  </a>
+                </span>
+                <a className="btn btn-light action-button" role="button" href="/">
                   Log In
                 </a>
-              </span>
-              <a className="btn btn-light action-button" role="button" href="/">
-                Sign Up
-              </a>
+              </div>
             </div>
           </div>
         </nav>

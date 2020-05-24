@@ -10,7 +10,7 @@ export default class CurriculumDropSource extends Component {
   render() {
     return (
       <Container>
-
+        
       </Container>
     )
   }
