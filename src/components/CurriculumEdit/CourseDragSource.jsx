@@ -1,162 +1,148 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Form, Row, Col, Container } from "react-bootstrap";
-import CourseTypeTile from "./CourseTypeTile";
+import { Row, Col, Container } from "react-bootstrap";
+
 import CourseTile from "../Curriculum/CourseTile";
+import SearchForm from "./SearchForm";
 
-const CourseNameWrapper = styled.div`
-  min-width: 50px;
-  max-width: 300px;
+const Toolbar = styled(Container).attrs({ fluid: true })`
+  background-color: gainsboro;
+  padding-top: 15px;
+  padding-bottom: 15px;
 `;
 
-const SelectWrapper = styled.div`
-  min-width: 50px;
-  max-width: 300px;
-`;
-
-const MajorBox = styled(Container)`
-  margin-bottom: 40px;
-  /* background-color: darkcyan; */
-`;
-
-const CourseTitleWrapper = styled(Row)`
+const MajorLabel = styled.div`
   font-style: italic;
-  justify-content: flex-start;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
   font-size: 12px;
-`;
-
-const TitleWrapper = styled(Row)`
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 15px 0px 15px 0px;
-  font-style: italic;
-  justify-content: flex-start;
   align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 12px;
   text-align: center;
 `;
 
-function CourseTitle(props) {
+function MajorTitle(props) {
   return (
-    <CourseTitleWrapper>
-      <span
+    <Row as={MajorLabel}>
+      <Col
+        xl={"auto"}
         style={{
-          fontSize: "22px",
-          paddingRight: "10px",
+          fontSize: "21px",
           fontWeight: "bold",
         }}
       >
-        {props.majorName ?? "Other"}
-      </span>
-      <span>{props.count} course(s)</span>
-    </CourseTitleWrapper>
+        {props.name ?? "(No name)"}
+      </Col>
+      {props.count ? <Col xl={"auto"}>{props.count} course(s)</Col> : ""}
+      {props.note ? <Col xl={"auto"}>{props.note}</Col> : ""}
+    </Row>
   );
 }
 
-const CourseList = styled(Row)`
-  /* padding-right: 10px;
-  padding-left: 10px; */
-  justify-content: flex-start;
+const CourseList = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
-const CourseTypeList = styled(Row)`
-  padding-right: 10px;
-  padding-left: 10px;
-  margin: -15px 0px 0px 0px;
-  justify-content: flex-start;
-  display: flex;
-  flex-wrap: wrap;
+const MajorGroup = styled.div`
+  padding-top: 10px;
+  padding-bottom: 10px;
 `;
 
-const CourseToolbar = styled(Container)`
-  background-color: lightgrey;
-  padding-top: 15px;
-  padding-bottom: 15px;
-`;
-
-const CourseSource = styled(Container)`
-  padding-top: 15px;
-  padding-bottom: 15px;
+const Content = styled.div`
+  background-color: whitesmoke;
+  /* height: 70vh; */
+  /* overflow-y: auto; */
 `;
 
 class CourseDragSource extends Component {
   render() {
     return (
-      <div>
-        <CourseToolbar>
-          <Row noGutters>
-            <Col xl={6} style={{ paddingLeft: "5px", paddingRight: "5px" }}>
-              <CourseNameWrapper>
-                <Form.Control
-                  as="input"
-                  type="text"
-                  placeholder="Find course"
+      <Container fluid>
+        <Row>
+          <Toolbar>
+            <SearchForm />
+            {/* <Row style={{ paddingTop: "10px" }}>
+              <Container fluid>
+                <MajorTitle
+                  name="Course Type"
+                  note="Drag to curriculum to change course type"
                 />
-              </CourseNameWrapper>
-            </Col>
-            <Col xl={6} style={{ paddingLeft: "5px", paddingRight: "5px" }}>
-              <SelectWrapper>
-                <Form.Control as="select">
-                  <option>All major</option>
-                  <option>BA - Business Administration</option>
-                  <option>IT - Information Technology</option>
-                  <option>EE - Electrical Engineering</option>
-                </Form.Control>
-              </SelectWrapper>
-            </Col>
-          </Row>
-          <TitleWrapper>
-            <span
-              style={{
-                fontSize: "22px",
-                paddingRight: "10px",
-                fontWeight: "bold",
-              }}
-            >
-              Course Type
-            </span>
-            <span>Drag over the course to change type</span>
-          </TitleWrapper>
-          <CourseTypeList>
-            <CourseTypeTile color="blue" name="General" />
-            <CourseTypeTile color="green" name="Major" />
-            <CourseTypeTile color="red" name="Elective (Specialized Major)" />
-          </CourseTypeList>
-        </CourseToolbar>
-        <CourseSource>
-          <MajorBox>
-            <CourseTitle majorName="Information Technology" count={99} />
-            <CourseList>
-              <CourseTile courseId="IT101IU" name="Calculus 1" />
-              <CourseTile courseId="IT101IU" />
-              <CourseTile courseId="IT101IU" />
-              <CourseTile courseId="IT101IU" name="Calculus 1" />
-              <CourseTile courseId="IT101IU" name="Calculus 1" />
-              <CourseTile courseId="IT101IU" name="Calculus 1" />
-              <CourseTile courseId="IT101IU" name="Calculus 1" />
-            </CourseList>
-          </MajorBox>
-          <MajorBox>
-            <CourseTitle majorName="Information Technology" count={99} />
-            <CourseList>
-              <CourseTile courseId="IT101IU" name="Calculus 1" />
-              <CourseTile courseId="IT101IU" />
-              <CourseTile courseId="IT101IU" />
-              <CourseTile courseId="IT101IU" name="Calculus 1" />
-              <CourseTile courseId="IT101IU" name="Calculus 1" />
-              <CourseTile courseId="IT101IU" name="Calculus 1" />
-              <CourseTile />
-            </CourseList>
-          </MajorBox>
-        </CourseSource>
-      </div>
+                <Row>
+                  <Col as={CourseList}>
+                    <CourseTypeTile color="blue" name="General" />
+                    <CourseTypeTile color="green" name="Major" />
+                    <CourseTypeTile
+                      color="red"
+                      name="Elective (Specialized Major)"
+                    />
+                  </Col>
+                </Row>
+              </Container>
+            </Row> */}
+          </Toolbar>
+        </Row>
+        <Row as={Content}>
+          <Container fluid>
+            <Row as={MajorGroup}>
+              <Container fluid>
+                <MajorTitle name="Information Technology" count={99} />
+                <Row>
+                  <Col as={CourseList}>
+                    <CourseTile courseId="IT101IU" active />
+                    <CourseTile courseId="IT101IU" name="Calculus 1" active />
+                    <CourseTile courseId="IT101IU" name="Calculus 2" active />
+                    <CourseTile courseId="IT101IU" name="Calculus 3" active />
+                    <CourseTile
+                      courseId="IT101IU"
+                      name="Revolutionary Lines of Vietnamese Communist Party"
+                      active
+                    />
+                    <CourseTile
+                      courseId="IT101IU"
+                      name="Revolutionary Lines of Vietnamese Communist Party"
+                      active
+                    />
+                    <CourseTile
+                      courseId="IT101IU"
+                      name="Revolutionary Lines of Vietnamese Communist Party"
+                      active
+                    />
+                  </Col>
+                </Row>
+              </Container>
+            </Row>
+            <Row as={MajorGroup}>
+              <Container fluid>
+                <MajorTitle name="Information Technology" count={99} />
+                <Row>
+                  <Col as={CourseList}>
+                    <CourseTile courseId="IT101IU" />
+                    <CourseTile courseId="IT101IU" active />
+                    <CourseTile courseId="IT101IU" active dragged />
+                    <CourseTile courseId="IT101IU" />
+                    <CourseTile courseId="IT101IU" active />
+                    <CourseTile courseId="IT101IU" active dragged />
+                  </Col>
+                </Row>
+              </Container>
+            </Row>
+            <Row as={MajorGroup}>
+              <Container fluid>
+                <MajorTitle name="Information Technology" count={99} />
+                <Row>
+                  <Col as={CourseList}>
+                    <CourseTile courseId="IT101IU" name="Calculus 1" />
+                    <CourseTile courseId="IT101IU" />
+                    <CourseTile courseId="IT101IU" />
+                    <CourseTile courseId="IT101IU" name="Calculus 1" />
+                    <CourseTile courseId="IT101IU" name="Calculus 1" />
+                    <CourseTile courseId="IT101IU" name="Calculus 1" />
+                  </Col>
+                </Row>
+              </Container>
+            </Row>
+          </Container>
+        </Row>
+      </Container>
     );
   }
 }

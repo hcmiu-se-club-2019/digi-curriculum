@@ -1,19 +1,79 @@
 import React from "react";
 import styled from "styled-components";
 
+const TILE_COLOR = {
+  red: {
+    name: "red",
+    borderColor: "#B85450",
+    backgroundColor: "#F8CECC",
+  },
+  orange: {
+    name: "orange",
+    borderColor: "#D79B00",
+    backgroundColor: "#FFE6CC",
+  },
+  yellow: {
+    name: "yellow",
+    borderColor: "#D6B656",
+    backgroundColor: "#FFFFCC",
+  },
+  green: {
+    name: "green",
+    borderColor: "#82B366",
+    backgroundColor: "#D5E8D4",
+  },
+  blue: {
+    name: "blue",
+    borderColor: "#6C8EBF",
+    backgroundColor: "#CCE5FF",
+  },
+  indigo: {
+    name: "indigo",
+    borderColor: "#6B6BB3",
+    backgroundColor: "#CCCCFF",
+  },
+  purple: {
+    name: "purple",
+    borderColor: "#9673A6",
+    backgroundColor: "#E5CCFF",
+  },
+  white: {
+    name: "white",
+    borderColor: "#000000",
+    backgroundColor: "#FFFFFF",
+  },
+};
+
 const Container = styled.div`
-  border: 1px solid black;
+  /* border: 2px solid ${props => (props.active ? "solid" : "dashed")}; */
+  border: 2px solid;
   border-radius: 10px;
-  width: 102px;
-  height: 82px;
-  overflow: false;
+  border-color: ${props =>
+    props.active
+      ? TILE_COLOR[props.color ?? TILE_COLOR.white.name].borderColor
+      : "#000000"};
+
+  background-color: ${props =>
+    props.active
+      ? TILE_COLOR[props.color ?? TILE_COLOR.white.name].backgroundColor
+      : "rgba(255, 255, 255, 0.0)"};
+
+  opacity: ${props => (props.dragged === true ? 0.4 : 1.0)};
+  width: 104px;
+  height: 84px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   text-align: center;
   margin: 10px;
 `;
 
 const CourseName = styled.div`
-  height: ${(props) => (props.id ? "60px" : "80px")};
-  font-size: ${(props) => (props.id ? "11px" : "14px")};
+  height: ${props => (props.id ? "60px" : "80px")};
+  font-size: ${props => (props.id ? "11px" : "14px")};
   font-weight: bold;
   line-height: 1em;
   display: flex;
@@ -28,7 +88,11 @@ const CourseId = styled.div`
 
 function CourseTile(props) {
   return (
-    <Container>
+    <Container
+      color={props.color}
+      active={props.active}
+      dragged={props.dragged}
+    >
       <CourseName id={props.courseId}>
         {props.courseId
           ? props.name

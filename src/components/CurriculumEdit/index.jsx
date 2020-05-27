@@ -1,30 +1,40 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col } from "react-bootstrap";
 
+import CurriculumActionFilter from "./CurriculumActionFilter";
 import CourseDragSource from "./CourseDragSource";
-
-const Container = styled.div`
-  /* padding-top: 350px;
-  padding-bottom: 350px; */
-`;
-
-const DragSource = styled.div`
-  /* padding: 15px 10px 15px 10px; */
-`;
-
-const DropSource = styled.div`
-  background-color: lightgreen;
-`;
+import CurriculumDropSource from "./CurriculumDropSource";
 
 class CurriculumEdit extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     height: null,
+  //   };
+  // }
+
+  // getHeight(node) {
+  //   if (node && !this.state.height) {
+  //     this.setState({
+  //       height: node.clientHeight,
+  //     });
+  //   }
+  // }
+
   render() {
     return (
-      <Container className="row no-gutters">
-        <DragSource className="col-3">
-          <CourseDragSource />
-        </DragSource>
-        <DropSource className="col-9">Drop Source</DropSource>
+      <Container fluid style={{ padding: "0px" }}>
+        <CurriculumActionFilter />
+        <Row noGutters>
+          <Col sm={3} md={3} lg={3} xl={3}>
+            <CourseDragSource /* height={this.state.height} */ />
+          </Col>
+          <Col sm={9} md={9} lg={9} xl={9}>
+            <div /*ref={node => this.getHeight(node)*/>
+              <CurriculumDropSource />
+            </div>
+          </Col>
+        </Row>
       </Container>
     );
   }

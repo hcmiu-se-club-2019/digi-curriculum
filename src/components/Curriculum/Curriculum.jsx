@@ -79,35 +79,38 @@ class Curriculum extends Component {
                     minWidth: "346px",
                     maxWidth: "346px",
                     margin: "10px",
-                    backgroundColor: "lightgrey",
+                    // backgroundColor: "lightgrey",
                   }}
                 >
-                  <h5 className="border-bottom border-dark">Year {i + 1}</h5>
+                  <h5>Year {i + 1}</h5>
                   <Row noGutters>
                     <Col className="semester">
                       Sem 1
-                      {year.sem1.map((course) => (
+                      {year.sem1.map(course => (
                         <CourseTile
                           courseId={course}
                           name="Revolutionary Lines of Vietnamese Communist Party"
+                          active={false}
                         />
                       ))}
                     </Col>
                     <Col className="semester">
                       Sem 2
-                      {year.sem2.map((course) => (
+                      {year.sem2.map(course => (
                         <CourseTile
                           courseId={course}
                           name="Revolutionary Lines of Vietnamese Communist Party"
+                          active={false}
                         />
                       ))}
                     </Col>
                     <Col className="semester">
                       Sem 3
-                      {year.sem3.map((course) => (
+                      {year.sem3.map(course => (
                         <CourseTile
                           courseId={course}
                           name="Revolutionary Lines of Vietnamese Communist Party"
+                          active={false}
                         />
                       ))}
                     </Col>

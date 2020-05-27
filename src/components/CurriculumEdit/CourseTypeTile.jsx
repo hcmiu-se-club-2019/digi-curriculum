@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  border: 3px solid;
-  border-color: ${(props) => {
+  border: 2px solid;
+  border-color: ${props => {
     switch (props.color) {
       case "blue":
         return "#6C8EBF";
@@ -15,7 +15,7 @@ const Container = styled.div`
         return "#000000";
     }
   }};
-  background-color: ${(props) => {
+  background-color: ${props => {
     switch (props.color) {
       case "blue":
         return "#DAE8FC";
@@ -27,8 +27,8 @@ const Container = styled.div`
         return "#FFFFFF";
     }
   }};
-  width: 102px;
-  height: 82px;
+  width: 104px;
+  height: 84px;
   font-size: 11px;
   font-weight: bold;
   justify-content: center;
@@ -37,7 +37,8 @@ const Container = styled.div`
   display: flex;
   margin: 10px;
 `;
-const CourseTypeTile = (props) => {
+
+const CourseTypeTile = props => {
   return <Container color={props.color}>{props.name ?? "No name"}</Container>;
 };
 
