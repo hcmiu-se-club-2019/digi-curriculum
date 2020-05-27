@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  border: 1px solid grey;
+  border: 1px solid lightgrey;
   border-radius: 3px;
   padding: 2px;
   font-size: 11px;

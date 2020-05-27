@@ -87,6 +87,34 @@ const CourseSource = styled(Container)`
   border-bottom: 1px solid grey;
 `;
 
+const CourseDiv = styled.div`
+  width: 75%;
+  margin: 6px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 4px;
+  display: flex;
+`
+
+const Handle = styled.div`
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 3px;
+  background-color: ${(props) => {
+    switch (props.color) {
+      case "blue":
+        return "#DAE8FC";
+      case "green":
+        return "#D5E8D4";
+      case "red":
+        return "#F8CECC";
+      default:
+        return "#FFFFFF";
+    }
+  }};
+`
+
 class CourseDragSource extends Component {
   render() {
     return (
@@ -123,7 +151,6 @@ class CourseDragSource extends Component {
             >
               Course Type
             </span>
-            <span>Drag over the course to change type</span>
           </TitleWrapper>
           <CourseTypeList>
             <CourseTypeTile color="blue" name="General" />
@@ -134,6 +161,7 @@ class CourseDragSource extends Component {
         <CourseSource>
           <MajorBox>
             <CourseTitle majorName="Information Technology" count={99} />
+            <CourseDiv><div><h6>Web App Dev</h6><p>Prerequire: C/C++; DSA; Network</p></div><Handle color={'blue'}/></CourseDiv>
             <CourseList>
               <CourseTile courseId="IT101IU" name="Calculus 1" />
               <CourseTile courseId="IT101IU" />
