@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import CurriculumActionFilter from "./CurriculumActionFilter";
 import CourseDragSource from "./CourseDragSource";
-import CurriculumDropSource from "./CurriculumDropSource";
+import CurriculumDropDestination from "./CurriculumDropDestination";
 
 class CurriculumEdit extends Component {
   // constructor(props) {
@@ -31,7 +31,7 @@ class CurriculumEdit extends Component {
           </Col>
           <Col sm={9} md={9} lg={9} xl={9}>
             <div /*ref={node => this.getHeight(node)*/>
-              <CurriculumDropSource />
+              <CurriculumDropDestination />
             </div>
           </Col>
         </Row>

@@ -241,6 +241,7 @@ export default function curriculums(state = initState, action) {
         programTypeId,
         englishEntranceid: englishEntranceId,
       } = action.payload;
+
       const curriculum = fetchState.find(
         (curriculum) =>
           curriculum.majorId === majorId &&
@@ -248,22 +249,17 @@ export default function curriculums(state = initState, action) {
           curriculum.programTypeId === programTypeId &&
           curriculum.englishEntranceId === englishEntranceId
       );
-      console.log("FOUND: ");
-      console.log(curriculum);
-      // const result = Object.assign([], [...curriculum]);
-      // console.log(result)
+
       return Object.assign([], [...state], curriculum);
     }
     case FIND_CURRICULUMS: {
-      // console.log("FIND CURRICULUM:");
-      // console.log(action.payload);
       const {
         majorId,
         subMajorId,
         programTypeId,
         englishEntranceId,
       } = action.payload;
-      // console.log("RESULT");
+
       const result = fetchState.filter(
         (curriculum) =>
           curriculum.majorId === majorId &&
@@ -273,6 +269,7 @@ export default function curriculums(state = initState, action) {
             ? curriculum.englishEntranceId === englishEntranceId
             : true)
       );
+
       result.sort((a, b) => {
         let countA = 0,
           countB = 0;
@@ -282,11 +279,8 @@ export default function curriculums(state = initState, action) {
         b.years.forEach((year) => {
           countB += year.sem1.length + year.sem2.length + year.sem3.length;
         });
-        // console.log("COUNT A: " + countA);
-        // console.log("COUNT B: " + countB);
         return countB - countA;
       });
-      // console.log(result);
       return Object.assign([], [...result]);
     }
     default:
