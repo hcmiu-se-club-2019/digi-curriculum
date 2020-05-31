@@ -5,10 +5,10 @@
 3. Go to file index.js to modify configuration database connection 
 ```javascript
     mysql.createConnection({
-    host: {your host},
-    user: {your mysql user name},
-    password: {your password of this user name}
-    database: {your database}
+        host: {your host},
+        user: {your mysql user name},
+        password: {your password of this user name}
+        database: {your database}
 })
 ```
 4. Run server on port ( default: 3000 ) 
@@ -17,8 +17,6 @@
 # Simple API and Usage
 + Get curriculum
 `GET /curiculum/:programId/:pathway`
-
-+ Return object
 ```javascript
 {
     "curriculum": [
@@ -33,7 +31,8 @@
             "name": "Chemistry Laboratory",
             "semester": 1,
             "year": 2
-        }
+        },
+        ...
     ]
 }
 ```
