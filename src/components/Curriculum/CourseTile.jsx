@@ -45,20 +45,20 @@ const TILE_COLOR = {
 };
 
 const Container = styled.div`
-  /* border: 2px solid ${props => (props.active ? "solid" : "dashed")}; */
+  /* border: 2px solid ${(props) => (props.active ? "solid" : "dashed")}; */
   border: 2px solid;
   border-radius: 10px;
-  border-color: ${props =>
+  border-color: ${(props) =>
     props.active
       ? TILE_COLOR[props.color ?? TILE_COLOR.white.name].borderColor
       : "#000000"};
 
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.active
       ? TILE_COLOR[props.color ?? TILE_COLOR.white.name].backgroundColor
       : "rgba(255, 255, 255, 0.0)"};
 
-  opacity: ${props => (props.dragged === true ? 0.4 : 1.0)};
+  opacity: ${(props) => (props.dragged === true ? 0.4 : 1.0)};
   width: 104px;
   height: 84px;
   -webkit-touch-callout: none;
@@ -72,8 +72,8 @@ const Container = styled.div`
 `;
 
 const CourseName = styled.div`
-  height: ${props => (props.id ? "60px" : "80px")};
-  font-size: ${props => (props.id ? "11px" : "14px")};
+  height: ${(props) => (props.id ? "60px" : "80px")};
+  font-size: ${(props) => (props.id ? "11px" : "14px")};
   font-weight: bold;
   line-height: 1em;
   display: flex;
