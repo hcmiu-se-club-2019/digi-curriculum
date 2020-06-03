@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { DragDropContext } from "react-beautiful-dnd";
 
 import CurriculumActionFilter from "./CurriculumActionFilter";
 import CourseDragSource from "./CourseDragSource";
@@ -25,16 +26,18 @@ class CurriculumEdit extends Component {
     return (
       <Container fluid style={{ padding: "0px" }}>
         <CurriculumActionFilter />
-        <Row noGutters>
-          <Col sm={3} md={3} lg={3} xl={3}>
-            <CourseDragSource /* height={this.state.height} */ />
-          </Col>
-          <Col sm={9} md={9} lg={9} xl={9}>
-            <div /*ref={node => this.getHeight(node)*/>
-              <CurriculumDropDestination />
-            </div>
-          </Col>
-        </Row>
+        <DragDropContext>
+          <Row noGutters>
+            <Col sm={3} md={3} lg={3} xl={3}>
+              <CourseDragSource /* height={this.state.height} */ />
+            </Col>
+            <Col sm={9} md={9} lg={9} xl={9}>
+              <div /*ref={node => this.getHeight(node)*/>
+                <CurriculumDropDestination />
+              </div>
+            </Col>
+          </Row>
+        </DragDropContext>
       </Container>
     );
   }

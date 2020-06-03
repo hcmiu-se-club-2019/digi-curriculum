@@ -45,8 +45,7 @@ const TILE_COLOR = {
 };
 
 const Container = styled.div`
-  /* border: 2px solid ${(props) => (props.active ? "solid" : "dashed")}; */
-  border: 2px solid;
+  /* border: 2px solid; */
   border-radius: 10px;
   border-color: ${(props) =>
     props.active
@@ -57,10 +56,10 @@ const Container = styled.div`
     props.active
       ? TILE_COLOR[props.color ?? TILE_COLOR.white.name].backgroundColor
       : "rgba(255, 255, 255, 0.0)"};
-
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 5px 15px 0 rgba(0, 0, 0, 0.3);
   opacity: ${(props) => (props.dragged === true ? 0.4 : 1.0)};
-  width: 104px;
-  height: 84px;
+  width: 100px;
+  height: 80px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

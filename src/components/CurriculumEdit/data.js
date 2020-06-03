@@ -1,4 +1,8 @@
 const data = {
+  majorId: "IT",
+  subMajorId: "DS",
+  programTypeId: "IU",
+  englishLevel: "IE1",
   years: {
     year1: {
       id: "year1",

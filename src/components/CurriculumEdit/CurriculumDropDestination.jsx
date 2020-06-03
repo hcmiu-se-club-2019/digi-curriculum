@@ -4,11 +4,15 @@ import { Row, Col, Container } from "react-bootstrap";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 // import Content from "./../Curriculum/Content";
-import CourseTile from "../Curriculum/CourseTile";
+import img from "./drop-content-background.jpg";
 import data from "./data";
+
+// import CourseTile from "../Curriculum/CourseTile";
+import Semester from "./Semester";
 
 const DropContent = styled.div`
   background-color: steelblue;
+  background-image: url(${img});
   display: flex;
   overflow-x: auto;
   flex-direction: row;
@@ -28,7 +32,8 @@ const Year = styled(Col).attrs({
   lg: "auto",
   xl: "auto",
 })`
-  background-color: gainsboro;
+  background-color: rgba(220, 220, 220, 0.7);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -42,11 +47,6 @@ const Year = styled(Col).attrs({
   user-select: none;
 `;
 
-const Semester = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 class CurriculumDropDestination extends Component {
   state = data;
 
@@ -55,74 +55,36 @@ class CurriculumDropDestination extends Component {
       <Container fluid>
         <Row style={{ display: "inherit" }}>
           <DropContent>
-            <DragDropContext>
-              {this.state.yearOrder.map((yearId) => {
-                return (
-                  <Year key={yearId}>
-                    <Row>
-                      <Col>
-                        <b>Year {yearId[yearId.length - 1]}</b>
-                      </Col>
-                    </Row>
-                    <Row
-                      noGutters
-                      style={{ display: "flex", flexWrap: "nowrap" }}
-                    >
-                      {data.years[yearId].semOrder.map((semId) => (
-                        <Col
-                          as={Semester}
-                          key={`${yearId} - ${semId}`}
-                          xs={"auto"}
-                          sm={"auto"}
-                          md={"auto"}
-                          lg={"auto"}
-                          xl={"auto"}
-                        >
-                          <div>Sem {semId[semId.length - 1]}</div>
-                          <Droppable droppableId={yearId + semId}>
-                            {(provided) => (
-                              <div
-                                ref={provided.innerRef}
-                                {...provided.droppableProps}
-                                style={{
-                                  display: "flex",
-                                  flexDirection: "column",
-                                }}
-                              >
-                                {data.years[yearId].semesters[
-                                  semId
-                                ].courseIds.map((courseId, index) => (
-                                  <Draggable
-                                    draggableId={courseId}
-                                    index={index}
-                                    key={courseId}
-                                  >
-                                    {(provided2) => (
-                                      <div
-                                        ref={provided2.innerRef}
-                                        {...provided2.dragHandleProps}
-                                        {...provided2.draggableProps}
-                                      >
-                                        <CourseTile
-                                          key={courseId}
-                                          courseId={courseId}
-                                          active
-                                        />
-                                      </div>
-                                    )}
-                                  </Draggable>
-                                ))}
-                                {provided.placeholder}
-                              </div>
-                            )}
-                          </Droppable>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Year>
-                );
-              })}
-            </DragDropContext>
+            {this.state.yearOrder.map((yearId) => {
+              return (
+                <Year key={yearId}>
+                  <Row>
+                    <Col>
+                      <b>Year {yearId[yearId.length - 1]}</b>
+                    </Col>
+                  </Row>
+                  <Row
+                    noGutters
+                    style={{
+                      display: "flex",
+                      flexWrap: "nowrap",
+                      zIndex: -1,
+                    }}
+                  >
+                    {data.years[yearId].semOrder.map((semId) => (
+                      <Semester
+                        key={yearId + semId}
+                        yearId={yearId}
+                        semId={semId}
+                        courseIds={
+                          data.years[yearId].semesters[semId].courseIds
+                        }
+                      />
+                    ))}
+                  </Row>
+                </Year>
+              );
+            })}
           </DropContent>
         </Row>
         <Row>
