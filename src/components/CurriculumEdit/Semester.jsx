@@ -17,7 +17,7 @@ const CourseList = styled.div`
   border-radius: 10px;
   :hover {
     background-color: ${(props) => (props.isDraggingOver ? "dimgray" : "lightslategrey")};
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
   }
 `;
 
@@ -35,7 +35,7 @@ class Semester extends React.PureComponent {
         xl={"auto"}
       >
         <div>Sem {semId[semId.length - 1]}</div>
-        <Droppable droppableId={yearId + semId}>
+        <Droppable droppableId={`${yearId}-${semId}`}>
           {(provided, snapshot) => (
             <CourseList
               ref={provided.innerRef}

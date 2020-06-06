@@ -47,45 +47,66 @@ const Year = styled(Col).attrs({
   user-select: none;
 `;
 
+const SemesterList = styled(Row).attrs({ noGutters: true })`
+  display: flex;
+  flex-wrap: nowrap;
+`;
+
 class CurriculumDropDestination extends Component {
   state = data;
+
+  onDragEnd = (result) => {
+    const { source, destination } = result;
+    console.log(result);
+
+    if (!destination) return;
+    if (source === destination) return;
+
+    const startYear = source.droppableId.split("-")[0];
+    const startSem = source.droppableId.split("-")[1];
+    const endYear = destination.droppableId.split("-")[0];
+    const endSem = destination.droppableId.split("-")[1];
+
+    const startColumn = this.state.years[startYear].semesters[startSem];
+    startColumn.courseIds.splice(source.index, 1);
+
+    const endColumn = this.state.years[endYear].semesters[endSem];
+    endColumn.courseIds.splice(destination.index, 0, result.draggableId);
+
+    // this.setState
+  };
 
   render() {
     return (
       <Container fluid>
         <Row style={{ display: "inherit" }}>
-          <DropContent>
-            {this.state.yearOrder.map((yearId) => {
-              return (
-                <Year key={yearId}>
-                  <Row>
-                    <Col>
-                      <b>Year {yearId[yearId.length - 1]}</b>
-                    </Col>
-                  </Row>
-                  <Row
-                    noGutters
-                    style={{
-                      display: "flex",
-                      flexWrap: "nowrap",
-                      zIndex: -1,
-                    }}
-                  >
-                    {data.years[yearId].semOrder.map((semId) => (
-                      <Semester
-                        key={yearId + semId}
-                        yearId={yearId}
-                        semId={semId}
-                        courseIds={
-                          data.years[yearId].semesters[semId].courseIds
-                        }
-                      />
-                    ))}
-                  </Row>
-                </Year>
-              );
-            })}
-          </DropContent>
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <DropContent>
+              {this.state.yearOrder.map((yearId) => {
+                return (
+                  <Year key={yearId}>
+                    <Row>
+                      <Col>
+                        <b>Year {yearId[yearId.length - 1]}</b>
+                      </Col>
+                    </Row>
+                    <SemesterList>
+                      {data.years[yearId].semOrder.map((semId) => (
+                        <Semester
+                          key={`${yearId}-${semId}`}
+                          yearId={yearId}
+                          semId={semId}
+                          courseIds={
+                            data.years[yearId].semesters[semId].courseIds
+                          }
+                        />
+                      ))}
+                    </SemesterList>
+                  </Year>
+                );
+              })}
+            </DropContent>
+          </DragDropContext>
         </Row>
         <Row>
           <div>YEET</div>
