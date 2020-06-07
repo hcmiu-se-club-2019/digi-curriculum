@@ -8,8 +8,6 @@ const SelectGroup = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
 `;
 
 function EnglishLevelButton(props) {
@@ -19,7 +17,9 @@ function EnglishLevelButton(props) {
         width: "40px",
         height: "40px",
         borderRadius: "40px",
+        margin: "2px",
         padding: "0px",
+        textAlign: "center",
       }}
     >
       {props.name}
@@ -30,33 +30,38 @@ function EnglishLevelButton(props) {
 const Select = styled.div`
   text-align: center;
   font-size: 12px;
-  /* padding-top: 10px; */
+  padding-top: 5px;
   padding-bottom: 5px;
 `;
 
 function SelectItem(props) {
   return (
     <Select>
-      <div style={{ fontSize: "20px", fontWeight: "bold" }}>Major</div>
-      <div>
-        <Form.Control as="select" custom style={{ maxWidth: "220px" }}>
-          <option>BA - Business Administration</option>
-          <option>IT - Information Technology</option>
-          <option>EE - Electrical Engineering</option>
-        </Form.Control>
-      </div>
+      <Form.Control
+        as="select"
+        key={props.title}
+        custom
+        style={{ maxWidth: "200px" }}
+      >
+        <option hidden>{props.title}</option>
+        {props.orders
+          ? props.orders.map((order) => (
+              <option>{props.options[order].name}</option>
+            ))
+          : ""}
+      </Form.Control>
     </Select>
   );
 }
 
-const ActionButton = props => {
+const ActionButton = (props) => {
   return (
-    <div style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+    <div style={{ paddingTop: "5px", paddingBottom: "5px" }}>
       <Button
         variant={"outline-success"}
         style={{
           width: "140px",
-          height: "40px",
+          height: "38px",
           fontSize: "16px",
           wordWrap: true,
         }}
@@ -67,21 +72,51 @@ const ActionButton = props => {
   );
 };
 
+const filterData = {
+  majors: {
+    IT: {
+      id: "IT",
+      name: "IT - Information Technology",
+    },
+    BA: {
+      id: "BA",
+      name: "BA - Business Administration",
+    },
+    EE: {
+      id: "EE",
+      name: "EE - Electrical Engineering",
+    },
+  },
+  majorOrders: ["BA", "IT", "EE"],
+};
+
 class CurriculumActionFilter extends Component {
   render() {
     return (
-      <Row noGutters>
+      <Row noGutters style={{ padding: "5px" }}>
         <Col xl={5}>
           <Container fluid>
             <Row as={SelectGroup}>
               <Col sm={"auto"} md={"auto"} lg={"auto"} xl={"auto"}>
-                <SelectItem />
+                <SelectItem
+                  title="Major"
+                  options={filterData.majors}
+                  orders={filterData.majorOrders}
+                />
               </Col>
               <Col sm={"auto"} md={"auto"} lg={"auto"} xl={"auto"}>
-                <SelectItem />
+                <SelectItem
+                  title="Specialized Major"
+                  options={filterData.majors}
+                  orders={filterData.majorOrders}
+                />
               </Col>
               <Col sm={"auto"} md={"auto"} lg={"auto"} xl={"auto"}>
-                <SelectItem />
+                <SelectItem
+                  title="Program Type"
+                  options={filterData.majors}
+                  orders={filterData.majorOrders}
+                />
               </Col>
             </Row>
           </Container>
@@ -95,15 +130,10 @@ class CurriculumActionFilter extends Component {
           }}
         >
           <Row style={{ textAlign: "center" }}>
-            <Col xl={12} style={{ fontWeight: "bold", fontStyle: "italic" }}>
-              English Entrance
-            </Col>
             <Col
-              xl={12}
               style={{
                 display: "flex",
                 justifyContent: "center",
-                padding: "5px",
               }}
             >
               <EnglishLevelButton name="IE1" />
