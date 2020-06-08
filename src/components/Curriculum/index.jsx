@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+// import { Container, Row, Col } from "react-bootstrap";
 
-import "./decoration.css";
-import MajorNavbar from "./MajorNavbar";
-import ProgramType from "./ProgramType";
-import Content from "./Content";
+// import "./decoration.css";
+// import MajorNavbar from "./MajorNavbar";
+// import ProgramType from "./ProgramType";
+// import Content from "./Content";
 
 const EditLinkWrapper = styled.div`
   justify-content: center;
@@ -27,6 +27,16 @@ const EditLink = styled.div`
   display: flex;
 `;
 
+const Pathway = styled.div`
+  padding-top: 350px;
+  padding-bottom: 350px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 36px;
+  background-color: lightgrey;
+`;
+
 class Home extends Component {
   render() {
     return (
@@ -37,7 +47,8 @@ class Home extends Component {
             <EditLink>Edit Curriculum</EditLink>
           </Link>
         </EditLinkWrapper>
-        <MajorNavbar />
+        <Pathway>Pathway</Pathway>
+        {/* <MajorNavbar />
         <Container
           fluid={true}
           style={{ paddingLeft: "0px", paddingRight: "0px" }}
@@ -50,7 +61,7 @@ class Home extends Component {
               <Content />
             </Col>
           </Row>
-        </Container>
+        </Container> */}
       </div>
     );
   }
