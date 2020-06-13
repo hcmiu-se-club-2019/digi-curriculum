@@ -46,7 +46,7 @@ function SelectItem(props) {
         <option hidden>{props.title}</option>
         {props.orders
           ? props.orders.map((order) => (
-              <option>{props.options[order].name}</option>
+              <option key={order}>{props.options[order].name}</option>
             ))
           : ""}
       </Form.Control>
@@ -93,7 +93,7 @@ const filterData = {
 class CurriculumActionFilter extends Component {
   render() {
     return (
-      <Row noGutters style={{ padding: "5px" }}>
+      <Row noGutters style={{ padding: "5px", backgroundColor: "white" }}>
         <Col xl={5}>
           <Container fluid>
             <Row as={SelectGroup}>

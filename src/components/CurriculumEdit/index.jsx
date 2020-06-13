@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Navbar } from "react-bootstrap";
 // import { DragDropContext } from "react-beautiful-dnd";
 
 import CurriculumActionFilter from "./CurriculumActionFilter";
@@ -7,11 +7,12 @@ import CourseDragSource from "./CourseDragSource";
 import CurriculumDropDestination from "./CurriculumDropDestination";
 
 class CurriculumEdit extends Component {
-
   render() {
     return (
       <Container fluid style={{ padding: "0px" }}>
-        <CurriculumActionFilter />
+        <Navbar bsPrefix="div" fixed="top" sticky="top">
+          <CurriculumActionFilter />
+        </Navbar>
         {/* <DragDropContext onDragEnd={this.onDragEnd}> */}
         <Row noGutters>
           <Col sm={3} md={3} lg={3} xl={3}>
