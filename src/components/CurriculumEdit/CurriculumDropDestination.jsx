@@ -16,7 +16,7 @@ const DropContent = styled.div`
   display: flex;
   overflow-x: auto;
   flex-direction: row;
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
   text-align: center;
   /* Fix overflow-x visual bug */
   ::after {
