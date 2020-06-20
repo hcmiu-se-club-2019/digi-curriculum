@@ -51,10 +51,21 @@ const MajorGroup = styled.div`
 `;
 
 const Content = styled.div`
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
   /* height: 70vh; */
   /* overflow-y: auto; */
 `;
+
+function getStyle(style, snapshot) {
+  // if (!snapshot.isDropAnimating) {
+  //   return style;
+  // }
+  return {
+    ...style,
+    // cannot be 0, but make it super tiny
+    transitionDuration: `0.001s`,
+  };
+}
 
 class CourseDragSource extends Component {
   render() {
@@ -87,9 +98,13 @@ class CourseDragSource extends Component {
           <Row as={Content}>
             <Container fluid>
               {data_majors.allIds.map((majorId) => (
-                <Droppable droppableId={majorId} key={majorId}>
-                  {(provided, snapshot) => (
-                    <MajorGroup ref={provided.innerRef}>
+                <Droppable
+                  droppableId={majorId}
+                  key={majorId}
+                  isDropDisabled={true}
+                >
+                  {(dropProvided, dropSnapshot) => (
+                    <MajorGroup ref={dropProvided.innerRef}>
                       <Row>
                         <Container fluid>
                           <MajorTitle
@@ -104,12 +119,14 @@ class CourseDragSource extends Component {
                                     draggableId={courseId}
                                     index={index}
                                     key={courseId}
+                                    isDragDisabled
                                   >
-                                    {(provided2) => (
+                                    {(dragProvided, snapshot2) => (
                                       <div
-                                        ref={provided2.innerRef}
-                                        {...provided2.dragHandleProps}
-                                        {...provided2.draggableProps}
+                                        ref={dragProvided.innerRef}
+                                        {...dragProvided.dragHandleProps}
+                                        {...dragProvided.draggableProps}
+                                        // style={getStyle(dragProvided.draggableProps.style, snapshot2)}
                                       >
                                         <CourseTile
                                           // key={courseId}
@@ -128,7 +145,7 @@ class CourseDragSource extends Component {
                           </Row>
                         </Container>
                       </Row>
-                      {provided.placeholder}
+                      {dropProvided.placeholder}
                     </MajorGroup>
                   )}
                 </Droppable>

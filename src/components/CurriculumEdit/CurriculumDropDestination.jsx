@@ -92,14 +92,28 @@ class CurriculumDropDestination extends Component {
                     </Row>
                     <SemesterList>
                       {data.years[yearId].semOrder.map((semId) => (
-                        <Semester
-                          key={`${yearId}-${semId}`}
-                          yearId={yearId}
-                          semId={semId}
-                          courseIds={
-                            data.years[yearId].semesters[semId].courseIds
-                          }
-                        />
+                        // <Droppable
+                        //   droppableId={`${yearId}-${semId}`}
+                        //   key={`${yearId}-${semId}`}
+                        // >
+                        //   {(provided, snapshot) => (
+                        //     <SemesterWrapper
+                        //       ref={provided.innerRef}
+                        //       {...provided.droppableProps}
+                        //       isDraggingOver={snapshot.isDraggingOver}
+                        //     >
+                              <Semester
+                                key={`${yearId}-${semId}`}
+                                yearId={yearId}
+                                semId={semId}
+                                courseIds={
+                                  data.years[yearId].semesters[semId].courseIds
+                                }
+                              />
+                        //        {provided.placeholder}
+                        //     </SemesterWrapper>
+                        //   )}
+                        // </Droppable> 
                       ))}
                     </SemesterList>
                   </Year>
@@ -109,7 +123,7 @@ class CurriculumDropDestination extends Component {
           </DragDropContext>
         </Row>
         <Row>
-          <div>YEET</div>
+          <div>Elective Courses content here</div>
         </Row>
       </Container>
     );

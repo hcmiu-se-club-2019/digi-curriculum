@@ -15,7 +15,7 @@ class CurriculumEdit extends Component {
         </Navbar>
         {/* <DragDropContext onDragEnd={this.onDragEnd}> */}
         <Row noGutters>
-          <Col sm={3} md={3} lg={3} xl={3}>
+          <Col sm={3} md={3} lg={3} xl={3} style={{backgroundColor: "whitesmoke"}}>
             <CourseDragSource />
           </Col>
           <Col sm={9} md={9} lg={9} xl={9}>
