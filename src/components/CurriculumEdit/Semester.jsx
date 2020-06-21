@@ -1,40 +1,26 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Col } from "react-bootstrap";
 import { Droppable, Draggable } from "react-beautiful-dnd";
 
 import CourseTile from "../Curriculum/CourseTile";
 
-const Container = styled(Col).attrs({
-  xs: "auto",
-  sm: "auto",
-  md: "auto",
-  lg: "auto",
-  xl: "auto",
-})`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
-  /* padding: 0px; */
   border-radius: 10px;
   width: 120px;
+  transition: background-color 0.3s ease;
   :hover {
     background-color: ${(props) =>
       props.isDraggingOver ? "dimgray" : "lightslategrey"};
-    transition: background-color 0.3s ease;
   }
 `;
 
 const EmptyBox = styled.div`
-  height: 100px;
+  height: 50px;
   display: flex;
   align-items: center;
-  
 `;
-
-// const CourseList = styled.div`
-//   display: flex;
-//   flex-direction: column;
-// `;
 
 class Semester extends Component {
   render() {
@@ -44,7 +30,6 @@ class Semester extends Component {
       <Droppable droppableId={`${yearId}-${semId}`}>
         {(dropProvided, dropSnapshot) => (
           <Container
-            as="div"
             ref={dropProvided.innerRef}
             {...dropProvided.droppableProps}
             isDraggingOver={dropSnapshot.isDraggingOver}

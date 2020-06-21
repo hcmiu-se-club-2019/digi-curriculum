@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Row, Col, Container } from "react-bootstrap";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { Row, Container } from "react-bootstrap";
+import { DragDropContext } from "react-beautiful-dnd";
 
 // import Content from "./../Curriculum/Content";
 import img from "./drop-content-background.jpg";
@@ -14,29 +14,27 @@ const DropContent = styled.div`
   background-color: steelblue;
   background-image: url(${img});
   display: flex;
+  flex-flow: row nowrap;
   overflow-x: auto;
-  flex-direction: row;
   padding: 20px;
   text-align: center;
+
+  /* Make the columns have different height */
+  align-items: flex-start;
+
   /* Fix overflow-x visual bug */
   ::after {
     content: "";
-    flex: 0 0 20px;
+    padding: 10px;
   }
 `;
 
-const Year = styled(Col).attrs({
-  xs: "auto",
-  sm: "auto",
-  md: "auto",
-  lg: "auto",
-  xl: "auto",
-})`
+const Year = styled.div`
   background-color: rgba(220, 220, 220, 0.7);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2),
+    0px 6px 20px 0px rgba(0, 0, 0, 0.19);
   border-radius: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   margin: 10px;
   text-align: center;
   -webkit-touch-callout: none;
@@ -47,7 +45,7 @@ const Year = styled(Col).attrs({
   user-select: none;
 `;
 
-const SemesterList = styled(Row).attrs({ noGutters: true })`
+const SemesterList = styled.div`
   display: flex;
   flex-wrap: nowrap;
 `;
@@ -82,43 +80,23 @@ class CurriculumDropDestination extends Component {
         <Row style={{ display: "inherit" }}>
           <DragDropContext onDragEnd={this.onDragEnd}>
             <DropContent>
-              {this.state.yearOrder.map((yearId) => {
-                return (
-                  <Year key={yearId}>
-                    <Row>
-                      <Col>
-                        <b>Year {yearId[yearId.length - 1]}</b>
-                      </Col>
-                    </Row>
-                    <SemesterList>
-                      {data.years[yearId].semOrder.map((semId) => (
-                        // <Droppable
-                        //   droppableId={`${yearId}-${semId}`}
-                        //   key={`${yearId}-${semId}`}
-                        // >
-                        //   {(provided, snapshot) => (
-                        //     <SemesterWrapper
-                        //       ref={provided.innerRef}
-                        //       {...provided.droppableProps}
-                        //       isDraggingOver={snapshot.isDraggingOver}
-                        //     >
-                              <Semester
-                                key={`${yearId}-${semId}`}
-                                yearId={yearId}
-                                semId={semId}
-                                courseIds={
-                                  data.years[yearId].semesters[semId].courseIds
-                                }
-                              />
-                        //        {provided.placeholder}
-                        //     </SemesterWrapper>
-                        //   )}
-                        // </Droppable> 
-                      ))}
-                    </SemesterList>
-                  </Year>
-                );
-              })}
+              {this.state.yearOrder.map((yearId) => (
+                <Year key={yearId}>
+                  <b>Year {yearId[yearId.length - 1]}</b>
+                  <SemesterList>
+                    {data.years[yearId].semOrder.map((semId) => (
+                      <Semester
+                        key={`${yearId}-${semId}`}
+                        yearId={yearId}
+                        semId={semId}
+                        courseIds={
+                          data.years[yearId].semesters[semId].courseIds
+                        }
+                      />
+                    ))}
+                  </SemesterList>
+                </Year>
+              ))}
             </DropContent>
           </DragDropContext>
         </Row>

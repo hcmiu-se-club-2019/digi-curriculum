@@ -75,24 +75,6 @@ class CourseDragSource extends Component {
           <Row>
             <Toolbar>
               <SearchForm />
-              {/* <Row style={{ paddingTop: "10px" }}>
-              <Container fluid>
-              <MajorTitle
-                  name="Course Type"
-                  note="Drag to curriculum to change course type"
-                  />
-                <Row>
-                  <Col as={CourseList}>
-                    <CourseTypeTile color="blue" name="General" />
-                    <CourseTypeTile color="green" name="Major" />
-                    <CourseTypeTile
-                      color="red"
-                      name="Elective (Specialized Major)"
-                    />
-                  </Col>
-                  </Row>
-              </Container>
-            </Row> */}
             </Toolbar>
           </Row>
           <Row as={Content}>
@@ -121,7 +103,7 @@ class CourseDragSource extends Component {
                                     key={courseId}
                                     isDragDisabled
                                   >
-                                    {(dragProvided, snapshot2) => (
+                                    {(dragProvided, dragSnapshot) => (
                                       <div
                                         ref={dragProvided.innerRef}
                                         {...dragProvided.dragHandleProps}

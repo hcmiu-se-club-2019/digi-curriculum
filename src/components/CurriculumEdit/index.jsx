@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Navbar } from "react-bootstrap";
 // import { DragDropContext } from "react-beautiful-dnd";
+import styled from "styled-components";
 
 import CurriculumActionFilter from "./CurriculumActionFilter";
 import CourseDragSource from "./CourseDragSource";
 import CurriculumDropDestination from "./CurriculumDropDestination";
+
+const DragSourceContainer = styled.div`
+  background-color: whitesmoke;
+`;
 
 class CurriculumEdit extends Component {
   render() {
@@ -15,8 +20,10 @@ class CurriculumEdit extends Component {
         </Navbar>
         {/* <DragDropContext onDragEnd={this.onDragEnd}> */}
         <Row noGutters>
-          <Col sm={3} md={3} lg={3} xl={3} style={{backgroundColor: "whitesmoke"}}>
-            <CourseDragSource />
+          <Col sm={3} md={3} lg={3} xl={3}>
+            <DragSourceContainer>
+              <CourseDragSource />
+            </DragSourceContainer>
           </Col>
           <Col sm={9} md={9} lg={9} xl={9}>
             <CurriculumDropDestination />
