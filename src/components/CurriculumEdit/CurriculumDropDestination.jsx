@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Container } from "react-bootstrap";
-import { DragDropContext } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 // import Content from "./../Curriculum/Content";
 import img from "./drop-content-background.jpg";
 import data from "./data";
 
 // import CourseTile from "../Curriculum/CourseTile";
+// import Year from "./Year";
 import Semester from "./Semester";
 
 const DropContent = styled.div`
@@ -80,23 +81,44 @@ class CurriculumDropDestination extends Component {
         <Row style={{ display: "inherit" }}>
           <DragDropContext onDragEnd={this.onDragEnd}>
             <DropContent>
-              {this.state.yearOrder.map((yearId) => (
-                <Year key={yearId}>
-                  <b>Year {yearId[yearId.length - 1]}</b>
-                  <SemesterList>
-                    {data.years[yearId].semOrder.map((semId) => (
-                      <Semester
-                        key={`${yearId}-${semId}`}
-                        yearId={yearId}
-                        semId={semId}
-                        courseIds={
-                          data.years[yearId].semesters[semId].courseIds
-                        }
-                      />
-                    ))}
-                  </SemesterList>
-                </Year>
-              ))}
+            {/* <Droppable droppableId="dragDropYear">
+              {(dropProvided, dropSnapshot) => (
+                <DropContent
+                  ref={dropProvided.innerRef}
+                  {...dropProvided.droppableProps}
+                > */}
+                  {this.state.yearOrder.map((yearId, index) => (
+                    <Year key={yearId}>
+                      <b>Year {yearId[yearId.length - 1]}</b>
+                      <SemesterList>
+                        {data.years[yearId].semOrder.map((semId) => (
+                          <Semester
+                            key={`${yearId}-${semId}`}
+                            yearId={yearId}
+                            semId={semId}
+                            courseIds={
+                              data.years[yearId].semesters[semId].courseIds
+                            }
+                          />
+                        ))}
+                      </SemesterList>
+                    </Year>
+                    // <Draggable key={yearId} draggableId={yearId} index={index}>
+                    //   {(dragProvided, dragSnapshot) => (
+                    //     <div
+                    //       ref={dragProvided.innerRef}
+                    //       {...dragProvided.dragHandleProps}
+                    //       {...dragProvided.draggableProps}
+                    //     >
+                    //       <Year yearId={yearId} order={index + 1} />
+                    //     </div>
+                    //   )}
+                    // </Draggable>
+                  ))}
+                  {/* {dropProvided.placeholder}
+                </DropContent>
+              )}
+            </Droppable> */}
             </DropContent>
           </DragDropContext>
         </Row>
