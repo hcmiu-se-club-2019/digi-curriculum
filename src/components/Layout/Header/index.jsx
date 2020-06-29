@@ -20,14 +20,17 @@ class Header extends Component {
                 alt="logo"
               />
             </a>
-            <Link to="/" className="text-white">
+            <Link to="/" className="text-white mr-2">
               DigiCurri
             </Link>
-            <Link to="/curriculum" className="text-white">
+            <Link to="/curriculum" className="text-white mr-2">
               Curriculum
             </Link>
-            <Link to="/program" className="text-white">
+            <Link to="/program" className="text-white mr-2">
               Program Display
+            </Link>
+            <Link to="/course/IT090IU" className="text-white mr-2">
+              Sample Course Detail
             </Link>
 
             {/* <a className="navbar-brand" href="/">

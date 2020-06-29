@@ -135,28 +135,96 @@ const state = {
   ],
   courses: [
     {
+      id: "IT090IU",
+      name: "Object-Oriented Analysis and Design",
+      specialization: false,
+      requirement: true,
+      core: true,
+      elective: false,
+      credit: 4,
+      prerequisties: ["IT103IU"],
+      textbook: "An Introduction to Object-Oriented Systems Analysis and Design with UML and the Unified Process - Stephen R. Schach",
+      refs: [
+        "Applying UML and Patterns – An introduction to Object-Oriented Analysis And Design - Craig Larman"
+      ],
+      description: [
+        "This course help students learn about system life cycle development and the knowledge and skills required to develop object-oriented system. The course tries to solve the following questions:",
+        "What are design approaches other than object-oriented design? What is object-oriented design?",
+        "What is a good design? How do you differentiate between a good and a bad design? What are the important characteristics of a good design?"
+      ],
+      objectives: [
+        "Use UML to describe system artefacts",
+        "Know how to get requirements from customers",
+        "Identify client needs based on a written or verbal specification",
+        "Know how analyze and design a system with object-oriented concepts and design patterns",
+        "Learn how to write a technical report and work in a team"
+      ]
+    },
+    {
       id: "IT101IU",
       name: "Data Structures and Algorithms",
+      specialization: false,
+      requirement: true,
+      core: true,
+      elective: false,
       credit: 4,
-      prerequisties: []
+      prerequisties: [],
+      textbook: "",
+      refs: [
+
+      ],
+      description: [],
+      objectives: []
     },
     {
       id: "IT102IU",
       name: "Web Application",
+      specialization: true,
+      requirement: true,
+      core: false,
+      elective: false,
       credit: 4,
-      prerequisties: ["IT101IU", "IT103IU"]
+      prerequisties: ["IT101IU", "IT103IU"],
+      textbook: "Data Structures and Algorithms Made Easy - Narasimha Karumanchi",
+      refs: [
+        "Data Structure and Algorithmic Puzzles - Narasimha Karumanchi",
+        "Data Structures and Algorithms in C++ - Adam Drozdek",
+        "Introduction to Algorithms - Thomas H. Corman"
+      ],
+      description: [],
+      objectives: []
     },
     {
       id: "IT103IU",
       name: "C/C++ programming",
+      specialization: false,
+      requirement: true,
+      core: true,
+      elective: false,
       credit: 4,
-      prerequisties: []
+      prerequisties: [],
+      textbook: "",
+      refs: [
+
+      ],
+      description: [],
+      objectives: []
     },
     {
       id: "FFFFFFF",
       name: "Testing course",
+      specialization: false,
+      requirement: false,
+      core: false,
+      elective: false,
       credit: 1,
-      prerequisties: ["IT102IU"]
+      prerequisties: ["IT102IU"],
+      textbook: "",
+      refs: [
+
+      ],
+      description: [],
+      objectives: []
     }
   ],
   externalLinks: [

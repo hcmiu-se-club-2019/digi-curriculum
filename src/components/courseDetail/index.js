@@ -4,6 +4,7 @@ import classNames from "classnames";
 
 import state from "../../data/json/testData2";
 import CourseGeneralTab from "./courseTabs/CourseGeneralTab";
+import CourseDescriptionTab from "./courseTabs/CourseDescriptionTab";
 
 const courseList = state.courses;
 const tabList = [
@@ -37,7 +38,7 @@ export default class CourseDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: "1",
+      activeTab: "2",
       course: {},
       isOpeningModal: false,
     };
@@ -62,6 +63,7 @@ export default class CourseDetail extends Component {
       <div className="container_wrap mt-4">
         <section className="content-header">
           <div className="container-fluid">
+            {/* <h3>{course.name}</h3> */}
             <div className="tabs">
               <div className="course-detail-tabs">
                 <Nav tabs>
@@ -86,6 +88,7 @@ export default class CourseDetail extends Component {
           </div>
         </section>
         {activeTab === "1" && <CourseGeneralTab initialValues={course} />}
+        {activeTab === "2" && <CourseDescriptionTab initialValues={course}/>}
       </div>
     );
   }
