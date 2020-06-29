@@ -2,14 +2,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Container } from "react-bootstrap";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import PropTypes from "prop-types";
 
-// import Content from "./../Curriculum/Content";
 import img from "./drop-content-background.jpg";
-import data from "./data";
-
-// import CourseTile from "../Curriculum/CourseTile";
-// import Year from "./Year";
-import Semester from "./Semester";
+import Year from "./Year";
 
 const DropContent = styled.div`
   background-color: steelblue;
@@ -30,95 +26,22 @@ const DropContent = styled.div`
   }
 `;
 
-const Year = styled.div`
-  background-color: rgba(220, 220, 220, 0.7);
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2),
-    0px 6px 20px 0px rgba(0, 0, 0, 0.19);
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
-  text-align: center;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-`;
-
-const SemesterList = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-`;
-
 class CurriculumDropDestination extends Component {
-  state = data;
-
-  onDragEnd = (result) => {
-    const { source, destination } = result;
-    console.log(result);
-
-    if (!destination) return;
-    if (source === destination) return;
-
-    const startYear = source.droppableId.split("-")[0];
-    const startSem = source.droppableId.split("-")[1];
-    const endYear = destination.droppableId.split("-")[0];
-    const endSem = destination.droppableId.split("-")[1];
-
-    const startColumn = this.state.years[startYear].semesters[startSem];
-    startColumn.courseIds.splice(source.index, 1);
-
-    const endColumn = this.state.years[endYear].semesters[endSem];
-    endColumn.courseIds.splice(destination.index, 0, result.draggableId);
-
-    // this.setState
-  };
-
   render() {
+    const { yearOrder, years, onDragEnd } = this.props;
     return (
       <Container fluid>
         <Row style={{ display: "inherit" }}>
-          <DragDropContext onDragEnd={this.onDragEnd}>
+          <DragDropContext onDragEnd={result => onDragEnd(result)}>
             <DropContent>
-            {/* <Droppable droppableId="dragDropYear">
-              {(dropProvided, dropSnapshot) => (
-                <DropContent
-                  ref={dropProvided.innerRef}
-                  {...dropProvided.droppableProps}
-                > */}
-                  {this.state.yearOrder.map((yearId, index) => (
-                    <Year key={yearId}>
-                      <b>Year {yearId[yearId.length - 1]}</b>
-                      <SemesterList>
-                        {data.years[yearId].semOrder.map((semId) => (
-                          <Semester
-                            key={`${yearId}-${semId}`}
-                            yearId={yearId}
-                            semId={semId}
-                            courseIds={
-                              data.years[yearId].semesters[semId].courseIds
-                            }
-                          />
-                        ))}
-                      </SemesterList>
-                    </Year>
-                    // <Draggable key={yearId} draggableId={yearId} index={index}>
-                    //   {(dragProvided, dragSnapshot) => (
-                    //     <div
-                    //       ref={dragProvided.innerRef}
-                    //       {...dragProvided.dragHandleProps}
-                    //       {...dragProvided.draggableProps}
-                    //     >
-                    //       <Year yearId={yearId} order={index + 1} />
-                    //     </div>
-                    //   )}
-                    // </Draggable>
-                  ))}
-                  {/* {dropProvided.placeholder}
-                </DropContent>
-              )}
-            </Droppable> */}
+              {yearOrder.map((yearId, yearIndex) => (
+                <Year
+                  key={yearId}
+                  yearId={yearId}
+                  index={yearIndex + 1}
+                  data={years[yearId]}
+                />
+              ))}
             </DropContent>
           </DragDropContext>
         </Row>
@@ -129,5 +52,11 @@ class CurriculumDropDestination extends Component {
     );
   }
 }
+
+CurriculumDropDestination.propTypes = {
+  yearOrder: PropTypes.array.isRequired,
+  years: PropTypes.object.isRequired,
+  onDragEnd: PropTypes.func.isRequired,
+};
 
 export default CurriculumDropDestination;

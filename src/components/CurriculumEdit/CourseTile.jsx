@@ -59,8 +59,8 @@ const Container = styled.div`
     0px 1px 3px 0px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.2s ease;
   opacity: ${(props) => (props.dragged === true ? 0.4 : 1.0)};
-  width: 100px;
-  height: 80px;
+  width: 104px;
+  height: 84px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -69,6 +69,7 @@ const Container = styled.div`
   user-select: none;
   text-align: center;
   margin: 10px;
+  padding: 2px;
   :hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 5px 15px 0 rgba(0, 0, 0, 0.3);
   }

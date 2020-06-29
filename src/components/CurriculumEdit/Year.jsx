@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import data from "./data";
-import Semester from "./Semester";
+import Semester from "./_Semester";
 
 const Container = styled.div`
   background-color: rgba(220, 220, 220, 0.7);
@@ -27,17 +27,18 @@ const SemesterList = styled.div`
 
 class Year extends Component {
   render() {
-    const { order, yearId } = this.props;
+    console.log(this.props.data);
+    const { index, yearId, data } = this.props;
     return (
       <Container>
-        <b>Year {order}</b>
+        <b>Year {index}</b>
         <SemesterList>
-          {data.years[yearId].semOrder.map((semId) => (
+          {data.semOrder.map((semId, semIndex) => (
             <Semester
               key={`${yearId}-${semId}`}
-              yearId={yearId}
-              semId={semId}
-              courseIds={data.years[yearId].semesters[semId].courseIds}
+              id={`${yearId}-${semId}`}
+              courseIds={data.semesters[semId].courseIds}
+              index={semIndex + 1}
             />
           ))}
         </SemesterList>
@@ -45,5 +46,11 @@ class Year extends Component {
     );
   }
 }
+
+Year.propTypes = {
+  yearOrder: PropTypes.array,
+  years: PropTypes.object,
+  onDragEnd: PropTypes.func,
+};
 
 export default Year;

@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Droppable, Draggable } from "react-beautiful-dnd";
+import PropTypes from "prop-types";
 
-import CourseTile from "../Curriculum/CourseTile";
+import CourseTile from "./CourseTile";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  width: 120px;
+  width: 124px;
   transition: background-color 0.3s ease;
   :hover {
     background-color: ${(props) =>
@@ -24,17 +25,17 @@ const EmptyBox = styled.div`
 
 class Semester extends Component {
   render() {
-    const { yearId, semId, courseIds } = this.props;
+    const { id, courseIds, index, courses } = this.props;
 
     return (
-      <Droppable droppableId={`${yearId}-${semId}`}>
+      <Droppable droppableId={id}>
         {(dropProvided, dropSnapshot) => (
           <Container
             ref={dropProvided.innerRef}
             {...dropProvided.droppableProps}
             isDraggingOver={dropSnapshot.isDraggingOver}
           >
-            <div>Sem {semId[semId.length - 1]}</div>
+            <div>Sem {index}</div>
             {courseIds.map((courseId, index) => (
               <Draggable draggableId={courseId} index={index} key={courseId}>
                 {(dragProvided) => (
@@ -46,7 +47,7 @@ class Semester extends Component {
                     <CourseTile
                       key={courseId}
                       courseId={courseId}
-                      name="YEET"
+                      name={courses[courseId].name}
                       active
                     />
                   </div>
@@ -61,5 +62,14 @@ class Semester extends Component {
     );
   }
 }
+
+Semester.propTypes = {
+  id: PropTypes.string,
+  courseIds: PropTypes.array,
+  index: PropTypes.number,
+  courses: PropTypes.shape({
+    name: PropTypes.string,
+  }),
+};
 
 export default Semester;
