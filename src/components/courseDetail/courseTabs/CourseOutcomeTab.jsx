@@ -15,12 +15,12 @@ const TabForm = (props) => {
             <h5>COURSE LEARNING OUTCOMES</h5>
           </div>
           <div className="course-detail-fields">
-            <Table responsive>
+            <Table bordered responsive>
               <thead>
                 <tr>
                   <th>Name</th>
-                  <tr className='w-100'>
-                    <th className='w-75'>Course Learning Outcomes</th>
+                  <tr className='d-flex'>
+                    <th className='w-50'>Course Learning Outcomes</th>
                     <th className='w-50'>Program Learning Outcomes</th>
                   </tr>
                 </tr>
@@ -28,9 +28,9 @@ const TabForm = (props) => {
               <tbody>
                 {typeof values.outcomes === 'object' ? values.outcomes.map(outcome => 
                   <tr>
-                    <th className='w-25'><h5>{outcome.name}</h5></th>
+                    <th><h5>{outcome.name}</h5></th>
                     {typeof outcome.outs === 'object' ? outcome.outs.map(out => 
-                      <tr className='w-75'>
+                      <tr className='d-flex'>
                         <th className='w-50'>{out.courseOut}</th>
                         <th className='w-50'>{out.programOut}</th>
                       </tr>
