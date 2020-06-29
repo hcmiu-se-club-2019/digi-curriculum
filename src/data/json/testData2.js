@@ -158,6 +158,47 @@ const state = {
         "Identify client needs based on a written or verbal specification",
         "Know how analyze and design a system with object-oriented concepts and design patterns",
         "Learn how to write a technical report and work in a team"
+      ],
+      outcomes: [
+        {
+          name: 'Knowledge',
+          outs: [
+            {
+              courseOut: 'Use UML to describe system artefacts',
+              programOut: '(a) an ability to apply knowledge of mathematics, science, and engineering'
+            },
+            {
+              courseOut: 'Know how to get requirements from customers',
+              programOut: '(c) an ability to design a system, component, or process to meet desired needs within realistic constraints such as economic, environmental, social, political, ethical, health and safety, manufacturability, and sustainability'
+            },
+            {
+              courseOut: 'Identify client needs based on a written or verbal specification',
+              programOut: '(b) an ability to design and conduct experiments, as well as to analyze and interpret data'
+            }
+          ]
+        },
+        {
+          name: 'Skill',
+          outs: [
+            {
+              courseOut: 'Know how analyze and design a system with object-oriented concepts and design patterns',
+              programOut: '(i) a recognition of the need for, and an ability to engage in life-long learning'
+            },
+            {
+              courseOut: 'Learn how to write a technical report and work in a team',
+              programOut: '(k) an ability to use the techniques, skills, and modern engineering tools necessary for engineering practice'
+            }
+          ]
+        },
+        {
+          name: 'Attitude',
+          outs: [
+            {
+              courseOut: 'To develop life-long learning attitude',
+              programOut: '(i) a recognition of the need for, and an ability to engage in life-long learning'
+            }
+          ]
+        }
       ]
     },
     {
@@ -174,7 +215,8 @@ const state = {
 
       ],
       description: [],
-      objectives: []
+      objectives: [],
+      outcomes: []
     },
     {
       id: "IT102IU",
@@ -192,7 +234,8 @@ const state = {
         "Introduction to Algorithms - Thomas H. Corman"
       ],
       description: [],
-      objectives: []
+      objectives: [],
+      outcomes: []
     },
     {
       id: "IT103IU",
@@ -208,7 +251,8 @@ const state = {
 
       ],
       description: [],
-      objectives: []
+      objectives: [],
+      outcomes: []
     },
     {
       id: "FFFFFFF",
@@ -224,7 +268,8 @@ const state = {
 
       ],
       description: [],
-      objectives: []
+      objectives: [],
+      outcomes: []
     }
   ],
   externalLinks: [
