@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -8,12 +8,10 @@ import {
 
 import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
-import EditCurriculum from "./editCurriculum";
 import ProgramDisplay from "./programDisplay";
 import CourseDetail from "./courseDetail";
 import Home from "./Home";
 import Curriculum from "./Curriculum";
-// import CurriculumEdit from "./CurriculumEdit/index";
 import CurriculumEdit from "./CurriculumEdit/_index";
 
 const Main = withRouter(({ location }) => (
@@ -25,26 +23,19 @@ const Main = withRouter(({ location }) => (
       <Route exact path="/curriculum/edit" component={CurriculumEdit} />
       <Route exact path="/program" component={ProgramDisplay} />
       <Route exact path="/course/:courseId" component={CourseDetail} />
-      <Route
-        exact
-        path="/curriculum/:curriId/edit"
-        component={EditCurriculum}
-      />
     </Switch>
     {location.pathname !== "/curriculum/edit" ? <Footer /> : ""}
   </>
 ));
 
-class App extends React.PureComponent {
-  render() {
-    return (
-      <div className="App">
-        <Router>
-          <Main />
-        </Router>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <Router>
+        <Main />
+      </Router>
+    </div>
+  );
 }
 
 export default App;

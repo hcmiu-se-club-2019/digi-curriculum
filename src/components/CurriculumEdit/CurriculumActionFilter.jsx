@@ -54,23 +54,21 @@ function SelectItem(props) {
   );
 }
 
-const ActionButton = (props) => {
-  return (
-    <div style={{ paddingTop: "5px", paddingBottom: "5px" }}>
-      <Button
-        variant={"outline-success"}
-        style={{
-          width: "140px",
-          height: "38px",
-          fontSize: "16px",
-          wordWrap: true,
-        }}
-      >
-        {props.name ?? "Button"}
-      </Button>
-    </div>
-  );
-};
+const ActionButton = (props) => (
+  <div style={{ paddingTop: "5px", paddingBottom: "5px" }}>
+    <Button
+      variant={"outline-success"}
+      style={{
+        width: "140px",
+        height: "38px",
+        fontSize: "16px",
+        wordWrap: true,
+      }}
+    >
+      {props.name ?? "Button"}
+    </Button>
+  </div>
+);
 
 const filterData = {
   majors: {

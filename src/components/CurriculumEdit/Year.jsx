@@ -8,7 +8,7 @@ const Container = styled.div`
   background-color: rgba(220, 220, 220, 0.7);
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2),
     0px 6px 20px 0px rgba(0, 0, 0, 0.19);
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 10px;
   margin: 10px;
   text-align: center;

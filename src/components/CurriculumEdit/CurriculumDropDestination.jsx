@@ -10,6 +10,7 @@ import Year from "./Year";
 const DropContent = styled.div`
   background-color: steelblue;
   background-image: url(${img});
+  background-position: center;
   display: flex;
   flex-flow: row nowrap;
   overflow-x: auto;
@@ -44,9 +45,6 @@ class CurriculumDropDestination extends Component {
               ))}
             </DropContent>
           </DragDropContext>
-        </Row>
-        <Row>
-          <div>Elective Courses content here</div>
         </Row>
       </Container>
     );

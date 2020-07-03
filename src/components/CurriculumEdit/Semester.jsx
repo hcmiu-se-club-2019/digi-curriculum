@@ -47,7 +47,7 @@ class Semester extends Component {
                     <CourseTile
                       key={courseId}
                       courseId={courseId}
-                      name={courses[courseId].name}
+                      name={courses.byId[courseId].name}
                       active
                     />
                   </div>
