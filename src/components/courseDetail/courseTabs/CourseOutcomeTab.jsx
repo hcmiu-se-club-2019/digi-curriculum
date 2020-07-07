@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Table } from "reactstrap";
 // import { Field } from 'formik';
 
 // import FormModal from '../../common/FormModal'
 // import Input from '../../common/FormModal/Input'
-
-const borderStyle = {
-  border: '1px solid black'
-}
 
 const TabForm = (props) => {
   const { values } = props;
@@ -19,36 +15,6 @@ const TabForm = (props) => {
             <h5>COURSE LEARNING OUTCOMES</h5>
           </div>
           <div className="course-detail-fields">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm" style={borderStyle}>
-                  Name
-                </div>
-                <div class="col-sm" style={borderStyle}>
-                  Course Learning Outcomes
-                </div>
-                <div class="col-sm" style={borderStyle}>
-                  Program Learning Outcomes
-                </div>
-              </div>
-              {
-                typeof values.outcomes === 'object' ? values.outcomes.map(outcome => 
-                  <div class=''>
-                    <div class='col-sm' style={borderStyle}>{outcome.name}</div>
-                    {
-                    typeof outcome.outs === 'object' ? outcome.outs.map(out =>
-                      <div class='row'>
-                        <div class='col-sm' style={borderStyle}></div>
-                        <div class='col-sm' style={borderStyle}>{out.courseOut}</div>
-                        <div class='col-sm' style={borderStyle}>{out.programOut}</div>
-                      </div>
-                    ) : null
-                  }
-                  </div>
-                  
-                ) : null
-              }
-            </div>
             <Table bordered>
               <thead>
                 <tr>
@@ -58,17 +24,25 @@ const TabForm = (props) => {
                 </tr>
               </thead>
               <tbody>
-                {typeof values.outcomes === 'object' ? values.outcomes.map(outcome => 
-                  <tr>
-                    <th colSpan={outcome.outs.length}>{outcome.name}</th>
-                    {typeof outcome.outs === 'object' ? outcome.outs.map(out => 
+                {
+                  typeof values.outcomes === 'object' ? values.outcomes.map(outcome => 
+                    <Fragment>
                       <tr>
-                        <td>{out.courseOut}</td>
-                        <td>{out.programOut}</td>
+                        <th rowSpan={outcome.outs.length}>{outcome.name}</th>
+                        <td>{outcome.outs[0].courseOut}</td>
+                        <td>{outcome.outs[0].programOut}</td>
                       </tr>
-                    ) : null}
-                  </tr>
-                ) : null}
+                      {
+                        typeof outcome.outs === 'object' ? outcome.outs.slice(1, outcome.outs.length).map(out => 
+                          <tr>
+                            <td>{out.courseOut}</td>
+                            <td>{out.programOut}</td>
+                          </tr>
+                        ) : null
+                      }
+                    </Fragment>
+                  ) : null
+                }
               </tbody>
             </Table>
             
