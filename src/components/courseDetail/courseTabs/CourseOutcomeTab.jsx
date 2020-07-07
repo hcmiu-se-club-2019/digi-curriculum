@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import { Form, FormGroup, Label, Input, Table } from "reactstrap";
+import { Table } from "reactstrap";
 // import { Field } from 'formik';
 
 // import FormModal from '../../common/FormModal'
 // import Input from '../../common/FormModal/Input'
+
+const borderStyle = {
+  border: '1px solid black'
+}
 
 const TabForm = (props) => {
   const { values } = props;
@@ -15,30 +19,59 @@ const TabForm = (props) => {
             <h5>COURSE LEARNING OUTCOMES</h5>
           </div>
           <div className="course-detail-fields">
-            <Table bordered responsive>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm" style={borderStyle}>
+                  Name
+                </div>
+                <div class="col-sm" style={borderStyle}>
+                  Course Learning Outcomes
+                </div>
+                <div class="col-sm" style={borderStyle}>
+                  Program Learning Outcomes
+                </div>
+              </div>
+              {
+                typeof values.outcomes === 'object' ? values.outcomes.map(outcome => 
+                  <div class=''>
+                    <div class='col-sm' style={borderStyle}>{outcome.name}</div>
+                    {
+                    typeof outcome.outs === 'object' ? outcome.outs.map(out =>
+                      <div class='row'>
+                        <div class='col-sm' style={borderStyle}></div>
+                        <div class='col-sm' style={borderStyle}>{out.courseOut}</div>
+                        <div class='col-sm' style={borderStyle}>{out.programOut}</div>
+                      </div>
+                    ) : null
+                  }
+                  </div>
+                  
+                ) : null
+              }
+            </div>
+            <Table bordered>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <tr className='d-flex'>
-                    <th className='w-50'>Course Learning Outcomes</th>
-                    <th className='w-50'>Program Learning Outcomes</th>
-                  </tr>
+                  <th scope='col'>Name</th>
+                  <th scope='col'>Course Learning Outcomes</th>
+                  <th scope='col'>Program Learning Outcomes</th>
                 </tr>
               </thead>
               <tbody>
                 {typeof values.outcomes === 'object' ? values.outcomes.map(outcome => 
                   <tr>
-                    <th><h5>{outcome.name}</h5></th>
+                    <th colSpan={outcome.outs.length}>{outcome.name}</th>
                     {typeof outcome.outs === 'object' ? outcome.outs.map(out => 
-                      <tr className='d-flex'>
-                        <th className='w-50'>{out.courseOut}</th>
-                        <th className='w-50'>{out.programOut}</th>
+                      <tr>
+                        <td>{out.courseOut}</td>
+                        <td>{out.programOut}</td>
                       </tr>
                     ) : null}
                   </tr>
                 ) : null}
               </tbody>
             </Table>
+            
           </div>
         </div>
       </div>
