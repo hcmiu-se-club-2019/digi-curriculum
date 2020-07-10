@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import styled from "styled-components";
 import { Col } from "react-bootstrap";
 import { Droppable, Draggable } from "react-beautiful-dnd";
@@ -21,7 +22,7 @@ const CourseList = styled.div`
   }
 `;
 
-class Semester extends React.PureComponent {
+class Semester extends PureComponent {
   render() {
     const { yearId, semId, courseIds } = this.props;
 

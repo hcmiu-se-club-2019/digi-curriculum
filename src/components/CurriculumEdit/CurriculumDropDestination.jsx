@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Col, Container } from "react-bootstrap";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+// import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext } from "react-beautiful-dnd";
 
 // import Content from "./../Curriculum/Content";
 import img from "./drop-content-background.jpg";
