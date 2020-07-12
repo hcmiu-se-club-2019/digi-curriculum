@@ -27,7 +27,7 @@ const SemesterList = styled.div`
 
 class Year extends Component {
   render() {
-    console.log(this.props.data);
+    // console.log(this.props.data);
     const { index, yearId, data } = this.props;
     return (
       <Container>
