@@ -13,7 +13,8 @@ import ProgramDisplay from "./programDisplay";
 import CourseDetail from "./courseDetail";
 import Home from "./Home";
 import Curriculum from "./Curriculum";
-import CurriculumEdit from "./CurriculumEdit/index";
+// import CurriculumEdit from "./CurriculumEdit/index";
+import CurriculumEdit from "./CurriculumEdit/_index";
 
 const Main = withRouter(({ location }) => (
   <>
