@@ -6,6 +6,7 @@ import state from "../../data/json/testData2";
 import CourseGeneralTab from "./courseTabs/CourseGeneralTab";
 import CourseDescriptionTab from "./courseTabs/CourseDescriptionTab";
 import CourseOutcomeTab from "./courseTabs/CourseOutcomeTab";
+import CourseImplementationTab from "./courseTabs/CourseImplementationTab";
 
 const courseList = state.courses;
 const tabList = [
@@ -39,7 +40,7 @@ export default class CourseDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: "3",
+      activeTab: "4",
       course: {},
       isOpeningModal: false,
     };
@@ -92,6 +93,7 @@ export default class CourseDetail extends Component {
         {activeTab === "1" && <CourseGeneralTab initialValues={course} />}
         {activeTab === "2" && <CourseDescriptionTab initialValues={course}/>}
         {activeTab === "3" && <CourseOutcomeTab initialValues={course}/>}
+        {activeTab === "4" && <CourseImplementationTab initialValues={course}/>}
       </div>
     );
   }

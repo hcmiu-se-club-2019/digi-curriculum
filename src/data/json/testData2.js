@@ -199,7 +199,71 @@ const state = {
             }
           ]
         }
-      ]
+      ],
+      implementation: {
+        times: [
+          {
+            type: 'Theory',
+            weekNum: 15,
+            periodsPerWeek: 3
+          },
+          {
+            type: 'Practice',
+            weekNum: 8,
+            periodsPerWeek: 4
+          }
+        ],
+        activities: [
+          {
+            type: 'Classroom activities',
+            forms: 'Lectures, discussions, exercises/quizzes, presentations'
+          },
+          {
+            type: 'Self-learning',
+            forms: 'Reading, homework'
+          },
+          {
+            type: 'Team work',
+            forms: 'Project assignment'
+          },
+          {
+            type: 'Lab sessions',
+            forms: null
+          }
+        ],
+        outlines: [
+          {
+            week: 1, topics: [
+              'Chapter 0: Introduction',
+              'Chapter 1: Modeling and Development Processes'
+            ]
+          },
+          { week: 2, topics: [ 'Chapter 2: Requirements & Use Case Modeling' ] },
+          { week: 3, topics: [ 'Chapter 3: Class Diagrams' ] },
+          { week: 4, topics: [ 'Chapter 4: Finding Classes and Relationships' ] },
+          { week: 5, topics: [ 'Chapter 5: Analysis to Design ' ] },
+          { week: 6, topics: [ 'Chapter 6: Atomic Use Cases' ] },
+          { week: 7, topics: [ 'Mid–term Exam' ] },
+          { week: 8, topics: [ 'Chapter 7: Prototyping' ] },
+          { week: 9, topics: [ 'Chapter 8: Interaction Diagrams' ] },
+          { week: 10, topics: [ 'Chapter 9: State Machines' ] },
+          { week: 11, topics: [ 'Chapter 10: Activity Diagrams' ] },
+          { week: 12, topics: [ 'Chapter 11: Other Diagrams' ] },
+          {
+            week: 13, topics: [ 
+              'Chapter 12: OCL',
+              'Chapter 13: Other Modeling Techniques'
+            ]
+          },
+          {
+            week: 14, topics: [
+              'Chapter 14: Software Development Methods',
+              'Chapter 15: Revision'
+            ]
+          },
+          { week: 15, topics: [ 'Final exam' ] }
+        ]
+      }
     },
     {
       id: "IT101IU",
@@ -216,7 +280,10 @@ const state = {
       ],
       description: [],
       objectives: [],
-      outcomes: []
+      outcomes: [],
+      implementation: {
+        outlines: []
+      }
     },
     {
       id: "IT102IU",
@@ -235,7 +302,10 @@ const state = {
       ],
       description: [],
       objectives: [],
-      outcomes: []
+      outcomes: [],
+      implementation: {
+        outlines: []
+      }
     },
     {
       id: "IT103IU",
@@ -252,7 +322,10 @@ const state = {
       ],
       description: [],
       objectives: [],
-      outcomes: []
+      outcomes: [],
+      implementation: {
+        outlines: []
+      }
     },
     {
       id: "FFFFFFF",
@@ -269,7 +342,10 @@ const state = {
       ],
       description: [],
       objectives: [],
-      outcomes: []
+      outcomes: [],
+      implementation: {
+        outlines: []
+      }
     }
   ],
   externalLinks: [
