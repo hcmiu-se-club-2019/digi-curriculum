@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, FormGroup, Label, Input, Table } from "reactstrap";
+import { Table } from "reactstrap";
 
 // import { Field } from 'formik';
 
@@ -11,50 +11,70 @@ const TabForm = (props) => {
   return (
     <form onSubmit={function () {}} className="course-outcome-form border">
       <div className="d-flex justify-content-center">
-        <div className="mt-2 ml-3">
+        <div className="col-sm-5 border mt-2 ml-3">
           <div>
-            <h5>COURSE IMPLEMENTATION</h5>
+            <h6>COURSE IMPLEMENTATION</h6>
           </div>
           <div className="course-detail-fields">
-            <Form>
-              <FormGroup className='d-block'>
-                <FormGroup>
-                  <Label for="name">Course Name</Label>
-                  <Input
-                    type="text"
-                    name="courseName"
-                    id="courseName"
-                    value={values.name}
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label for="id">Course Code</Label>
-                  <Input
-                    type="text"
-                    name="courseId"
-                    id="courseName"
-                    value={values.id}
-                  />
-                </FormGroup>
-              </FormGroup>
-              <FormGroup>
-                <Label for="required">Course Prerequisties</Label>
-                <Input
-                  type="textarea"
-                  name="courseRequired"
-                  id="courseRequired"
-                  value={typeof values.prerequisties === 'object' ? values.prerequisties.join('\n') : values.prerequisties}
-                />
-              </FormGroup>
-            </Form>
             <Table bordered>
+              <caption className='text-center'>Course Time Implementation</caption>
+              <thead>
+                <tr>
+                  <th scope='col'>Type</th>
+                  <th scope='col'>Number of Weeks</th>
+                  <th scope='col'>Periods Per Week</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  typeof values.implementation === 'object' 
+                  && typeof values.implementation.times === 'object' 
+                  && values.implementation.times.map(time => 
+                    <tr>
+                      <td>{time.type}</td>
+                      <td>{time.weekNum}</td>
+                      <td>{time.periodsPerWeek}</td>
+                    </tr>
+                  )
+                }
+              </tbody>
+            </Table>
+            <Table bordered>
+              <caption className='text-center'>Teaching and Learning Activities</caption>
+              <thead>
+                <tr>
+                  <th scope='col'>Type</th>
+                  <th scope='col'>Forms</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  typeof values.implementation === 'object' 
+                  && typeof values.implementation.activities === 'object' 
+                  && values.implementation.activities.map(activity => 
+                    <tr>
+                      <td>{activity.type}</td>
+                      <td>{activity.forms ?? 'null'}</td>
+                    </tr>
+                  )
+                }
+              </tbody>
+            </Table>
+          </div>
+        </div>
+        <div className="col-sm-5 border offset-sm-1 mt-2">
+          <div>
+            <h6>COURSE OUTLINE</h6>
+          </div>
+          <div className="course-detail-fields">
+            <Table bordered >
               <thead>
                 <tr>
                   <th scope='col'>Week</th>
                   <th scope='col'>Topics</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody style={{fontSize:'12px'}}>
                 {
                   typeof values.implementation === 'object' 
                   && typeof values.implementation.outlines === 'object' 
