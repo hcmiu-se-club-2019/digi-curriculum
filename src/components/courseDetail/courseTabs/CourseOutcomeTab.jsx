@@ -18,9 +18,9 @@ const TabForm = (props) => {
             <Table bordered>
               <thead>
                 <tr>
-                  <th scope='col'>Name</th>
-                  <th scope='col'>Course Learning Outcomes</th>
-                  <th scope='col'>Program Learning Outcomes</th>
+                  <th>Name</th>
+                  <th>Course Learning Outcomes</th>
+                  <th>Program Learning Outcomes</th>
                 </tr>
               </thead>
               <tbody>
@@ -45,7 +45,6 @@ const TabForm = (props) => {
                 }
               </tbody>
             </Table>
-            
           </div>
         </div>
       </div>

@@ -73,6 +73,7 @@ export default class CourseDetail extends Component {
                       <NavLink
                         id={tab.id}
                         className={classNames({ active: activeTab === tab.id })}
+                        disabled={tab.id === "6"}
                         onClick={() => {
                           this.setState({
                             activeTab: tab.id,
