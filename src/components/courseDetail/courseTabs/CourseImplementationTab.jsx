@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Table } from "reactstrap";
 
 // import { Field } from 'formik';
@@ -79,10 +79,20 @@ const TabForm = (props) => {
                   typeof values.implementation === 'object' 
                   && typeof values.implementation.outlines === 'object' 
                   && values.implementation.outlines.map(outline => 
-                    <tr>
-                      <td>{outline.week}</td>
-                      <td>{outline.topics.join('\n')}</td>
-                    </tr>
+                    <Fragment>
+                      <tr>
+                        <td rowSpan={outline.topics.length}>{outline.week}</td>
+                        <td>{outline.topics[0]}</td>
+                      </tr>
+                      {
+                        typeof outline.topics === 'object' && outline.topics.splice(1, outline.topics.length).map(topic =>
+                          <tr>
+                            <td>{topic}</td>
+                          </tr>
+                        )
+                      }
+                    </Fragment>
+                    
                   )
                 }
               </tbody>

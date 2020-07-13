@@ -41,7 +41,7 @@ export default class CourseDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: "5",
+      activeTab: "1",
       course: {},
       isOpeningModal: false,
     };
@@ -75,7 +75,7 @@ export default class CourseDetail extends Component {
                       <NavLink
                         id={tab.id}
                         className={classNames({ active: activeTab === tab.id })}
-                        disabled={tab.id === "6"}
+                        disabled={tab.id === "6" || tab.id === "5"}
                         onClick={() => {
                           this.setState({
                             activeTab: tab.id,

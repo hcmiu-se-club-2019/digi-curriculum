@@ -33,12 +33,12 @@ const TabForm = (props) => {
                         <td>{outcome.outs[0].programOut}</td>
                       </tr>
                       {
-                        typeof outcome.outs === 'object' ? outcome.outs.slice(1, outcome.outs.length).map(out => 
+                        typeof outcome.outs === 'object' && outcome.outs.slice(1, outcome.outs.length).map(out => 
                           <tr>
                             <td>{out.courseOut}</td>
                             <td>{out.programOut}</td>
                           </tr>
-                        ) : null
+                        )
                       }
                     </Fragment>
                   ) : null
