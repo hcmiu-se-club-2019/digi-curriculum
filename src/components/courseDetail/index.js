@@ -44,6 +44,7 @@ export default class CourseDetail extends Component {
       activeTab: "1",
       course: {},
       isOpeningModal: false,
+      mode: false // Display mode
     };
   }
 
@@ -59,19 +60,35 @@ export default class CourseDetail extends Component {
     this.setState({ course: course });
   }
 
+  toggleMode = () => {
+    this.setState({ mode: !this.state.mode })
+  }
+
   render() {
-    const { activeTab, course } = this.state;
+    const { activeTab, course, mode } = this.state;
 
     return (
       <div className="container_wrap mt-4">
         <section className="content-header">
           <div className="container-fluid">
-            {/* <h3>{course.name}</h3> */}
+            {/* <div className='d-flex'>
+              <h3>{course.name}</h3>
+              
+            </div> */}
+            <button 
+              className="btn btn-light border action-button"
+              onClick={this.toggleMode}
+            >
+              Toggle Mode
+            </button>
+            <span>{mode ? 'Edit Mode' : 'Display Mode'}</span>
             <div className="tabs">
               <div className="course-detail-tabs">
                 <Nav tabs>
                   {tabList.map((tab) => (
-                    <NavItem>
+                    <NavItem
+                      key={tab.id}
+                    >
                       <NavLink
                         id={tab.id}
                         className={classNames({ active: activeTab === tab.id })}
@@ -91,11 +108,11 @@ export default class CourseDetail extends Component {
             </div>
           </div>
         </section>
-        {activeTab === "1" && <CourseGeneralTab initialValues={course} />}
-        {activeTab === "2" && <CourseDescriptionTab initialValues={course}/>}
-        {activeTab === "3" && <CourseOutcomeTab initialValues={course}/>}
-        {activeTab === "4" && <CourseImplementationTab initialValues={course}/>}
-        {activeTab === "5" && <CourseAssessmentTab initialValues={course}/>}
+        {activeTab === "1" && <CourseGeneralTab initialValues={course} mode={mode}/>}
+        {activeTab === "2" && <CourseDescriptionTab initialValues={course} mode={mode}/>}
+        {activeTab === "3" && <CourseOutcomeTab initialValues={course} mode={mode}/>}
+        {activeTab === "4" && <CourseImplementationTab initialValues={course} mode={mode}/>}
+        {activeTab === "5" && <CourseAssessmentTab initialValues={course} mode={mode}/>}
       </div>
     );
   }

@@ -6,7 +6,7 @@ import { Table } from "reactstrap";
 // import FormModal from '../../common/FormModal'
 // import Input from '../../common/FormModal/Input'
 
-const TabForm = (props) => {
+const TabDisplayForm = (props) => {
   // const { values } = props;
   return (
     <form onSubmit={function () {}} className="course-general-form border">
@@ -75,7 +75,7 @@ class CourseAssessmentTab extends Component {
                     initialValues={initialValues}
                     component={<Form {...this.props} />}
                 /> */}
-              <TabForm values={initialValues} />
+              <TabDisplayForm values={initialValues} />
             </div>
           </div>
         </div>

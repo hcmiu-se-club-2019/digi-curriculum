@@ -32,7 +32,7 @@ const Main = withRouter(({ location }) => (
         component={EditCurriculum}
       />
     </Switch>
-    {location.pathname !== "/curriculum/edit" ? <Footer /> : ""}
+    {location.pathname !== "/curriculum/edit" && <Footer />}
   </>
 ));
 

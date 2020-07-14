@@ -5,17 +5,91 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 // import FormModal from '../../common/FormModal'
 // import Input from '../../common/FormModal/Input'
 
-const TabForm = (props) => {
+const TabDisplayForm = props => {
   const { values } = props;
   return (
-    <form onSubmit={function () {}} className="course-general-form border">
+    <div className="d-flex justify-content-center">
+      <div className="col-sm-5 border mt-2 ml-3">
+        <div>
+          <h5>GENERAL INFORMATION</h5>
+        </div>
+        <div className="course-detail-fields">
+          <div>
+            <p><strong>Course Name: </strong><span>{values.name}</span></p>
+            <p><strong>Course Code: </strong><span>{values.id}</span></p>
+            <FormGroup tag="fieldset" disabled>
+              <Label for="type"><strong>Course Type: </strong></Label>
+              <div className='d-flex ml-1'>
+                <FormGroup check style={{width:'100px'}}>
+                  <Label check>
+                    <Input type="checkbox" name="cb1" checked={values.specialization} /> 
+                    Specialization
+                  </Label>
+                </FormGroup>
+                <FormGroup check style={{width:'100px'}} className='mx-auto'>
+                  <Label check>
+                    <Input type="checkbox" name="cb2" checked={values.core} /> 
+                    Core
+                  </Label>
+                </FormGroup>
+              </div>
+              <div className='d-flex ml-1'>
+                <FormGroup check style={{width:'100px'}}>
+                  <Label check>
+                    <Input type="checkbox" name="cb3" checked={values.requirement} /> 
+                    Requirement
+                  </Label>
+                </FormGroup>
+                <FormGroup check style={{width:'100px'}} className='mx-auto'>
+                  <Label check>
+                    <Input type="checkbox" name="cb4" checked={values.elective} /> 
+                    Elective
+                  </Label>
+                </FormGroup>
+              </div>
+            </FormGroup>
+            <p><strong>Course Credit(s): </strong><span>{values.credit}</span></p>
+            <p><strong>Course Prerequisties: </strong></p>
+            <ul>
+              {
+                typeof values.prerequisties === 'object' && values.prerequisties.map(prereq => <li key={prereq}>{prereq}</li>)
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="col-sm-5 offset-sm-1 border mt-2">
+        <div>
+          <h5>TEXTBOOK REFERENCES</h5>
+        </div>
+        <div className="course-detail-fields">
+          <div>
+            <p><strong>Course Main Textbook: </strong></p>
+            <p><span>{values.textbook}</span></p>
+            <p><strong>Course Other References: </strong></p>
+            <ul>
+              {
+                typeof values.refs === 'object' && values.refs.map(ref => <li key={ref}>{ref}</li>)
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const TabEditForm = (props) => {
+  const { values } = props;
+  return (
+    <Form onSubmit={function () {}} className="course-general-form border">
       <div className="d-flex justify-content-center">
         <div className="col-sm-5 border mt-2 ml-3">
           <div>
             <h5>GENERAL INFORMATION</h5>
           </div>
           <div className="course-detail-fields">
-            <Form>
+            <div>
               <FormGroup>
                 <Label for="name">Course Name</Label>
                 <Input
@@ -30,7 +104,7 @@ const TabForm = (props) => {
                 <Input
                   type="text"
                   name="courseId"
-                  id="courseName"
+                  id="courseId"
                   value={values.id}
                 />
               </FormGroup>
@@ -83,7 +157,7 @@ const TabForm = (props) => {
                   value={typeof values.prerequisties === 'object' ? values.prerequisties.join('\n') : values.prerequisties}
                 />
               </FormGroup>
-            </Form>
+            </div>
           </div>
         </div>
         <div className="col-sm-5 offset-sm-1 border mt-2">
@@ -111,6 +185,7 @@ const TabForm = (props) => {
                   name="courseTextbook"
                   id="courseTextbook"
                   value={values.textbook}
+                  rows='4'
                 />
               </FormGroup>
               <FormGroup>
@@ -131,7 +206,7 @@ const TabForm = (props) => {
         <button className="btn btn-primary m-1 w-25">Save</button>
         <button className="btn btn-danger m-1 w-25">Delete</button>
       </div>
-    </form>
+    </Form>
   );
 };
 
@@ -142,7 +217,7 @@ export default class CourseGeneralTab extends Component {
   // }
 
   render() {
-    const { initialValues } = this.props;
+    const { initialValues, mode } = this.props;
     return (
       <section className="content pb-5">
         <div className="edit-client-detail-form-container container-fluid bg-white">
@@ -152,7 +227,7 @@ export default class CourseGeneralTab extends Component {
                     initialValues={initialValues}
                     component={<Form {...this.props} />}
                 /> */}
-              <TabForm values={initialValues} />
+              {mode ? <TabEditForm values={initialValues} /> : <TabDisplayForm values={initialValues}/>}
             </div>
           </div>
         </div>

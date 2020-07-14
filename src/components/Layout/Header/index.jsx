@@ -79,7 +79,7 @@ class Header extends Component {
               </ul> */}
               <form className="form-inline mr-auto" target="_self">
                 <div className="form-group">
-                  <label for="search-field"></label>
+                  <label htmlFor="search-field"></label>
                   <input
                     className="form-control search-field"
                     type="search"

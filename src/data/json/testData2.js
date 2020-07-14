@@ -142,10 +142,14 @@ const state = {
       core: true,
       elective: false,
       credit: 4,
-      prerequisties: ["IT103IU"],
+      prerequisties: ["Object-Oriented Programming", "Discrete Math"],
       textbook: "An Introduction to Object-Oriented Systems Analysis and Design with UML and the Unified Process - Stephen R. Schach",
       refs: [
-        "Applying UML and Patterns – An introduction to Object-Oriented Analysis And Design - Craig Larman"
+        "Applying UML and Patterns – An introduction to Object-Oriented Analysis And Design - Craig Larman",
+        "Object-Oriented Design with UML and Java - K. Barclay & J. Savage",
+        "UML for the IT Business Analyst: A Practical Guide to Object-Oriented Requirements Gathering - Howard Podeswa",
+        "Object-Oriented Analysis and Design with Applications - Grady Booch & Ivar Jacobson",
+        "Interactive Object-Oriented Programming in Java - Vaskaran Sarcar"
       ],
       description: [
         "This course help students learn about system life cycle development and the knowledge and skills required to develop object-oriented system. The course tries to solve the following questions:",

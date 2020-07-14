@@ -56,16 +56,16 @@ const Content = styled.div`
   /* overflow-y: auto; */
 `;
 
-function getStyle(style, snapshot) {
-  // if (!snapshot.isDropAnimating) {
-  //   return style;
-  // }
-  return {
-    ...style,
-    // cannot be 0, but make it super tiny
-    transitionDuration: `0.001s`,
-  };
-}
+// function getStyle(style, snapshot) {
+//   // if (!snapshot.isDropAnimating) {
+//   //   return style;
+//   // }
+//   return {
+//     ...style,
+//     // cannot be 0, but make it super tiny
+//     transitionDuration: `0.001s`,
+//   };
+// }
 
 class CourseDragSource extends Component {
   render() {
