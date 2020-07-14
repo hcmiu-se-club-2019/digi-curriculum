@@ -1,5 +1,7 @@
 import { GET_COURSES } from "./action";
 
+// import courseData from "../../components/CurriculumEdit/data-courses"; 
+
 const initState = [];
 const fetchState = [
   {

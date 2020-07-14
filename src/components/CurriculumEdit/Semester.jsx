@@ -1,73 +1,76 @@
 // import React, { Component } from "react";
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
-import { Col } from "react-bootstrap";
 import { Droppable, Draggable } from "react-beautiful-dnd";
+import PropTypes from "prop-types";
 
-import CourseTile from "../Curriculum/CourseTile";
+import CourseTile from "./CourseTile";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const CourseList = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: inherit;
   border-radius: 10px;
+  width: 124px;
+  transition: background-color 0.3s ease;
   :hover {
-    background-color: ${(props) => (props.isDraggingOver ? "dimgray" : "lightslategrey")};
-    transition: background-color 0.3s ease;
+    background-color: ${(props) =>
+      props.isDraggingOver ? "dimgray" : "lightslategrey"};
   }
 `;
 
-class Semester extends PureComponent {
+const EmptyBox = styled.div`
+  height: 50px;
+  display: flex;
+  align-items: center;
+`;
+
+class Semester extends Component {
   render() {
-    const { yearId, semId, courseIds } = this.props;
+    const { id, courseIds, index, courses } = this.props;
 
     return (
-      <Col
-        as={Container}
-        xs={"auto"}
-        sm={"auto"}
-        md={"auto"}
-        lg={"auto"}
-        xl={"auto"}
-      >
-        <div>Sem {semId[semId.length - 1]}</div>
-        <Droppable droppableId={`${yearId}-${semId}`}>
-          {(provided, snapshot) => (
-            <CourseList
-              ref={provided.innerRef}
-              {...provided.droppableProps}
-              isDraggingOver={snapshot.isDraggingOver}
-            >
-              {courseIds.map((courseId, index) => (
-                <Draggable draggableId={courseId} index={index} key={courseId}>
-                  {(provided2) => (
-                    <div
-                      ref={provided2.innerRef}
-                      {...provided2.dragHandleProps}
-                      {...provided2.draggableProps}
-                    >
-                      <CourseTile
-                        key={courseId}
-                        courseId={courseId}
-                        name="YEET"
-                        active
-                      />
-                    </div>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </CourseList>
-          )}
-        </Droppable>
-      </Col>
+      <Droppable droppableId={id}>
+        {(dropProvided, dropSnapshot) => (
+          <Container
+            ref={dropProvided.innerRef}
+            {...dropProvided.droppableProps}
+            isDraggingOver={dropSnapshot.isDraggingOver}
+          >
+            <div>Sem {index}</div>
+            {courseIds.map((courseId, index) => (
+              <Draggable draggableId={courseId} index={index} key={courseId}>
+                {(dragProvided) => (
+                  <div
+                    ref={dragProvided.innerRef}
+                    {...dragProvided.dragHandleProps}
+                    {...dragProvided.draggableProps}
+                  >
+                    <CourseTile
+                      key={courseId}
+                      courseId={courseId}
+                      name={courses[courseId].name}
+                      active
+                    />
+                  </div>
+                )}
+              </Draggable>
+            ))}
+            {dropProvided.placeholder}
+            <EmptyBox />
+          </Container>
+        )}
+      </Droppable>
     );
   }
 }
+
+Semester.propTypes = {
+  id: PropTypes.string,
+  courseIds: PropTypes.array,
+  index: PropTypes.number,
+  courses: PropTypes.shape({
+    name: PropTypes.string,
+  }),
+};
 
 export default Semester;

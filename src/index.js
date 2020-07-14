@@ -6,7 +6,7 @@ import "./index.css";
 import App from "./components/App";
 // import App from "./App"
 import * as serviceWorker from "./serviceWorker";
-import configureStore from "./configureStore";
+import configureStore from "./redux/configureStore";
 
 export const store = configureStore();
 
