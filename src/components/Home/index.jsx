@@ -11,12 +11,12 @@ const Container = styled.div`
   background-color: lightgrey;
 `;
 
-const Home = () => {
+function Home() {
   return (
     <Container>
       <h1>Home</h1>
     </Container>
   );
-};
+}
 
 export default Home;

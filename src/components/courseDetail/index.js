@@ -4,6 +4,10 @@ import classNames from "classnames";
 
 import state from "../../data/json/testData2";
 import CourseGeneralTab from "./courseTabs/CourseGeneralTab";
+import CourseDescriptionTab from "./courseTabs/CourseDescriptionTab";
+import CourseOutcomeTab from "./courseTabs/CourseOutcomeTab";
+import CourseImplementationTab from "./courseTabs/CourseImplementationTab";
+import CourseAssessmentTab from "./courseTabs/CourseAssessmentTab";
 
 const courseList = state.courses;
 const tabList = [
@@ -62,6 +66,7 @@ export default class CourseDetail extends Component {
       <div className="container_wrap mt-4">
         <section className="content-header">
           <div className="container-fluid">
+            {/* <h3>{course.name}</h3> */}
             <div className="tabs">
               <div className="course-detail-tabs">
                 <Nav tabs>
@@ -70,6 +75,7 @@ export default class CourseDetail extends Component {
                       <NavLink
                         id={tab.id}
                         className={classNames({ active: activeTab === tab.id })}
+                        disabled={tab.id === "6" || tab.id === "5"}
                         onClick={() => {
                           this.setState({
                             activeTab: tab.id,
@@ -86,6 +92,10 @@ export default class CourseDetail extends Component {
           </div>
         </section>
         {activeTab === "1" && <CourseGeneralTab initialValues={course} />}
+        {activeTab === "2" && <CourseDescriptionTab initialValues={course}/>}
+        {activeTab === "3" && <CourseOutcomeTab initialValues={course}/>}
+        {activeTab === "4" && <CourseImplementationTab initialValues={course}/>}
+        {activeTab === "5" && <CourseAssessmentTab initialValues={course}/>}
       </div>
     );
   }
