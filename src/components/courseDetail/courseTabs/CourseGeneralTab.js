@@ -8,8 +8,8 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 const TabDisplayForm = props => {
   const { values } = props;
   return (
-    <div className="d-flex justify-content-center">
-      <div className="col-sm-5 mt-2 ml-3">
+    <div className="row mt-2">
+      <div className="col-md-5 ml-md-4">
         <div>
           <h5>GENERAL INFORMATION</h5>
         </div>
@@ -57,8 +57,9 @@ const TabDisplayForm = props => {
             </ul>
           </div>
         </div>
+        <span class="visible-md"><hr></hr></span>
       </div>
-      <div className="col-sm-5 offset-sm-1 mt-2">
+      <div className="col-md-5 offset-md-1">
         <div>
           <h5>TEXTBOOK REFERENCES</h5>
         </div>
@@ -82,9 +83,9 @@ const TabDisplayForm = props => {
 const TabEditForm = (props) => {
   const { values } = props;
   return (
-    <Form onSubmit={function () {}} className="course-general-form border">
-      <div className="d-flex justify-content-center">
-        <div className="col-sm-5 border mt-2 ml-3">
+    <Form onSubmit={function () {}} className="course-general-form">
+      <div className="row mt-2">
+        <div className="col-md-5 ml-md-4">
           <div>
             <h5>GENERAL INFORMATION</h5>
           </div>
@@ -159,8 +160,9 @@ const TabEditForm = (props) => {
               </FormGroup>
             </div>
           </div>
+          <span class="visible-md"><hr></hr></span>
         </div>
-        <div className="col-sm-5 offset-sm-1 border mt-2">
+        <div className="col-md-6 offset-md-1">
           <div>
             <h5>TEXTBOOK REFERENCES</h5>
           </div>
@@ -211,25 +213,16 @@ const TabEditForm = (props) => {
 };
 
 export default class CourseGeneralTab extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   // this.state = { initialValues: {} };
-  // }
-
   render() {
     const { initialValues, mode } = this.props;
     return (
       <section className="content pb-5">
         <div className="edit-client-detail-form-container container-fluid bg-white">
-          <div className="row">
-            <div className="col-sm-12">
-              {/* <FormModal
-                    initialValues={initialValues}
-                    component={<Form {...this.props} />}
-                /> */}
-              {mode ? <TabEditForm values={initialValues} /> : <TabDisplayForm values={initialValues}/>}
-            </div>
-          </div>
+          {/* <FormModal
+                initialValues={initialValues}
+                component={<Form {...this.props} />}
+            /> */}
+          {mode ? <TabEditForm values={initialValues} /> : <TabDisplayForm values={initialValues}/>}
         </div>
       </section>
     );

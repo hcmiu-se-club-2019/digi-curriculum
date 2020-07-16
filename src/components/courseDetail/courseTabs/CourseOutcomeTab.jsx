@@ -8,8 +8,8 @@ import { Table, Form } from "reactstrap";
 const TabDisplayForm = (props) => {
   const { values } = props;
   return (
-    <div className="d-flex justify-content-center">
-      <div className="mt-2 ml-3">
+    <div className="row mt-2">
+      <div className="col-md-12">
         <div>
           <h5>COURSE LEARNING OUTCOMES</h5>
         </div>
@@ -24,7 +24,7 @@ const TabDisplayForm = (props) => {
             </thead>
             <tbody>
               {
-                typeof values.outcomes === 'object' ? values.outcomes.map((outcome, index) => 
+                typeof values.outcomes === 'object' && values.outcomes.map((outcome, index) => 
                   <Fragment key={index}>
                     <tr>
                       <th rowSpan={outcome.outs.length}>{outcome.name}</th>
@@ -40,7 +40,7 @@ const TabDisplayForm = (props) => {
                       )
                     }
                   </Fragment>
-                ) : null
+                )
               }
             </tbody>
           </Table>
@@ -65,16 +65,11 @@ export default class CourseOutcomeTab extends Component {
     return (
       <section className="content pb-5">
         <div className="edit-client-detail-form-container container-fluid bg-white">
-          <div className="row">
-            <div className="col-sm-12">
-              {/* <FormModal
-                    initialValues={initialValues}
-                    component={<Form {...this.props} />}
-                /> */}
-              {mode ? <TabEditForm values={initialValues} /> : <TabDisplayForm values={initialValues} />}
-              
-            </div>
-          </div>
+          {/* <FormModal
+                initialValues={initialValues}
+                component={<Form {...this.props} />}
+            /> */}
+          {mode ? <TabEditForm values={initialValues} /> : <TabDisplayForm values={initialValues} />}
         </div>
       </section>
     );

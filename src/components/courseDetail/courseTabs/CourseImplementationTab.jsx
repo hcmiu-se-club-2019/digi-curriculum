@@ -9,10 +9,10 @@ import { Table, Form } from "reactstrap";
 const TabDisplayForm = (props) => {
   const { values } = props;
   return (
-    <div className="d-flex justify-content-center">
-      <div className="col-sm-5 mt-2 ml-3">
+    <div className="row mt-2">
+      <div className="col-md-5 ml-md-4">
         <div>
-          <h6>COURSE IMPLEMENTATION</h6>
+          <h5>COURSE IMPLEMENTATION</h5>
         </div>
         <div className="course-detail-fields">
           <Table bordered>
@@ -60,10 +60,11 @@ const TabDisplayForm = (props) => {
             </tbody>
           </Table>
         </div>
+        <span class="visible-md"><hr></hr></span>
       </div>
-      <div className="col-sm-5 offset-sm-1 mt-2">
+      <div className="col-md-6 offset-md-1">
         <div>
-          <h6>COURSE OUTLINE</h6>
+          <h5>COURSE OUTLINE</h5>
         </div>
         <div className="course-detail-fields">
           <Table bordered >
@@ -116,16 +117,11 @@ export default class CourseImplementationTab extends Component {
     return (
       <section className="content pb-5">
         <div className="edit-client-detail-form-container container-fluid bg-white">
-          <div className="row">
-            <div className="col-sm-12">
-              {/* <FormModal
-                    initialValues={initialValues}
-                    component={<Form {...this.props} />}
-                /> */}
-              {mode ? <TabEditForm values={initialValues} /> : <TabDisplayForm values={initialValues} />}
-              
-            </div>
-          </div>
+          {/* <FormModal
+                initialValues={initialValues}
+                component={<Form {...this.props} />}
+            /> */}
+          {mode ? <TabEditForm values={initialValues} /> : <TabDisplayForm values={initialValues} />}
         </div>
       </section>
     );

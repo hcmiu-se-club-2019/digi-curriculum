@@ -9,10 +9,10 @@ import { Table } from "reactstrap";
 const TabDisplayForm = (props) => {
   // const { values } = props;
   return (
-    <div className="d-flex">
-      <div className="col-sm-5 mt-2 ml-3">
+    <div className="row mt-2">
+      <div className="col-sm-12">
         <div>
-          <h5>ASSESSMENT PLAN</h5>
+          <h6>ASSESSMENT PLAN</h6>
         </div>
         <div className="course-detail-fields">
           <Table bordered>
@@ -64,15 +64,11 @@ class CourseAssessmentTab extends Component {
     return (
       <section className="content pb-5">
         <div className="edit-client-detail-form-container container-fluid bg-white">
-          <div className="row">
-            <div className="col-sm-12">
-              {/* <FormModal
-                    initialValues={initialValues}
-                    component={<Form {...this.props} />}
-                /> */}
-              <TabDisplayForm values={initialValues} />
-            </div>
-          </div>
+          {/* <FormModal
+                initialValues={initialValues}
+                component={<Form {...this.props} />}
+            /> */}
+          <TabDisplayForm values={initialValues} />
         </div>
       </section>
     );
