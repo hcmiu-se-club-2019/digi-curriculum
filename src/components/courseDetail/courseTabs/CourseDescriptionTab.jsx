@@ -9,7 +9,7 @@ const TabDisplayForm = props => {
   const { values } = props
   return (
     <div className="row mt-2">
-      <div className="col-md-5 ml-md-4">
+      <div className="col-lg-5 ml-lg-4">
         <div>
           <h5>COURSE DESCRIPTION</h5>
         </div>
@@ -25,9 +25,9 @@ const TabDisplayForm = props => {
             }
           </ul>
         </div>
-        <span class="visible-md"><hr></hr></span>
+        <span class="d-lg-none"><hr></hr></span>
       </div>
-      <div className="col-md-5 offset-md-1">
+      <div className="col-lg-5 offset-lg-1">
         <div>
           <h5>COURSE OBJECTIVES</h5>
         </div>
@@ -69,7 +69,7 @@ const TabEditForm = (props) => {
               </FormGroup>
             </Form>
           </div>
-          <span class="visible-md"><hr></hr></span>
+          <span class="d-lg-none"><hr></hr></span>
         </div>
         <div className="col-md-5 offset-md-1">
           <div>

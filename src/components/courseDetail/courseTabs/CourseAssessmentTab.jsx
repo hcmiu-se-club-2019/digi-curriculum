@@ -12,7 +12,7 @@ const TabDisplayForm = (props) => {
     <div className="row mt-2">
       <div className="col-sm-12">
         <div>
-          <h6>ASSESSMENT PLAN</h6>
+          <h5>ASSESSMENT PLAN</h5>
         </div>
         <div className="course-detail-fields">
           <Table bordered>

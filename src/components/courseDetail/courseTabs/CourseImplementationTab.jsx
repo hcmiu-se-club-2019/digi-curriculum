@@ -10,7 +10,7 @@ const TabDisplayForm = (props) => {
   const { values } = props;
   return (
     <div className="row mt-2">
-      <div className="col-md-5 ml-md-4">
+      <div className="col-md-5">
         <div>
           <h5>COURSE IMPLEMENTATION</h5>
         </div>
@@ -60,9 +60,9 @@ const TabDisplayForm = (props) => {
             </tbody>
           </Table>
         </div>
-        <span class="visible-md"><hr></hr></span>
+        <span class="d-md-none"><hr></hr></span>
       </div>
-      <div className="col-md-6 offset-md-1">
+      <div className="col-md-6 offset-sm-1">
         <div>
           <h5>COURSE OUTLINE</h5>
         </div>
