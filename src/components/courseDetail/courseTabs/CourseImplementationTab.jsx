@@ -10,7 +10,7 @@ const TabDisplayForm = (props) => {
   const { values } = props;
   return (
     <div className="d-flex justify-content-center">
-      <div className="col-sm-5 border mt-2 ml-3">
+      <div className="col-sm-5 mt-2 ml-3">
         <div>
           <h6>COURSE IMPLEMENTATION</h6>
         </div>
@@ -61,7 +61,7 @@ const TabDisplayForm = (props) => {
           </Table>
         </div>
       </div>
-      <div className="col-sm-5 border offset-sm-1 mt-2">
+      <div className="col-sm-5 offset-sm-1 mt-2">
         <div>
           <h6>COURSE OUTLINE</h6>
         </div>
@@ -73,7 +73,7 @@ const TabDisplayForm = (props) => {
                 <th scope='col'>Topics</th>
               </tr>
             </thead>
-            <tbody style={{fontSize:'12px'}}>
+            <tbody>
               {
                 typeof values.implementation === 'object' 
                 && typeof values.implementation.outlines === 'object' 
@@ -84,7 +84,7 @@ const TabDisplayForm = (props) => {
                       <td>{outline.topics[0]}</td>
                     </tr>
                     {
-                      typeof outline.topics === 'object' && outline.topics.splice(1, outline.topics.length).map((topic, index) =>
+                      typeof outline.topics === 'object' && [...outline.topics].slice(1, outline.topics.length).map((topic, index) =>
                         <tr key={index}>
                           <td>{topic}</td>
                         </tr>

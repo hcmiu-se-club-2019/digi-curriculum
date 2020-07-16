@@ -9,7 +9,7 @@ const TabDisplayForm = props => {
   const { values } = props;
   return (
     <div className="d-flex justify-content-center">
-      <div className="col-sm-5 border mt-2 ml-3">
+      <div className="col-sm-5 mt-2 ml-3">
         <div>
           <h5>GENERAL INFORMATION</h5>
         </div>
@@ -17,7 +17,7 @@ const TabDisplayForm = props => {
           <div>
             <p><strong>Course Name: </strong><span>{values.name}</span></p>
             <p><strong>Course Code: </strong><span>{values.id}</span></p>
-            <FormGroup tag="fieldset" disabled>
+            <FormGroup tag="fieldset" readOnly>
               <Label for="type"><strong>Course Type: </strong></Label>
               <div className='d-flex ml-1'>
                 <FormGroup check style={{width:'100px'}}>
@@ -48,7 +48,7 @@ const TabDisplayForm = props => {
                 </FormGroup>
               </div>
             </FormGroup>
-            <p><strong>Course Credit(s): </strong><span>{values.credit}</span></p>
+            <p><strong>Course Credits: </strong><span>{values.credit}</span></p>
             <p><strong>Course Prerequisties: </strong></p>
             <ul>
               {
@@ -58,7 +58,7 @@ const TabDisplayForm = props => {
           </div>
         </div>
       </div>
-      <div className="col-sm-5 offset-sm-1 border mt-2">
+      <div className="col-sm-5 offset-sm-1 mt-2">
         <div>
           <h5>TEXTBOOK REFERENCES</h5>
         </div>

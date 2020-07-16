@@ -9,7 +9,7 @@ const TabDisplayForm = props => {
   const { values } = props
   return (
     <div className="d-flex justify-content-center">
-      <div className="col-sm-5 offset-sm-1 mt-2 ml-3">
+      <div className="col-sm-5 mt-2 ml-3">
         <div>
           <h5>COURSE DESCRIPTION</h5>
         </div>
@@ -17,7 +17,7 @@ const TabDisplayForm = props => {
           <p><i>{typeof values.description === 'object' && values.description[0]}</i></p>
           <ul>
             {
-              typeof values.description === 'object' && values.description.slice(1, values.description.length).map((desc, index) => 
+              typeof values.description === 'object' && [...values.description].slice(1, values.description.length).map((desc, index) => 
                 <li key={index}>
                   {desc}
                 </li>
