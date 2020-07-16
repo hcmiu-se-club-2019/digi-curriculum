@@ -18,22 +18,24 @@ import Curriculum from "./Curriculum";
 import CurriculumEdit from "./CurriculumEdit/_index";
 
 const Main = withRouter(({ location }) => (
-  <>
-    <Header />
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/curriculum" component={Curriculum} />
-      <Route exact path="/curriculum/edit" component={CurriculumEdit} />
-      <Route exact path="/program" component={ProgramDisplay} />
-      <Route exact path="/course/:courseId" component={CourseDetail} />
-      <Route
-        exact
-        path="/curriculum/:curriId/edit"
-        component={EditCurriculum}
-      />
-    </Switch>
+  <div className="d-flex flex-column min-vh-100">
+    <div class="wrapper flex-grow-1">
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/curriculum" component={Curriculum} />
+        <Route exact path="/curriculum/edit" component={CurriculumEdit} />
+        <Route exact path="/program" component={ProgramDisplay} />
+        <Route exact path="/course/:courseId" component={CourseDetail} />
+        <Route
+          exact
+          path="/curriculum/:curriId/edit"
+          component={EditCurriculum}
+        />
+      </Switch>
+    </div>
     {location.pathname !== "/curriculum/edit" && <Footer />}
-  </>
+  </div>
 ));
 
 class App extends React.PureComponent {
