@@ -43,6 +43,7 @@ export default class CourseDetail extends Component {
     this.state = {
       activeTab: "1",
       course: {},
+      availableCourses: [],
       isOpeningModal: false,
       mode: false // Display mode
     };
@@ -51,6 +52,7 @@ export default class CourseDetail extends Component {
   componentDidMount() {
     const { courseId } = this.props.match.params;
     this.fetchCourse(courseId); // Axios later
+    this.setState({ activeTab: '1', mode: true, availableCourses: courseList.map(course => course.name) }) // For testing
   }
 
   fetchCourse(courseId) {
@@ -67,12 +69,19 @@ export default class CourseDetail extends Component {
   onTextChangeHandler = event => {
     const { name, value } = event.target
     const newCourse = {...this.state.course}
-    newCourse[name] = value
+    newCourse[name] = isNaN(+value) ? value : +value // For credits
+    this.setState({ course: newCourse })
+  }
+
+  onCheckboxChangeHandler = event => {
+    const { name, checked } = event.target
+    const newCourse = {...this.state.course}
+    newCourse[name] = !checked
     this.setState({ course: newCourse })
   }
 
   render() {
-    const { activeTab, course, mode } = this.state;
+    const { activeTab, course, mode, availableCourses } = this.state;
 
     return (
       <div className="container_wrap mt-4 h-100">
@@ -115,7 +124,13 @@ export default class CourseDetail extends Component {
           </div>
         </section>
         <section className='h-100 border ml-lg-3 mr-lg-3'>
-          {activeTab === "1" && <CourseGeneralTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
+          {activeTab === "1" && <CourseGeneralTab 
+            initialValues={course} 
+            mode={mode} 
+            availableCourses={availableCourses}
+            onTextChange={this.onTextChangeHandler}
+            onCheckboxChange={this.onCheckboxChangeHandler}
+          />}
           {activeTab === "2" && <CourseDescriptionTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
           {activeTab === "3" && <CourseOutcomeTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
           {activeTab === "4" && <CourseImplementationTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}

@@ -19,7 +19,7 @@ import CurriculumEdit from "./CurriculumEdit/_index";
 
 const Main = withRouter(({ location }) => (
   <div className="d-flex flex-column min-vh-100">
-    <div class="wrapper flex-grow-1">
+    <div className="wrapper flex-grow-1">
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
