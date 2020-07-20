@@ -161,17 +161,14 @@ const TabEditForm = props => {
               </FormGroup>
               <FormGroup>
                 <Label for="required">Course Prerequisties</Label>  
-                <div className='d-flex flex-row mb-2'>
-                  <Select className='mr-2' isMulti options={[...courses]} value={values.prerequisties.map(prereq => {
-                      return {
-                        label: prereq,
-                        value: prereq
-                      }
-                    })}
-                    onChange={opt => console.log(opt)}
-                  />
-                  <Button color='danger'>X</Button>
-                </div>
+                <Select isMulti options={[...courses]} value={values.prerequisties.map(prereq => {
+                    return {
+                      label: prereq,
+                      value: prereq
+                    }
+                  })}
+                  onChange={opt => console.log(opt)}
+                />
               </FormGroup>
             </div>
           </div>
@@ -197,23 +194,29 @@ const TabEditForm = props => {
                   /> */}
               <FormGroup>
                 <Label for="textbook">Course Main Textbook</Label>
-                <Input
-                  type="textarea"
-                  name="courseTextbook"
-                  id="courseTextbook"
-                  value={values.textbook}
-                  rows='4'
+                <Select 
+                  value={{label: values.textbook, value: values.textbook}}
+                  options={[values.textbook].concat(values.refs).map(ref => {return {label: ref, value: ref}})}
                 />
               </FormGroup>
               <FormGroup>
                 <Label for="references">Course Other References</Label>
-                <Input
-                  type="textarea"
-                  name="courseReferences"
-                  id="courseReferences"
-                  value={typeof values.refs === 'object' ? values.refs.join('\n') : values.refs}
-                  rows='10'
-                />
+                {
+                  typeof values.refs === 'object' && values.refs.map(ref => 
+                    <div className='mb-2 d-flex'>
+                      <div className='flex-grow-1 mr-2'>
+                        <Select 
+                          value={{label: ref, value: ref}}
+                          options={values.refs.map(ref => {return {label: ref, value: ref}})}
+                        />
+                      </div>
+                      
+                      <Button color='danger'>X</Button>
+                    </div>
+                    
+                  )
+                }
+                <Button className='float-right' color='success'>Add New Reference</Button>
               </FormGroup>
             </div>
           </div>
