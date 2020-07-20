@@ -64,16 +64,22 @@ export default class CourseDetail extends Component {
     this.setState({ mode: !this.state.mode })
   }
 
+  onTextChangeHandler = event => {
+    const { name, value } = event.target
+    const newCourse = {...this.state.course}
+    newCourse[name] = value
+    this.setState({ course: newCourse })
+  }
+
   render() {
     const { activeTab, course, mode } = this.state;
 
     return (
-      <div className="container_wrap mt-4">
+      <div className="container_wrap mt-4 h-100">
         <section className="content-header">
           <div className="container-fluid">
             {/* <div className='d-flex'>
               <h3>{course.name}</h3>
-              
             </div> */}
             <button 
               className="btn btn-light border action-button"
@@ -108,11 +114,14 @@ export default class CourseDetail extends Component {
             </div>
           </div>
         </section>
-        {activeTab === "1" && <CourseGeneralTab initialValues={course} mode={mode}/>}
-        {activeTab === "2" && <CourseDescriptionTab initialValues={course} mode={mode}/>}
-        {activeTab === "3" && <CourseOutcomeTab initialValues={course} mode={mode}/>}
-        {activeTab === "4" && <CourseImplementationTab initialValues={course} mode={mode}/>}
-        {activeTab === "5" && <CourseAssessmentTab initialValues={course} mode={mode}/>}
+        <section className='h-100 border ml-lg-3 mr-lg-3'>
+          {activeTab === "1" && <CourseGeneralTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
+          {activeTab === "2" && <CourseDescriptionTab initialValues={course} mode={mode}/>}
+          {activeTab === "3" && <CourseOutcomeTab initialValues={course} mode={mode}/>}
+          {activeTab === "4" && <CourseImplementationTab initialValues={course} mode={mode}/>}
+          {activeTab === "5" && <CourseAssessmentTab initialValues={course} mode={mode}/>}
+        </section>
+        
       </div>
     );
   }

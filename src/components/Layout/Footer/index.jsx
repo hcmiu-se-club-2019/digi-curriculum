@@ -10,8 +10,8 @@ class Footer extends Component {
   render() {
     return (
       <footer
-        className="page-footer footer-basic text-center"
-        style={{ backgroundColor: "white", color: "black" }}
+        className="page-footer footer-basic text-center pt-3 mt-2"
+        style={{ backgroundColor: "whitesmoke", color: "black" }}
       >
         <div className="social">
           {externalLinks.map((link) => (

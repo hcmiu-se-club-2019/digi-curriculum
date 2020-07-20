@@ -81,7 +81,7 @@ const TabDisplayForm = props => {
 }
 
 const TabEditForm = (props) => {
-  const { values } = props;
+  const { values, onTextChange } = props;
   return (
     <Form onSubmit={function () {}} className="course-general-form">
       <div className="row mt-2">
@@ -95,9 +95,10 @@ const TabEditForm = (props) => {
                 <Label for="name">Course Name</Label>
                 <Input
                   type="text"
-                  name="courseName"
+                  name="name"
                   id="courseName"
                   value={values.name}
+                  onChange={onTextChange}
                 />
               </FormGroup>
               <FormGroup>
@@ -214,7 +215,7 @@ const TabEditForm = (props) => {
 
 export default class CourseGeneralTab extends Component {
   render() {
-    const { initialValues, mode } = this.props;
+    const { initialValues, mode, onTextChange } = this.props;
     return (
       <section className="content pb-5">
         <div className="edit-client-detail-form-container container-fluid bg-white">
@@ -222,7 +223,10 @@ export default class CourseGeneralTab extends Component {
                 initialValues={initialValues}
                 component={<Form {...this.props} />}
             /> */}
-          {mode ? <TabEditForm values={initialValues} /> : <TabDisplayForm values={initialValues}/>}
+          {mode ? <TabEditForm 
+            values={initialValues} 
+            onTextChange={onTextChange}
+          /> : <TabDisplayForm values={initialValues}/>}
         </div>
       </section>
     );
