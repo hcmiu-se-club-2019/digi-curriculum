@@ -116,10 +116,10 @@ export default class CourseDetail extends Component {
         </section>
         <section className='h-100 border ml-lg-3 mr-lg-3'>
           {activeTab === "1" && <CourseGeneralTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
-          {activeTab === "2" && <CourseDescriptionTab initialValues={course} mode={mode}/>}
-          {activeTab === "3" && <CourseOutcomeTab initialValues={course} mode={mode}/>}
-          {activeTab === "4" && <CourseImplementationTab initialValues={course} mode={mode}/>}
-          {activeTab === "5" && <CourseAssessmentTab initialValues={course} mode={mode}/>}
+          {activeTab === "2" && <CourseDescriptionTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
+          {activeTab === "3" && <CourseOutcomeTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
+          {activeTab === "4" && <CourseImplementationTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
+          {activeTab === "5" && <CourseAssessmentTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
         </section>
         
       </div>

@@ -105,9 +105,10 @@ const TabEditForm = (props) => {
                 <Label for="id">Course Code</Label>
                 <Input
                   type="text"
-                  name="courseId"
+                  name="id"
                   id="courseId"
                   value={values.id}
+                  onChange={onTextChange}
                 />
               </FormGroup>
               <FormGroup tag="fieldset">
@@ -115,7 +116,7 @@ const TabEditForm = (props) => {
                 <div className='d-flex ml-1'>
                   <FormGroup check style={{width:'100px'}}>
                     <Label check>
-                      <Input type="checkbox" name="cb1" checked={values.specialization} /> 
+                      <Input type="checkbox" name="specialization" checked={values.specialization} onChange={onTextChange}/> 
                       Specialization
                     </Label>
                   </FormGroup>
@@ -145,9 +146,10 @@ const TabEditForm = (props) => {
                 <Label for="credit">Course Credits</Label>
                 <Input
                   type="number"
-                  name="courseCredit"
+                  name="credit"
                   id="courseCredit"
                   value={values.credit}
+                  onChange={onTextChange}
                 />
               </FormGroup>
               <FormGroup>
