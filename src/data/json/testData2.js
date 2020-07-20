@@ -142,7 +142,7 @@ const state = {
       core: true,
       elective: false,
       credit: 4,
-      prerequisties: ["Object-Oriented Programming", "Discrete Math"],
+      prerequisties: ["Data Structures and Algorithms", "Discrete Math"],
       textbook: "An Introduction to Object-Oriented Systems Analysis and Design with UML and the Unified Process - Stephen R. Schach",
       refs: [
         "Applying UML and Patterns – An introduction to Object-Oriented Analysis And Design - Craig Larman",
@@ -313,7 +313,7 @@ const state = {
     },
     {
       id: "IT103IU",
-      name: "C/C++ programming",
+      name: "Discrete Math",
       specialization: false,
       requirement: true,
       core: true,

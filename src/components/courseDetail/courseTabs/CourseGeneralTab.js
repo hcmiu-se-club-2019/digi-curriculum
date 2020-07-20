@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import Select from 'react-select';
 // import { Field } from 'formik';
 
 // import FormModal from '../../common/FormModal'
@@ -82,6 +83,12 @@ const TabDisplayForm = props => {
 
 const TabEditForm = props => {
   const { values, availableCourses, onTextChange, onCheckboxChange } = props;
+  const courses = availableCourses.map( course => {
+    return { 
+      label: course, 
+      value: course
+    }} 
+  )
   return (
     <Form onSubmit={function () {}} className="course-general-form">
       <div className="row mt-2">
@@ -154,38 +161,17 @@ const TabEditForm = props => {
               </FormGroup>
               <FormGroup>
                 <Label for="required">Course Prerequisties</Label>  
-                {/* <Input
-                  type="textarea"
-                  name="courseRequired"
-                  id="courseRequired"
-                  value={typeof values.prerequisties === 'object' ? values.prerequisties.join('\n') : values.prerequisties}
-                /> */}
-                {
-                  typeof values.prerequisties === 'object' && values.prerequisties.map((prereq, index) => 
-                    <div key={index} className='d-flex flex-row mb-2'>
-                      <Input
-                        className='mr-2'
-                        type='select'
-                        name="courseRequired"
-                        id="courseRequired"
-                        defaultValue={prereq}
-                        // onChange={onTextChange}
-                      >
-                        <option value={prereq}>{prereq}</option>
-                        {
-                          typeof availableCourses === 'object' && availableCourses
-                            .filter((course) => { return course !== prereq })
-                            .map((course, index) =>
-                              <option key={index} value={course}>{course}</option>
-                            )
-                        }
-                      </Input>
-                      <Button color='danger'>X</Button>
-                    </div>
-
-                  )
-                }
-                <Button color='success' className='float-right' onClick={() => {}}>Add New Course</Button>
+                <div className='d-flex flex-row mb-2'>
+                  <Select className='mr-2' isMulti options={[...courses]} value={values.prerequisties.map(prereq => {
+                      return {
+                        label: prereq,
+                        value: prereq
+                      }
+                    })}
+                    onChange={opt => console.log(opt)}
+                  />
+                  <Button color='danger'>X</Button>
+                </div>
               </FormGroup>
             </div>
           </div>
@@ -253,7 +239,7 @@ export default class CourseGeneralTab extends Component {
             /> */}
           {mode ? <TabEditForm 
             values={initialValues} 
-            availableCourses={availableCourses}
+            availableCourses={[...availableCourses]}
             onTextChange={onTextChange}
             onCheckboxChange={onCheckboxChange}
           /> : <TabDisplayForm values={initialValues}/>}

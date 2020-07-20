@@ -127,7 +127,7 @@ export default class CourseDetail extends Component {
           {activeTab === "1" && <CourseGeneralTab 
             initialValues={course} 
             mode={mode} 
-            availableCourses={availableCourses}
+            availableCourses={[...availableCourses]}
             onTextChange={this.onTextChangeHandler}
             onCheckboxChange={this.onCheckboxChangeHandler}
           />}
