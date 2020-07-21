@@ -80,6 +80,12 @@ export default class CourseDetail extends Component {
     this.setState({ course: newCourse })
   }
 
+  onListChangeHandler = (name, options) => {
+    const newCourse = {...this.state.course}
+    newCourse[name] = options.map(opt => opt.value)
+    this.setState({ course: newCourse })
+  }
+
   render() {
     const { activeTab, course, mode, availableCourses } = this.state;
 
@@ -130,6 +136,7 @@ export default class CourseDetail extends Component {
             availableCourses={[...availableCourses]}
             onTextChange={this.onTextChangeHandler}
             onCheckboxChange={this.onCheckboxChangeHandler}
+            onListChange={(name, options) => this.onListChangeHandler(name, options)}
           />}
           {activeTab === "2" && <CourseDescriptionTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
           {activeTab === "3" && <CourseOutcomeTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}

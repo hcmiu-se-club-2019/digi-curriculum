@@ -82,7 +82,7 @@ const TabDisplayForm = props => {
 }
 
 const TabEditForm = props => {
-  const { values, availableCourses, onTextChange, onCheckboxChange } = props;
+  const { values, availableCourses, onTextChange, onCheckboxChange, onListChange } = props;
   const courses = availableCourses.map( course => {
     return { 
       label: course, 
@@ -160,14 +160,22 @@ const TabEditForm = props => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="required">Course Prerequisties</Label>  
-                <Select isMulti options={[...courses]} value={values.prerequisties.map(prereq => {
+                <Label for="prerequisties">Course Prerequisties</Label>  
+                <Select 
+                  id="coursePrereq"
+                  name="prerequisties" 
+                  isMulti 
+                  options={[...courses]} 
+                  value={values.prerequisties.map(prereq => {
                     return {
                       label: prereq,
                       value: prereq
                     }
                   })}
-                  onChange={opt => console.log(opt)}
+                  onChange={(options, action) => {
+                    // console.log(action, options) // For testing
+                    onListChange(action.name, options)
+                  }}
                 />
               </FormGroup>
             </div>
@@ -195,28 +203,53 @@ const TabEditForm = props => {
               <FormGroup>
                 <Label for="textbook">Course Main Textbook</Label>
                 <Select 
+                  // name="textbook"
+                  
                   value={{label: values.textbook, value: values.textbook}}
-                  options={[values.textbook].concat(values.refs).map(ref => {return {label: ref, value: ref}})}
+                  options={[values.textbook].concat(values.refs).map(ref => { return { label: ref, value: ref } })}
+                  onChange={ (opt) => {
+                    let event ={
+                      target: {
+                        name: "textbook",
+                        value: opt.value
+                      }
+                    }
+                    onTextChange(event)
+                  }}
                 />
               </FormGroup>
               <FormGroup>
                 <Label for="references">Course Other References</Label>
-                {
-                  typeof values.refs === 'object' && values.refs.map(ref => 
-                    <div className='mb-2 d-flex'>
+                {/* {
+                  typeof values.refs === 'object' && values.refs.map((ref, index) => 
+                    <div className='mb-2 d-flex' key={index}>
                       <div className='flex-grow-1 mr-2'>
                         <Select 
                           value={{label: ref, value: ref}}
-                          options={values.refs.map(ref => {return {label: ref, value: ref}})}
+                          options={values.refs.map(ref => { return { label: ref, value: ref } })}
                         />
                       </div>
-                      
                       <Button color='danger'>X</Button>
                     </div>
-                    
                   )
-                }
-                <Button className='float-right' color='success'>Add New Reference</Button>
+                } */}
+                <Select 
+                  id="courseRefs"
+                  name="refs" 
+                  isMulti 
+                  options={values.refs.map(ref => { return { label: ref, value: ref } })} 
+                  value={values.refs.map(ref => {
+                    return {
+                      label: ref,
+                      value: ref
+                    }
+                  })}
+                  onChange={(options, action) => {
+                    // console.log(action, options) // For testing
+                    onListChange(action.name, options)
+                  }}
+                />
+                <Button className='mt-2 float-right' color='success'>Add New Reference</Button>
               </FormGroup>
             </div>
           </div>
@@ -232,7 +265,7 @@ const TabEditForm = props => {
 
 export default class CourseGeneralTab extends Component {
   render() {
-    const { initialValues, mode, availableCourses, onTextChange, onCheckboxChange } = this.props;
+    const { initialValues, mode, availableCourses, onTextChange, onCheckboxChange, onListChange } = this.props;
     return (
       <section className="content pb-5">
         <div className="edit-client-detail-form-container container-fluid bg-white">
@@ -245,6 +278,7 @@ export default class CourseGeneralTab extends Component {
             availableCourses={[...availableCourses]}
             onTextChange={onTextChange}
             onCheckboxChange={onCheckboxChange}
+            onListChange={(name, options) => onListChange(name, options)}
           /> : <TabDisplayForm values={initialValues}/>}
         </div>
       </section>

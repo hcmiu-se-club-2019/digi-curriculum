@@ -25,7 +25,7 @@ const TabDisplayForm = props => {
             }
           </ul>
         </div>
-        <span class="d-lg-none"><hr></hr></span>
+        <span className="d-lg-none"><hr></hr></span>
       </div>
       <div className="col-lg-5 offset-lg-1">
         <div>
@@ -49,27 +49,25 @@ const TabDisplayForm = props => {
 const TabEditForm = (props) => {
   const { values } = props;
   return (
-    <form onSubmit={function () {}} className="course-general-form">
+    <Form onSubmit={function () {}} className="course-general-form">
       <div className="row mt-2">
         <div className="col-md-5 ml-md-4">
           <div>
             <h5>COURSE DESCRIPTION</h5>
           </div>
           <div className="course-detail-fields">
-            <Form>
-              <FormGroup>
-                {/* <Label for="required">Course Prerequisties</Label> */}
-                <Input
-                  type="textarea"
-                  name="courseDesc"
-                  id="courseDesc"
-                  value={typeof values.description === 'object' ? values.description.join('\n+\t') : values.description}
-                  rows='16'
-                />
-              </FormGroup>
-            </Form>
+            <FormGroup>
+              {/* <Label for="required">Course Prerequisties</Label> */}
+              <Input
+                type="textarea"
+                name="courseDesc"
+                id="courseDesc"
+                value={typeof values.description === 'object' ? values.description.join('\n+\t') : values.description}
+                rows='16'
+              />
+            </FormGroup>
           </div>
-          <span class="d-lg-none"><hr></hr></span>
+          <span className="d-lg-none"><hr></hr></span>
         </div>
         <div className="col-md-5 offset-md-1">
           <div>
@@ -77,22 +75,20 @@ const TabEditForm = (props) => {
           </div>
           <div className="course-detail-fields">
             <div>
-              <Form>
-                <FormGroup>
-                  <Label for="required">Upon the successful completion of this course students will be able to:</Label>
-                  <Input
-                    type="textarea"
-                    name="courseObj"
-                    id="courseObj"
-                    value={
-                      typeof values.objectives === 'object' ? values.objectives.map((objective, index) => 
-                        (index + 1) + ".\t" + objective + "."
-                      ).join('\n') : values.objectives
-                    }
-                    rows='15'
-                  />
-                </FormGroup>
-              </Form>
+              <FormGroup>
+                <Label for="required">Upon the successful completion of this course students will be able to:</Label>
+                <Input
+                  type="textarea"
+                  name="courseObj"
+                  id="courseObj"
+                  value={
+                    typeof values.objectives === 'object' ? values.objectives.map((objective, index) => 
+                      (index + 1) + ".\t" + objective + "."
+                    ).join('\n') : values.objectives
+                  }
+                  rows='15'
+                />
+              </FormGroup>
             </div>
           </div>
         </div>
@@ -101,7 +97,7 @@ const TabEditForm = (props) => {
         <button className="btn btn-primary m-1 w-25">Save</button>
         <button className="btn btn-danger m-1 w-25">Delete</button>
       </div>
-    </form>
+    </Form>
   );
 };
 
