@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { Form, FormGroup, Label, Input } from "reactstrap";
 import Select from 'react-select';
 // import { Field } from 'formik';
 
@@ -220,19 +220,6 @@ const TabEditForm = props => {
               </FormGroup>
               <FormGroup>
                 <Label for="references">Course Other References</Label>
-                {/* {
-                  typeof values.refs === 'object' && values.refs.map((ref, index) => 
-                    <div className='mb-2 d-flex' key={index}>
-                      <div className='flex-grow-1 mr-2'>
-                        <Select 
-                          value={{label: ref, value: ref}}
-                          options={values.refs.map(ref => { return { label: ref, value: ref } })}
-                        />
-                      </div>
-                      <Button color='danger'>X</Button>
-                    </div>
-                  )
-                } */}
                 <Select 
                   id="courseRefs"
                   name="refs" 
@@ -249,7 +236,6 @@ const TabEditForm = props => {
                     onListChange(action.name, options)
                   }}
                 />
-                <Button className='mt-2 float-right' color='success'>Add New Reference</Button>
               </FormGroup>
             </div>
           </div>
