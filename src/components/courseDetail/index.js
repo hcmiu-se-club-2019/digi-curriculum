@@ -52,7 +52,7 @@ export default class CourseDetail extends Component {
   componentDidMount() {
     const { courseId } = this.props.match.params;
     this.fetchCourse(courseId); // Axios later
-    this.setState({ activeTab: '1', mode: true, availableCourses: courseList.map(course => course.name) }) // For testing
+    this.setState({ activeTab: '3', mode: true, availableCourses: courseList.map(course => course.name) }) // For testing
   }
 
   fetchCourse(courseId) {
@@ -138,7 +138,11 @@ export default class CourseDetail extends Component {
             onCheckboxChange={this.onCheckboxChangeHandler}
             onListChange={(name, options) => this.onListChangeHandler(name, options)}
           />}
-          {activeTab === "2" && <CourseDescriptionTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
+          {activeTab === "2" && <CourseDescriptionTab 
+            initialValues={course} 
+            mode={mode} 
+            onTextChange={this.onTextChangeHandler}
+          />}
           {activeTab === "3" && <CourseOutcomeTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
           {activeTab === "4" && <CourseImplementationTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}
           {activeTab === "5" && <CourseAssessmentTab initialValues={course} mode={mode} onTextChange={this.onTextChangeHandler}/>}

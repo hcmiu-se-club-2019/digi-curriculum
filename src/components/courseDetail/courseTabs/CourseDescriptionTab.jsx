@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, FormGroup, Label, Input } from "reactstrap";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 // import { Field } from 'formik';
 
 // import FormModal from '../../common/FormModal'
@@ -47,7 +47,7 @@ const TabDisplayForm = props => {
 }
 
 const TabEditForm = (props) => {
-  const { values } = props;
+  const { values, onTextChange } = props;
   return (
     <Form onSubmit={function () {}} className="course-general-form">
       <div className="row mt-2">
@@ -60,10 +60,11 @@ const TabEditForm = (props) => {
               {/* <Label for="required">Course Prerequisties</Label> */}
               <Input
                 type="textarea"
-                name="courseDesc"
+                name="description"
                 id="courseDesc"
                 value={typeof values.description === 'object' ? values.description.join('\n+\t') : values.description}
                 rows='16'
+                onChange={onTextChange}
               />
             </FormGroup>
           </div>
@@ -77,7 +78,21 @@ const TabEditForm = (props) => {
             <div>
               <FormGroup>
                 <Label for="required">Upon the successful completion of this course students will be able to:</Label>
-                <Input
+                {
+                  typeof values.objectives === 'object' && values.objectives.map((objective, index) =>
+                    <div key={index} className="d-flex mb-2">
+                      <Input 
+                        type="text"
+                        name="objectives"
+                        id="courseObj"
+                        value={objective}
+                      />
+                      <Button className="ml-2" color="danger">X</Button>
+                    </div>
+                  )
+                }
+                <Button className="float-right" color="success">+ Add New Objective</Button>
+                {/* <Input
                   type="textarea"
                   name="courseObj"
                   id="courseObj"
@@ -87,7 +102,7 @@ const TabEditForm = (props) => {
                     ).join('\n') : values.objectives
                   }
                   rows='15'
-                />
+                /> */}
               </FormGroup>
             </div>
           </div>
@@ -108,7 +123,7 @@ export default class CourseDescriptionTab extends Component {
   // }
 
   render() {
-    const { initialValues, mode } = this.props;
+    const { initialValues, mode, onTextChange } = this.props;
     return (
       <section className="content pb-5">
         <div className="edit-client-detail-form-container container-fluid bg-white">
@@ -116,7 +131,7 @@ export default class CourseDescriptionTab extends Component {
                 initialValues={initialValues}
                 component={<Form {...this.props} />}
             /> */}
-          {mode ? <TabEditForm values={initialValues}/> : <TabDisplayForm values={initialValues}/>}
+          {mode ? <TabEditForm values={initialValues} onTextChange={onTextChange}/> : <TabDisplayForm values={initialValues}/>}
         </div>
       </section>
     );
