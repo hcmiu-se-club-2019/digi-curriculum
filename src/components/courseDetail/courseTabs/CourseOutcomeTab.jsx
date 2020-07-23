@@ -101,40 +101,13 @@ const TabEditForm = props => {
                 </Fragment>
               )
             }
-            <Button className='float-right mb-2' color='primary'>Add New Type of Outcome</Button>
-
-            <Table bordered>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Course Learning Outcomes</th>
-                  <th>Program Learning Outcomes</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  typeof values.outcomes === 'object' && values.outcomes.map((outcome, index) => 
-                    <Fragment key={index}>
-                      <tr>
-                        <th rowSpan={outcome.outs.length}>{outcome.name}</th>
-                        <td>{outcome.outs[0].courseOut}</td>
-                        <td>{outcome.outs[0].programOut}</td>
-                      </tr>
-                      {
-                        typeof outcome.outs === 'object' && outcome.outs.slice(1, outcome.outs.length).map((out, index) => 
-                          <tr key={index}>
-                            <td>{out.courseOut}</td>
-                            <td>{out.programOut}</td>
-                          </tr>
-                        )
-                      }
-                    </Fragment>
-                  )
-                }
-              </tbody>
-            </Table>
           </div>
         </div>
+      </div>
+      <div className="mt-3 d-flex justify-content-center">
+        <Button className="m-1 w-25" color='success'>Add New Type of Outcome</Button>
+        <Button className="m-1 w-25" color='primary'>Save</Button>
+        <Button className="m-1 w-25" color='danger'>Delete</Button>
       </div>
     </Form>
   )

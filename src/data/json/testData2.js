@@ -267,6 +267,118 @@ const state = {
           },
           { week: 15, topics: [ 'Final exam' ] }
         ]
+      },
+      assessment: {
+        grading: [
+          {
+            task: 'Midterm exam',
+            value: 30
+          },
+          {
+            task: 'Final exam',
+            value: 40
+          },
+          {
+            task: 'In-class activities',
+            value: 10
+          },
+          {
+            task: 'Project assignment',
+            value: 20
+          }
+        ],
+        plan: [
+          {
+            criteria: 'Use UML to describe system artefacts',
+            weight: 14,
+            tasks: [
+              {
+                task: 'Midterm exam',
+                domain: [1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]
+              },
+              {
+                task: 'Quiz',
+                domain: [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+              },
+              {
+                task: 'Lab assignment',
+                domain: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              }
+            ]
+          },
+          {
+            criteria: 'Know how to get requirements from customers',
+            weight: 14,
+            tasks: [
+              {
+                task: 'Midterm exam',
+                domain: [1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]
+              },
+              {
+                task: 'Quiz',
+                domain: [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+              },
+              {
+                task: 'Lab assignment',
+                domain: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              }
+            ]
+          },
+          {
+            criteria: 'Identify client needs based on a written or verbal specification',
+            weight: 24,
+            tasks: [
+              {
+                task: 'Midterm exam',
+                domain: [1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]
+              },
+              {
+                task: 'Quiz',
+                domain: [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+              },
+              {
+                task: 'Lab assignment',
+                domain: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              }
+            ]
+          },
+          {
+            criteria: 'Know how analyze and design a system with object-oriented concepts and design patterns',
+            weight: 24,
+            tasks: [
+              {
+                task: 'Midterm exam',
+                domain: [1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]
+              },
+              {
+                task: 'Quiz',
+                domain: [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+              },
+              {
+                task: 'Lab assignment',
+                domain: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              }
+            ]
+          },
+          {
+            criteria: 'Learn how to write a technical report and work in a team',
+            weight: 24,
+            tasks: [
+              {
+                task: 'Midterm exam',
+                domain: [1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]
+              },
+              {
+                task: 'Quiz',
+                domain: [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+              },
+              {
+                task: 'Lab assignment',
+                domain: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              }
+            ]
+          }
+        ]
       }
     },
     {

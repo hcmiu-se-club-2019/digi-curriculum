@@ -52,7 +52,7 @@ export default class CourseDetail extends Component {
   componentDidMount() {
     const { courseId } = this.props.match.params;
     this.fetchCourse(courseId); // Axios later
-    this.setState({ activeTab: '3', mode: true, availableCourses: courseList.map(course => course.name) }) // For testing
+    this.setState({ activeTab: '5', mode: true, availableCourses: courseList.map(course => course.name) }) // For testing
   }
 
   fetchCourse(courseId) {
@@ -113,7 +113,7 @@ export default class CourseDetail extends Component {
                       <NavLink
                         id={tab.id}
                         className={classNames({ active: activeTab === tab.id })}
-                        disabled={tab.id === "6" || tab.id === "5"}
+                        disabled={tab.id === "6"}
                         onClick={() => {
                           this.setState({
                             activeTab: tab.id,

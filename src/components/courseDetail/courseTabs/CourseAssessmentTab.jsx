@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from 'prop-types';
 import { Table } from "reactstrap";
 // import { Field } from 'formik';
@@ -7,7 +7,7 @@ import { Table } from "reactstrap";
 // import Input from '../../common/FormModal/Input'
 
 const TabDisplayForm = (props) => {
-  // const { values } = props;
+  const { assessment } = props.values;
   return (
     <div className="row mt-2">
       <div className="col-sm-12">
@@ -19,7 +19,8 @@ const TabDisplayForm = (props) => {
             <caption>
               <strong>Note: MCQ:</strong> Multiple choice questions ;
               <strong> WQ:</strong> Writing questions ; 
-              <strong> P:</strong> Presentation
+              <strong> P:</strong> Presentation.
+              <strong>Total: 100%</strong>
             </caption>
             <thead>
               <tr>
@@ -37,14 +38,65 @@ const TabDisplayForm = (props) => {
               </tr>
               <tr>
                 {[1, 2, 3, 4].map( index =>
-                  <>
+                  <Fragment key={index}>
                     <th>MCQ</th>
                     <th>WQ</th>
                     <th>P</th>
-                  </>
+                  </Fragment>
                 )}
               </tr>
             </thead>
+            <tbody>
+              {
+                typeof assessment.plan === 'object' && assessment.plan.map((p, index) => 
+                  <Fragment key={index}>
+                    <tr>
+                      <td rowSpan={p.tasks.length}>{index + 1}</td>
+                      <td rowSpan={p.tasks.length}>{p.criteria}</td>
+                      <td>{p.tasks[0].task}</td>
+                      {typeof p.tasks[0].domain === 'object' && p.tasks[0].domain.map(d => 
+                        <td>{d === 1 ? 'X' : null}</td>  
+                      )}
+                      <td rowSpan={p.tasks.length}>{p.weight}</td>
+                    </tr>  
+                    {
+                      typeof p.tasks === 'object' && p.tasks.slice(1, p.tasks.length).map((task, index) => 
+                        <tr key={index}>
+                          <td>{task.task}</td>
+                          {typeof task.domain === 'object' && task.domain.map(d => 
+                            <td>{d === 1 ? 'X' : null}</td>  
+                          )}
+                        </tr>
+                      )
+                    }
+                  </Fragment>
+                )
+              }
+            </tbody>
+          </Table>
+        </div>
+        <div>
+          <h5>GRADING PLAN</h5>
+        </div>
+        <div className="course-detail-fields col-5 align-self-center">
+          <Table bordered>
+            {/* <caption>Grading</caption> */}
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Weight (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                typeof assessment.grading === 'object' && assessment.grading.map((grade, index) => 
+                  <tr key={index}>
+                    <td>{grade.task}</td>
+                    <td>{grade.value}</td>
+                  </tr>
+                )
+              }
+            </tbody>
           </Table>
         </div>
       </div>
