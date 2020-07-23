@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Table, Form } from "reactstrap";
+import { Table, Form, FormGroup, Label, Input, Button, InputGroup } from "reactstrap";
 
 // import { Field } from 'formik';
 
@@ -103,10 +103,78 @@ const TabDisplayForm = (props) => {
 };
 
 const TabEditForm = props => {
-  const { values } = props
+  const { implementation } = props.values
   return (
     <Form>
-      {values.name}
+      <div className="row mt-2">
+        <div className="col-md-12">
+          <div>
+            <h5>COURSE IMPLEMENTATION</h5>
+          </div>
+          <div className="course-detail-fields">
+            <h6>Time Implementation</h6>
+            {
+              typeof implementation.times === 'object' && implementation.times.map((time, index) => 
+                <Fragment key={index}>
+                  <InputGroup className='mb-2'>
+                    <Label for='type'>Time Type</Label>
+                    <Input
+                      className='ml-2'
+                      name='type'
+                      type='text'
+                      value={time.type}
+                    />
+                    <Label className='ml-2' for='weekNum'>Number of Weeks</Label>
+                    <Input
+                      className='ml-2'
+                      name='weekNum'
+                      type='number'
+                      value={time.weekNum}
+                    />
+                    <Label className='ml-2' for='periodsPerWeek'>Number of Periods per Week</Label>
+                    <Input
+                      className='ml-2'
+                      name='periodsPerWeek'
+                      type='number'
+                      value={time.periodsPerWeek}
+                    />
+                  </InputGroup>
+                </Fragment>
+              )
+            }
+          </div>
+          <div className="course-detail-fields">
+            <h6>Activities Implementation</h6>
+            {
+              typeof implementation.activities === 'object' && implementation.activities.map((activity, index) => 
+                <div className='row-12' key={index}>
+                  <InputGroup className='col-lg-12 mb-2'>
+                    <Label className='ml-2' for='type'>Activity Type</Label>
+                    <Input
+                      className='ml-2'
+                      name='type'
+                      type='text'
+                      value={activity.type}
+                    />
+                    <Label className='ml-2' for='forms'>Forms</Label>
+                    <Input
+                      className='ml-2'
+                      name='forms'
+                      type='text'
+                      value={activity.forms}
+                    />
+                  </InputGroup>
+                </div>
+              )
+            }
+          </div>
+        </div>
+      </div>
+      <div className="mt-3 d-flex justify-content-center">
+        <Button className="m-1 w-25" color='success'>Add New Type of Outcome</Button>
+        <Button className="m-1 w-25" color='primary'>Save</Button>
+        <Button className="m-1 w-25" color='danger'>Delete</Button>
+      </div>
     </Form>
   )
 }

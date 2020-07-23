@@ -329,7 +329,7 @@ const state = {
             weight: 24,
             tasks: [
               {
-                task: 'Midterm exam',
+                task: 'Final exam',
                 domain: [1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]
               },
               {
@@ -347,7 +347,7 @@ const state = {
             weight: 24,
             tasks: [
               {
-                task: 'Midterm exam',
+                task: 'Final exam',
                 domain: [1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]
               },
               {
@@ -365,7 +365,7 @@ const state = {
             weight: 24,
             tasks: [
               {
-                task: 'Midterm exam',
+                task: 'Final exam',
                 domain: [1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]
               },
               {

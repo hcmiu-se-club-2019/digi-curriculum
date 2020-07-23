@@ -52,7 +52,7 @@ export default class CourseDetail extends Component {
   componentDidMount() {
     const { courseId } = this.props.match.params;
     this.fetchCourse(courseId); // Axios later
-    this.setState({ activeTab: '5', mode: true, availableCourses: courseList.map(course => course.name) }) // For testing
+    this.setState({ activeTab: '4', mode: true, availableCourses: courseList.map(course => course.name) }) // For testing
   }
 
   fetchCourse(courseId) {

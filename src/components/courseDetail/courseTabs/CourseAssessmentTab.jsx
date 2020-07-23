@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from 'prop-types';
-import { Table } from "reactstrap";
+import { Table, Form, FormGroup, Label, Input, Button } from "reactstrap";
 // import { Field } from 'formik';
 
 // import FormModal from '../../common/FormModal'
@@ -15,7 +15,7 @@ const TabDisplayForm = (props) => {
           <h5>ASSESSMENT PLAN</h5>
         </div>
         <div className="course-detail-fields">
-          <Table bordered>
+          <Table>
             <caption>
               <strong>Note: MCQ:</strong> Multiple choice questions ;
               <strong> WQ:</strong> Writing questions ; 
@@ -101,9 +101,72 @@ const TabDisplayForm = (props) => {
         </div>
       </div>
     </div>
-      
-  );
-};
+  )
+}
+
+const TabEditForm = props => {
+  const { values } = props
+  return (
+    <Form>
+      <div className="row mt-2">
+        <div className="col-md-12">
+          <div>
+            <h5>COURSE LEARNING OUTCOMES</h5>
+          </div>
+          <div className="course-detail-fields">
+            {
+              typeof values.outcomes === 'object' && values.outcomes.map((outcome, index) => 
+                <Fragment key={index}>
+                  <FormGroup>
+                    <Label for='name'>Outcome Type</Label>
+                    <Input
+                      className='mb-2'
+                      name='name'
+                      type='text'
+                      value={outcome.name}
+                    />
+                    {
+                      typeof outcome.outs === 'object' && outcome.outs.map((out, index) => 
+                        <Fragment key={index}>
+                          <FormGroup className='row'>
+                            <FormGroup className='col-5'>
+                              <Label for='courseOut'>Course Outcome</Label>
+                              <Input
+                                name='courseOut'
+                                type='text'
+                                value={out.courseOut}
+                              />
+                            </FormGroup>
+                            <FormGroup className='col-5'>
+                              <Label for='programOut'>Program Outcome</Label>
+                              <Input
+                                name='programOut'
+                                type='text'
+                                value={out.programOut}
+                              />
+                            </FormGroup>
+                            <Button className='' style={{width:'40px', height:'40px', marginLeft:'5px', borderRadius:'40%'}} color='danger'>X</Button>
+                          </FormGroup>
+                        </Fragment>
+                      )
+                    }
+                    <Button className='mb-2' color='success'>Add New Outcome</Button>
+                  </FormGroup>
+                </Fragment>
+              )
+            }
+          </div>
+        </div>
+      </div>
+      <div className="mt-3 d-flex justify-content-center">
+        <Button className="m-1 w-25" color='success'>Add New Type of Outcome</Button>
+        <Button className="m-1 w-25" color='primary'>Save</Button>
+        <Button className="m-1 w-25" color='danger'>Delete</Button>
+      </div>
+    </Form>
+  )
+}
+
 
 class CourseAssessmentTab extends Component {
   // constructor(props) {
@@ -112,7 +175,7 @@ class CourseAssessmentTab extends Component {
   // }
 
   render() {
-    const { initialValues } = this.props;
+    const { initialValues, mode } = this.props;
     return (
       <section className="content pb-5">
         <div className="edit-client-detail-form-container container-fluid bg-white">
@@ -120,7 +183,12 @@ class CourseAssessmentTab extends Component {
                 initialValues={initialValues}
                 component={<Form {...this.props} />}
             /> */}
-          <TabDisplayForm values={initialValues} />
+          {
+            mode ?
+            <TabDisplayForm values={initialValues} /> :
+            <h1>Under Construction...</h1>
+            // <TabEditForm values={initialValues}/>
+          }
         </div>
       </section>
     );
