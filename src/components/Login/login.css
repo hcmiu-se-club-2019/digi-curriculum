@@ -1,0 +1,54 @@
+  
+  .reg-form {
+    padding: 80px 40px;
+    position: absolute;
+    background-color: white;
+    width: 360px;
+    height: 580px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+  }
+  
+  .reg-form h1 {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+ .google-btn {
+
+  position: relative;
+  left: 35%;
+
+  width: 80px;
+
+  color: white;
+  font-family: 'Lucida Grande', 'Helvetica Neue', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0 15px 15px 0;
+  display: inline-block;
+	background-color: #4D90FE;
+	background-image: -webkit-linear-gradient(right,#4d90fe,#4787ed);
+	background-image: -moz-linear-gradient(right,#4d90fe,#4787ed);
+	background-image: -ms-linear-gradient(right,#4d90fe,#4787ed);
+	background-image: -o-linear-gradient(right,#4d90fe,#4787ed);
+	background-image: linear-gradient(to left,#4d90fe,#4787ed);
+
+	border: 1px solid #3079ED;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+  
+	cursor: default;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	height: 27px;
+	line-height: 27px;
+	min-width: 54px;
+	padding: 0 8px;
+	text-decoration: none;
+}
