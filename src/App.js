@@ -4,8 +4,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./components/Home";
-import Header from "./components/Layout/Header";
-import Footer from "./components/Footer";
+//import Header from "./components/Layout/Header";
+//import Footer from "./components/Footer";
 import EditCurriculum from "./components/editCurriculum/index";
 import ProgramDisplay from "./components/programDisplay/index";
 import CourseDetail from "./components/courseDetail";
@@ -15,7 +15,6 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Header />
           {/* <div className="text-left">
             <p>Example Links</p>
             <ul>
@@ -43,7 +42,6 @@ class App extends Component {
               component={EditCurriculum}
             />
           </Switch>
-          <Footer />
         </div>
       </Router>
     );
