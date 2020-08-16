@@ -1,1 +1,1 @@
-# Digit Curriculum
+# Digi Curriculum
