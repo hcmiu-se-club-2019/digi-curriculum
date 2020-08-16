@@ -5,6 +5,7 @@ import {
   Route,
   Switch,
   withRouter,
+  Redirect,
 } from "react-router-dom";
 
 import Header from "./Layout/Header";
@@ -16,11 +17,14 @@ import Home from "./Home";
 import Curriculum from "./Curriculum";
 // import CurriculumEdit from "./CurriculumEdit/index";
 import CurriculumEdit from "./CurriculumEdit/_index";
+import UserProvider from "./contexts/userProvider"
 
-const Main = withRouter(({ location }) => (
+const Main = withRouter(({ location, props }) => (
+  
   <>
-    <Header />
     <Switch>
+      <UserProvider>
+      <Header />
       <Route exact path="/" component={Home} />
       <Route exact path="/curriculum" component={Curriculum} />
       <Route exact path="/curriculum/edit" component={CurriculumEdit} />
@@ -30,9 +34,10 @@ const Main = withRouter(({ location }) => (
         exact
         path="/curriculum/:curriId/edit"
         component={EditCurriculum}
-      />
+      /> 
+      </UserProvider>
     </Switch>
-    {location.pathname !== "/curriculum/edit" ? <Footer /> : ""}
+    {(location.pathname !== "/curriculum/edit")? <Footer /> : ""}
   </>
 ));
 
