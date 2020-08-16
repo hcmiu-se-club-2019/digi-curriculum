@@ -7,13 +7,12 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 
 const TabForm = (props) => {
   const { values } = props;
-
   return (
     <form onSubmit={function () {}} className="course-general-form border">
-      <div className="d-flex">
+      <div className="d-flex justify-content-center">
         <div className="col-sm-5 border mt-2 ml-3">
           <div>
-            <p>GENERAL INFORMATION</p>
+            <h5>GENERAL INFORMATION</h5>
           </div>
           <div className="course-detail-fields">
             <Form>
@@ -36,27 +35,35 @@ const TabForm = (props) => {
                 />
               </FormGroup>
               <FormGroup tag="fieldset">
-                <legend>Course Type</legend>
-                <FormGroup check>
-                  <Label check>
-                    <Input type="checkbox" name="cb1" /> Specialization
-                  </Label>
-                </FormGroup>
-                <FormGroup check>
-                  <Label check>
-                    <Input type="checkbox" name="cb2" /> Core
-                  </Label>
-                </FormGroup>
-                <FormGroup check>
-                  <Label check>
-                    <Input type="checkbox" name="cb3" /> Requirement
-                  </Label>
-                </FormGroup>
-                <FormGroup check>
-                  <Label check>
-                    <Input type="checkbox" name="cb4" /> Elective
-                  </Label>
-                </FormGroup>
+                <Label for="type">Course Type</Label>
+                <div className='d-flex ml-1'>
+                  <FormGroup check style={{width:'100px'}}>
+                    <Label check>
+                      <Input type="checkbox" name="cb1" checked={values.specialization} /> 
+                      Specialization
+                    </Label>
+                  </FormGroup>
+                  <FormGroup check style={{width:'100px'}} className='mx-auto'>
+                    <Label check>
+                      <Input type="checkbox" name="cb2" checked={values.core} /> 
+                      Core
+                    </Label>
+                  </FormGroup>
+                </div>
+                <div className='d-flex ml-1'>
+                  <FormGroup check style={{width:'100px'}}>
+                    <Label check>
+                      <Input type="checkbox" name="cb3" checked={values.requirement} /> 
+                      Requirement
+                    </Label>
+                  </FormGroup>
+                  <FormGroup check style={{width:'100px'}} className='mx-auto'>
+                    <Label check>
+                      <Input type="checkbox" name="cb4" checked={values.elective} /> 
+                      Elective
+                    </Label>
+                  </FormGroup>
+                </div>
               </FormGroup>
               <FormGroup>
                 <Label for="credit">Course Credits</Label>
@@ -70,10 +77,10 @@ const TabForm = (props) => {
               <FormGroup>
                 <Label for="required">Course Prerequisties</Label>
                 <Input
-                  type="text"
+                  type="textarea"
                   name="courseRequired"
                   id="courseRequired"
-                  value={values.prerequisties}
+                  value={typeof values.prerequisties === 'object' ? values.prerequisties.join('\n') : values.prerequisties}
                 />
               </FormGroup>
             </Form>
@@ -81,57 +88,58 @@ const TabForm = (props) => {
         </div>
         <div className="col-sm-5 offset-sm-1 border mt-2">
           <div>
-            <p>TEXTBOOK REFERENCES</p>
+            <h5>TEXTBOOK REFERENCES</h5>
           </div>
           <div className="course-detail-fields">
             <div>
               {/* <Field
-                                id='courseTextbook'
-                                name='courseTextbook'
-                                label='Main Textbook'
-                                component={Input}
-                            />
-                            <Field
-                                id='courseReference'
-                                name='courseReference'
-                                label='Other References'
-                                component={Input}
-                            /> */}
+                      id='courseTextbook'
+                      name='courseTextbook'
+                      label='Main Textbook'
+                      component={Input}
+                  />
+                  <Field
+                      id='courseReference'
+                      name='courseReference'
+                      label='Other References'
+                      component={Input}
+                  /> */}
               <FormGroup>
                 <Label for="textbook">Course Main Textbook</Label>
                 <Input
-                  type="text"
+                  type="textarea"
                   name="courseTextbook"
                   id="courseTextbook"
-                  value={values.prerequisties}
+                  value={values.textbook}
                 />
               </FormGroup>
               <FormGroup>
                 <Label for="references">Course Other References</Label>
                 <Input
-                  type="text"
+                  type="textarea"
                   name="courseReferences"
                   id="courseReferences"
-                  value={values.prerequisties}
+                  value={typeof values.refs === 'object' ? values.refs.join('\n') : values.refs}
+                  rows='10'
                 />
               </FormGroup>
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-3">
-        <button className="btn btn-primary m-1">Save</button>
-        <button className="btn btn-danger m-1">Delete</button>
+      <div className="mt-3 d-flex justify-content-center">
+        <button className="btn btn-primary m-1 w-25">Save</button>
+        <button className="btn btn-danger m-1 w-25">Delete</button>
       </div>
     </form>
   );
 };
 
 export default class CourseGeneralTab extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  // constructor(props) {
+  //   super(props);
+  //   // this.state = { initialValues: {} };
+  // }
 
   render() {
     const { initialValues } = this.props;
@@ -141,9 +149,9 @@ export default class CourseGeneralTab extends Component {
           <div className="row">
             <div className="col-sm-12">
               {/* <FormModal
-                                initialValues={initialValues}
-                                component={<Form {...this.props} />}
-                            /> */}
+                    initialValues={initialValues}
+                    component={<Form {...this.props} />}
+                /> */}
               <TabForm values={initialValues} />
             </div>
           </div>
