@@ -1,0 +1,303 @@
+[
+	{
+		"year" : 1,
+		"course_code" : "CH011IU",
+		"Course Name" : "Chemistry for Engineer",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 1,
+		"course_code" : "CH012IU",
+		"Course Name" : "Chemistry Laboratory",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 1,
+		"course_code" : "EN007IU",
+		"Course Name" : "Writing AE1",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 1,
+		"course_code" : "EN008IU",
+		"Course Name" : "Listening AE1",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 1,
+		"course_code" : "IT135IU",
+		"Course Name" : "Introduction to Data Science",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 1,
+		"course_code" : "MA001IU",
+		"Course Name" : "Calculus 1",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 1,
+		"course_code" : "PE015IU",
+		"Course Name" : " Philosophy Marx - Lenin",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 1,
+		"course_code" : "PH013IU",
+		"Course Name" : "Physics 1 (general mechanics",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 1,
+		"course_code" : "PT001IU",
+		"Course Name" : "Physical Training 1",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 1,
+		"course_code" : "EN011IU",
+		"Course Name" : "Writing AE2",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 1,
+		"course_code" : "EN012IU",
+		"Course Name" : "Speaking AE2",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 1,
+		"course_code" : "IT136IU",
+		"Course Name" : "Regression Analysis",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 1,
+		"course_code" : "IT149IU",
+		"Course Name" : "Fundamentals of Programming",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 1,
+		"course_code" : "IT151IU",
+		"Course Name" : "Statistical Method",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 1,
+		"course_code" : "MA003IU",
+		"Course Name" : "Calculus 2",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 1,
+		"course_code" : "PH014IU",
+		"Course Name" : "Physics 2 (Fluid Mechanics and Thermal Physics)",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 1,
+		"course_code" : "PT002IU",
+		"Course Name" : "Physical Training 2",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 2,
+		"course_code" : "IT069IU",
+		"Course Name" : "Object-Oriented Programming",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 2,
+		"course_code" : "IT137IU",
+		"Course Name" : "Data Analysis",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 2,
+		"course_code" : "IT155IU",
+		"Course Name" : "Linear Algebra for Data Science",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 2,
+		"course_code" : "PE014IU",
+		"Course Name" : "Environmental Science",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 2,
+		"course_code" : "PE016IU",
+		"Course Name" : "Marxist – Leninist Political Economy",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 2,
+		"course_code" : "IT013IU",
+		"Course Name" : "Algorithms and Data Structure",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 2,
+		"course_code" : "IT079IU",
+		"Course Name" : "Principles of Database Management",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 2,
+		"course_code" : "IT090IU",
+		"Course Name" : "Object-oriented analysis and design",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 2,
+		"course_code" : "IT138IU",
+		"Course Name" : "Data Science and Visualization",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 2,
+		"course_code" : "PE017IU",
+		"Course Name" : "Scientific Socialism",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 3,
+		"course_code" : "IT139IU",
+		"Course Name" : "Scalable and Distributed Computing",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 3,
+		"course_code" : "IT140IU",
+		"Course Name" : "Fundamental Concepts of Data Security",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 3,
+		"course_code" : "MA026IU",
+		"Course Name" : "Probability, Statistic & Random Process",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 3,
+		"course_code" : "PE008IU",
+		"Course Name" : "Critical Thinking",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 3,
+		"course_code" : "PE018IU",
+		"Course Name" : "History of Vietnamese Communist Party",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 3,
+		"course_code" : "IT097IU",
+		"Course Name" : "Introduction to Artificial Intelligence",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 3,
+		"course_code" : "IT132IU",
+		"Course Name" : "Introduction to data mining",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 3,
+		"course_code" : "IT142IU",
+		"Course Name" : "Analytics for Observational Data",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 3,
+		"course_code" : "ITDS1",
+		"Course Name" : "Elective DS1",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 3,
+		"course_code" : "PE019IU",
+		"Course Name" : "Ho Chi Minh's Thoughts",
+		"Program" : "DS2020",
+		"semester" : 2
+	},
+	{
+		"year" : 3,
+		"course_code" : "IT082IU",
+		"Course Name" : "Internship",
+		"Program" : "DS2020",
+		"semester" : 3
+	},
+	{
+		"year" : 4,
+		"course_code" : "IT083IU",
+		"Course Name" : "Special Study of the Field",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 4,
+		"course_code" : "IT143IU",
+		"Course Name" : "Fundamentals of Big Data Technology",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 4,
+		"course_code" : "ITDS2",
+		"Course Name" : "Elective DS2",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 4,
+		"course_code" : "ITDS3",
+		"Course Name" : "Elective DS3",
+		"Program" : "DS2020",
+		"semester" : 1
+	},
+	{
+		"year" : 4,
+		"course_code" : "IT058IU",
+		"Course Name" : "Thesis",
+		"Program" : "DS2020",
+		"semester" : 2
+	}
+]
