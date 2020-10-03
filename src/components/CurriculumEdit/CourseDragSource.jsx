@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Row, Col, Container } from "react-bootstrap";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Row, Col, Container } from 'react-bootstrap';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-import CourseTile from "./CourseTile";
-import SearchForm from "./SearchForm";
-import data_majors from "./data-majors";
-import data_courses from "./data-courses";
+import CourseTile from './CourseTile';
+import SearchForm from './SearchForm';
+import data_majors from './data-majors';
+import data_courses from './data-courses';
 
 const Toolbar = styled(Container).attrs({ fluid: true })`
   background-color: gainsboro;
@@ -25,16 +25,16 @@ function MajorTitle(props) {
   return (
     <Row as={MajorLabel}>
       <Col
-        xl={"auto"}
+        xl={'auto'}
         style={{
-          fontSize: "21px",
-          fontWeight: "bold",
+          fontSize: '21px',
+          fontWeight: 'bold',
         }}
       >
-        {props.name ?? "(No name)"}
+        {props.name ?? '(No name)'}
       </Col>
-      {props.count ? <Col xl={"auto"}>{props.count} course(s)</Col> : ""}
-      {props.note ? <Col xl={"auto"}>{props.note}</Col> : ""}
+      {props.count ? <Col xl={'auto'}>{props.count} course(s)</Col> : ''}
+      {props.note ? <Col xl={'auto'}>{props.note}</Col> : ''}
     </Row>
   );
 }
@@ -80,29 +80,17 @@ class CourseDragSource extends Component {
           <Row as={Content}>
             <Container fluid>
               {data_majors.allIds.map((majorId) => (
-                <Droppable
-                  droppableId={majorId}
-                  key={majorId}
-                  isDropDisabled={true}
-                >
+                <Droppable droppableId={majorId} key={majorId} isDropDisabled={true}>
                   {(dropProvided, dropSnapshot) => (
                     <MajorGroup ref={dropProvided.innerRef}>
                       <Row>
                         <Container fluid>
-                          <MajorTitle
-                            name={data_majors[majorId].name}
-                            count={99}
-                          />
+                          <MajorTitle name={data_majors[majorId].name} count={99} />
                           <Row>
                             <Col as={CourseList}>
                               {data_courses.allIds.map((courseId, index) =>
                                 data_courses[courseId].majorId === majorId ? (
-                                  <Draggable
-                                    draggableId={courseId}
-                                    index={index}
-                                    key={courseId}
-                                    isDragDisabled
-                                  >
+                                  <Draggable draggableId={courseId} index={index} key={courseId} isDragDisabled>
                                     {(dragProvided, dragSnapshot) => (
                                       <div
                                         ref={dragProvided.innerRef}
@@ -120,7 +108,7 @@ class CourseDragSource extends Component {
                                     )}
                                   </Draggable>
                                 ) : (
-                                  ""
+                                  ''
                                 )
                               )}
                             </Col>

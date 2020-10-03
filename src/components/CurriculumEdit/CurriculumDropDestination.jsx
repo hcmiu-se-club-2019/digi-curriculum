@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Row, Container } from "react-bootstrap";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Row, Container } from 'react-bootstrap';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import PropTypes from 'prop-types';
 
-import img from "./drop-content-background.jpg";
-import Year from "./Year";
+import img from './drop-content-background.jpg';
+import Year from './Year';
 
 const DropContent = styled.div`
   background-color: steelblue;
@@ -21,7 +21,7 @@ const DropContent = styled.div`
 
   /* Fix overflow-x visual bug */
   ::after {
-    content: "";
+    content: '';
     padding: 10px;
   }
 `;
@@ -31,16 +31,11 @@ class CurriculumDropDestination extends Component {
     const { yearOrder, years, onDragEnd } = this.props;
     return (
       <Container fluid>
-        <Row style={{ display: "inherit" }}>
-          <DragDropContext onDragEnd={result => onDragEnd(result)}>
+        <Row style={{ display: 'inherit' }}>
+          <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
             <DropContent>
               {yearOrder.map((yearId, yearIndex) => (
-                <Year
-                  key={yearId}
-                  yearId={yearId}
-                  index={yearIndex + 1}
-                  data={years[yearId]}
-                />
+                <Year key={yearId} yearId={yearId} index={yearIndex + 1} data={years[yearId]} />
               ))}
             </DropContent>
           </DragDropContext>

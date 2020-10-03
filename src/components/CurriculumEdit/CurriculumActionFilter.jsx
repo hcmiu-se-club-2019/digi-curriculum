@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import styled from 'styled-components';
 
 const SelectGroup = styled.div`
   display: flex;
@@ -14,12 +14,12 @@ function EnglishLevelButton(props) {
   return (
     <Button
       style={{
-        width: "40px",
-        height: "40px",
-        borderRadius: "40px",
-        margin: "2px",
-        padding: "0px",
-        textAlign: "center",
+        width: '40px',
+        height: '40px',
+        borderRadius: '40px',
+        margin: '2px',
+        padding: '0px',
+        textAlign: 'center',
       }}
     >
       {props.name}
@@ -37,18 +37,9 @@ const Select = styled.div`
 function SelectItem(props) {
   return (
     <Select>
-      <Form.Control
-        as="select"
-        key={props.title}
-        custom
-        style={{ maxWidth: "200px" }}
-      >
+      <Form.Control as="select" key={props.title} custom style={{ maxWidth: '200px' }}>
         <option hidden>{props.title}</option>
-        {props.orders
-          ? props.orders.map((order) => (
-              <option key={order}>{props.options[order].name}</option>
-            ))
-          : ""}
+        {props.orders ? props.orders.map((order) => <option key={order}>{props.options[order].name}</option>) : ''}
       </Form.Control>
     </Select>
   );
@@ -56,17 +47,17 @@ function SelectItem(props) {
 
 const ActionButton = (props) => {
   return (
-    <div style={{ paddingTop: "5px", paddingBottom: "5px" }}>
+    <div style={{ paddingTop: '5px', paddingBottom: '5px' }}>
       <Button
-        variant={"outline-success"}
+        variant={'outline-success'}
         style={{
-          width: "140px",
-          height: "38px",
-          fontSize: "16px",
+          width: '140px',
+          height: '38px',
+          fontSize: '16px',
           wordWrap: true,
         }}
       >
-        {props.name ?? "Button"}
+        {props.name ?? 'Button'}
       </Button>
     </div>
   );
@@ -75,48 +66,36 @@ const ActionButton = (props) => {
 const filterData = {
   majors: {
     IT: {
-      id: "IT",
-      name: "IT - Information Technology",
+      id: 'IT',
+      name: 'IT - Information Technology',
     },
     BA: {
-      id: "BA",
-      name: "BA - Business Administration",
+      id: 'BA',
+      name: 'BA - Business Administration',
     },
     EE: {
-      id: "EE",
-      name: "EE - Electrical Engineering",
+      id: 'EE',
+      name: 'EE - Electrical Engineering',
     },
   },
-  majorOrders: ["BA", "IT", "EE"],
+  majorOrders: ['BA', 'IT', 'EE'],
 };
 
 class CurriculumActionFilter extends Component {
   render() {
     return (
-      <Row noGutters style={{ padding: "5px", backgroundColor: "white" }}>
+      <Row noGutters style={{ padding: '5px', backgroundColor: 'white' }}>
         <Col xl={5}>
           <Container fluid>
             <Row as={SelectGroup}>
-              <Col sm={"auto"} md={"auto"} lg={"auto"} xl={"auto"}>
-                <SelectItem
-                  title="Major"
-                  options={filterData.majors}
-                  orders={filterData.majorOrders}
-                />
+              <Col sm={'auto'} md={'auto'} lg={'auto'} xl={'auto'}>
+                <SelectItem title="Major" options={filterData.majors} orders={filterData.majorOrders} />
               </Col>
-              <Col sm={"auto"} md={"auto"} lg={"auto"} xl={"auto"}>
-                <SelectItem
-                  title="Specialized Major"
-                  options={filterData.majors}
-                  orders={filterData.majorOrders}
-                />
+              <Col sm={'auto'} md={'auto'} lg={'auto'} xl={'auto'}>
+                <SelectItem title="Specialized Major" options={filterData.majors} orders={filterData.majorOrders} />
               </Col>
-              <Col sm={"auto"} md={"auto"} lg={"auto"} xl={"auto"}>
-                <SelectItem
-                  title="Program Type"
-                  options={filterData.majors}
-                  orders={filterData.majorOrders}
-                />
+              <Col sm={'auto'} md={'auto'} lg={'auto'} xl={'auto'}>
+                <SelectItem title="Program Type" options={filterData.majors} orders={filterData.majorOrders} />
               </Col>
             </Row>
           </Container>
@@ -124,16 +103,16 @@ class CurriculumActionFilter extends Component {
         <Col
           xl={2}
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
-          <Row style={{ textAlign: "center" }}>
+          <Row style={{ textAlign: 'center' }}>
             <Col
               style={{
-                display: "flex",
-                justifyContent: "center",
+                display: 'flex',
+                justifyContent: 'center',
               }}
             >
               <EnglishLevelButton name="IE1" />
@@ -145,13 +124,13 @@ class CurriculumActionFilter extends Component {
         <Col xl={5}>
           <Container fluid>
             <Row as={SelectGroup}>
-              <Col sm={"auto"} md={"auto"} lg={"auto"} xl={"auto"}>
+              <Col sm={'auto'} md={'auto'} lg={'auto'} xl={'auto'}>
                 <ActionButton name="Reset" />
               </Col>
-              <Col sm={"auto"} md={"auto"} lg={"auto"} xl={"auto"}>
+              <Col sm={'auto'} md={'auto'} lg={'auto'} xl={'auto'}>
                 <ActionButton name="Discard Change" />
               </Col>
-              <Col sm={"auto"} md={"auto"} lg={"auto"} xl={"auto"}>
+              <Col sm={'auto'} md={'auto'} lg={'auto'} xl={'auto'}>
                 <ActionButton name="Save Change" />
               </Col>
             </Row>
