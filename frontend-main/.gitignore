@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# root
 # dependencies
 /node_modules
 /.pnp
@@ -22,3 +23,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 yarn.lock
+<<<<<<< HEAD:.gitignore
+=======
+package-lock.json
+>>>>>>> 1b2d21b67f777b2afe627fc67493dc840147cbbf:frontend-main/.gitignore
