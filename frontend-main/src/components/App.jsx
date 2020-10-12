@@ -15,6 +15,17 @@ import Statistics from './Statistics';
 import CurriculumEdit from './CurriculumEdit/_index';
 import UserProvider from './contexts/userProvider';
 
+const isFooterEnabled = (pathname) => {
+  switch (pathname) {
+    case '/curriculum/edit':
+    case '/statistics':
+    case '/statistics/grading':
+      return false;
+    default:
+      return true;
+  }
+};
+
 const Main = withRouter(({ location, props }) => (
   <>
     <Switch>
@@ -26,10 +37,10 @@ const Main = withRouter(({ location, props }) => (
         <Route exact path="/program" component={ProgramDisplay} />
         <Route exact path="/course/:courseId" component={CourseDetail} />
         <Route exact path="/curriculum/:curriId/edit" component={EditCurriculum} />
-        <Route exact path="/statistics" component={Statistics} />
+        <Route path="/statistics" component={Statistics} />
       </UserProvider>
     </Switch>
-    {location.pathname !== '/curriculum/edit' ? <Footer /> : ''}
+    {isFooterEnabled(location.pathname) ? <Footer /> : ''}
   </>
 ));
 
