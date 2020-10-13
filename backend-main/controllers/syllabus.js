@@ -15,6 +15,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const year1_sem2 = await Table.CourseProgramPathway.findAll({
@@ -26,6 +41,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const year1_sem3 = await Table.CourseProgramPathway.findAll({
@@ -37,6 +67,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const year2_sem1 = await Table.CourseProgramPathway.findAll({
@@ -48,6 +93,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const year2_sem2 = await Table.CourseProgramPathway.findAll({
@@ -59,6 +119,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const year2_sem3 = await Table.CourseProgramPathway.findAll({
@@ -70,6 +145,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const year3_sem1 = await Table.CourseProgramPathway.findAll({
@@ -81,6 +171,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const year3_sem2 = await Table.CourseProgramPathway.findAll({
@@ -92,6 +197,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const year3_sem3 = await Table.CourseProgramPathway.findAll({
@@ -103,6 +223,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const year4_sem1 = await Table.CourseProgramPathway.findAll({
@@ -114,6 +249,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const year4_sem2 = await Table.CourseProgramPathway.findAll({
@@ -125,6 +275,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const year4_sem3 = await Table.CourseProgramPathway.findAll({
@@ -136,6 +301,21 @@ module.exports = {
           },
           include: {
             model: Table.Course
+          },
+          attributes: {
+            include: [
+              [
+                Table.sequelize.literal(`(
+                  SELECT cp.course_code
+                  FROM course_program as cp
+                  WHERE
+                    cp.course_id = CoursePathway.course_id
+                    AND
+                    cp.program_id = ${programId}
+                )`),
+                "code"
+              ]
+            ]
           }
         })
         const syllabus = [

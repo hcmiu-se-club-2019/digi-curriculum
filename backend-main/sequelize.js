@@ -1,10 +1,10 @@
 const {Sequelize,DataTypes} = require("sequelize");
 
 // ==> Database information
-const DB_NAME = process.env.DB_NAME
-const DB_USER = process.env.DB_USER
-const DB_HOST = process.env.DB_HOST
-const DB_PASSWORD = process.env.DB_PASSWORD
+const DB_NAME = process.env.DB_NAME || "syllabus_mirror"
+const DB_USER = process.env.DB_USER || "newuser";
+const DB_HOST = process.env.DB_HOST || "localhost"
+const DB_PASSWORD = process.env.DB_PASSWORD || ""
 
 const sequelize = new Sequelize(DB_NAME,DB_USER,DB_PASSWORD,{
   host: DB_HOST,
@@ -234,5 +234,6 @@ const Table = {
   CourseProgramPathway,
   CourseProgram,
   DepartmentInstructor,
+  sequelize,
 }
 module.exports = Table
