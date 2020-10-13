@@ -234,6 +234,7 @@ const Table = {
   CourseProgramPathway,
   CourseProgram,
   DepartmentInstructor,
+
   sequelize,
 }
 module.exports = Table
