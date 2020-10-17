@@ -1,0 +1,8 @@
+sort by average score
+sort by average score + sort student by course
+
+sort by GPA (default)
+sort by GPA + sort course by student
+
+sort student by course
+sort course by student

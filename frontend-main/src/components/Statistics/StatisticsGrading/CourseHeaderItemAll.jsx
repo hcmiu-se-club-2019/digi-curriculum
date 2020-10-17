@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { Checkbox } from '@material-ui/core';
 
-class CourseHeaderItem extends Component {
+import { ReactComponent as AscendingHorizontalIcon } from '../../icons/ascending-horizontal.svg';
+import { ReactComponent as DescendingHorizontalIcon } from '../../icons/descending-horizontal.svg';
+import { ReactComponent as AscendingVerticalIcon } from '../../icons/ascending-vertical.svg';
+import { ReactComponent as DescendingVerticalIcon } from '../../icons/descending-vertical.svg';
+
+class CourseHeaderItemAll extends Component {
   render() {
     return (
       <div
@@ -10,7 +15,7 @@ class CourseHeaderItem extends Component {
           height: '170px',
           display: 'flex',
           flexDirection: 'column',
-          margin: `1px ${this.props.index % 5 === 0 ? 5 : 1}px 1px ${this.props.index % 5 === 1 ? 5 : 1}px`,
+          margin: '1px 0px 1px 5px',
           justifyContent: 'flex-end',
         }}
       >
@@ -20,14 +25,14 @@ class CourseHeaderItem extends Component {
             height: '20px',
             transform: 'rotate(-60deg) translate(42px, -69px)',
             fontSize: '10px',
-            color: this.props.isSelected ? 'black' : 'grey',
+            color: this.props.isSelected ? '#CC0000' : 'grey',
             fontWeight: this.props.isSelected ? 'bold' : 'normal',
             display: 'flex',
             alignItems: 'center',
             cursor: 'pointer',
           }}
         >
-          {this.props.name.length <= 31 ? this.props.name : `${this.props.name.substring(0, 31)}...`}
+          Course
         </div>
         <Checkbox defaultChecked={this.props.isSelected} style={{ color: '#007FFF', margin: '0px', padding: '0px' }} size="small" />
         <div
@@ -42,12 +47,16 @@ class CourseHeaderItem extends Component {
             margin: '1px 0px',
           }}
         >
-          {this.props.averageScore}
+          {/* <svg width="20px" height="20px" fill="#CCCCCC">
+            <circle r={3} cx={10} cy={10} />
+          </svg> */}
+          <DescendingHorizontalIcon />
         </div>
         <div
           style={{
             width: '20px',
             height: '20px',
+            backgroundColor: this.props.backgroundColor,
             color: this.props.color ?? 'black',
             display: 'flex',
             justifyContent: 'center',
@@ -55,13 +64,14 @@ class CourseHeaderItem extends Component {
             margin: '5px 0px -5px 0px',
           }}
         >
-          <svg width="20px" height="20px" fill="#CCCCCC">
+          <AscendingVerticalIcon />
+          {/* <svg width="20px" height="20px" fill="#CCCCCC">
             <circle r={3} cx={10} cy={10} />
-          </svg>
+          </svg> */}
         </div>
       </div>
     );
   }
 }
 
-export default CourseHeaderItem;
+export default CourseHeaderItemAll;

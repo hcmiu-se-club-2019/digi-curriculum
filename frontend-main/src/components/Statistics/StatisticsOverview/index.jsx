@@ -3,7 +3,7 @@ import Box from '@material-ui/core/Box';
 
 import { ReactComponent as RoadBlockIcon } from '../../icons/roadblock.svg';
 
-class StatisticsLearningProgress extends Component {
+class StatisticsOverview extends Component {
   render() {
     return (
       <div>
@@ -16,4 +16,4 @@ class StatisticsLearningProgress extends Component {
   }
 }
 
-export default StatisticsLearningProgress;
+export default StatisticsOverview;
