@@ -38,8 +38,8 @@ export const getGeneratedGradingData = () => {
   }
 
   const getRandomLearningProgress = () => {
-    // let learningCount = faker.random.number({ min: courseCount, max: courseCount }),
-    let learningCount = faker.random.number({ min: 0, max: courseCount }),
+    let learningCount = faker.random.number({ min: courseCount, max: courseCount }),
+    // let learningCount = faker.random.number({ min: 0, max: courseCount }),
     // let learningCount = faker.random.number({ min: 0, max: 5 }),
       learntCourses = {},
       learntCourseIds = [],

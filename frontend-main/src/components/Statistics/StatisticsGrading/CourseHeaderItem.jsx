@@ -1,11 +1,44 @@
 import React, { Component } from 'react';
 import { Checkbox } from '@material-ui/core';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import { SortOrder } from './SortOptions.enum';
 
 import { ReactComponent as AscendingVerticalIcon } from '../../icons/ascending-vertical.svg';
 import { ReactComponent as DescendingVerticalIcon } from '../../icons/descending-vertical.svg';
+
+const StyledContainer = styled.div`
+  width: 20px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  margin: 1px ${(props) => (props.index % 5 === 0 ? 5 : 1)}px 1px ${(props) => (props.index % 5 === 1 ? 5 : 1)}px;
+  justify-content: flex-end;
+`;
+
+const StyledCourseName = styled.div`
+  width: 180px;
+  height: 20px;
+  transform: rotate(-60deg) translate(42px, -69px);
+  font-size: 10px;
+  color: ${(props) => (props.isSelected ? 'black' : 'grey')};
+  font-weight: ${(props) => (props.isSelected ? 'bold' : 'normal')};
+  display: flex;
+  align-items: center;
+  cursor: ${(props) => (props.isSelected ? 'pointer' : 'auto')}; ;
+`;
+
+const StyledAverageScore = styled.div`
+  width: 20px;
+  height: 20px;
+  background-color: ${(props) => props.backgroundColor};
+  color: ${(props) => props.color};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px 0px;
+`;
 
 class CourseHeaderItem extends Component {
   changeSortMode(headerOptions, id) {
@@ -15,51 +48,17 @@ class CourseHeaderItem extends Component {
     const { id, index, name, averageScore, color, backgroundColor, isSelected, selectedSortId, sortScoreOrder } = this.props;
 
     return (
-      <div
-        style={{
-          width: '20px',
-          height: '170px',
-          display: 'flex',
-          flexDirection: 'column',
-          margin: `1px ${index % 5 === 0 ? 5 : 1}px 1px ${index % 5 === 1 ? 5 : 1}px`,
-          justifyContent: 'flex-end',
-        }}
-      >
-        <div
-          style={{
-            width: '180px',
-            height: '20px',
-            transform: 'rotate(-60deg) translate(42px, -69px)',
-            fontSize: '10px',
-            color: isSelected ? 'black' : 'grey',
-            fontWeight: isSelected ? 'bold' : 'normal',
-            display: 'flex',
-            alignItems: 'center',
-            cursor: 'pointer',
-          }}
-        >
-          {name.length <= 30 ? name : `${name.substring(0, 30)}...`}
-        </div>
+      <StyledContainer index={index}>
+        <StyledCourseName isSelected={isSelected}>{name.length <= 30 ? name : `${name.substring(0, 30)}...`}</StyledCourseName>
         <Checkbox
           disabled={!averageScore}
           defaultChecked={isSelected}
           style={{ color: !!averageScore ? '#007FFF' : '#BDBDBD', margin: '0px', padding: '0px' }}
           size="small"
         />
-        <div
-          style={{
-            width: '20px',
-            height: '20px',
-            backgroundColor: backgroundColor,
-            color: color ?? 'black',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            margin: '1px 0px',
-          }}
-        >
+        <StyledAverageScore backgroundColor={backgroundColor} color={color} >
           {!isNaN(averageScore) ? averageScore : ''}
-        </div>
+        </StyledAverageScore>
         <div
           style={{
             width: '20px',
@@ -88,7 +87,7 @@ class CourseHeaderItem extends Component {
             ''
           )}
         </div>
-      </div>
+      </StyledContainer>
     );
   }
 }

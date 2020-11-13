@@ -20,6 +20,7 @@ const isFooterEnabled = (pathname) => {
     case '/curriculum/edit':
     case '/statistics':
     case '/statistics/grading':
+    case '/statistics/courses':
       return false;
     default:
       return true;

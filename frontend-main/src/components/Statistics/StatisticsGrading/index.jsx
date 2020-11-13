@@ -15,6 +15,7 @@ import { HeaderOptions, SortOrder } from './SortOptions.enum';
 import { ReactComponent as RoadBlockIcon } from '../../icons/roadblock.svg';
 import { ReactComponent as AscendingHorizontalIcon } from '../../icons/ascending-horizontal.svg';
 import { ReactComponent as DescendingHorizontalIcon } from '../../icons/descending-horizontal.svg';
+import './CourseGrading.scss';
 
 const HeaderLabel = styled.div`
   align-self: flex-end;
@@ -28,6 +29,29 @@ const HeaderLabel = styled.div`
   display: flex;
   justify-content: center;
   margin: 1px 0px;
+`;
+
+const StudentScore = styled.div`
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${(props) => (!isNaN(props.score) ? getFontColor(props.score) : 'white')};
+  background-color: ${(props) => (!isNaN(props.score) ? getBackgroundColor(props.score) : 'white')};
+  margin: 1px ${(props) => ((props.index + 1) % 5 === 0 ? 5 : 1)}px 1px ${(props) => ((props.index + 1) % 5 === 1 ? 5 : 1)}px;
+`;
+
+const StudentGPA = styled.div`
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => getBackgroundColor(props.gpa)};
+  color: ${(props) => getFontColor(props.gpa)};
 `;
 
 const colorNoteValues = ['[Excellent] More than 85', '[Good] >= 70 and < 85', '[Average] >= 50 and < 70', '[Poor] Less than 50'];
@@ -205,28 +229,21 @@ class StatisticsGrading extends Component {
     const { allCourses, allCourseIds, allStudents, allStudentIds, selectedHeader, allSortHeaders } = this.state;
 
     return (
-      <div style={{ height: '100vh' }}>
+      <div className={'statistic-grading-container'}>
         <Grid container>
-          <Grid item lg={2} style={{ backgroundColor: 'whitesmoke', padding: '40px', height: '100vh' }}>
+          <Grid item lg={2} className={'grid-item-left'}>
             {/* Search and filter panel */}
             <Box display="flex" flexDirection="column" justifyContent="center">
-              <RoadBlockIcon style={{ width: '40px', height: '40px', fill: 'grey', display: 'block', margin: 'auto' }} />
+              <RoadBlockIcon className={'road-block-icon'} />
               <div>This page is under development</div>
             </Box>
           </Grid>
-          <Grid item lg={10} style={{ padding: '40px', fontSize: '10px', backgroundColor: '#525659', height: '100vh' }}>
-            <div
-              style={{
-                overflowX: 'auto',
-                backgroundColor: 'white',
-                height: '100%',
-                boxShadow: '0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19)',
-              }}
-            >
-              <MapInteractionCSS minScale={0.25} maxScale={3.0} defaultValue={{ scale: 1.0, translation: { x: 100, y: 100 } }}>
-                {/* header */}
-                <Box display="flex" flexWrap="nowrap" margin={'1px 1px 1px 1px'}>
-                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <Grid item lg={10} className={'grid-item-right'}>
+            <div className={'zoom-box'}>
+              <MapInteractionCSS minScale={0.5} maxScale={3.0} defaultValue={{ scale: 1.0, translation: { x: 100, y: 100 } }}>
+                {/* Header */}
+                <Box className={'course-header'}>
+                  <div className={'header-left'}>
                     <div style={{ height: '178px', fontSize: '16px' }}>
                       <div style={{ textAlign: 'center', fontWeight: 'bold' }}>Note</div>
                       <div style={{ padding: '10px 0px', fontSize: '14px' }}>
@@ -237,24 +254,12 @@ class StatisticsGrading extends Component {
                           </div>
                         ))}
                       </div>
-                      <div style={{ fontWeight: 'bold' }}>
+                      <b>
                         <div>Total students: {allStudentIds.length}</div>
                         <div>Total courses: {allCourseIds.length}</div>
-                      </div>
+                      </b>
                     </div>
-                    <div
-                      style={{
-                        height: '22px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'flex-end',
-                        color: '#cc0000',
-                        fontWeight: 'bold',
-                        margin: '1px 0px',
-                      }}
-                    >
-                      Average score
-                    </div>
+                    <div className={'header-course-average-score'}>Average score</div>
                     <div style={{ height: '20px', display: 'flex', margin: '5px 0px -5px 0px', alignItems: 'center' }}>
                       <HeaderLabel width={30} minWidth={30}>
                         No.
@@ -270,7 +275,7 @@ class StatisticsGrading extends Component {
                       </HeaderLabel>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', alignSelf: 'flex-end', paddingTop: '50px' }}>
+                  <div className={'course-item'}>
                     <CourseHeaderItemAll
                       isSelected={true}
                       selectedHeader={selectedHeader}
@@ -296,12 +301,12 @@ class StatisticsGrading extends Component {
                     ))}
                   </div>
                 </Box>
-                {/* item list */}
+                {/* Item detail */}
                 <Box>
-                  {/* Item detail */}
                   {allStudentIds.map((studentId, studentIndex) => (
                     <Box
                       key={studentIndex}
+                      className={'student-item'}
                       display="flex"
                       flexWrap="nowrap"
                       height={21}
@@ -309,38 +314,12 @@ class StatisticsGrading extends Component {
                       margin={`${(studentIndex + 1) % 5 === 1 ? 10 : 1}px 1px ${(studentIndex + 1) % 5 === 0 ? 10 : 1}px 1px`}
                       fontSize="10px"
                     >
-                      <div style={{ fontWeight: 'bold', width: '30px', minWidth: '30px', textAlign: 'right', justifyContent: 'flex-end' }}>
-                        {studentIndex + 1}
-                      </div>
+                      <div className={'student-index'}>{studentIndex + 1}</div>
                       <div style={{ width: '20px', minWidth: '20px' }}>
                         <Checkbox defaultChecked={true} style={{ color: '#007FFF', margin: '0px', padding: '0px' }} size="small" />
                       </div>
-                      <div
-                        style={{
-                          fontWeight: 'bold',
-                          width: '200px',
-                          minWidth: '200px',
-                          padding: '0px 5px',
-                          display: 'inline-flex',
-                          justifyContent: 'flex-end',
-                        }}
-                      >
-                        {allStudents[studentId].fullName}
-                      </div>
-                      <div
-                        style={{
-                          width: '20px',
-                          minWidth: '20px',
-                          height: '20px',
-                          display: 'flex',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          backgroundColor: getBackgroundColor(allStudents[studentId].gpa),
-                          color: getFontColor(allStudents[studentId].gpa),
-                        }}
-                      >
-                        {!isNaN(allStudents[studentId].gpa) ? allStudents[studentId].gpa : ''}
-                      </div>
+                      <div className={'student-name'}>{allStudents[studentId].fullName}</div>
+                      <StudentGPA gpa={allStudents[studentId].gpa}>{!isNaN(allStudents[studentId].gpa) ? allStudents[studentId].gpa : ''}</StudentGPA>
                       <div
                         style={{
                           display: 'flex',
@@ -375,24 +354,9 @@ class StatisticsGrading extends Component {
                         )}
                       </div>
                       {allCourseIds.map((courseId, courseIndex) => (
-                        <div
-                          key={courseId}
-                          style={{
-                            width: '20px',
-                            minWidth: '20px',
-                            height: '20px',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            backgroundColor: !isNaN(allStudents[studentId].courses[courseId])
-                              ? getBackgroundColor(allStudents[studentId].courses[courseId])
-                              : 'white',
-                            color: !isNaN(allStudents[studentId].courses[courseId]) ? getFontColor(allStudents[studentId].courses[courseId]) : 'black',
-                            margin: `1px ${(courseIndex + 1) % 5 === 0 ? 5 : 1}px 1px ${(courseIndex + 1) % 5 === 1 ? 5 : 1}px`,
-                          }}
-                        >
+                        <StudentScore key={courseId} index={courseIndex} score={allStudents[studentId].courses[courseId]}>
                           {allStudents[studentId].courses[courseId] ?? ''}
-                        </div>
+                        </StudentScore>
                       ))}
                     </Box>
                   ))}

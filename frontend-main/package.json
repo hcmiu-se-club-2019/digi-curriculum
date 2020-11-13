@@ -17,6 +17,7 @@
     "formik": "^2.1.4",
     "http-proxy-middleware": "^1.0.5",
     "lodash": "^4.17.19",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-beautiful-dnd": "^13.0.0",
