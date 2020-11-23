@@ -53,10 +53,11 @@ export function getGeneratedCourseData() {
       allCourseIds = [];
     for (let i = 0; i < courseCount; ++i) {
       const randomCourseId = faker.random.uuid();
-      const studentYear1 = getRandomScore(),
-        studentYear2 = getRandomScore(),
-        studentYear3 = getRandomScore(),
-        studentOverYear4 = getRandomScore();
+      const studentYear1 = getRandomScore();
+      const studentYear2 = getRandomScore();
+      const studentYear3 = getRandomScore();
+      const studentOverYear4 = getRandomScore();
+      const { allLecturers, allLecturerIds } = randomLecturer();
 
       allCourseIds.push(randomCourseId);
       allCourses[randomCourseId] = {
@@ -67,6 +68,8 @@ export function getGeneratedCourseData() {
         studentYear3,
         studentOverYear4,
         averageScore: d3.mean([...studentYear1, ...studentYear2, ...studentYear3, ...studentOverYear4]).toFixed(0),
+        allLecturerIds,
+        allLecturers,
       };
     }
     return {
@@ -90,6 +93,28 @@ export function getGeneratedCourseData() {
   return {
     allSems,
     allSemIds,
+  };
+}
+
+function randomLecturer() {
+  const lecturerCount = faker.random.number({ min: 1, max: 5 });
+  let allLecturers = {};
+  let allLecturerIds = [];
+  for (let i = 0; i < lecturerCount; ++i) {
+    const randomId = faker.random.uuid();
+    allLecturerIds.push(randomId);
+    allLecturers[randomId] = {
+      id: randomId,
+      // fullName: faker.random.words(faker.random.number({ min: 1, max: 10 })),
+      fullName: `${faker.name.firstName()} ${faker.name.lastName()}`,
+      isTeachingTheory: faker.random.boolean(),
+      isTeachingPractice: faker.random.boolean(),
+    };
+  }
+
+  return {
+    allLecturers,
+    allLecturerIds,
   };
 }
 
@@ -118,6 +143,7 @@ export async function fetchStatisticByCourses() {
       const studentYear2 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) === 1).map((d) => +d.score);
       const studentYear3 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) === 2).map((d) => +d.score);
       const studentOverYear4 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) >= 3).map((d) => +d.score);
+      const { allLecturers, allLecturerIds } = randomLecturer();
       allCourses[id] = {
         id,
         name: `${id}`,
@@ -126,6 +152,8 @@ export async function fetchStatisticByCourses() {
         studentYear3,
         studentOverYear4,
         averageScore: d3.mean([...studentYear1, ...studentYear2, ...studentYear3, ...studentOverYear4]).toFixed(0),
+        allLecturerIds,
+        allLecturers,
       };
     });
 
