@@ -9,7 +9,7 @@ import { MapInteractionCSS } from 'react-map-interaction';
 
 import CourseHeaderItem from './CourseHeaderItem';
 import CourseHeaderItemAll from './CourseHeaderItemAll';
-import { getGeneratedGradingData } from './FakeStudentScoreGenerator';
+import { getGeneratedGradingData, fetchStatisticByGrading } from './FakeStudentScoreGenerator';
 import { HeaderOptions, SortOrder } from './SortOptions.enum';
 
 import { ReactComponent as RoadBlockIcon } from '../../icons/roadblock.svg';
@@ -97,12 +97,30 @@ class StatisticsGrading extends Component {
   }
   componentDidMount() {
     console.log('DID MOUNT');
-    const generatedGradingData = getGeneratedGradingData();
+    this._loadData();
+    // this._loadRandomData();
+  }
 
-    let allCourses = generatedGradingData.allCourses,
-      allCourseIds = generatedGradingData.allCourseIds,
-      allStudents = generatedGradingData.allStudents,
-      allStudentIds = generatedGradingData.allStudentIds;
+  async _loadData() {
+    const { allCourses, allCourseIds, allStudents, allStudentIds } = await fetchStatisticByGrading();
+
+    //sort by gpa by default before render
+    allStudentIds.sort((prevStudentId, currentStudentId) => {
+      const prevGPA = allStudents[prevStudentId].gpa;
+      const currentGPA = allStudents[currentStudentId].gpa;
+      return currentGPA - prevGPA || isNaN(prevGPA) - isNaN(currentGPA);
+    });
+
+    this.setState({
+      allCourses,
+      allCourseIds,
+      allStudents,
+      allStudentIds,
+    });
+  }
+
+  _loadRandomData() {
+    const { allCourses, allCourseIds, allStudents, allStudentIds } = getGeneratedGradingData();
 
     //sort by gpa by default before render
     allStudentIds.sort((prevStudentId, currentStudentId) => {
@@ -236,6 +254,7 @@ class StatisticsGrading extends Component {
             <Box display="flex" flexDirection="column" justifyContent="center">
               <RoadBlockIcon className={'road-block-icon'} />
               <div>This page is under development</div>
+              <button onClick={() => this._loadRandomData()}>Random data</button>
             </Box>
           </Grid>
           <Grid item lg={10} className={'grid-item-right'}>
@@ -318,7 +337,12 @@ class StatisticsGrading extends Component {
                       <div style={{ width: '20px', minWidth: '20px' }}>
                         <Checkbox defaultChecked={true} style={{ color: '#007FFF', margin: '0px', padding: '0px' }} size="small" />
                       </div>
-                      <div className={'student-name'}>{allStudents[studentId].fullName}</div>
+                      {/* {name.length <= 30 ? name : `${name.substring(0, 30)}...`} */}
+                      <div className={'student-name'}>
+                        {allStudents[studentId].fullName.length <= 30
+                          ? allStudents[studentId].fullName
+                          : `${allStudents[studentId].fullName.substring(0, 30)}...`}
+                      </div>
                       <StudentGPA gpa={allStudents[studentId].gpa}>{!isNaN(allStudents[studentId].gpa) ? allStudents[studentId].gpa : ''}</StudentGPA>
                       <div
                         style={{

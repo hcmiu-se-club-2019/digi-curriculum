@@ -26,7 +26,7 @@ const StyledCourseName = styled.div`
   font-weight: ${(props) => (props.isSelected ? 'bold' : 'normal')};
   display: flex;
   align-items: center;
-  cursor: ${(props) => (props.isSelected ? 'pointer' : 'auto')}; ;
+  cursor: ${(props) => (props.isSelected ? 'pointer' : 'auto')}; 
 `;
 
 const StyledAverageScore = styled.div`
