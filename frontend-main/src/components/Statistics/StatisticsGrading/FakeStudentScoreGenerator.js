@@ -143,11 +143,10 @@ export async function fetchStatisticByGrading() {
     filteredCourses.forEach((d, i) => {
       courses[d.course] = +d.score;
     });
-    const gpa = d3.mean(learntCourseIds.map((d, i) => courses[d])).toFixed(1);
-
+    const gpa = +d3.mean(learntCourseIds.map((d, i) => courses[d])).toFixed(1);
     allStudents[d.id] = {
       id: d.id,
-      gpa,
+      gpa: gpa === 0 || gpa === 100 ? gpa.toFixed(0) : gpa.toFixed(1),
       fullName: `${d.id.substring(0, 8)}...${d.id.substring(d.id.length - 8, d.id.length)}`,
       // fullName: `${faker.name.firstName()} ${faker.name.lastName()}`,
       courses,
