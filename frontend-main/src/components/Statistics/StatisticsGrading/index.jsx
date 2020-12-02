@@ -38,9 +38,14 @@ const StudentScore = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${(props) => (!isNaN(props.score) ? getFontColor(props.score) : 'white')};
-  background-color: ${(props) => (!isNaN(props.score) ? getBackgroundColor(props.score) : 'white')};
+  color: ${(props) => {
+    return props.isChecked ? (!isNaN(props.score) ? getFontColor(props.score) : 'rgba(255,255,255,0)') : '#CCCCCC';
+  }};
+  background-color: ${(props) => {
+    return props.isChecked ? (!isNaN(props.score) ? getBackgroundColor(props.score) : 'rgba(255,255,255,0)') : props.score ? '#EEEEEE' : 'rgba(255,255,255,0)';
+  }};
   margin: 1px ${(props) => ((props.index + 1) % 5 === 0 ? 5 : 1)}px 1px ${(props) => ((props.index + 1) % 5 === 1 ? 5 : 1)}px;
+  z-index: 2;
 `;
 
 const StudentGPA = styled.div`
@@ -50,8 +55,12 @@ const StudentGPA = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => getBackgroundColor(props.gpa)};
-  color: ${(props) => getFontColor(props.gpa)};
+  background-color: ${(props) => {
+    return props.isChecked ? getBackgroundColor(props.gpa) : '#EEEEEE';
+  }};
+  color: ${(props) => {
+    return props.isChecked ? getFontColor(props.gpa) : '#CCCCCC';
+  }};
 `;
 
 const colorNoteValues = ['[Excellent] More than 85', '[Good] >= 70 and < 85', '[Average] >= 50 and < 70', '[Poor] Less than 50'];
@@ -70,7 +79,7 @@ class StatisticsGrading extends Component {
       allStudentIds: [],
       allCourses: {},
       allCourseIds: [],
-
+      maxHeightBoxHighlight: 0,
       allSortHeaders: {
         GPA: {
           order: SortOrder.DESC,
@@ -87,6 +96,8 @@ class StatisticsGrading extends Component {
           studentId: null,
         },
       },
+      isAllCoursesSelected: false,
+      isAllStudentsSelected: false,
 
       selectedCourses: [],
       selectedSortCourse: null,
@@ -102,7 +113,7 @@ class StatisticsGrading extends Component {
   }
 
   async _loadData() {
-    const { allCourses, allCourseIds, allStudents, allStudentIds } = await fetchStatisticByGrading();
+    const { allCourses, allCourseIds, allStudents, allStudentIds, isAllCoursesSelected, isAllStudentsSelected } = await fetchStatisticByGrading();
 
     //sort by gpa by default before render
     allStudentIds.sort((prevStudentId, currentStudentId) => {
@@ -111,16 +122,21 @@ class StatisticsGrading extends Component {
       return currentGPA - prevGPA || isNaN(prevGPA) - isNaN(currentGPA);
     });
 
+    const maxHeightBoxHighlight = 67 + allStudentIds.length * 22 + Math.ceil(allStudentIds.length / 5) * 10;
+
     this.setState({
       allCourses,
       allCourseIds,
       allStudents,
       allStudentIds,
+      isAllCoursesSelected,
+      isAllStudentsSelected,
+      maxHeightBoxHighlight,
     });
   }
 
   _loadRandomData() {
-    const { allCourses, allCourseIds, allStudents, allStudentIds } = getGeneratedGradingData();
+    const { allCourses, allCourseIds, allStudents, allStudentIds, isAllCoursesSelected, isAllStudentsSelected } = getGeneratedGradingData();
 
     //sort by gpa by default before render
     allStudentIds.sort((prevStudentId, currentStudentId) => {
@@ -132,6 +148,7 @@ class StatisticsGrading extends Component {
     //   return allStudents[currentStudentId].fullName.localeCompare(allStudents[currentStudentId].fullName);
     // });
     // allStudentIds.forEach(studentId => console.log(allStudents[studentId].fullName))
+    const maxHeightBoxHighlight = 67 + allStudentIds.length * 22 + Math.ceil(allStudentIds.length / 5) * 10;
 
     this.setState(
       {
@@ -139,6 +156,9 @@ class StatisticsGrading extends Component {
         allCourseIds,
         allStudents,
         allStudentIds,
+        isAllCoursesSelected,
+        isAllStudentsSelected,
+        maxHeightBoxHighlight,
       },
       () => console.log(this.state)
     );
@@ -240,11 +260,67 @@ class StatisticsGrading extends Component {
     });
   }
 
+  _handleSelectAllCourses() {
+    const { allCourses, allCourseIds, allStudents, allStudentIds, selectedHeader, allSortHeaders, isAllStudentsSelected, isAllCoursesSelected } = this.state;
+
+    allCourseIds.forEach((courseId, index) => {
+      allCourses[courseId].isChecked = !isAllCoursesSelected;
+    });
+
+    this.setState({
+      allCourses,
+      isAllCoursesSelected: !isAllCoursesSelected,
+    });
+  }
+
+  _handleSelectedCoursesChange(courseId) {
+    const { allCourses, allCourseIds, allStudents, allStudentIds, selectedHeader, allSortHeaders, isAllCoursesSelected } = this.state;
+    const { isChecked } = allCourses[courseId];
+    allCourses[courseId].isChecked = !isChecked;
+    this.setState({
+      allCourses,
+      isAllCoursesSelected: false,
+    });
+  }
+
+  _handleSelectAllStudents() {
+    const { allCourses, allCourseIds, allStudents, allStudentIds, selectedHeader, allSortHeaders, isAllStudentsSelected } = this.state;
+
+    allStudentIds.forEach((studentId, index) => {
+      allStudents[studentId].isChecked = !isAllStudentsSelected;
+    });
+
+    this.setState({
+      allStudents,
+      isAllStudentsSelected: !isAllStudentsSelected,
+    });
+  }
+
+  _handleSelectedStudentsChange(studentId) {
+    const { allCourses, allCourseIds, allStudents, allStudentIds, selectedHeader, allSortHeaders } = this.state;
+    const { isChecked } = allStudents[studentId];
+    allStudents[studentId].isChecked = !isChecked;
+    this.setState({
+      allStudents,
+      isAllStudentsSelected: false,
+    });
+  }
+
   render() {
     console.log('RENDER');
     console.log('PROPS', this.props);
     console.log('STATE', this.state);
-    const { allCourses, allCourseIds, allStudents, allStudentIds, selectedHeader, allSortHeaders } = this.state;
+    const {
+      allCourses,
+      allCourseIds,
+      allStudents,
+      allStudentIds,
+      selectedHeader,
+      allSortHeaders,
+      isAllCoursesSelected,
+      isAllStudentsSelected,
+      maxHeightBoxHighlight,
+    } = this.state;
 
     return (
       <div className={'statistic-grading-container'}>
@@ -259,7 +335,30 @@ class StatisticsGrading extends Component {
           </Grid>
           <Grid item lg={10} className={'grid-item-right'}>
             <div className={'zoom-box'}>
-              <MapInteractionCSS minScale={0.5} maxScale={3.0} defaultValue={{ scale: 1.0, translation: { x: 100, y: 100 } }}>
+              <MapInteractionCSS minScale={0.5} maxScale={5.0} defaultValue={{ scale: 1.0, translation: { x: 100, y: 100 } }}>
+                <div
+                  className="all-courses-highlight-container"
+                  style={{
+                    position: 'absolute',
+                    height: `${maxHeightBoxHighlight}px`,
+                    zIndex: 0,
+                    top: '160px',
+                    left: '301px',
+                    display: 'flex',
+                    flexDirection: 'row',
+                  }}
+                >
+                  {allCourseIds.map((courseId, index) => (
+                    <div
+                      key={courseId}
+                      style={{
+                        width: '22px',
+                        backgroundColor: allCourses[courseId].isChecked ? 'rgba(192, 192, 192, 0.5)' : 'rgba(255,255,255,0)',
+                        margin: `1px ${(index + 1) % 5 === 0 ? 8 : 0}px 1px 0px`,
+                      }}
+                    ></div>
+                  ))}
+                </div>
                 {/* Header */}
                 <Box className={'course-header'}>
                   <div className={'header-left'}>
@@ -284,7 +383,12 @@ class StatisticsGrading extends Component {
                         No.
                       </HeaderLabel>
                       <HeaderLabel width={20} minWidth={20} checkbox>
-                        <Checkbox defaultChecked={true} style={{ color: '#007FFF', margin: '0px', padding: '0px' }} size="small" />
+                        <Checkbox
+                          checked={isAllStudentsSelected}
+                          style={{ color: '#007FFF', margin: '0px', padding: '0px' }}
+                          size="small"
+                          onClick={() => this._handleSelectAllStudents()}
+                        />
                       </HeaderLabel>
                       <HeaderLabel width={200} minWidth={200}>
                         Fullname
@@ -296,7 +400,8 @@ class StatisticsGrading extends Component {
                   </div>
                   <div className={'course-item'}>
                     <CourseHeaderItemAll
-                      isSelected={true}
+                      isAllCoursesSelected={isAllCoursesSelected}
+                      onClickAllCourses={() => this._handleSelectAllCourses()}
                       selectedHeader={selectedHeader}
                       sortGPAOrder={allSortHeaders.GPA.order}
                       sortAverageScoreOrder={allSortHeaders.AVE_SCORE.order}
@@ -310,40 +415,50 @@ class StatisticsGrading extends Component {
                         index={courseIndex + 1}
                         name={allCourses[courseId].name}
                         averageScore={allCourses[courseId].averageScore}
-                        color={getFontColor(allCourses[courseId].averageScore)}
-                        backgroundColor={getBackgroundColor(allCourses[courseId].averageScore)}
-                        isSelected={true}
+                        color={allCourses[courseId].isChecked ? getFontColor(allCourses[courseId].averageScore) : '#CCCCCC'}
+                        backgroundColor={allCourses[courseId].isChecked ? getBackgroundColor(allCourses[courseId].averageScore) : '#EEEEEE'}
+                        isSelected={allCourses[courseId].isChecked}
                         sortScoreOrder={allSortHeaders.TOP_STUDENT_SCORE.order}
                         selectedSortId={allSortHeaders.TOP_STUDENT_SCORE.courseId === courseId ? allSortHeaders.TOP_STUDENT_SCORE.courseId : null}
                         onSortScore={(selectedId, order) => this._sortScoreByOneCourse(selectedId, order)}
+                        onClick={(selectedId) => this._handleSelectedCoursesChange(selectedId)}
                       />
                     ))}
                   </div>
                 </Box>
                 {/* Item detail */}
+
                 <Box>
                   {allStudentIds.map((studentId, studentIndex) => (
                     <Box
                       key={studentIndex}
                       className={'student-item'}
                       display="flex"
-                      flexWrap="nowrap"
-                      height={21}
+                      // flexWrap="nowrap"
+                      height={`22px`}
                       alignItems="center"
-                      margin={`${(studentIndex + 1) % 5 === 1 ? 10 : 1}px 1px ${(studentIndex + 1) % 5 === 0 ? 10 : 1}px 1px`}
+                      padding={`0px 2px`}
+                      margin={`${(studentIndex + 1) % 5 === 1 ? 10 : 0}px 0px 0px 0px`}
                       fontSize="10px"
+                      bgcolor={allStudents[studentId].isChecked ? '#E6E6E6' : 'white'}
                     >
                       <div className={'student-index'}>{studentIndex + 1}</div>
                       <div style={{ width: '20px', minWidth: '20px' }}>
-                        <Checkbox defaultChecked={true} style={{ color: '#007FFF', margin: '0px', padding: '0px' }} size="small" />
+                        <Checkbox
+                          style={{ color: '#007FFF', margin: '0px', padding: '0px' }}
+                          size="small"
+                          checked={allStudents[studentId].isChecked}
+                          onClick={() => this._handleSelectedStudentsChange(studentId)}
+                        />
                       </div>
-                      {/* {name.length <= 30 ? name : `${name.substring(0, 30)}...`} */}
-                      <div className={'student-name'}>
+                      <div className={'student-name'} style={{ color: allStudents[studentId].isChecked ? 'black' : '#CCCCCC' }}>
                         {allStudents[studentId].fullName.length <= 30
                           ? allStudents[studentId].fullName
                           : `${allStudents[studentId].fullName.substring(0, 30)}...`}
                       </div>
-                      <StudentGPA gpa={allStudents[studentId].gpa}>{!isNaN(allStudents[studentId].gpa) ? allStudents[studentId].gpa : ''}</StudentGPA>
+                      <StudentGPA gpa={allStudents[studentId].gpa} isChecked={allStudents[studentId].isChecked}>
+                        {!isNaN(allStudents[studentId].gpa) ? allStudents[studentId].gpa : ''}
+                      </StudentGPA>
                       <div
                         style={{
                           display: 'flex',
@@ -352,7 +467,9 @@ class StatisticsGrading extends Component {
                           width: '20px',
                           minWidth: '20px',
                           height: '20px',
-                          margin: '1px 0px 1px 5px',
+                          // padding: '1px 0px 1px 5px',
+                          // // margin: '1px 0px 1px 5px',
+                          margin: '0px 0px 0px 5px',
                           cursor: isNaN(allStudents[studentId].gpa) ? 'auto' : 'pointer',
                         }}
                         onClick={() => {
@@ -378,7 +495,12 @@ class StatisticsGrading extends Component {
                         )}
                       </div>
                       {allCourseIds.map((courseId, courseIndex) => (
-                        <StudentScore key={courseId} index={courseIndex} score={allStudents[studentId].courses[courseId]}>
+                        <StudentScore
+                          key={courseId}
+                          index={courseIndex}
+                          score={allStudents[studentId].courses[courseId]}
+                          isChecked={allStudents[studentId].isChecked && allCourses[courseId].isChecked}
+                        >
                           {allStudents[studentId].courses[courseId] ?? ''}
                         </StudentScore>
                       ))}

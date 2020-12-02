@@ -33,8 +33,8 @@ class CourseHeaderItemAll extends Component {
             height: '20px',
             transform: 'rotate(-60deg) translate(42px, -69px)',
             fontSize: '10px',
-            color: this.props.isSelected ? '#CC0000' : 'grey',
-            fontWeight: this.props.isSelected ? 'bold' : 'normal',
+            color: '#CC0000',
+            fontWeight: 'bold',
             display: 'flex',
             alignItems: 'center',
             cursor: 'pointer',
@@ -42,7 +42,7 @@ class CourseHeaderItemAll extends Component {
         >
           Course
         </div>
-        <Checkbox defaultChecked={this.props.isSelected} style={{ color: '#007FFF', margin: '0px', padding: '0px' }} size="small" />
+        <Checkbox checked={this.props.isAllCoursesSelected} style={{ color: '#007FFF', margin: '0px', padding: '0px' }} size="small" onClick={() => this.props.onClickAllCourses()}/>
         <div
           style={{
             width: '20px',
@@ -98,10 +98,11 @@ class CourseHeaderItemAll extends Component {
 }
 
 CourseHeaderItemAll.propTypes = {
-  isSelected: PropTypes.bool,
+  isAllCoursesSelected: PropTypes.bool,
   selectedHeader: PropTypes.string,
   sortOrder: PropTypes.string,
   onChangeSortMode: PropTypes.func,
+  onClickAllCourses: PropTypes.func,
 };
 
 export default CourseHeaderItemAll;

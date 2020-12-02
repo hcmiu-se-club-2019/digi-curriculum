@@ -25,6 +25,7 @@ export const getGeneratedGradingData = () => {
       credit: faker.random.number({ min: 0, max: 10 }),
       learningProgressOrder: faker.random.number({ min: 0, max: courseCount - 1 }),
       averageScore: 0,
+      isChecked: true,
     };
   }
 
@@ -61,7 +62,7 @@ export const getGeneratedGradingData = () => {
     }
 
     let averageScore = sumScore / totalCredit;
-    averageScore = Number.parseFloat(averageScore === 0 || averageScore === 100 ? averageScore.toFixed(0) : averageScore.toFixed(1));
+    averageScore = averageScore === 0 || averageScore === 100 ? averageScore.toFixed(0) : averageScore.toFixed(1);
 
     return {
       learntCourses,
@@ -81,6 +82,7 @@ export const getGeneratedGradingData = () => {
       fullName: faker.name.findName(),
       courses: learntCourses,
       learntCourseIds,
+      isChecked: true,
     };
   }
 
@@ -103,6 +105,8 @@ export const getGeneratedGradingData = () => {
     allStudentIds,
     allCourses,
     allCourseIds,
+    isAllCoursesSelected: true,
+    isAllStudentsSelected: true,
   };
 };
 
@@ -133,6 +137,7 @@ export async function fetchStatisticByGrading() {
       credit: faker.random.number({ min: 0, max: 10 }),
       learningProgressOrder: faker.random.number({ min: 0, max: courseCount - 1 }),
       averageScore: d3.mean(filteredScores).toFixed(0),
+      isChecked: true,
     };
   });
 
@@ -151,6 +156,7 @@ export async function fetchStatisticByGrading() {
       // fullName: `${faker.name.firstName()} ${faker.name.lastName()}`,
       courses,
       learntCourseIds,
+      isChecked: true,
     };
   });
 
@@ -159,5 +165,7 @@ export async function fetchStatisticByGrading() {
     allStudentIds,
     allCourses,
     allCourseIds,
+    isAllCoursesSelected: true,
+    isAllStudentsSelected: true,
   };
 }

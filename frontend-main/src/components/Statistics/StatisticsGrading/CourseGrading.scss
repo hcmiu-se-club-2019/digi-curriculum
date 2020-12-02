@@ -25,7 +25,8 @@
       .course-header {
         display: flex;
         flex-wrap: nowrap;
-        margin: 1px 1px 1px 1px;
+        margin: 1px 0px 1px 0px;
+        padding: 0px 2px;
         .header-left {
           display: flex;
           flex-direction: column;

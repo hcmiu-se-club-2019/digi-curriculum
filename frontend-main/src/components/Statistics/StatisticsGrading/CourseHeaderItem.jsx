@@ -22,11 +22,11 @@ const StyledCourseName = styled.div`
   height: 20px;
   transform: rotate(-60deg) translate(42px, -69px);
   font-size: 10px;
-  color: ${(props) => (props.isSelected ? 'black' : 'grey')};
-  font-weight: ${(props) => (props.isSelected ? 'bold' : 'normal')};
+  color: ${(props) => (props.isSelected ? 'black' : '#CCCCCC')};
+  font-weight: bold;
   display: flex;
   align-items: center;
-  cursor: ${(props) => (props.isSelected ? 'pointer' : 'auto')}; 
+  cursor: ${(props) => (props.isSelected ? 'pointer' : 'auto')};
 `;
 
 const StyledAverageScore = styled.div`
@@ -38,6 +38,7 @@ const StyledAverageScore = styled.div`
   justify-content: center;
   align-items: center;
   margin: 1px 0px;
+  z-index: 2;
 `;
 
 class CourseHeaderItem extends Component {
@@ -52,11 +53,12 @@ class CourseHeaderItem extends Component {
         <StyledCourseName isSelected={isSelected}>{name.length <= 30 ? name : `${name.substring(0, 30)}...`}</StyledCourseName>
         <Checkbox
           disabled={!averageScore}
-          defaultChecked={isSelected}
-          style={{ color: !!averageScore ? '#007FFF' : '#BDBDBD', margin: '0px', padding: '0px' }}
+          checked={isSelected}
+          style={{ color: !!averageScore ? '#007FFF' : '#BDBDBD', margin: '0px', padding: '0px', zIndex: 2 }}
           size="small"
+          onClick={() => this.props.onClick(id)}
         />
-        <StyledAverageScore backgroundColor={backgroundColor} color={color} >
+        <StyledAverageScore backgroundColor={backgroundColor} color={color}>
           {!isNaN(averageScore) ? averageScore : ''}
         </StyledAverageScore>
         <div
@@ -69,6 +71,7 @@ class CourseHeaderItem extends Component {
             alignItems: 'center',
             margin: '5px 0px -5px 0px',
             cursor: isNaN(averageScore) ? 'auto' : 'pointer',
+            zIndex: 2
           }}
           onClick={() => {
             if (isNaN(averageScore)) return;
@@ -93,16 +96,17 @@ class CourseHeaderItem extends Component {
 }
 
 CourseHeaderItem.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   index: PropTypes.number,
   name: PropTypes.string,
-  averageScore: PropTypes.number,
+  averageScore: PropTypes.string,
   color: PropTypes.string,
   backgroundColor: PropTypes.string,
   isSelected: PropTypes.bool,
   selectedSortId: PropTypes.string,
   sortScoreOrder: PropTypes.string,
   onSortScore: PropTypes.func,
+  onClick: PropTypes.func,
 };
 
 export default CourseHeaderItem;
