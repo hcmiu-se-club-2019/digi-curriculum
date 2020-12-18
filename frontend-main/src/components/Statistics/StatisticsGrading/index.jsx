@@ -103,7 +103,7 @@ class StatisticsGrading extends Component {
       selectedSortCourse: null,
       selectedStudents: [],
       selectedHeader: HeaderOptions.GPA,
-      sortOrder: SortOrder.DESC,
+      // sortOrder: SortOrder.DESC,
     };
   }
   componentDidMount() {
@@ -274,6 +274,7 @@ class StatisticsGrading extends Component {
   }
 
   _handleSelectedCoursesChange(courseId) {
+    const t0 = performance.now();
     const { allCourses, allCourseIds, allStudents, allStudentIds, selectedHeader, allSortHeaders, isAllCoursesSelected } = this.state;
     const { isChecked } = allCourses[courseId];
     allCourses[courseId].isChecked = !isChecked;
@@ -281,6 +282,8 @@ class StatisticsGrading extends Component {
       allCourses,
       isAllCoursesSelected: false,
     });
+    const t1 = performance.now();
+    console.log(t1 - t0 + 'ms');
   }
 
   _handleSelectAllStudents() {
@@ -331,183 +334,186 @@ class StatisticsGrading extends Component {
               <RoadBlockIcon className={'road-block-icon'} />
               <div>This page is under development</div>
               <button onClick={() => this._loadRandomData()}>Random data</button>
+              <button onClick={() => this._loadData()}>Reset data</button>
             </Box>
           </Grid>
           <Grid item lg={10} className={'grid-item-right'}>
             <div className={'zoom-box'}>
-              <MapInteractionCSS minScale={0.5} maxScale={5.0} defaultValue={{ scale: 1.0, translation: { x: 100, y: 100 } }}>
-                <div
-                  className="all-courses-highlight-container"
-                  style={{
-                    position: 'absolute',
-                    height: `${maxHeightBoxHighlight}px`,
-                    zIndex: 0,
-                    top: '160px',
-                    left: '301px',
-                    display: 'flex',
-                    flexDirection: 'row',
-                  }}
-                >
-                  {allCourseIds.map((courseId, index) => (
-                    <div
+              {/* <MapInteractionCSS minScale={0.5} maxScale={5.0} defaultValue={{ scale: 1.0, translation: { x: 100, y: 100 } }}> */}
+              <div
+                className="all-courses-highlight-container"
+                style={{
+                  position: 'absolute',
+                  height: `${maxHeightBoxHighlight}px`,
+                  zIndex: 0,
+                  // top: '160px',
+                  // left: '658px',
+                  top: '160px',
+                  left: '301px',
+                  display: 'flex',
+                  flexDirection: 'row',
+                }}
+              >
+                {allCourseIds.map((courseId, index) => (
+                  <div
+                    key={courseId}
+                    style={{
+                      width: '22px',
+                      backgroundColor: allCourses[courseId].isChecked ? 'rgba(192, 192, 192, 0.5)' : 'rgba(255,255,255,0)',
+                      margin: `1px ${(index + 1) % 5 === 0 ? 8 : 0}px 1px 0px`,
+                    }}
+                  ></div>
+                ))}
+              </div>
+              {/* Header */}
+              <Box className={'course-header'}>
+                <div className={'header-left'}>
+                  <div style={{ height: '178px', fontSize: '16px' }}>
+                    <div style={{ textAlign: 'center', fontWeight: 'bold' }}>Note</div>
+                    <div style={{ padding: '10px 0px', fontSize: '14px' }}>
+                      {colorNoteValues.map((value) => (
+                        <div style={{ display: 'flex', alignItems: 'center', margin: '0px 0px 1px 0px' }} key={value}>
+                          <div style={{ width: '20px', height: '20px', backgroundColor: colorLegends(value) }}></div>
+                          <div style={{ padding: '0px 5px' }}>{value}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <b>
+                      <div>Total students: {allStudentIds.length}</div>
+                      <div>Total courses: {allCourseIds.length}</div>
+                    </b>
+                  </div>
+                  <div className={'header-course-average-score'}>Average score</div>
+                  <div style={{ height: '20px', display: 'flex', margin: '5px 0px -5px 0px', alignItems: 'center' }}>
+                    <HeaderLabel width={30} minWidth={30}>
+                      No.
+                    </HeaderLabel>
+                    <HeaderLabel width={20} minWidth={20} checkbox>
+                      <Checkbox
+                        checked={isAllStudentsSelected}
+                        style={{ color: '#007FFF', margin: '0px', padding: '0px' }}
+                        size="small"
+                        onClick={() => this._handleSelectAllStudents()}
+                      />
+                    </HeaderLabel>
+                    <HeaderLabel width={200} minWidth={200}>
+                      Fullname
+                    </HeaderLabel>
+                    <HeaderLabel width={20} minWidth={20}>
+                      GPA
+                    </HeaderLabel>
+                  </div>
+                </div>
+                <div className={'course-item'}>
+                  <CourseHeaderItemAll
+                    isAllCoursesSelected={isAllCoursesSelected}
+                    onClickAllCourses={() => this._handleSelectAllCourses()}
+                    selectedHeader={selectedHeader}
+                    sortGPAOrder={allSortHeaders.GPA.order}
+                    sortAverageScoreOrder={allSortHeaders.AVE_SCORE.order}
+                    onSortGPA={(order) => this._sortGPA(order)}
+                    onSortAverageScore={(order) => this._sortAverageScore(order)}
+                  />
+                  {allCourseIds.map((courseId, courseIndex) => (
+                    <CourseHeaderItem
                       key={courseId}
-                      style={{
-                        width: '22px',
-                        backgroundColor: allCourses[courseId].isChecked ? 'rgba(192, 192, 192, 0.5)' : 'rgba(255,255,255,0)',
-                        margin: `1px ${(index + 1) % 5 === 0 ? 8 : 0}px 1px 0px`,
-                      }}
-                    ></div>
+                      id={courseId}
+                      index={courseIndex + 1}
+                      name={allCourses[courseId].name}
+                      averageScore={allCourses[courseId].averageScore}
+                      color={allCourses[courseId].isChecked ? getFontColor(allCourses[courseId].averageScore) : '#CCCCCC'}
+                      backgroundColor={allCourses[courseId].isChecked ? getBackgroundColor(allCourses[courseId].averageScore) : '#EEEEEE'}
+                      isSelected={allCourses[courseId].isChecked}
+                      sortScoreOrder={allSortHeaders.TOP_STUDENT_SCORE.order}
+                      selectedSortId={allSortHeaders.TOP_STUDENT_SCORE.courseId === courseId ? allSortHeaders.TOP_STUDENT_SCORE.courseId : null}
+                      onSortScore={(selectedId, order) => this._sortScoreByOneCourse(selectedId, order)}
+                      onClick={(selectedId) => this._handleSelectedCoursesChange(selectedId)}
+                    />
                   ))}
                 </div>
-                {/* Header */}
-                <Box className={'course-header'}>
-                  <div className={'header-left'}>
-                    <div style={{ height: '178px', fontSize: '16px' }}>
-                      <div style={{ textAlign: 'center', fontWeight: 'bold' }}>Note</div>
-                      <div style={{ padding: '10px 0px', fontSize: '14px' }}>
-                        {colorNoteValues.map((value) => (
-                          <div style={{ display: 'flex', alignItems: 'center', margin: '0px 0px 1px 0px' }} key={value}>
-                            <div style={{ width: '20px', height: '20px', backgroundColor: colorLegends(value) }}></div>
-                            <div style={{ padding: '0px 5px' }}>{value}</div>
-                          </div>
-                        ))}
-                      </div>
-                      <b>
-                        <div>Total students: {allStudentIds.length}</div>
-                        <div>Total courses: {allCourseIds.length}</div>
-                      </b>
-                    </div>
-                    <div className={'header-course-average-score'}>Average score</div>
-                    <div style={{ height: '20px', display: 'flex', margin: '5px 0px -5px 0px', alignItems: 'center' }}>
-                      <HeaderLabel width={30} minWidth={30}>
-                        No.
-                      </HeaderLabel>
-                      <HeaderLabel width={20} minWidth={20} checkbox>
-                        <Checkbox
-                          checked={isAllStudentsSelected}
-                          style={{ color: '#007FFF', margin: '0px', padding: '0px' }}
-                          size="small"
-                          onClick={() => this._handleSelectAllStudents()}
-                        />
-                      </HeaderLabel>
-                      <HeaderLabel width={200} minWidth={200}>
-                        Fullname
-                      </HeaderLabel>
-                      <HeaderLabel width={20} minWidth={20}>
-                        GPA
-                      </HeaderLabel>
-                    </div>
-                  </div>
-                  <div className={'course-item'}>
-                    <CourseHeaderItemAll
-                      isAllCoursesSelected={isAllCoursesSelected}
-                      onClickAllCourses={() => this._handleSelectAllCourses()}
-                      selectedHeader={selectedHeader}
-                      sortGPAOrder={allSortHeaders.GPA.order}
-                      sortAverageScoreOrder={allSortHeaders.AVE_SCORE.order}
-                      onSortGPA={(order) => this._sortGPA(order)}
-                      onSortAverageScore={(order) => this._sortAverageScore(order)}
-                    />
-                    {allCourseIds.map((courseId, courseIndex) => (
-                      <CourseHeaderItem
-                        key={courseId}
-                        id={courseId}
-                        index={courseIndex + 1}
-                        name={allCourses[courseId].name}
-                        averageScore={allCourses[courseId].averageScore}
-                        color={allCourses[courseId].isChecked ? getFontColor(allCourses[courseId].averageScore) : '#CCCCCC'}
-                        backgroundColor={allCourses[courseId].isChecked ? getBackgroundColor(allCourses[courseId].averageScore) : '#EEEEEE'}
-                        isSelected={allCourses[courseId].isChecked}
-                        sortScoreOrder={allSortHeaders.TOP_STUDENT_SCORE.order}
-                        selectedSortId={allSortHeaders.TOP_STUDENT_SCORE.courseId === courseId ? allSortHeaders.TOP_STUDENT_SCORE.courseId : null}
-                        onSortScore={(selectedId, order) => this._sortScoreByOneCourse(selectedId, order)}
-                        onClick={(selectedId) => this._handleSelectedCoursesChange(selectedId)}
-                      />
-                    ))}
-                  </div>
-                </Box>
-                {/* Item detail */}
+              </Box>
+              {/* Item detail */}
 
-                <Box>
-                  {allStudentIds.map((studentId, studentIndex) => (
-                    <Box
-                      key={studentIndex}
-                      className={'student-item'}
-                      display="flex"
-                      // flexWrap="nowrap"
-                      height={`22px`}
-                      alignItems="center"
-                      padding={`0px 2px`}
-                      margin={`${(studentIndex + 1) % 5 === 1 ? 10 : 0}px 0px 0px 0px`}
-                      fontSize="10px"
-                      bgcolor={allStudents[studentId].isChecked ? '#E6E6E6' : 'white'}
+              <Box>
+                {allStudentIds.map((studentId, studentIndex) => (
+                  <Box
+                    key={studentIndex}
+                    className={'student-item'}
+                    display="flex"
+                    // flexWrap="nowrap"
+                    height={`22px`}
+                    alignItems="center"
+                    padding={`0px 2px`}
+                    margin={`${(studentIndex + 1) % 5 === 1 ? 10 : 0}px 0px 0px 0px`}
+                    fontSize="10px"
+                    bgcolor={allStudents[studentId].isChecked ? '#E6E6E6' : 'white'}
+                  >
+                    <div className={'student-index'}>{studentIndex + 1}</div>
+                    <div style={{ width: '20px', minWidth: '20px' }}>
+                      <Checkbox
+                        style={{ color: '#007FFF', margin: '0px', padding: '0px' }}
+                        size="small"
+                        checked={allStudents[studentId].isChecked}
+                        onClick={() => this._handleSelectedStudentsChange(studentId)}
+                      />
+                    </div>
+                    <div className={'student-name'} style={{ color: allStudents[studentId].isChecked ? 'black' : '#CCCCCC' }}>
+                      {allStudents[studentId].fullName.length <= 30
+                        ? allStudents[studentId].fullName
+                        : `${allStudents[studentId].fullName.substring(0, 30)}...`}
+                    </div>
+                    <StudentGPA gpa={allStudents[studentId].gpa} isChecked={allStudents[studentId].isChecked}>
+                      {!isNaN(allStudents[studentId].gpa) ? allStudents[studentId].gpa : ''}
+                    </StudentGPA>
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: '20px',
+                        minWidth: '20px',
+                        height: '20px',
+                        // padding: '1px 0px 1px 5px',
+                        // // margin: '1px 0px 1px 5px',
+                        margin: '0px 0px 0px 5px',
+                        cursor: isNaN(allStudents[studentId].gpa) ? 'auto' : 'pointer',
+                      }}
+                      onClick={() => {
+                        if (isNaN(allStudents[studentId].gpa)) return;
+                        this._sortTopCourseByOneStudent(
+                          studentId,
+                          allSortHeaders.TOP_COURSE_BY_STUDENT.order === SortOrder.ASC || !allSortHeaders.TOP_COURSE_BY_STUDENT.order
+                            ? SortOrder.DESC
+                            : SortOrder.ASC
+                        );
+                      }}
                     >
-                      <div className={'student-index'}>{studentIndex + 1}</div>
-                      <div style={{ width: '20px', minWidth: '20px' }}>
-                        <Checkbox
-                          style={{ color: '#007FFF', margin: '0px', padding: '0px' }}
-                          size="small"
-                          checked={allStudents[studentId].isChecked}
-                          onClick={() => this._handleSelectedStudentsChange(studentId)}
-                        />
-                      </div>
-                      <div className={'student-name'} style={{ color: allStudents[studentId].isChecked ? 'black' : '#CCCCCC' }}>
-                        {allStudents[studentId].fullName.length <= 30
-                          ? allStudents[studentId].fullName
-                          : `${allStudents[studentId].fullName.substring(0, 30)}...`}
-                      </div>
-                      <StudentGPA gpa={allStudents[studentId].gpa} isChecked={allStudents[studentId].isChecked}>
-                        {!isNaN(allStudents[studentId].gpa) ? allStudents[studentId].gpa : ''}
-                      </StudentGPA>
-                      <div
-                        style={{
-                          display: 'flex',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          width: '20px',
-                          minWidth: '20px',
-                          height: '20px',
-                          // padding: '1px 0px 1px 5px',
-                          // // margin: '1px 0px 1px 5px',
-                          margin: '0px 0px 0px 5px',
-                          cursor: isNaN(allStudents[studentId].gpa) ? 'auto' : 'pointer',
-                        }}
-                        onClick={() => {
-                          if (isNaN(allStudents[studentId].gpa)) return;
-                          this._sortTopCourseByOneStudent(
-                            studentId,
-                            allSortHeaders.TOP_COURSE_BY_STUDENT.order === SortOrder.ASC || !allSortHeaders.TOP_COURSE_BY_STUDENT.order
-                              ? SortOrder.DESC
-                              : SortOrder.ASC
-                          );
-                        }}
+                      {allSortHeaders.TOP_COURSE_BY_STUDENT.studentId === studentId && allSortHeaders.TOP_COURSE_BY_STUDENT.order === SortOrder.ASC ? (
+                        <AscendingHorizontalIcon />
+                      ) : allSortHeaders.TOP_COURSE_BY_STUDENT.studentId === studentId && allSortHeaders.TOP_COURSE_BY_STUDENT.order === SortOrder.DESC ? (
+                        <DescendingHorizontalIcon />
+                      ) : !isNaN(allStudents[studentId].gpa) ? (
+                        <svg width="20px" height="20px" fill="#CCCCCC">
+                          <circle r={3} cx={10} cy={10} />
+                        </svg>
+                      ) : (
+                        ''
+                      )}
+                    </div>
+                    {allCourseIds.map((courseId, courseIndex) => (
+                      <StudentScore
+                        key={courseId}
+                        index={courseIndex}
+                        score={allStudents[studentId].courses[courseId]}
+                        isChecked={allStudents[studentId].isChecked && allCourses[courseId].isChecked}
                       >
-                        {allSortHeaders.TOP_COURSE_BY_STUDENT.studentId === studentId && allSortHeaders.TOP_COURSE_BY_STUDENT.order === SortOrder.ASC ? (
-                          <AscendingHorizontalIcon />
-                        ) : allSortHeaders.TOP_COURSE_BY_STUDENT.studentId === studentId && allSortHeaders.TOP_COURSE_BY_STUDENT.order === SortOrder.DESC ? (
-                          <DescendingHorizontalIcon />
-                        ) : !isNaN(allStudents[studentId].gpa) ? (
-                          <svg width="20px" height="20px" fill="#CCCCCC">
-                            <circle r={3} cx={10} cy={10} />
-                          </svg>
-                        ) : (
-                          ''
-                        )}
-                      </div>
-                      {allCourseIds.map((courseId, courseIndex) => (
-                        <StudentScore
-                          key={courseId}
-                          index={courseIndex}
-                          score={allStudents[studentId].courses[courseId]}
-                          isChecked={allStudents[studentId].isChecked && allCourses[courseId].isChecked}
-                        >
-                          {allStudents[studentId].courses[courseId] ?? ''}
-                        </StudentScore>
-                      ))}
-                    </Box>
-                  ))}
-                </Box>
-              </MapInteractionCSS>
+                        {allStudents[studentId].courses[courseId] ?? ''}
+                      </StudentScore>
+                    ))}
+                  </Box>
+                ))}
+              </Box>
+              {/* </MapInteractionCSS> */}
             </div>
           </Grid>
         </Grid>

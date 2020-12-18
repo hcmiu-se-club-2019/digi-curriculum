@@ -18,6 +18,7 @@
     background-color: #525659;
     height: 100vh;
     .zoom-box {
+      position: relative;
       overflow-x: auto;
       background-color: white;
       height: 100%;
@@ -35,7 +36,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            color: #CC0000;
+            color: #cc0000;
             font-weight: bold;
             margin: 1px 0px;
           }

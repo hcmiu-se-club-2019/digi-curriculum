@@ -2,6 +2,7 @@
 
 .statistic-course-container {
   height: 100vh;
+  // height: calc(100% - (100px + 150px))
   .grid-item-left {
     background-color: whitesmoke;
     padding: 40px;
@@ -98,6 +99,45 @@
         margin: 20px 0px;
         b {
           font-size: 24px;
+        }
+      }
+      .option-content {
+        .distribution-filter-btn-toolbar {
+          display: flex;
+          justify-content: center;
+          padding: 10px 5px;
+          .distribution-filter-btn {
+            margin: 5px;
+          }
+        }
+        .student-count-table {
+          table {
+            text-align: center;
+
+            tbody > tr {
+              // td {
+              //   display: flex;
+              //   justify-content: center;
+              //   align-items: center;
+              // }
+              // .thead-year {
+              // }
+              .tbody-avg-score {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                div {
+                  // width: 10%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              }
+              .thead-student-count {
+                width: 60%;
+              }
+            }
+          }
         }
       }
     }

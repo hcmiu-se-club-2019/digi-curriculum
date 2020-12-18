@@ -56,7 +56,8 @@ export function getGeneratedCourseData() {
       const studentYear1 = getRandomScore();
       const studentYear2 = getRandomScore();
       const studentYear3 = getRandomScore();
-      const studentOverYear4 = getRandomScore();
+      const studentYear4 = getRandomScore();
+      const studentYearOther = getRandomScore();
       const { allLecturers, allLecturerIds } = randomLecturer();
 
       allCourseIds.push(randomCourseId);
@@ -66,8 +67,9 @@ export function getGeneratedCourseData() {
         studentYear1,
         studentYear2,
         studentYear3,
-        studentOverYear4,
-        averageScore: d3.mean([...studentYear1, ...studentYear2, ...studentYear3, ...studentOverYear4]).toFixed(0),
+        studentYear4,
+        studentYearOther,
+        averageScore: d3.mean([...studentYear1, ...studentYear2, ...studentYear3, ...studentYear4, ...studentYearOther]).toFixed(0),
         allLecturerIds,
         allLecturers,
       };
@@ -142,7 +144,8 @@ export async function fetchStatisticByCourses() {
       const studentYear1 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) === 0).map((d) => +d.score);
       const studentYear2 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) === 1).map((d) => +d.score);
       const studentYear3 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) === 2).map((d) => +d.score);
-      const studentOverYear4 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) >= 3).map((d) => +d.score);
+      const studentYear4 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) === 3).map((d) => +d.score);
+      const studentYearOther = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) > 3).map((d) => +d.score);
       const { allLecturers, allLecturerIds } = randomLecturer();
       allCourses[id] = {
         id,
@@ -150,8 +153,9 @@ export async function fetchStatisticByCourses() {
         studentYear1,
         studentYear2,
         studentYear3,
-        studentOverYear4,
-        averageScore: d3.mean([...studentYear1, ...studentYear2, ...studentYear3, ...studentOverYear4]).toFixed(0),
+        studentYear4,
+        studentYearOther,
+        averageScore: d3.mean([...studentYear1, ...studentYear2, ...studentYear3, ...studentYear4, ...studentYearOther]).toFixed(0),
         allLecturerIds,
         allLecturers,
       };

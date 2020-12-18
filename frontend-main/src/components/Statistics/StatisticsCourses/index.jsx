@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
-import axios from 'axios';
-import { Grid, Checkbox, Box } from '@material-ui/core';
-import faker from 'faker';
+import { Grid, Box } from '@material-ui/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { getGeneratedStatisticByCourses, getGeneratedCourseData, fetchStatisticByCourses } from './FakeCourseOverviewGenerator';
-import { useStyles } from './theme';
+import { getGeneratedCourseData, fetchStatisticByCourses } from './FakeCourseOverviewGenerator';
 
 import { ReactComponent as RoadBlockIcon } from '../../icons/roadblock.svg';
-import { ReactComponent as AscendingHorizontalIcon } from '../../icons/ascending-horizontal.svg';
-import { ReactComponent as DescendingHorizontalIcon } from '../../icons/descending-horizontal.svg';
 import './CourseOverview.scss';
 
-const getBackgroundColor = d3.scaleThreshold().domain([50, 70, 85, 100]).range(['#D9D9D9', '#99CFA1', '#43925F', '#02371A']);
+// const getBackgroundColor = d3.scaleThreshold().domain([50, 70, 85, 100]).range(['#D9D9D9', '#99CFA1', '#43925F', '#02371A']);
+const getBackgroundColor = d3.scaleThreshold().domain([50, 70, 85, 100]).range(['#D9D9D9', '#8DB8D9', '#2E8AD0', '#174568']);
 const getFontColor = d3.scaleThreshold().domain([50, 70, 85, 100]).range(['#808080', '#FFFFFF', '#FFFFFF', '#FFFFFF']);
 // const getHeightColor = d3.scaleThreshold().domain([99, 100]).range(['#2E8AD0', '#cb181d']);
 const getHeightColor = d3.scaleThreshold().domain([50, 70, 85, 100]).range(['#8DB8D9', '#8DB8D9', '#8DB8D9', '#8DB8D9', '#cb181d']);
-// const getHeightColor = d3.scaleThreshold().domain([50, 70, 85, 100]).range(['#8DB8D9', '#8DB8D9', '#2E8AD0', '#174568', '#cb181d']);
-const getHeightColorRight = d3.scaleThreshold().domain([99, 100]).range(['#2E8AD0', '#cb181d']);
+
+const semTitleHeight = 30;
+const semHeaderHeight = 40;
+const courseItemHeight = 22;
+const courseItemPosYScale = courseItemHeight + 5;
+const courseItemNameWidth = 240;
+const courseItemAvgScorePosX = courseItemNameWidth;
+const courseItemAvgScoreWidth = 90;
+const courseItemScoreDistributionPosX = courseItemAvgScorePosX + courseItemAvgScoreWidth + 5;
+const courseItemScoreDistributionWidth = 520;
+const totalCourseItemWidth = courseItemNameWidth + courseItemAvgScoreWidth + courseItemScoreDistributionWidth + 5;
 
 class StatisticsCourses extends Component {
   constructor(props) {
@@ -71,18 +76,6 @@ class StatisticsCourses extends Component {
   renderCourse() {
     console.log('render course');
     const { allSemIds, allSems } = this.state;
-    const semTitleHeight = 30;
-    const semHeaderHeight = 40;
-
-    const courseItemHeight = 22;
-    const courseItemPosYMin = semTitleHeight + semHeaderHeight;
-    const courseItemPosYScale = courseItemHeight + 5;
-    const courseItemNameWidth = 240;
-    const courseItemAvgScorePosX = courseItemNameWidth;
-    const courseItemAvgScoreWidth = 90;
-    const courseItemScoreDistributionPosX = courseItemAvgScorePosX + courseItemAvgScoreWidth + 5;
-    const courseItemScoreDistributionWidth = 520;
-    const totalCourseItemWidth = courseItemNameWidth + courseItemAvgScoreWidth + courseItemScoreDistributionWidth + 5;
 
     // console.log(totalCourseItemWidth);
 
@@ -184,7 +177,6 @@ class StatisticsCourses extends Component {
     SemesterHeader.select('.sem-header-avg-score')
       .style('cursor', 'pointer')
       .on('click', () => sortByAvgScore('sort-avg-score-desc'));
-
     // #endregion
 
     // #region sem-header-score-distribution
@@ -371,6 +363,8 @@ class StatisticsCourses extends Component {
         d3.select(parent).select('.course-item-rect').attr('fill', 'rgba(0, 0, 0, 0)');
       });
 
+    const renderCourseDetail = (course) => this.renderCourseDetail(course);
+
     CourseItem.on('click', function (d, i) {
       // CourseItem.classed('selected', false);
       // d3.select(this).classed('selected', true);
@@ -418,7 +412,7 @@ class StatisticsCourses extends Component {
       .selectAll('rect')
       .data(
         (item, index) => {
-          const allScores = [...item.studentYear1, ...item.studentYear2, ...item.studentYear3, ...item.studentOverYear4];
+          const allScores = [...item.studentYear1, ...item.studentYear2, ...item.studentYear3, ...item.studentYear4, ...item.studentYearOther];
           allScores.sort((prevScore, currentScore) => prevScore - currentScore);
 
           const histoChart = d3.histogram();
@@ -449,7 +443,6 @@ class StatisticsCourses extends Component {
 
     Histogram.enter()
       .append('rect')
-      // .attr('fill', '#174568')
       .attr('fill', (d, index) => getHeightColor(d.heightPercentage))
       .attr('width', 5)
       .attr('x', (d, index) => d.x0 * 5)
@@ -468,29 +461,48 @@ class StatisticsCourses extends Component {
       .attr('y', (d, i) => d.y)
       .attr('height', (d, i) => d.height)
       .delay((d, i) => i * 20);
+  }
 
-    function renderCourseDetail(course) {
-      const { id, name, averageScore, studentYear1, studentYear2, studentYear3, studentOverYear4, allLecturers, allLecturerIds } = course;
-      console.log('COURSE DETAIL', course);
-      // const { current } = this.rightRef;
-      const totalNumberStudent = studentYear1.length + studentYear2.length + studentYear3.length + studentOverYear4.length;
-      const maxPlotHeight = 280;
-      const maxBarHeight = maxPlotHeight - 20;
+  renderCourseDetail(course) {
+    const { id, name, averageScore, studentYear1, studentYear2, studentYear3, studentYear4, studentYearOther, allLecturers, allLecturerIds } = course;
+    console.log('COURSE DETAIL', course);
+    const totalNumberStudent = studentYear1.length + studentYear2.length + studentYear3.length + studentYear4.length + studentYearOther.length;
+    const maxPlotHeight = 280;
+    const maxBarHeight = maxPlotHeight - 20;
 
-      d3.select('.statistics-courses-right').selectAll('*').remove();
-      const rootRightDom = d3.select('.statistics-courses-right');
-      rootRightDom.append('div').classed('course-label', true).text(course.name);
-      rootRightDom.append('div').classed('student-count', true).html(`
-          <div>Number of student: <b>${totalNumberStudent}</b></div>
-        `);
+    d3.select('.statistics-courses-right').selectAll('*').remove();
+    const rootRightDom = d3.select('.statistics-courses-right');
+    rootRightDom.append('div').classed('course-label', true).text(course.name);
+    rootRightDom.append('div').classed('student-count', true).html(`
+        <div>Number of student: <b>${totalNumberStudent}</b></div>
+      `);
 
-      console.log(d3.select('.statistics-courses-right').node().clientWidth);
-      const Histogram = rootRightDom.append('svg').classed('histogram-right', true).attr('width', '100%').attr('height', maxPlotHeight);
+    function renderOption(option = null) {
+      if (!option) return;
+      rootRightDom.select('.option-content').remove();
+      switch (option) {
+        case 'SCORE_DISTRIBUTION_GENERAL': {
+          renderOptionScoreDistributionGeneral();
+          break;
+        }
+        case 'LIST_OF_STUDENTS_AND_LECTURERS': {
+          renderOptionListStudentLecturer();
+          break;
+        }
+        default:
+          break;
+      }
+    }
 
+    function renderOptionScoreDistributionGeneral() {
+      const OptionContent = rootRightDom.append('div').classed('option-content', true);
+      const Histogram = OptionContent.append('svg').classed('histogram-right', true).attr('width', '100%').attr('height', maxPlotHeight);
       const HistogramData = Histogram.append('g')
+        .classed('histogram-distribution-overview', true)
         .selectAll('svg')
         .data((item, index) => {
-          const allScores = [...studentYear1, ...studentYear2, ...studentYear3, ...studentOverYear4];
+          console.log(item);
+          const allScores = [...studentYear1, ...studentYear2, ...studentYear3, ...studentYear4, ...studentYearOther];
           const histoChart = d3.histogram();
           // allScores.sort((prevScore, currentScore) => prevScore - currentScore);
           histoChart
@@ -527,7 +539,7 @@ class StatisticsCourses extends Component {
         .attr('height', maxPlotHeight);
 
       Bar.append('rect')
-        .attr('fill', '#2E8AD0')
+        .attr('fill', 'rgba(46,138,208,0.5)')
         .attr('width', '100%')
         .attr('stroke', 'white')
         .attr('stroke-width', 1)
@@ -563,14 +575,224 @@ class StatisticsCourses extends Component {
         .tickSize(2)
         .tickFormat((d, i) => (d !== 90 ? `${d} - ${d + 9}` : '90 - 100'));
 
-      const HistogramAxis = rootRightDom.append('svg').attr('width', '100%').attr('height', 45).append('g').classed('histogram-axis', true).call(xAxis);
+      const HistogramAxis = OptionContent.append('svg').attr('width', '100%').attr('height', 45).append('g').classed('histogram-axis', true).call(xAxis);
       HistogramAxis.select('path').remove();
       HistogramAxis.selectAll('text').attr('transform', 'rotate(-60, 15, 15)');
-      //#endregion
 
-      //#region course-table
-      const CourseTable = rootRightDom
+      const HistogramFilter = OptionContent.append('div').classed('btn-toolbar', true).classed('distribution-filter-btn-toolbar', true);
+      HistogramFilter.append('button').classed('btn btn-outline-primary distribution-filter-btn active', true).attr('id', 'year1').text('Year 1');
+      HistogramFilter.append('button').classed('btn btn-outline-primary distribution-filter-btn', true).attr('id', 'year2').text('Year 2');
+      HistogramFilter.append('button').classed('btn btn-outline-primary distribution-filter-btn', true).attr('id', 'year3').text('Year 3');
+      HistogramFilter.append('button').classed('btn btn-outline-primary distribution-filter-btn', true).attr('id', 'year4').text('Year 4');
+      HistogramFilter.append('button').classed('btn btn-outline-primary distribution-filter-btn', true).attr('id', 'yearOther').text('Other');
+      HistogramFilter.selectAll('button').on('click', function () {
+        handleDistributionButtonChange.bind(this)();
+      });
+
+      renderHistogramnByYear('year1');
+
+      const StudentCountTable = OptionContent.append('div')
+        .classed('table-responsive-sm', true)
+        .classed('student-count-table', true)
+        .append('table')
+        .classed('table table-sm table-borderless', true);
+      const StudentCountTableHeader = StudentCountTable.append('thead').append('tr');
+      StudentCountTableHeader.append('th').classed('thead-year', true).text('Year');
+      StudentCountTableHeader.append('th').classed('thead-avg-score', true).text('Avg score');
+      StudentCountTableHeader.append('th').classed('thead-student-count', true).text('Number of students');
+      const studentCountData = StudentCountTable.append('tbody')
+        .selectAll('tr')
+        .data((d, i) => {
+          const maxStudentDensity = d3.max([studentYear1.length, studentYear2.length, studentYear3.length, studentYear4.length, studentYearOther.length]);
+          return [
+            {
+              name: 'Year 1',
+              averageScore: studentYear1.length === 0 ? 0 : (+d3.mean(studentYear1)).toFixed(0),
+              studentCount: studentYear1.length,
+              widthPercentage: (studentYear1.length / maxStudentDensity) * 100,
+            },
+            {
+              name: 'Year 2',
+              averageScore: studentYear2.length === 0 ? 0 : (+d3.mean(studentYear2)).toFixed(0),
+              studentCount: studentYear2.length,
+              widthPercentage: (studentYear2.length / maxStudentDensity) * 100,
+            },
+            {
+              name: 'Year 3',
+              averageScore: studentYear3.length === 0 ? 0 : (+d3.mean(studentYear3)).toFixed(0),
+              studentCount: studentYear3.length,
+              widthPercentage: (studentYear3.length / maxStudentDensity) * 100,
+            },
+            {
+              name: 'Year 4',
+              averageScore: studentYear4.length === 0 ? 0 : (+d3.mean(studentYear4)).toFixed(0),
+              studentCount: studentYear4.length,
+              widthPercentage: (studentYear4.length / maxStudentDensity) * 100,
+            },
+            {
+              name: 'Other',
+              averageScore: studentYearOther.length === 0 ? 0 : (+d3.mean(studentYearOther)).toFixed(0),
+              studentCount: studentYearOther.length,
+              widthPercentage: (studentYearOther.length / maxStudentDensity) * 100,
+            },
+          ];
+        });
+      const StudentCountTableRow = studentCountData.enter().append('tr');
+      StudentCountTableRow.append('td')
+        .classed('align-middle tbody-year', true)
+        .text((d, i) => d.name);
+      StudentCountTableRow.append('td')
+        .classed('align-middle tbody-avg-score', true)
         .append('div')
+        .style('width', '30px')
+        .style('height', '30px')
+        .style('background-color', (d, i) => (!d.studentCount ? 'rgba(255,255,255,0)' : getBackgroundColor(d.averageScore)))
+        .style('color', (d, i) => getFontColor(d.averageScore))
+        .text((d, i) => (!d.studentCount ? '' : d.averageScore));
+      const StudentCountBarChart = StudentCountTableRow.append('td')
+        .classed('align-middle tbody-student-count', true)
+        .append('svg')
+        .attr('width', '100%')
+        .attr('height', 30);
+      StudentCountBarChart.append('rect')
+        .attr('x', 0)
+        .attr('fill', '#2E8AD0')
+        .attr('width', 0)
+        .attr('height', '100%')
+        .transition()
+        .duration((d, i) => 500 * (d.widthPercentage / 100))
+        .attr('width', (d, i) => `calc(${d.widthPercentage * 0.9}%)`)
+        .delay((d, i) => i * 20);
+
+      StudentCountBarChart.append('text')
+        .attr('x', 0)
+        .attr('y', 20)
+        .text((d, i) => d.studentCount)
+        .transition()
+        .duration((d, i) => 500 * (d.widthPercentage / 100))
+        .attr('x', (d, i) => `calc(${d.widthPercentage * 0.9}%)`)
+        .attr('dx', (d, i) => (d.studentCount !== 0 ? 5 : 0))
+        .delay((d, i) => i * 20);
+
+      function handleDistributionButtonChange() {
+        HistogramFilter.selectAll('button').classed('active', false);
+        const btnNode = d3.select(this);
+        btnNode.classed('active', true);
+        renderHistogramnByYear(d3.select(this).attr('id'));
+      }
+
+      function renderHistogramnByYear(year) {
+        Histogram.select('.histogram-distribution-by-year').remove();
+        OptionContent.select('.score-distribution-by-year-tooltip').remove();
+        const Tooltip = OptionContent.append('div')
+          .classed('score-distribution-by-year-tooltip', true)
+          .style('position', 'absolute')
+          .style('border', '3px solid grey')
+          .style('border-radius', '10px')
+          .style('background-color', 'white')
+          .style('width', '100px')
+          .style('height', '40px')
+          .style('display', 'flex')
+          .style('justify-content', 'center')
+          .style('align-items', 'center')
+          .style('visibility', 'hidden')
+          .text('YEEEEEEEEEEEET');
+        const allScores = [...studentYear1, ...studentYear2, ...studentYear3, ...studentYear4, ...studentYearOther];
+        let filteredScore = [];
+
+        switch (year) {
+          case 'year1': {
+            filteredScore = [...studentYear1];
+            break;
+          }
+          case 'year2': {
+            filteredScore = [...studentYear2];
+            break;
+          }
+          case 'year3': {
+            filteredScore = [...studentYear3];
+            break;
+          }
+          case 'year4': {
+            filteredScore = [...studentYear4];
+            break;
+          }
+          case 'yearOther': {
+            filteredScore = [...studentYearOther];
+            break;
+          }
+          default:
+            break;
+        }
+
+        const HistogramDataByYear = Histogram.append('g')
+          .classed('histogram-distribution-by-year', true)
+          .selectAll('svg')
+          .data((item, index) => {
+            const histoChart = d3.histogram();
+            histoChart
+              .domain([0, 100])
+              .thresholds(d3.ticks(0, 90, 10))
+              .value((d) => d);
+
+            // Scale height if density is too big
+            const histogramDataOverview = histoChart(allScores);
+            const histogramDataByYear = histoChart(filteredScore);
+            const maxDensity = d3.max(histogramDataOverview, (d) => d.length);
+            const newHistogramLengthData = histogramDataByYear.map((d) => {
+              let heightRatio = d.length / maxDensity;
+              return {
+                x0: d.x0,
+                x1: d.x1,
+                y: maxPlotHeight - maxBarHeight * heightRatio,
+                height: maxBarHeight * heightRatio,
+                heightPercentage: heightRatio * 100,
+                length: d.length,
+              };
+            });
+            // console.log(newHistogramLengthData);
+            return newHistogramLengthData;
+          });
+
+        //#region course-item-histogram-bar
+        const Bar = HistogramDataByYear.enter()
+          .append('svg')
+          .attr('x', (d, i) => `${i * 10}%`)
+          .attr('y', 0)
+          .attr('width', '10%')
+          .attr('height', maxPlotHeight);
+
+        Bar.append('rect')
+          .attr('fill', 'rgba(46,138,208,1.0)')
+          .attr('width', '100%')
+          .attr('stroke', 'white')
+          .attr('stroke-width', 1)
+          .attr('height', (d, index) => 0)
+          .attr('y', (d, i) => maxPlotHeight)
+          .on('mouseover', function (d, i) {
+            Tooltip.style('visibility', 'visible');
+            Tooltip.text(d.length);
+            d3.select(this).attr('fill', '#174568');
+          })
+          .on('mousemove', function () {
+            Tooltip.style('left', `${d3.event.pageX - 100}px`).style('top', `${d3.event.pageY - 50}px`);
+          })
+          .on('mouseout', function () {
+            Tooltip.style('visibility', 'hidden');
+            d3.select(this).attr('fill', 'rgba(46,138,208,1.0)');
+          })
+          .transition()
+          .duration((d, i) => 500 * (d.heightPercentage / 100))
+          .attr('y', (d, i) => d.y)
+          .attr('height', (d, i) => d.height)
+          .delay((d, i) => i * 40);
+        //#endregion
+      }
+    }
+
+    function renderOptionListStudentLecturer() {
+      const OptionContent = rootRightDom.append('div').classed('option-content', true);
+      const CourseTable = OptionContent.append('div')
         .classed('table-responsive-xl', true)
         .style('margin-top', '20px')
         .append('table')
@@ -588,7 +810,6 @@ class StatisticsCourses extends Component {
       const CourseTableBody = CourseTable.append('tbody').selectAll('tr');
       const lecturerData = CourseTableBody.data(
         () => {
-          console.log(allLecturerIds);
           return allLecturerIds;
         },
         (d, i) => allLecturerIds[i]
@@ -602,15 +823,26 @@ class StatisticsCourses extends Component {
       LecturerItem.append('td')
         .style('text-align', 'center')
         .text((d, i) => (allLecturers[d].isTeachingPractice ? 'x' : ''));
-      //#endregion
     }
+
+    const DropdownContainer = rootRightDom.append('form').append('div').classed('form-group', true);
+    const DropdownMenu = DropdownContainer.append('select')
+      .classed('form-control', true)
+      .attr('id', 'formControlSelectDropdown')
+      .on('change', function () {
+        renderOption(d3.select(this).property('value'));
+      });
+    DropdownMenu.append('option').attr('value', 'SCORE_DISTRIBUTION_GENERAL').text('Score distribution');
+    DropdownMenu.append('option').attr('value', 'LIST_OF_STUDENTS_AND_LECTURERS').text('List of students and lecturers');
+
+    rootRightDom.append('div').classed('option-content', true);
+    renderOption('SCORE_DISTRIBUTION_GENERAL');
   }
 
   render() {
     console.log('RENDER');
     console.log('PROPS', this.props);
     console.log('STATE', this.state);
-    const { allSems, allSemIds } = this.state;
     return (
       <div>
         <Grid container className={'statistic-course-container'}>
