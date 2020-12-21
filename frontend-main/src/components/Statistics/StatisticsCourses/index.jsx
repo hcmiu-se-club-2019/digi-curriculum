@@ -36,13 +36,12 @@ class StatisticsCourses extends Component {
     };
   }
   componentDidMount() {
-    console.log('YEEET');
-    this.loadData();
-    // this.loadRandomData();
+    this._loadData();
   }
 
-  async loadData() {
+  async _loadData() {
     const { allSems, allSemIds } = await fetchStatisticByCourses();
+    d3.select('.statistics-courses-middle').selectAll('*').remove();
     d3.select('.statistics-courses-right').selectAll('*').remove();
     this.setState(
       {
@@ -57,8 +56,9 @@ class StatisticsCourses extends Component {
     );
   }
 
-  loadRandomData() {
+  _loadRandomData() {
     const { allSems, allSemIds } = getGeneratedCourseData();
+    d3.select('.statistics-courses-middle').selectAll('*').remove();
     d3.select('.statistics-courses-right').selectAll('*').remove();
     this.setState(
       {
@@ -74,11 +74,7 @@ class StatisticsCourses extends Component {
   }
 
   renderCourse() {
-    console.log('render course');
     const { allSemIds, allSems } = this.state;
-
-    // console.log(totalCourseItemWidth);
-
     const maxWidthPlot = 600;
     const maxHeightPlot = 22;
 
@@ -465,7 +461,7 @@ class StatisticsCourses extends Component {
 
   renderCourseDetail(course) {
     const { id, name, averageScore, studentYear1, studentYear2, studentYear3, studentYear4, studentYearOther, allLecturers, allLecturerIds } = course;
-    console.log('COURSE DETAIL', course);
+    // console.log('COURSE DETAIL', course);
     const totalNumberStudent = studentYear1.length + studentYear2.length + studentYear3.length + studentYear4.length + studentYearOther.length;
     const maxPlotHeight = 280;
     const maxBarHeight = maxPlotHeight - 20;
@@ -501,10 +497,8 @@ class StatisticsCourses extends Component {
         .classed('histogram-distribution-overview', true)
         .selectAll('svg')
         .data((item, index) => {
-          console.log(item);
           const allScores = [...studentYear1, ...studentYear2, ...studentYear3, ...studentYear4, ...studentYearOther];
           const histoChart = d3.histogram();
-          // allScores.sort((prevScore, currentScore) => prevScore - currentScore);
           histoChart
             .domain([0, 100])
             .thresholds(d3.ticks(0, 90, 10))
@@ -524,7 +518,6 @@ class StatisticsCourses extends Component {
               length: d.length,
             };
           });
-          console.log(newHistogramLengthData);
           return newHistogramLengthData;
         });
 
@@ -750,7 +743,6 @@ class StatisticsCourses extends Component {
                 length: d.length,
               };
             });
-            // console.log(newHistogramLengthData);
             return newHistogramLengthData;
           });
 
@@ -840,9 +832,9 @@ class StatisticsCourses extends Component {
   }
 
   render() {
-    console.log('RENDER');
-    console.log('PROPS', this.props);
-    console.log('STATE', this.state);
+    // console.log('RENDER');
+    // console.log('PROPS', this.props);
+    // console.log('STATE', this.state);
     return (
       <div>
         <Grid container className={'statistic-course-container'}>
@@ -851,7 +843,8 @@ class StatisticsCourses extends Component {
             <Box display="flex" flexDirection="column" justifyContent="center">
               <RoadBlockIcon className={'road-block-icon'} />
               <div>This page is under development</div>
-              <button onClick={() => this.loadRandomData()}>Random data</button>
+              <button onClick={() => this._loadRandomData()}>Random data</button>
+              <button onClick={() => this._loadData()}>Reset data</button>
             </Box>
           </Grid>
           <Grid item lg={6} className={'grid-item-middle'} ref={this.middleRef}>
