@@ -20,6 +20,7 @@ B. Logic load data cho panel bên phải:
 C. Logic khi drag and drop:
 
 D. Vấn đề cần làm: 
+
 -Clean code.
 
 -Fetch data từ backend và map data.
