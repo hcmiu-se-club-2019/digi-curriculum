@@ -1,0 +1,1530 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/3671ad7/
+@sindresorhus/is	package-lock.json	/^        "@sindresorhus\/is": "^0.14.0",$/;"	s	object:dependencies.got.requires
+@sindresorhus/is	package-lock.json	/^    "@sindresorhus\/is": {$/;"	o	object:dependencies
+@szmarczak/http-timer	package-lock.json	/^        "@szmarczak\/http-timer": "^1.1.2",$/;"	s	object:dependencies.got.requires
+@szmarczak/http-timer	package-lock.json	/^    "@szmarczak\/http-timer": {$/;"	o	object:dependencies
+@types/color-name	package-lock.json	/^        "@types\/color-name": "^1.1.1",$/;"	s	object:dependencies.ansi-styles.requires
+@types/color-name	package-lock.json	/^    "@types\/color-name": {$/;"	o	object:dependencies
+@types/mysql	package-lock.json	/^        "@types\/mysql": "^2.15.7",$/;"	s	object:dependencies.mysql2.requires
+@types/mysql	package-lock.json	/^    "@types\/mysql": {$/;"	o	object:dependencies
+@types/node	package-lock.json	/^        "@types\/node": "*"$/;"	s	object:dependencies.@types/mysql.requires
+@types/node	package-lock.json	/^        "@types\/node": "*"$/;"	s	object:dependencies.wkx.requires
+@types/node	package-lock.json	/^    "@types\/node": {$/;"	o	object:dependencies
+Assessment	sequelize.js	/^const Assessment = require(".\/models\/assessment")(sequelize,DataTypes)$/;"	C
+AssessmentTool	sequelize.js	/^const AssessmentTool = require(".\/models\/assessmentTool")(sequelize,DataTypes)$/;"	C
+Backend - Digit Curriculum	README.md	/^## Backend - Digit Curriculum$/;"	s
+Book	sequelize.js	/^const Book = require(".\/models\/book")(sequelize,DataTypes)$/;"	C
+Course	sequelize.js	/^const Course = require(".\/models\/course")(sequelize,DataTypes)$/;"	C
+CourseAssessment	sequelize.js	/^const CourseAssessment = require(".\/models\/intermediate\/courseAssessment")(sequelize,DataType/;"	C
+CourseBook	sequelize.js	/^const CourseBook = require(".\/models\/intermediate\/courseBook")(sequelize,DataTypes)$/;"	C
+CourseCourse	sequelize.js	/^const CourseCourse = require(".\/models\/intermediate\/courseCourse")(sequelize,DataTypes)$/;"	C
+CourseDepartment	sequelize.js	/^const CourseDepartment = require(".\/models\/intermediate\/courseDepartment")(sequelize,DataType/;"	C
+CourseInstructor	sequelize.js	/^const CourseInstructor = require(".\/models\/intermediate\/courseInstructor")(sequelize,DataType/;"	C
+CourseLevel	sequelize.js	/^const CourseLevel = require('.\/models\/courseLevel')(sequelize,DataTypes);$/;"	C
+CourseProgram	sequelize.js	/^const CourseProgram = require(".\/models\/intermediate\/courseProgram")(sequelize,DataTypes)$/;"	C
+CourseProgramPathway	sequelize.js	/^const CourseProgramPathway = require(".\/models\/intermediate\/coursePathway")(sequelize,DataTyp/;"	C
+CourseRelationship	sequelize.js	/^const CourseRelationship = require(".\/models\/courseRelationship")(sequelize,DataTypes);$/;"	C
+CourseType	sequelize.js	/^const CourseType = require(".\/models\/courseType")(sequelize,DataTypes)$/;"	C
+DB_HOST	sequelize.js	/^const DB_HOST = process.env.DB_HOST$/;"	C
+DB_NAME	sequelize.js	/^const DB_NAME = process.env.DB_NAME$/;"	C
+DB_PASSWORD	sequelize.js	/^const DB_PASSWORD = process.env.DB_PASSWORD$/;"	C
+DB_USER	sequelize.js	/^const DB_USER = process.env.DB_USER$/;"	C
+Department	sequelize.js	/^const Department = require(".\/models\/department")(sequelize,DataTypes)$/;"	C
+DepartmentInstructor	sequelize.js	/^const DepartmentInstructor = require(".\/models\/intermediate\/departmentInstructor")(sequelize,/;"	C
+Documentation	README.md	/^### Documentation$/;"	S	section:Backend - Digit Curriculum
+Instructor	sequelize.js	/^const Instructor = require(".\/models\/instructor")(sequelize,DataTypes)$/;"	C
+LearningOutcome	sequelize.js	/^const LearningOutcome = require(".\/models\/learningOutcome")(sequelize,DataTypes)$/;"	C
+PORT	index.js	/^const PORT = process.env.PORT || 3000;$/;"	C
+Pathway	sequelize.js	/^const Pathway = require(".\/models\/pathway")(sequelize,DataTypes)$/;"	C
+Program	sequelize.js	/^const Program = require(".\/models\/program")(sequelize,DataTypes)$/;"	C
+Serializer	controllers/course.js	/^const Serializer = require('sequelize-to-json');$/;"	C
+Table	controllers/book.js	/^const Table = require('..\/sequelize');$/;"	C
+Table	controllers/course.js	/^const Table = require("..\/sequelize");$/;"	C
+Table	controllers/department.js	/^const Table = require('..\/sequelize');$/;"	C
+Table	controllers/instructor.js	/^const Table = require('..\/sequelize');$/;"	C
+Table	controllers/pathway.js	/^const Table = require("..\/sequelize")$/;"	C
+Table	controllers/program.js	/^const Table = require("..\/sequelize");$/;"	C
+Table	controllers/syllabus.js	/^const Table = require('..\/sequelize')$/;"	C
+Table	controllers/utils.js	/^const Table = require('..\/sequelize');$/;"	C
+Table	sequelize.js	/^const Table = {$/;"	C
+Todo List	README.md	/^### Todo List$/;"	S	section:Backend - Digit Curriculum
+Topic	sequelize.js	/^const Topic = require(".\/models\/topic")(sequelize,DataTypes)$/;"	C
+TopicDetail	sequelize.js	/^const TopicDetail = require(".\/models\/topicDetail")(sequelize,DataTypes);$/;"	C
+TopicType	sequelize.js	/^const TopicType = require(".\/models\/topicType")(sequelize,DataTypes)$/;"	C
+Usage	README.md	/^### Usage$/;"	S	section:Backend - Digit Curriculum
+abbrev	package-lock.json	/^        "abbrev": "1"$/;"	s	object:dependencies.nopt.requires
+abbrev	package-lock.json	/^    "abbrev": {$/;"	o	object:dependencies
+accepts	package-lock.json	/^        "accepts": "~1.3.7",$/;"	s	object:dependencies.express.requires
+accepts	package-lock.json	/^    "accepts": {$/;"	o	object:dependencies
+ansi-align	package-lock.json	/^        "ansi-align": "^3.0.0",$/;"	s	object:dependencies.boxen.requires
+ansi-align	package-lock.json	/^    "ansi-align": {$/;"	o	object:dependencies
+ansi-regex	package-lock.json	/^            "ansi-regex": "^5.0.0"$/;"	s	object:dependencies.string-width.dependencies.strip-ansi.requires
+ansi-regex	package-lock.json	/^        "ansi-regex": "^4.1.0"$/;"	s	object:dependencies.strip-ansi.requires
+ansi-regex	package-lock.json	/^        "ansi-regex": {$/;"	o	object:dependencies.string-width.dependencies
+ansi-regex	package-lock.json	/^    "ansi-regex": {$/;"	o	object:dependencies
+ansi-styles	package-lock.json	/^        "ansi-styles": "^4.1.0",$/;"	s	object:dependencies.chalk.requires
+ansi-styles	package-lock.json	/^    "ansi-styles": {$/;"	o	object:dependencies
+any-promise	package-lock.json	/^        "any-promise": "^1.3.0"$/;"	s	object:dependencies.retry-as-promised.requires
+any-promise	package-lock.json	/^    "any-promise": {$/;"	o	object:dependencies
+anymatch	package-lock.json	/^        "anymatch": "~3.1.1",$/;"	s	object:dependencies.chokidar.requires
+anymatch	package-lock.json	/^    "anymatch": {$/;"	o	object:dependencies
+app	index.js	/^const app = express()$/;"	C
+array-flatten	package-lock.json	/^        "array-flatten": "1.1.1",$/;"	s	object:dependencies.express.requires
+array-flatten	package-lock.json	/^    "array-flatten": {$/;"	o	object:dependencies
+asignAssessment	controllers/course.js	/^  asignAssessment: async (req,res) => {$/;"	p	class:module.exports
+assessment	controllers/course.js	/^          const assessment = await Table.Assessment.findByPk(assessment_id);$/;"	C	class:module.exports.deleteAssessmentTool
+assessment	controllers/course.js	/^        const assessment = await Table.Assessment.findByPk(assessmentId);$/;"	C	class:module.exports.asignAssessment
+assessment	controllers/course.js	/^        const assessment = await Table.Assessment.findByPk(assessmentId);$/;"	C	class:module.exports.deleteAssessment
+assessment	controllers/course.js	/^        const assessment = await Table.Assessment.findByPk(assessmentId);$/;"	C	class:module.exports.updateAssessment
+assessment	controllers/course.js	/^      const assessment = await Table.Assessment.findByPk(assessmentId);$/;"	C	class:module.exports.createAssessmentTool
+assessmentTool	controllers/course.js	/^        const assessmentTool = await Table.AssessmentTool.findByPk(assessmentToolId);$/;"	C	class:module.exports.deleteAssessmentTool
+assessmentTools	controllers/course.js	/^        const assessmentTools = await Table.Assessment.findAll({$/;"	C	class:module.exports.getAssessmentTools
+assessments	controllers/course.js	/^        const assessments = await Table.Course.findByPk(id,{$/;"	C	class:module.exports.getAssessments
+assignBook	controllers/course.js	/^  assignBook: async (req,res) => {$/;"	p	class:module.exports
+assignCourse	controllers/program.js	/^  assignCourse: async (req,res) => {$/;"	p	class:module.exports
+assignCourse	controllers/syllabus.js	/^  assignCourse: async (req,res) => {$/;"	p	class:module.exports
+assignedAssessment	controllers/course.js	/^          const assignedAssessment = await Table.CourseAssessment.create({$/;"	C	class:module.exports.asignAssessment
+assignedBook	controllers/course.js	/^      const assignedBook = await Table.CourseBook.create({$/;"	C	class:module.exports.assignBook
+assignedCourse	controllers/program.js	/^        const assignedCourse = await Table.CourseProgram.create({$/;"	C	class:module.exports.assignCourse
+assignedCourse	controllers/syllabus.js	/^            const assignedCourse = await Table.CourseProgramPathway.create({$/;"	C	class:module.exports.assignCourse
+assignedCourse	controllers/syllabus.js	/^            const assignedCourse = await Table.CourseProgramPathway.update({$/;"	C	class:module.exports.assignCourse
+assignedLO	controllers/course.js	/^            const assignedLO = await Table.LearningOutcome.update({$/;"	C	class:module.exports.createLearningOutcome
+author	package.json	/^  "author": "viayengi",$/;"	s
+balanced-match	package-lock.json	/^        "balanced-match": "^1.0.0",$/;"	s	object:dependencies.brace-expansion.requires
+balanced-match	package-lock.json	/^    "balanced-match": {$/;"	o	object:dependencies
+binary-extensions	package-lock.json	/^        "binary-extensions": "^2.0.0"$/;"	s	object:dependencies.is-binary-path.requires
+binary-extensions	package-lock.json	/^    "binary-extensions": {$/;"	o	object:dependencies
+body-parser	package-lock.json	/^        "body-parser": "1.19.0",$/;"	s	object:dependencies.express.requires
+body-parser	package-lock.json	/^    "body-parser": {$/;"	o	object:dependencies
+body-parser	package.json	/^    "body-parser": "^1.19.0",$/;"	s	object:dependencies
+bodyParser	index.js	/^const bodyParser = require("body-parser");$/;"	C
+book	controllers/book.js	/^      const book = await Table.Book.findByPk(id);$/;"	C	class:module.exports.createBook
+book	controllers/book.js	/^      const book = await Table.Book.findByPk(id);$/;"	C	class:module.exports.deleteBook
+book	controllers/course.js	/^      const book = await Table.Book.findByPk(bookId);$/;"	C	class:module.exports.assignBook
+book	controllers/course.js	/^      const book = await Table.Book.findByPk(bookId);$/;"	C	class:module.exports.deleteBook
+bookController	routes/book.js	/^const bookController = require('..\/controllers\/book');$/;"	C
+bookRoutes	index.js	/^const bookRoutes = require('.\/routes\/book');$/;"	C
+books	controllers/book.js	/^      const books = await Table.Book.findAll({});$/;"	C	class:module.exports.getAllBooks
+books	controllers/course.js	/^        const books = await course.getBooks();$/;"	C	class:module.exports.getBooks
+boxen	package-lock.json	/^        "boxen": "^4.2.0",$/;"	s	object:dependencies.update-notifier.requires
+boxen	package-lock.json	/^    "boxen": {$/;"	o	object:dependencies
+brace-expansion	package-lock.json	/^        "brace-expansion": "^1.1.7"$/;"	s	object:dependencies.minimatch.requires
+brace-expansion	package-lock.json	/^    "brace-expansion": {$/;"	o	object:dependencies
+braces	package-lock.json	/^        "braces": "~3.0.2",$/;"	s	object:dependencies.chokidar.requires
+braces	package-lock.json	/^    "braces": {$/;"	o	object:dependencies
+bytes	package-lock.json	/^        "bytes": "3.1.0",$/;"	s	object:dependencies.body-parser.requires
+bytes	package-lock.json	/^        "bytes": "3.1.0",$/;"	s	object:dependencies.raw-body.requires
+bytes	package-lock.json	/^    "bytes": {$/;"	o	object:dependencies
+cacheable-request	package-lock.json	/^        "cacheable-request": "^6.0.0",$/;"	s	object:dependencies.got.requires
+cacheable-request	package-lock.json	/^    "cacheable-request": {$/;"	o	object:dependencies
+call	all.sql	/^	('IT139',1,'Scalable and Distributed Computing','Tính toán khả năng mở rộng và phân /;"	p
+camelcase	package-lock.json	/^        "camelcase": "^5.3.1",$/;"	s	object:dependencies.boxen.requires
+camelcase	package-lock.json	/^    "camelcase": {$/;"	o	object:dependencies
+chalk	package-lock.json	/^        "chalk": "^3.0.0",$/;"	s	object:dependencies.boxen.requires
+chalk	package-lock.json	/^        "chalk": "^3.0.0",$/;"	s	object:dependencies.update-notifier.requires
+chalk	package-lock.json	/^    "chalk": {$/;"	o	object:dependencies
+chokidar	package-lock.json	/^        "chokidar": "^3.2.2",$/;"	s	object:dependencies.nodemon.requires
+chokidar	package-lock.json	/^    "chokidar": {$/;"	o	object:dependencies
+ci-info	package-lock.json	/^        "ci-info": "^2.0.0"$/;"	s	object:dependencies.is-ci.requires
+ci-info	package-lock.json	/^    "ci-info": {$/;"	o	object:dependencies
+cli-boxes	package-lock.json	/^        "cli-boxes": "^2.2.0",$/;"	s	object:dependencies.boxen.requires
+cli-boxes	package-lock.json	/^    "cli-boxes": {$/;"	o	object:dependencies
+clone-response	package-lock.json	/^        "clone-response": "^1.0.2",$/;"	s	object:dependencies.cacheable-request.requires
+clone-response	package-lock.json	/^    "clone-response": {$/;"	o	object:dependencies
+color-convert	package-lock.json	/^        "color-convert": "^2.0.1"$/;"	s	object:dependencies.ansi-styles.requires
+color-convert	package-lock.json	/^    "color-convert": {$/;"	o	object:dependencies
+color-name	package-lock.json	/^        "color-name": "~1.1.4"$/;"	s	object:dependencies.color-convert.requires
+color-name	package-lock.json	/^    "color-name": {$/;"	o	object:dependencies
+concat-map	package-lock.json	/^        "concat-map": "0.0.1"$/;"	s	object:dependencies.brace-expansion.requires
+concat-map	package-lock.json	/^    "concat-map": {$/;"	o	object:dependencies
+configstore	package-lock.json	/^        "configstore": "^5.0.1",$/;"	s	object:dependencies.update-notifier.requires
+configstore	package-lock.json	/^    "configstore": {$/;"	o	object:dependencies
+content-disposition	package-lock.json	/^        "content-disposition": "0.5.3",$/;"	s	object:dependencies.express.requires
+content-disposition	package-lock.json	/^    "content-disposition": {$/;"	o	object:dependencies
+content-type	package-lock.json	/^        "content-type": "~1.0.4",$/;"	s	object:dependencies.body-parser.requires
+content-type	package-lock.json	/^        "content-type": "~1.0.4",$/;"	s	object:dependencies.express.requires
+content-type	package-lock.json	/^    "content-type": {$/;"	o	object:dependencies
+cookie	package-lock.json	/^        "cookie": "0.4.0",$/;"	s	object:dependencies.express.requires
+cookie	package-lock.json	/^    "cookie": {$/;"	o	object:dependencies
+cookie-signature	package-lock.json	/^        "cookie-signature": "1.0.6",$/;"	s	object:dependencies.express.requires
+cookie-signature	package-lock.json	/^    "cookie-signature": {$/;"	o	object:dependencies
+cors	index.js	/^const cors = require("cors")$/;"	C
+cors	package-lock.json	/^    "cors": {$/;"	o	object:dependencies
+cors	package.json	/^    "cors": "^2.8.5",$/;"	s	object:dependencies
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(courseId)$/;"	C	class:module.exports.updateRelationship
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(courseId);$/;"	C	class:module.exports.deleteRelationship
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(courseId);$/;"	C	class:module.exports.relateCourse
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.asignAssessment
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.assignBook
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.createAssessmentTool
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.createLearningOutcome
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.createTopic
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.deleteAssessment
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.deleteAssessmentTool
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.deleteBook
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.deleteCourse
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.deleteLearningOutcome
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.deleteTopic
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.getAssessmentTools
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.getAssessments
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.getAvailabelPrograms
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.getBooks
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.getInstructors
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.getLearningOutcomes
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.getRelatedCourses
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.getTopics
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.updateAssessment
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.updateCourse
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.updateLearningOutcome
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id);$/;"	C	class:module.exports.updateTopic
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(id,{$/;"	C	class:module.exports.getCourseById
+course	controllers/course.js	/^      const course = await Table.Course.findByPk(req.body.id);$/;"	C	class:module.exports.createCourse
+course	controllers/program.js	/^      const course = await Table.Course.findByPk(courseId);$/;"	C	class:module.exports.assignCourse
+course	controllers/program.js	/^      const course = await Table.Course.findByPk(courseId);$/;"	C	class:module.exports.deleteCourse
+course	controllers/program.js	/^      const course = await Table.Course.findByPk(courseId);$/;"	C	class:module.exports.updateCourse
+course	controllers/syllabus.js	/^        const course = await Table.Course.findByPk(courseId);$/;"	C	class:module.exports.assignCourse
+courseAssessmentToolsResponse	controllers/course.js	/^      const courseAssessmentToolsResponse = await fetch(`${host}\/courses\/${id}\/assessmentTool/;"	C	class:module.exports.getDetails
+courseAssessmentsResponse	controllers/course.js	/^      const courseAssessmentsResponse = await fetch(`${host}\/courses\/${id}\/assessments`);$/;"	C	class:module.exports.getDetails
+courseAssociation	models/association.js	/^  courseAssociation: (Table) => {$/;"	p	class:module.exports
+courseBooksResponse	controllers/course.js	/^      const courseBooksResponse = await fetch(`${host}\/courses\/${id}\/books`)$/;"	C	class:module.exports.getDetails
+courseController	routes/course.js	/^const courseController = require("..\/controllers\/course");$/;"	C
+courseInformationResponse	controllers/course.js	/^      const courseInformationResponse = await fetch(`${host}\/courses\/${id}`);$/;"	C	class:module.exports.getDetails
+courseLearningOutcomesResponse	controllers/course.js	/^      const courseLearningOutcomesResponse = await fetch(`${host}\/courses\/${id}\/los`);$/;"	C	class:module.exports.getDetails
+courseObj	controllers/course.js	/^        const courseObj = coursesArr[i];$/;"	C	class:module.exports.getAllCourse
+courseObj	controllers/course.js	/^      const courseObj = await (JSON.parse(JSON.stringify(course)))$/;"	C	class:module.exports.getCourseById
+courseTopicsDetailReponse	controllers/course.js	/^      const courseTopicsDetailReponse = await fetch(`${host}\/courses\/${id}\/topics?view=detail/;"	C	class:module.exports.getDetails
+courses	controllers/course.js	/^      const courses = await Table.Course.findAll({$/;"	C	class:module.exports.getAllCourse
+courses	controllers/department.js	/^        const courses = await department.getCourses();$/;"	C
+courses	controllers/program.js	/^        const courses = await program.getCourses();$/;"	C	class:module.exports.getAvailableCourses
+coursesArr	controllers/course.js	/^      const coursesArr = await JSON.parse(JSON.stringify(courses));$/;"	C	class:module.exports.getAllCourse
+createAssessmentTool	controllers/course.js	/^  createAssessmentTool: async (req,res) => {$/;"	p	class:module.exports
+createBook	controllers/book.js	/^  createBook: async (req,res) => {$/;"	p	class:module.exports
+createCourse	controllers/course.js	/^  createCourse: async (req,res) => {$/;"	p	class:module.exports
+createDepartment	controllers/department.js	/^  createDepartment: async (req,res) => {$/;"	p	class:module.exports
+createInstructor	controllers/instructor.js	/^  createInstructor: async (req,res) => {$/;"	p	class:module.exports
+createLearningOutcome	controllers/course.js	/^  createLearningOutcome: async (req,res) => {$/;"	p	class:module.exports
+createPathway	controllers/pathway.js	/^  createPathway: async (req,res) => {$/;"	p	class:module.exports
+createProgram	controllers/program.js	/^  createProgram: async (req,res) => {$/;"	p	class:module.exports
+createTopic	controllers/course.js	/^  createTopic: async (req,res) => {$/;"	p	class:module.exports
+createTopicDetail	controllers/course.js	/^  createTopicDetail: async (req,res) => {$/;"	p	class:module.exports
+crypto-random-string	package-lock.json	/^        "crypto-random-string": "^2.0.0"$/;"	s	object:dependencies.unique-string.requires
+crypto-random-string	package-lock.json	/^    "crypto-random-string": {$/;"	o	object:dependencies
+debug	package-lock.json	/^        "debug": "2.6.9",$/;"	s	object:dependencies.body-parser.requires
+debug	package-lock.json	/^        "debug": "2.6.9",$/;"	s	object:dependencies.express.requires
+debug	package-lock.json	/^        "debug": "2.6.9",$/;"	s	object:dependencies.finalhandler.requires
+debug	package-lock.json	/^        "debug": "2.6.9",$/;"	s	object:dependencies.send.requires
+debug	package-lock.json	/^        "debug": "^2.2.0"$/;"	s	object:dependencies.undefsafe.requires
+debug	package-lock.json	/^        "debug": "^3.2.6",$/;"	s	object:dependencies.nodemon.requires
+debug	package-lock.json	/^        "debug": "^4.1.1",$/;"	s	object:dependencies.sequelize.requires
+debug	package-lock.json	/^        "debug": {$/;"	o	object:dependencies.nodemon.dependencies
+debug	package-lock.json	/^        "debug": {$/;"	o	object:dependencies.sequelize.dependencies
+debug	package-lock.json	/^    "debug": {$/;"	o	object:dependencies
+decompress-response	package-lock.json	/^        "decompress-response": "^3.3.0",$/;"	s	object:dependencies.got.requires
+decompress-response	package-lock.json	/^    "decompress-response": {$/;"	o	object:dependencies
+deep-extend	package-lock.json	/^        "deep-extend": "^0.6.0",$/;"	s	object:dependencies.rc.requires
+deep-extend	package-lock.json	/^    "deep-extend": {$/;"	o	object:dependencies
+defer-to-connect	package-lock.json	/^        "defer-to-connect": "^1.0.1"$/;"	s	object:dependencies.@szmarczak/http-timer.requires
+defer-to-connect	package-lock.json	/^    "defer-to-connect": {$/;"	o	object:dependencies
+deleteAssessment	controllers/course.js	/^  deleteAssessment: async (req,res) => {$/;"	p	class:module.exports
+deleteAssessmentTool	controllers/course.js	/^  deleteAssessmentTool: async (req,res) => {$/;"	p	class:module.exports
+deleteBook	controllers/book.js	/^  deleteBook: async (req,res) => {$/;"	p	class:module.exports
+deleteBook	controllers/course.js	/^  deleteBook: async (req,res) => {$/;"	p	class:module.exports
+deleteCourse	controllers/course.js	/^  deleteCourse: async (req,res) => {$/;"	p	class:module.exports
+deleteCourse	controllers/program.js	/^  deleteCourse: async (req,res) => {$/;"	p	class:module.exports
+deleteCourse	controllers/syllabus.js	/^  deleteCourse: async (req,res) => {$/;"	p	class:module.exports
+deleteInstructor	controllers/instructor.js	/^  deleteInstructor: async (req,res) => {$/;"	p	class:module.exports
+deleteLearningOutcome	controllers/course.js	/^  deleteLearningOutcome: async (req,res) => {$/;"	p	class:module.exports
+deletePathways	controllers/pathway.js	/^  deletePathways: async (req,res) => {$/;"	p	class:module.exports
+deleteProgram	controllers/program.js	/^  deleteProgram: async (req,res) => {$/;"	p	class:module.exports
+deleteRelationship	controllers/course.js	/^  deleteRelationship: async (req,res) => {$/;"	p	class:module.exports
+deleteTopic	controllers/course.js	/^  deleteTopic: async (req,res) => {$/;"	p	class:module.exports
+deletedBook	controllers/book.js	/^        const deletedBook = await Table.Book.destroy({where:{id}});$/;"	C	class:module.exports.deleteBook
+deletedBook	controllers/course.js	/^        const deletedBook = await course.removeBooks(book);$/;"	C	class:module.exports.deleteBook
+deletedCourse	controllers/course.js	/^        const deletedCourse = await Table.Course.destroy({where: {id}})$/;"	C
+deletedCourse	controllers/syllabus.js	/^          const deletedCourse = await Table.CourseProgramPathway.destroy({$/;"	C	class:module.exports.deleteCourse
+deletedInstructor	controllers/instructor.js	/^        const deletedInstructor = await Table.Instructor.destroy({where: {id}});$/;"	C	class:module.exports.deleteInstructor
+deletedLO	controllers/course.js	/^            const deletedLO = await Table.LearningOutcome.findOne({$/;"	C	class:module.exports.deleteLearningOutcome
+deletedPathway	controllers/pathway.js	/^        const deletedPathway = await Table.Pathway.destroy({where: {id}});$/;"	C	class:module.exports.deletePathways
+deletedProgram	controllers/program.js	/^        const deletedProgram = await Table.Program.destroy({where: {id}});$/;"	C	class:module.exports.deleteProgram
+deletedTopicDetail	controllers/course.js	/^            const deletedTopicDetail = await Table.TopicDetail.destroy({where: {id: topicId}});$/;"	C	class:module.exports.deleteTopic
+denque	package-lock.json	/^        "denque": "^1.4.1",$/;"	s	object:dependencies.mysql2.requires
+denque	package-lock.json	/^    "denque": {$/;"	o	object:dependencies
+department	controllers/department.js	/^      const department = await Table.Department.findByPk(id);$/;"	C
+departmentController	routes/department.js	/^const departmentController = require('..\/controllers\/department');$/;"	C
+departmentRoutes	index.js	/^const departmentRoutes = require(".\/routes\/department");$/;"	C
+departments	controllers/department.js	/^      const departments = await Table.Department.findAll({});$/;"	C
+depd	package-lock.json	/^        "depd": "~1.1.2",$/;"	s	object:dependencies.body-parser.requires
+depd	package-lock.json	/^        "depd": "~1.1.2",$/;"	s	object:dependencies.express.requires
+depd	package-lock.json	/^        "depd": "~1.1.2",$/;"	s	object:dependencies.http-errors.requires
+depd	package-lock.json	/^        "depd": "~1.1.2",$/;"	s	object:dependencies.send.requires
+depd	package-lock.json	/^    "depd": {$/;"	o	object:dependencies
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.ansi-align
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.cacheable-request
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.chalk
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.make-dir
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.mysql2
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.named-placeholders
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.nodemon
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.package-json
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.semver-diff
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.send
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.sequelize
+dependencies	package-lock.json	/^      "dependencies": {$/;"	o	object:dependencies.string-width
+dependencies	package-lock.json	/^  "dependencies": {$/;"	o
+dependencies	package.json	/^  "dependencies": {$/;"	o
+description	package.json	/^  "description": "Backend for Side Project Digit Curriculum",$/;"	s
+destroy	package-lock.json	/^        "destroy": "~1.0.4",$/;"	s	object:dependencies.send.requires
+destroy	package-lock.json	/^    "destroy": {$/;"	o	object:dependencies
+dot-prop	package-lock.json	/^        "dot-prop": "^5.2.0",$/;"	s	object:dependencies.configstore.requires
+dot-prop	package-lock.json	/^    "dot-prop": {$/;"	o	object:dependencies
+dotenv	package-lock.json	/^    "dotenv": {$/;"	o	object:dependencies
+dotenv	package.json	/^    "dotenv": "^8.2.0",$/;"	s	object:dependencies
+dottie	package-lock.json	/^        "dottie": "^2.0.0",$/;"	s	object:dependencies.sequelize.requires
+dottie	package-lock.json	/^    "dottie": {$/;"	o	object:dependencies
+duplexer3	package-lock.json	/^        "duplexer3": "^0.1.4",$/;"	s	object:dependencies.got.requires
+duplexer3	package-lock.json	/^    "duplexer3": {$/;"	o	object:dependencies
+ee-first	package-lock.json	/^        "ee-first": "1.1.1"$/;"	s	object:dependencies.on-finished.requires
+ee-first	package-lock.json	/^    "ee-first": {$/;"	o	object:dependencies
+emoji-regex	package-lock.json	/^            "emoji-regex": "^7.0.1",$/;"	s	object:dependencies.ansi-align.dependencies.string-width.requires
+emoji-regex	package-lock.json	/^        "emoji-regex": "^8.0.0",$/;"	s	object:dependencies.string-width.requires
+emoji-regex	package-lock.json	/^        "emoji-regex": {$/;"	o	object:dependencies.string-width.dependencies
+emoji-regex	package-lock.json	/^    "emoji-regex": {$/;"	o	object:dependencies
+encodeurl	package-lock.json	/^        "encodeurl": "~1.0.2",$/;"	s	object:dependencies.express.requires
+encodeurl	package-lock.json	/^        "encodeurl": "~1.0.2",$/;"	s	object:dependencies.finalhandler.requires
+encodeurl	package-lock.json	/^        "encodeurl": "~1.0.2",$/;"	s	object:dependencies.send.requires
+encodeurl	package-lock.json	/^        "encodeurl": "~1.0.2",$/;"	s	object:dependencies.serve-static.requires
+encodeurl	package-lock.json	/^    "encodeurl": {$/;"	o	object:dependencies
+end-of-stream	package-lock.json	/^        "end-of-stream": "^1.1.0",$/;"	s	object:dependencies.pump.requires
+end-of-stream	package-lock.json	/^    "end-of-stream": {$/;"	o	object:dependencies
+escape-goat	package-lock.json	/^        "escape-goat": "^2.0.0"$/;"	s	object:dependencies.pupa.requires
+escape-goat	package-lock.json	/^    "escape-goat": {$/;"	o	object:dependencies
+escape-html	package-lock.json	/^        "escape-html": "~1.0.3",$/;"	s	object:dependencies.express.requires
+escape-html	package-lock.json	/^        "escape-html": "~1.0.3",$/;"	s	object:dependencies.finalhandler.requires
+escape-html	package-lock.json	/^        "escape-html": "~1.0.3",$/;"	s	object:dependencies.send.requires
+escape-html	package-lock.json	/^        "escape-html": "~1.0.3",$/;"	s	object:dependencies.serve-static.requires
+escape-html	package-lock.json	/^    "escape-html": {$/;"	o	object:dependencies
+etag	package-lock.json	/^        "etag": "~1.8.1",$/;"	s	object:dependencies.express.requires
+etag	package-lock.json	/^        "etag": "~1.8.1",$/;"	s	object:dependencies.send.requires
+etag	package-lock.json	/^    "etag": {$/;"	o	object:dependencies
+exports	controllers/book.js	/^module.exports = {$/;"	c	class:module
+exports	controllers/course.js	/^module.exports = {$/;"	c	class:module
+exports	controllers/department.js	/^module.exports = {$/;"	c	class:module
+exports	controllers/instructor.js	/^module.exports = {$/;"	c	class:module
+exports	controllers/pathway.js	/^module.exports = {$/;"	c	class:module
+exports	controllers/program.js	/^module.exports = {$/;"	c	class:module
+exports	controllers/syllabus.js	/^module.exports = {$/;"	c	class:module
+exports	controllers/utils.js	/^module.exports = {$/;"	c	class:module
+exports	models/association.js	/^module.exports = {$/;"	c	class:module
+express	package-lock.json	/^    "express": {$/;"	o	object:dependencies
+express	package.json	/^    "express": "^4.17.1",$/;"	s	object:dependencies
+fetch	controllers/course.js	/^const fetch = require('node-fetch');$/;"	C
+fill-range	package-lock.json	/^        "fill-range": "^7.0.1"$/;"	s	object:dependencies.braces.requires
+fill-range	package-lock.json	/^    "fill-range": {$/;"	o	object:dependencies
+filtering	all.sql	/^	('IT130',1,'Digital Image Processing','Xử lý ảnh số',3,1,'This course helps students dis/;"	D
+finalhandler	package-lock.json	/^        "finalhandler": "~1.1.2",$/;"	s	object:dependencies.express.requires
+finalhandler	package-lock.json	/^    "finalhandler": {$/;"	o	object:dependencies
+forwarded	package-lock.json	/^        "forwarded": "~0.1.2",$/;"	s	object:dependencies.proxy-addr.requires
+forwarded	package-lock.json	/^    "forwarded": {$/;"	o	object:dependencies
+fresh	package-lock.json	/^        "fresh": "0.5.2",$/;"	s	object:dependencies.express.requires
+fresh	package-lock.json	/^        "fresh": "0.5.2",$/;"	s	object:dependencies.send.requires
+fresh	package-lock.json	/^    "fresh": {$/;"	o	object:dependencies
+fsevents	package-lock.json	/^        "fsevents": "~2.1.2",$/;"	s	object:dependencies.chokidar.requires
+fsevents	package-lock.json	/^    "fsevents": {$/;"	o	object:dependencies
+generate-function	package-lock.json	/^        "generate-function": "^2.3.1",$/;"	s	object:dependencies.mysql2.requires
+generate-function	package-lock.json	/^    "generate-function": {$/;"	o	object:dependencies
+get-stream	package-lock.json	/^        "get-stream": "^4.1.0",$/;"	s	object:dependencies.got.requires
+get-stream	package-lock.json	/^        "get-stream": "^5.1.0",$/;"	s	object:dependencies.cacheable-request.requires
+get-stream	package-lock.json	/^        "get-stream": {$/;"	o	object:dependencies.cacheable-request.dependencies
+get-stream	package-lock.json	/^    "get-stream": {$/;"	o	object:dependencies
+getAllBooks	controllers/book.js	/^  getAllBooks: async (req,res) => {$/;"	p	class:module.exports
+getAllCourse	controllers/course.js	/^  getAllCourse: async (req,res) => {$/;"	p	class:module.exports
+getAllCourseRelationships	controllers/utils.js	/^  getAllCourseRelationships: async (req,res) => {$/;"	p	class:module.exports
+getAllCourseTypes	controllers/utils.js	/^  getAllCourseTypes : async (req,res) => {$/;"	p	class:module.exports
+getAllInstructors	controllers/instructor.js	/^  getAllInstructors: async (req,res) => {$/;"	p	class:module.exports
+getAllPathways	controllers/pathway.js	/^  getAllPathways: async (req,res) => {$/;"	p	class:module.exports
+getAllPrograms	controllers/program.js	/^  getAllPrograms: async (req,res) => {$/;"	p	class:module.exports
+getAssessmentTools	controllers/course.js	/^  getAssessmentTools: async (req,res) => {$/;"	p	class:module.exports
+getAssessments	controllers/course.js	/^  getAssessments: async (req,res) => {$/;"	p	class:module.exports
+getAvailabelPrograms	controllers/course.js	/^  getAvailabelPrograms: async (req,res) => {$/;"	p	class:module.exports
+getAvailableCourses	controllers/program.js	/^  getAvailableCourses: async (req,res) => {$/;"	p	class:module.exports
+getBooks	controllers/course.js	/^  getBooks: async (req,res) => {$/;"	p	class:module.exports
+getCourseById	controllers/course.js	/^  getCourseById: async (req,res) => {$/;"	p	class:module.exports
+getDetails	controllers/course.js	/^  getDetails: async (req,res) => {$/;"	p	class:module.exports
+getInstructorById	controllers/instructor.js	/^  getInstructorById: async (req,res) => {$/;"	p	class:module.exports
+getInstructors	controllers/course.js	/^  getInstructors: async (req,res) => {$/;"	p	class:module.exports
+getLearningOutcomes	controllers/course.js	/^  getLearningOutcomes: async (req,res) => {$/;"	p	class:module.exports
+getRelatedCourses	controllers/course.js	/^  getRelatedCourses: async (req,res) => {$/;"	p	class:module.exports
+getSyllabus	controllers/syllabus.js	/^  getSyllabus: async (req,res) => {$/;"	p	class:module.exports
+getTopics	controllers/course.js	/^  getTopics: async (req,res) => {$/;"	p	class:module.exports
+glob-parent	package-lock.json	/^        "glob-parent": "~5.1.0",$/;"	s	object:dependencies.chokidar.requires
+glob-parent	package-lock.json	/^    "glob-parent": {$/;"	o	object:dependencies
+global-dirs	package-lock.json	/^        "global-dirs": "^2.0.1",$/;"	s	object:dependencies.is-installed-globally.requires
+global-dirs	package-lock.json	/^    "global-dirs": {$/;"	o	object:dependencies
+got	package-lock.json	/^        "got": "^9.6.0",$/;"	s	object:dependencies.package-json.requires
+got	package-lock.json	/^    "got": {$/;"	o	object:dependencies
+graceful-fs	package-lock.json	/^        "graceful-fs": "^4.1.2",$/;"	s	object:dependencies.configstore.requires
+graceful-fs	package-lock.json	/^    "graceful-fs": {$/;"	o	object:dependencies
+has-flag	package-lock.json	/^            "has-flag": "^4.0.0"$/;"	s	object:dependencies.chalk.dependencies.supports-color.requires
+has-flag	package-lock.json	/^        "has-flag": "^3.0.0"$/;"	s	object:dependencies.supports-color.requires
+has-flag	package-lock.json	/^        "has-flag": {$/;"	o	object:dependencies.chalk.dependencies
+has-flag	package-lock.json	/^    "has-flag": {$/;"	o	object:dependencies
+has-yarn	package-lock.json	/^        "has-yarn": "^2.1.0",$/;"	s	object:dependencies.update-notifier.requires
+has-yarn	package-lock.json	/^    "has-yarn": {$/;"	o	object:dependencies
+hasAssessment	controllers/course.js	/^          const hasAssessment = await course.hasAssessment(assessment);$/;"	C	class:module.exports.deleteAssessmentTool
+hasAssessment	controllers/course.js	/^        const hasAssessment = await course.hasAssessment(assessment);$/;"	C	class:module.exports.asignAssessment
+hasAssessment	controllers/course.js	/^        const hasAssessment = await course.hasAssessment(assessment);$/;"	C	class:module.exports.createAssessmentTool
+hasAssessment	controllers/course.js	/^        const hasAssessment = await course.hasAssessment(assessment);$/;"	C	class:module.exports.deleteAssessment
+hasAssessment	controllers/course.js	/^        const hasAssessment = await course.hasAssessment(assessment);$/;"	C	class:module.exports.updateAssessment
+hasBook	controllers/course.js	/^      const hasBook = await course.hasBook(book);$/;"	C	class:module.exports.deleteBook
+hasBook	controllers/course.js	/^      const hasBook = await course.hasBooks(book);$/;"	C	class:module.exports.assignBook
+hasLO	controllers/course.js	/^          const hasLO = await Table.LearningOutcome.findOne({$/;"	C	class:module.exports.createLearningOutcome
+hasLO	controllers/course.js	/^          const hasLO = await course.hasLearningOutcome(lo);$/;"	C	class:module.exports.deleteAssessmentTool
+hasLO	controllers/course.js	/^          const hasLO = await course.hasLearningOutcome(lo);$/;"	C	class:module.exports.deleteLearningOutcome
+hasLO	controllers/course.js	/^        const hasLO = await course.hasLearningOutcome(lo);$/;"	C	class:module.exports.createAssessmentTool
+hasLO	controllers/course.js	/^        const hasLO = await course.hasLearningOutcome(lo);$/;"	C	class:module.exports.updateLearningOutcome
+host	controllers/course.js	/^      const host = 'http:\/\/localhost:3000'$/;"	C	class:module.exports.getDetails
+http-cache-semantics	package-lock.json	/^        "http-cache-semantics": "^4.0.0",$/;"	s	object:dependencies.cacheable-request.requires
+http-cache-semantics	package-lock.json	/^    "http-cache-semantics": {$/;"	o	object:dependencies
+http-errors	package-lock.json	/^        "http-errors": "1.7.2",$/;"	s	object:dependencies.body-parser.requires
+http-errors	package-lock.json	/^        "http-errors": "1.7.2",$/;"	s	object:dependencies.raw-body.requires
+http-errors	package-lock.json	/^        "http-errors": "~1.7.2",$/;"	s	object:dependencies.send.requires
+http-errors	package-lock.json	/^    "http-errors": {$/;"	o	object:dependencies
+iconv-lite	package-lock.json	/^        "iconv-lite": "0.4.24",$/;"	s	object:dependencies.body-parser.requires
+iconv-lite	package-lock.json	/^        "iconv-lite": "0.4.24",$/;"	s	object:dependencies.raw-body.requires
+iconv-lite	package-lock.json	/^        "iconv-lite": "^0.6.2",$/;"	s	object:dependencies.mysql2.requires
+iconv-lite	package-lock.json	/^        "iconv-lite": {$/;"	o	object:dependencies.mysql2.dependencies
+iconv-lite	package-lock.json	/^    "iconv-lite": {$/;"	o	object:dependencies
+ignore-by-default	package-lock.json	/^        "ignore-by-default": "^1.0.1",$/;"	s	object:dependencies.nodemon.requires
+ignore-by-default	package-lock.json	/^    "ignore-by-default": {$/;"	o	object:dependencies
+image	all.sql	/^	(285,'IT130','Apply special-domain image filtering.'),$/;"	D
+import-lazy	package-lock.json	/^        "import-lazy": "^2.1.0",$/;"	s	object:dependencies.update-notifier.requires
+import-lazy	package-lock.json	/^    "import-lazy": {$/;"	o	object:dependencies
+imurmurhash	package-lock.json	/^        "imurmurhash": "^0.1.4",$/;"	s	object:dependencies.write-file-atomic.requires
+imurmurhash	package-lock.json	/^    "imurmurhash": {$/;"	o	object:dependencies
+inflection	package-lock.json	/^        "inflection": "1.12.0",$/;"	s	object:dependencies.sequelize.requires
+inflection	package-lock.json	/^    "inflection": {$/;"	o	object:dependencies
+inherits	package-lock.json	/^        "inherits": "2.0.3",$/;"	s	object:dependencies.http-errors.requires
+inherits	package-lock.json	/^    "inherits": {$/;"	o	object:dependencies
+ini	package-lock.json	/^        "ini": "^1.3.5"$/;"	s	object:dependencies.global-dirs.requires
+ini	package-lock.json	/^        "ini": "~1.3.0",$/;"	s	object:dependencies.rc.requires
+ini	package-lock.json	/^    "ini": {$/;"	o	object:dependencies
+instructor	controllers/instructor.js	/^      const instructor = await Table.Instructor.findByPk(id);$/;"	C	class:module.exports.deleteInstructor
+instructor	controllers/instructor.js	/^      const instructor = await Table.Instructor.findByPk(id);$/;"	C	class:module.exports.getInstructorById
+instructor	controllers/instructor.js	/^      const instructor = await Table.Instructor.findByPk(req.body.id);$/;"	C	class:module.exports.createInstructor
+instructorController	routes/instructor.js	/^const instructorController = require("..\/controllers\/instructor");$/;"	C
+instructorObj	controllers/course.js	/^          let instructorObj = instructorsArr[i]$/;"	v	class:module.exports.getInstructors
+instructorRoutes	index.js	/^const instructorRoutes = require(".\/routes\/instructor");$/;"	C
+instructors	controllers/course.js	/^        const instructors = await course.getInstructors();$/;"	C	class:module.exports.getInstructors
+instructors	controllers/department.js	/^        const instructors = await department.getInstructors();$/;"	C
+instructors	controllers/instructor.js	/^      const instructors = await Table.Instructor.findAll({});$/;"	C	class:module.exports.getAllInstructors
+instructorsArr	controllers/course.js	/^        const instructorsArr = await JSON.parse(JSON.stringify(instructors))$/;"	C	class:module.exports.getInstructors
+integrity	package-lock.json	/^          "integrity": "sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI="$/;"	s	object:dependencies.named-placeholders.dependencies.yallist
+integrity	package-lock.json	/^          "integrity": "sha512-2y91h5OpQlolefMPmUlivelittSWy0rP+oYVpn6A7GwVHNE8AWzoYOBNmlwks3Lob/;"	s	object:dependencies.mysql2.dependencies.iconv-lite
+integrity	package-lock.json	/^          "integrity": "sha512-AuvKTrTfQNYNIctbR1K\/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS/;"	s	object:dependencies.string-width.dependencies.strip-ansi
+integrity	package-lock.json	/^          "integrity": "sha512-EykJT\/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDF/;"	s	object:dependencies.chalk.dependencies.has-flag
+integrity	package-lock.json	/^          "integrity": "sha512-IX2ncY78vDTjZMFUdmsvIRFY2Cf4FnD0wRs+nQwJU8Lu99\/tPFdb0VybiiMTPe3I/;"	s	object:dependencies.sequelize.dependencies.debug
+integrity	package-lock.json	/^          "integrity": "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo\/RPgnr1\/GGt+ic3iJ/;"	s	object:dependencies.string-width.dependencies.emoji-regex
+integrity	package-lock.json	/^          "integrity": "sha512-b39TBaTSfV6yBrapU89p5fKekE2m\/NwnDocOVruQFS1\/veMgdzuPcnOM34M6Cwx/;"	s	object:dependencies.make-dir.dependencies.semver
+integrity	package-lock.json	/^          "integrity": "sha512-b39TBaTSfV6yBrapU89p5fKekE2m\/NwnDocOVruQFS1\/veMgdzuPcnOM34M6Cwx/;"	s	object:dependencies.package-json.dependencies.semver
+integrity	package-lock.json	/^          "integrity": "sha512-b39TBaTSfV6yBrapU89p5fKekE2m\/NwnDocOVruQFS1\/veMgdzuPcnOM34M6Cwx/;"	s	object:dependencies.semver-diff.dependencies.semver
+integrity	package-lock.json	/^          "integrity": "sha512-bY6fj56OUQ0hU1KjFNDQuJFezqKdrAyFdIevADiqrWHwSlbmBNMHp5ak2f40Pm8JT/;"	s	object:dependencies.string-width.dependencies.ansi-regex
+integrity	package-lock.json	/^          "integrity": "sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0/;"	s	object:dependencies.nodemon.dependencies.debug
+integrity	package-lock.json	/^          "integrity": "sha512-nBF+F1rAZVCu\/p7rjzgA+Yb4lfYXrpl7a6VmJrU8wF9I1CKvP\/QwPNZHnOlwbTk/;"	s	object:dependencies.cacheable-request.dependencies.get-stream
+integrity	package-lock.json	/^          "integrity": "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO\/+Lwxc9+0q2wLyv4Dfvt80\/DP/;"	s	object:dependencies.chalk.dependencies.supports-color
+integrity	package-lock.json	/^          "integrity": "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk\/RyaKWP0PTKyWt/;"	s	object:dependencies.nodemon.dependencies.ms
+integrity	package-lock.json	/^          "integrity": "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk\/RyaKWP0PTKyWt/;"	s	object:dependencies.sequelize.dependencies.ms
+integrity	package-lock.json	/^          "integrity": "sha512-sWZlbEP2OsHNkXrMl5GYk\/jKk70MBng6UU4YI\/qGDYbgf6YbP4EvmqISbXCoJiR/;"	s	object:dependencies.named-placeholders.dependencies.lru-cache
+integrity	package-lock.json	/^          "integrity": "sha512-sauaDf\/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7Qz/;"	s	object:dependencies.nodemon.dependencies.semver
+integrity	package-lock.json	/^          "integrity": "sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z\/EfhWI4gl1Hwq8B\/GmY\/0oXZ6nF/;"	s	object:dependencies.send.dependencies.ms
+integrity	package-lock.json	/^          "integrity": "sha512-tqNXrS78oMOE73NMxK4EMLQsQowWf8jKooH9g7xPavRT706R6bkQJ6DY2Te7QukaZ/;"	s	object:dependencies.cacheable-request.dependencies.lowercase-keys
+integrity	package-lock.json	/^          "integrity": "sha512-vafcv6KjVZKSgz06oM\/H6GDBrAtz8vdhQakGjFIvNrHA6y3HCF1CInLy+QLq8dTJ/;"	s	object:dependencies.ansi-align.dependencies.string-width
+integrity	package-lock.json	/^          "integrity": "sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+K/;"	s	object:dependencies.string-width.dependencies.is-fullwidth-code-point
+integrity	package-lock.json	/^      "integrity": "sha1-0dyXOSAxTfZ\/vrlCI7TuNQI56Ws=",$/;"	s	object:dependencies.clone-response
+integrity	package-lock.json	/^      "integrity": "sha1-1WgS4cAXpuTnw+Ojeh2m143TyT4="$/;"	s	object:dependencies.seq-queue
+integrity	package-lock.json	/^      "integrity": "sha1-2Klr13\/Wjfd5OnMDajug1UBdR3s="$/;"	s	object:dependencies.concat-map
+integrity	package-lock.json	/^      "integrity": "sha1-32BBeABfUi8V60SQ5yR6G\/qmf4w="$/;"	s	object:dependencies.path-to-regexp
+integrity	package-lock.json	/^      "integrity": "sha1-4wOogrNCzD7oylE6eZmXNNqzriw="$/;"	s	object:dependencies.cookie-signature
+integrity	package-lock.json	/^      "integrity": "sha1-5HnICFjfDBsR3dppQPlgEfzaSpo="$/;"	s	object:dependencies.is-typedarray
+integrity	package-lock.json	/^      "integrity": "sha1-6SQ0v6XqjBn0HN\/UAddBo8gZ2Jc="$/;"	s	object:dependencies.prepend-http
+integrity	package-lock.json	/^      "integrity": "sha1-7gHdHKwO08vH\/b6jfcCo8c4ALOI="$/;"	s	object:dependencies.duplexer3
+integrity	package-lock.json	/^      "integrity": "sha1-8FKijacOYYkX7wqKw0wa5aaChrM="$/;"	s	object:dependencies.pseudomap
+integrity	package-lock.json	/^      "integrity": "sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg="$/;"	s	object:dependencies.escape-html
+integrity	package-lock.json	/^      "integrity": "sha1-BWmOPUXIjo1+nZLLBYTnfwlvPkM="$/;"	s	object:dependencies.import-lazy
+integrity	package-lock.json	/^      "integrity": "sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow="$/;"	s	object:dependencies.statuses
+integrity	package-lock.json	/^      "integrity": "sha1-FrXK\/Afb42dsGxmZF3gj1lA6yww=",$/;"	s	object:dependencies.url-parse-lax
+integrity	package-lock.json	/^      "integrity": "sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=",$/;"	s	object:dependencies.on-finished
+integrity	package-lock.json	/^      "integrity": "sha1-IQmtx5ZYh8\/AXLvUQsrIv7s2CGM="$/;"	s	object:dependencies.object-assign
+integrity	package-lock.json	/^      "integrity": "sha1-IpnwLG3tMNSllhsLn3RSShj2NPw="$/;"	s	object:dependencies.vary
+integrity	package-lock.json	/^      "integrity": "sha1-PFMZQukIwml8DsNEhYwobHygpgo="$/;"	s	object:dependencies.strip-json-comments
+integrity	package-lock.json	/^      "integrity": "sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac="$/;"	s	object:dependencies.fresh
+integrity	package-lock.json	/^      "integrity": "sha1-Qa4u62XvpiJorr\/qg6x9eSmbCIc="$/;"	s	object:dependencies.etag
+integrity	package-lock.json	/^      "integrity": "sha1-SMptcvbGo68Aqa1K5odr44ieKwk="$/;"	s	object:dependencies.ignore-by-default
+integrity	package-lock.json	/^      "integrity": "sha1-VSmk1nZUE07cxSZmVoNbD4Ua\/O4="$/;"	s	object:dependencies.methods
+integrity	package-lock.json	/^      "integrity": "sha1-V\/4cTkhHTt1lsJkR8msc1Ald2oQ="$/;"	s	object:dependencies.is-property
+integrity	package-lock.json	/^      "integrity": "sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g="$/;"	s	object:dependencies.ms
+integrity	package-lock.json	/^      "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",$/;"	s	object:dependencies.once
+integrity	package-lock.json	/^      "integrity": "sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0="$/;"	s	object:dependencies.ee-first
+integrity	package-lock.json	/^      "integrity": "sha1-Wx85evx11ne96Lz8Dkfh+aPZqJg="$/;"	s	object:dependencies.json-buffer
+integrity	package-lock.json	/^      "integrity": "sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4="$/;"	s	object:dependencies.inherits
+integrity	package-lock.json	/^      "integrity": "sha1-bd0hvSoxQXuScn3Vhfim83YI6+4=",$/;"	s	object:dependencies.nopt
+integrity	package-lock.json	/^      "integrity": "sha1-f\/0feMi+KMO6Rc1OGj9e4ZO9mYg="$/;"	s	object:dependencies.toposort-class
+integrity	package-lock.json	/^      "integrity": "sha1-gKTdMjdIOEv6JICDYirt7Jgq3\/M=",$/;"	s	object:dependencies.decompress-response
+integrity	package-lock.json	/^      "integrity": "sha1-hxDXrwqmJvj\/+hzgAWhUUmMlV0g="$/;"	s	object:dependencies.media-typer
+integrity	package-lock.json	/^      "integrity": "sha1-ibTRmasr7kneFk6gK4nORi1xt2c="$/;"	s	object:dependencies.balanced-match
+integrity	package-lock.json	/^      "integrity": "sha1-kYcg7ztjHFZCvgaPFa3lpG9Loec=",$/;"	s	object:dependencies.responselike
+integrity	package-lock.json	/^      "integrity": "sha1-khi5srkoojixPcT7a21XbyMUU+o="$/;"	s	object:dependencies.imurmurhash
+integrity	package-lock.json	/^      "integrity": "sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA="$/;"	s	object:dependencies.destroy
+integrity	package-lock.json	/^      "integrity": "sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak="$/;"	s	object:dependencies.depd
+integrity	package-lock.json	/^      "integrity": "sha1-mMI9qxF1ZXuMBXPozszZGw\/xjIQ="$/;"	s	object:dependencies.forwarded
+integrity	package-lock.json	/^      "integrity": "sha1-ml9pkFGx5wczKPKgCJaLZOopVdI="$/;"	s	object:dependencies.array-flatten
+integrity	package-lock.json	/^      "integrity": "sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM="$/;"	s	object:dependencies.utils-merge
+integrity	package-lock.json	/^      "integrity": "sha1-o7MKXE8ZkYMWeqq5O+764937ZU8="$/;"	s	object:dependencies.is-fullwidth-code-point
+integrity	package-lock.json	/^      "integrity": "sha1-ogCTVlbW9fa8TcdQLhrstwMihBY="$/;"	s	object:dependencies.inflection
+integrity	package-lock.json	/^      "integrity": "sha1-q8av7tzqUugJzcA3au0845Y10X8="$/;"	s	object:dependencies.any-promise
+integrity	package-lock.json	/^      "integrity": "sha1-qIwCU1eR8C7TfHahueqXc8gz+MI="$/;"	s	object:dependencies.is-extglob
+integrity	package-lock.json	/^      "integrity": "sha1-rT\/0yG7C0CkyL1oCw6mmBslbP1k="$/;"	s	object:dependencies.encodeurl
+integrity	package-lock.json	/^      "integrity": "sha1-sAqqVW3YtEVoFQ7J0blT8\/kMu2E="$/;"	s	object:dependencies.merge-descriptors
+integrity	package-lock.json	/^      "integrity": "sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw="$/;"	s	object:dependencies.unpipe
+integrity	package-lock.json	/^      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="$/;"	s	object:dependencies.wrappy
+integrity	package-lock.json	/^      "integrity": "sha1-tdRU3CGZriJWmfNGfloH87lVuv0="$/;"	s	object:dependencies.has-flag
+integrity	package-lock.json	/^      "integrity": "sha512-+GgHNg8xRhMXfEbv81iDtrVeTcWt0kWmTEY1XQK14dICTXnWJnT0dxdlPspwqF3keKMVP/;"	s	object:dependencies.moment-timezone
+integrity	package-lock.json	/^      "integrity": "sha512-+Hp8fLp57wnUSt0tY0tHEXh4voZRDnoIrZPqlo3DPiI4y9lwg\/jqx+1Om94\/W6ZaPDO/;"	s	object:dependencies.cookie
+integrity	package-lock.json	/^      "integrity": "sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x\/oI/;"	s	object:dependencies.end-of-stream
+integrity	package-lock.json	/^      "integrity": "sha512-0ISdNousHvZT2EiFlZeZAHBUvSxmKswVCEf8hW7KWgG4a8MVEu\/3Vb6uWYozkjylyCxe/;"	s	object:dependencies.defer-to-connect
+integrity	package-lock.json	/^      "integrity": "sha512-0KI\/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh\/hZykN8KpmMf7uYwPW3R+akZ6R/;"	s	object:dependencies.ipaddr.js
+integrity	package-lock.json	/^      "integrity": "sha512-0xe001vZBnJEK+uKcj8qOhyAKPzIT+gStxWr3LCB0DwcXR5NZJ3IaC+yGnHCYzB\/S7ov/;"	s	object:dependencies.readdirp
+integrity	package-lock.json	/^      "integrity": "sha512-1GJnq7RwuFPRicMHdT53vza5v39nep9OKIbozxNUpFXP04CydcdWrqpZQ+MlVdlLFCisW/;"	s	object:dependencies.@types/mysql
+integrity	package-lock.json	/^      "integrity": "sha512-1Yj8h9Q+QDF5FzhMs\/c9+6UntbD5MkRfRwac8DoEm9ZfUBZ7tZ55YcGVAzEe4bXsdQHE/;"	s	object:dependencies.binary-extensions
+integrity	package-lock.json	/^      "integrity": "sha512-1apePfXM1UOSqw0o9IiFAovVz9M5S1Dg+4TrDwfMewQ6p\/rmMueb7tWZjQ1rx4Loy1Ar/;"	s	object:dependencies.ansi-regex
+integrity	package-lock.json	/^      "integrity": "sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss\/19S9iBb/;"	s	object:dependencies.normalize-url
+integrity	package-lock.json	/^      "integrity": "sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv\/41Sn2emQ0dycQW4uZXLejwKv/;"	s	object:dependencies.yallist
+integrity	package-lock.json	/^      "integrity": "sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvN/;"	s	object:dependencies.is-number
+integrity	package-lock.json	/^      "integrity": "sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV\/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx/;"	s	object:dependencies.chalk
+integrity	package-lock.json	/^      "integrity": "sha512-4Oz8DUIwdvoa5qMJelxipzi\/iJIi40O5cGV1wNYp5hvZP8ZN0T+jiNkL0QepXs+EsQ9X/;"	s	object:dependencies.raw-body
+integrity	package-lock.json	/^      "integrity": "sha512-4YwEw3ZgK\/tY\/so+GfnSgXkdwIJJ1I32uZJztIEgZeAO6HMgj64OzySbWLgxj+tXhZC/;"	s	object:dependencies.sequelize-pool
+integrity	package-lock.json	/^      "integrity": "sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY/;"	s	object:dependencies.type-fest
+integrity	package-lock.json	/^      "integrity": "sha512-5G0tKtBTFImOqDnLB2hG6Bp2qcKEFduo4tZu9MT\/H6NQv\/ghhy30o55ufafxJ\/LdH7/;"	s	object:dependencies.is-glob
+integrity	package-lock.json	/^      "integrity": "sha512-5HqUqdhkEovj2Of\/ms3IeS\/EekcO54ytHRLV4PEY2rhRwrHXLQjeVEES0Lhka0xwNDt/;"	s	object:dependencies.global-dirs
+integrity	package-lock.json	/^      "integrity": "sha512-5dGPuURC113J99yga2ip554orbnowTMdUGIE6RiLXy+NbnIQ2QSQ93ZVCFYeX121sxfbi/;"	s	object:dependencies.sequelize-to-json
+integrity	package-lock.json	/^      "integrity": "sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1\//;"	s	object:dependencies.ci-info
+integrity	package-lock.json	/^      "integrity": "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li\/Hx6tyK0NEb+2GCy/;"	s	object:dependencies.to-regex-range
+integrity	package-lock.json	/^      "integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2P/;"	s	object:dependencies.normalize-path
+integrity	package-lock.json	/^      "integrity": "sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+/;"	s	object:dependencies.pstree.remy
+integrity	package-lock.json	/^      "integrity": "sha512-8\/uIhbG12Csjy2JEW7D9pHbreaVaS\/OpN3ycnyvElTdwM5n6GY6W6e2IPemfvGZeUMq/;"	s	object:dependencies.escape-goat
+integrity	package-lock.json	/^      "integrity": "sha512-8acYXXTI0AkQv6RAOjE3vOaIXZkT9wo4LOFbBKYQEEnnMNBpKqdUrI6S4NT0KPIo\/WVv/;"	s	object:dependencies.registry-url
+integrity	package-lock.json	/^      "integrity": "sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa\/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cE/;"	s	object:dependencies.dotenv
+integrity	package-lock.json	/^      "integrity": "sha512-96ECIfh9xtDDlPylNPXhzjsykHsMJZ18ASpaWzQyBr4YRTcVjUvzaHayDAES2oU\/3Kpl/;"	s	object:dependencies.is-npm
+integrity	package-lock.json	/^      "integrity": "sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2Dh/;"	s	object:dependencies.@sindresorhus/is
+integrity	package-lock.json	/^      "integrity": "sha512-9VGjrMsG1vePxcSweQsN20KY\/c4zN0h9fLjqAbwbPfahM3t+NL+M9HC8xeXG2I8pX5No/;"	s	object:dependencies.ansi-styles
+integrity	package-lock.json	/^      "integrity": "sha512-9y+Kds0+LoLG6yN802wVXoIfxYEwh3FlZwzMwpCZp62S2i1\/Jzeqb9Eeeju3NSHccGGa/;"	s	object:dependencies.update-notifier
+integrity	package-lock.json	/^      "integrity": "sha512-9ykJ\/46SN\/9KPM\/sichzQ7OvXyGDYKGTaDlKMGCAlg2UK8KRy4jb0d8sFc+0Tt0YYn/;"	s	object:dependencies.keyv
+integrity	package-lock.json	/^      "integrity": "sha512-Auw9a4AxqWpa9GUfj370BMPzzyncfBABW8Mab7BGWBYDj4Isgq+cDKtx0i6u9jcX9pQDn/;"	s	object:dependencies.fsevents
+integrity	package-lock.json	/^      "integrity": "sha512-AvHcyZ5JnSfq3ioSyjrBkH9yW4m7Ayk8\/9My\/DD9onKeu\/94fwrMocemO2QAJFAlnn/;"	s	object:dependencies.write-file-atomic
+integrity	package-lock.json	/^      "integrity": "sha512-BsVKsiGcQMFwT8UxypobUKyv7irCNRHk1T0G680vk88yf6LBByGcZJOTJCrTP2xVN6yI+/;"	s	object:dependencies.send
+integrity	package-lock.json	/^      "integrity": "sha512-CiyeOxFT\/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3/;"	s	object:dependencies.parseurl
+integrity	package-lock.json	/^      "integrity": "sha512-CwBLREIQ7LvYFB0WyRvwhq5N5qPhc6PMjD6bYggFlI5YyDgl+0vxq5VHbMOFqLg7hfWzm/;"	s	object:dependencies.emoji-regex
+integrity	package-lock.json	/^      "integrity": "sha512-CybGs60B7oYU\/qSQ6kuaFmRd9sTZ6oXSc0toqePvV74Ac6\/IFZSI1ReFQmtCN+uvW1M/;"	s	object:dependencies.retry-as-promised
+integrity	package-lock.json	/^      "integrity": "sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMM/;"	s	object:dependencies.strip-ansi
+integrity	package-lock.json	/^      "integrity": "sha512-ExO0774ikEObIAEV9kDo50o+79VCUdEB6n6lzKgGwupcVeRlhrj3qGAfwq8G6uBJjkqLr/;"	s	object:dependencies.content-disposition
+integrity	package-lock.json	/^      "integrity": "sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP\/UODVpGsr5OhXhhXg6f+qt/;"	s	object:dependencies.minimist
+integrity	package-lock.json	/^      "integrity": "sha512-FnI+VGOpnlGHWZxthPGR+QhR78fuiK0sNLkHQv+bL9fQi57lNNdquIbna\/WrfROrolq8/;"	s	object:dependencies.glob-parent
+integrity	package-lock.json	/^      "integrity": "sha512-G2Lj61tXDnVFFOi8VZds+SoQjtQC3dgokKdDG2mTm1tx4m50NUHBOZSBwQQHyy0V12A0J/;"	s	object:dependencies.lowercase-keys
+integrity	package-lock.json	/^      "integrity": "sha512-GMat4EJ5161kIy2HevLlr4luNjBgvmj413KaQA7jt4V8B4RDsfpHk7WQ9GVqfYyyx8OS\//;"	s	object:dependencies.get-stream
+integrity	package-lock.json	/^      "integrity": "sha512-GX0Ix\/CJcHyB8c4ykpHGIAvLyOwOobtM\/8d+TQkAd81\/bEjgPHrfba41Vpesr7jX\//;"	s	object:dependencies.semver-diff
+integrity	package-lock.json	/^      "integrity": "sha512-Gd2UZBJDkXlY7GbJxfsE8\/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOI/;"	s	object:dependencies.safe-buffer
+integrity	package-lock.json	/^      "integrity": "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr\/2/;"	s	object:dependencies.range-parser
+integrity	package-lock.json	/^      "integrity": "sha512-IZHaDeBeI+sZJRX7lGcXsdzgvZqKv6sECqsbErJA4mHWfpRrD8B97kSFN4cQz6nGBGiuF/;"	s	object:dependencies.chokidar
+integrity	package-lock.json	/^      "integrity": "sha512-Il80Qs2WjYlJIBNzNkK6KYqlVMTbZLXgHx2oT0pU\/fjRHyEp+PEfEPY0R3WCwAGVOtau/;"	s	object:dependencies.accepts
+integrity	package-lock.json	/^      "integrity": "sha512-Iq25XBt6zD5npPhlLVXGFN3\/gyR2\/qODcKNNyTMd4vbm39HUaOiAM4PMq0eMVC\/Tkx/;"	s	object:dependencies.to-readable-stream
+integrity	package-lock.json	/^      "integrity": "sha512-JIhqnCasI9yD+SsmkquHBxTSEuZdQX5BuQnS2Vc7puQQQ+8yiP5AY5uWhpdv4YL4VM5c6/;"	s	object:dependencies.mime-types
+integrity	package-lock.json	/^      "integrity": "sha512-JMrvUwE54emCYWlTI+hGrGv5I8dEwmco\/00EvkzIIsR7MqrHonbD9pO2MOfFnpFntl7e/;"	s	object:dependencies.serve-static
+integrity	package-lock.json	/^      "integrity": "sha512-Jo6dJ04CmSjuznwJSS3pUeWmd\/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fa/;"	s	object:dependencies.lru-cache
+integrity	package-lock.json	/^      "integrity": "sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEb/;"	s	object:dependencies.setprototypeof
+integrity	package-lock.json	/^      "integrity": "sha512-KIHbLJqu73RGr\/hnbrO9uBeixNGuvSQjul\/jdFvS\/KFSIH1hWVd1ng7zOHx+YrEfIn/;"	s	object:dependencies.cors
+integrity	package-lock.json	/^      "integrity": "sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRD/;"	s	object:dependencies.camelcase
+integrity	package-lock.json	/^      "integrity": "sha512-LOHxIOaPYdHlJRtCQfDIVZtfw\/ufM8+rVj649RIHzcm\/vGwQRXFt6OPqIFWsm2XEMrN/;"	s	object:dependencies.deep-extend
+integrity	package-lock.json	/^      "integrity": "sha512-Ltced+hIfTmaS28Zjv1BM552oQ3dbwPqI4+zI0SLgq+wpJhSyqgYude\/aZa\/3i31VCQ/;"	s	object:dependencies.nodemon
+integrity	package-lock.json	/^      "integrity": "sha512-LwZy+p3SFs1Pytd\/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69Tx/;"	s	object:dependencies.pump
+integrity	package-lock.json	/^      "integrity": "sha512-MiwiPkYSA8NWttRKAXdU9h0TxP6HAc1fl7qZmMO\/VQqQOND83G4nZLXd0kWILtAoT9cx/;"	s	object:dependencies.sequelize
+integrity	package-lock.json	/^      "integrity": "sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8Ob/;"	s	object:dependencies.widest-line
+integrity	package-lock.json	/^      "integrity": "sha512-OfzPuSZKGcgr96rf1oODnfjqBFmr1DVoc\/TrItj3Ohe0Ah1C5WX5Baquw\/9U9KovnQ8/;"	s	object:dependencies.denque
+integrity	package-lock.json	/^      "integrity": "sha512-Oj3cAGPCqOZX7Rz64Uny2GYAZNliQSqfbePrgAQ1wKAihYmCUnraBtJtKcGR4xz7wF+Lo/;"	s	object:dependencies.cacheable-request
+integrity	package-lock.json	/^      "integrity": "sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6\/5XpPNp2DuRH6+9QLw\/orhp72j87v8Qa1ScDk/;"	s	object:dependencies.semver
+integrity	package-lock.json	/^      "integrity": "sha512-P+lWzPrsgfN+UEpDS3U8AQKg\/UjZX6mQSJueZj3EK+vNESoqBSpBUD3gmu4sF9lOsjXW/;"	s	object:dependencies.registry-auth-token
+integrity	package-lock.json	/^      "integrity": "sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E/;"	s	object:dependencies.xdg-basedir
+integrity	package-lock.json	/^      "integrity": "sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1/;"	s	object:dependencies.lodash
+integrity	package-lock.json	/^      "integrity": "sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCv/;"	s	object:dependencies.dot-prop
+integrity	package-lock.json	/^      "integrity": "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey/;"	s	object:dependencies.supports-color
+integrity	package-lock.json	/^      "integrity": "sha512-R7eWptXuGYxwijs0eV+v3o6+XH1IqVK8dJOEecQfTmkncw9AV4dcw\/Dhxi8MdlqPthxx/;"	s	object:dependencies.got
+integrity	package-lock.json	/^      "integrity": "sha512-RRECPsj7iu\/xb5oKYcsFHSppFNnsj\/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpf/;"	s	object:dependencies.color-convert
+integrity	package-lock.json	/^      "integrity": "sha512-RZY5huIKCMRWDUqZlEi72f\/lmXKMvuszcMBduliQ3nnWbx9X\/ZBQO7DijMEYS9EhHBb/;"	s	object:dependencies.ini
+integrity	package-lock.json	/^      "integrity": "sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+/;"	s	object:dependencies.type-is
+integrity	package-lock.json	/^      "integrity": "sha512-UqBRqi4ju7T+TqGNdqAO0PaSVGsDGJUBQvk9eUWNGRY1CFGDzYhLWoM7JQEemnlvVcv\//;"	s	object:dependencies.has-yarn
+integrity	package-lock.json	/^      "integrity": "sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+gg/;"	s	object:dependencies.node-fetch
+integrity	package-lock.json	/^      "integrity": "sha512-VCdBRNFTX1fyE7Nb6FYoURo\/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZph/;"	s	object:dependencies.qs
+integrity	package-lock.json	/^      "integrity": "sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf\/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFR/;"	s	object:dependencies.signal-exit
+integrity	package-lock.json	/^      "integrity": "sha512-VjSeb\/lHmkoyd8ryPVIKvOCn4D1koMqY+vqyjjUfc3xyKtP4dYOxM44sZrnqQSzSds3x/;"	s	object:dependencies.is-yarn-global
+integrity	package-lock.json	/^      "integrity": "sha512-WBx8Uy5TLtOSRtIq+M03\/sKDrXCLHxwDcquSP2c43Le03\/9serjQBIztjRz6FkJez9D/;"	s	object:dependencies.touch
+integrity	package-lock.json	/^      "integrity": "sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN\/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs\/Vs/;"	s	object:dependencies.graceful-fs
+integrity	package-lock.json	/^      "integrity": "sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foY/;"	s	object:dependencies.@szmarczak/http-timer
+integrity	package-lock.json	/^      "integrity": "sha512-X\/p3UZerAIsbBfN\/IwahhYaBbY68EN\/UQBWHtsbXGT5bfrH\/p4NQzUCG1kF\/rtKa/;"	s	object:dependencies.validator
+integrity	package-lock.json	/^      "integrity": "sha512-Xng\/d4Ichh8uN4l0FToV\/258EjMGU9MGcA0HV2d9B\/ZpZB3lqQm7nkOdZdm5GhKtLL/;"	s	object:dependencies.wkx
+integrity	package-lock.json	/^      "integrity": "sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5/;"	s	object:dependencies.long
+integrity	package-lock.json	/^      "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7v/;"	s	object:dependencies.safer-buffer
+integrity	package-lock.json	/^      "integrity": "sha512-YfJT7rkpQB0updsdHLGWrvhBJfcfzNNawYDNIyQXJz0IViGf75O8EBPKSdvw2rF+LGCsX/;"	s	object:dependencies.is-ci
+integrity	package-lock.json	/^      "integrity": "sha512-Z5KOjYmnHyd\/ukynmFd\/WwyXHd7L4J9vTI\/nn5Ap9AVUgaAE15VvQ9MOGmJJygEUkl/;"	s	object:dependencies.moment
+integrity	package-lock.json	/^      "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR\/g7rd0xUimYNlvZRE\/K2MgZTjWy725/;"	s	object:dependencies.is-binary-path
+integrity	package-lock.json	/^      "integrity": "sha512-ZpClVKqXN3RGBmKibdfWzqCY4lnjEuoNzU5T0oEFpfd\/z5qJHVarukridD4juLO2FXMi/;"	s	object:dependencies.ansi-align
+integrity	package-lock.json	/^      "integrity": "sha512-\/2UGPSgmtqwo1ktx8NDHjuPwZWmHhO+gj0f93EkhLB5RgW9RZevWYYlIkS6zePc6U2Wp/;"	s	object:dependencies.is-path-inside
+integrity	package-lock.json	/^      "integrity": "sha512-\/NOTfLrsPBVeH7YtFPgsVWveuL+4SjjYxaQ1xtM1KMFj7HdxlBlxeyNLzhyJVx7r4rZG/;"	s	object:dependencies.mime-db
+integrity	package-lock.json	/^      "integrity": "sha512-a6sumDlzyHVJWb8+YofY4TW112G6p2FCPEAFk+59gIYHv3XHRhm9ltVQ9kli4hNWeQBwS/;"	s	object:dependencies.term-size
+integrity	package-lock.json	/^      "integrity": "sha512-aAWcW57uxVNrQZqFXjITpW3sIUQmHGG3qSb9mUah9MgMC4NeWhNOlNjXEYq3HjRAvL6ar/;"	s	object:dependencies.finalhandler
+integrity	package-lock.json	/^      "integrity": "sha512-aMKprgk5YhBNyH25hj8wGt2+D52Sw1DRRIzqBwLp2Ya9mFmY8KPvvtvmna8SxVR9JMZ4k/;"	s	object:dependencies.configstore
+integrity	package-lock.json	/^      "integrity": "sha512-ah5+q525gmcQ\/wfZExkFTSvajjAyje3PS4OAgWS2JyU8FOgUFJFQ3aitgRoZjhOW4fbI/;"	s	object:dependencies.mysql2
+integrity	package-lock.json	/^      "integrity": "sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+l/;"	s	object:dependencies.braces
+integrity	package-lock.json	/^      "integrity": "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm\/E7A/;"	s	object:dependencies.debug
+integrity	package-lock.json	/^      "integrity": "sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela\/ue5\/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g8/;"	s	object:dependencies.http-cache-semantics
+integrity	package-lock.json	/^      "integrity": "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU\/uBL\/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo/;"	s	object:dependencies.color-name
+integrity	package-lock.json	/^      "integrity": "sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV\/a4fX4XWW9CuFNK/;"	s	object:dependencies.body-parser
+integrity	package-lock.json	/^      "integrity": "sha512-dh\/frvCBVmSsDYzw6n926jv974gddhkFPfiN8hPOi30Wax25QZyZEGveluCgliBnqmuM/;"	s	object:dependencies.proxy-addr
+integrity	package-lock.json	/^      "integrity": "sha512-drqDG3cbczxxEJRoOXcOjtdp1J\/lyp1mNn0xaznRs8+muBhgQcrnbspox5X5fOw0HnMn/;"	s	object:dependencies.is-obj
+integrity	package-lock.json	/^      "integrity": "sha512-eB4uT9RGzg2odpER62bBwSLvUeGC+WbRjjyyFhGsKnc8wp\/m0+hQsMUvUe3H2V0D5vw0/;"	s	object:dependencies.boxen
+integrity	package-lock.json	/^      "integrity": "sha512-eeB5GfMNeevm\/GRYq20ShmsaGcmI81kIX2K9XQx5miC8KdHaC6Jm0qQ8ZNeGOi7wYB8O/;"	s	object:dependencies.generate-function
+integrity	package-lock.json	/^      "integrity": "sha512-fX6Z5o4m6XsXBdli9g7DtWgAx+osMsRRZFKma1mIUsLCz6vRvv+pz5VNbyu9UEDzpMWul/;"	s	object:dependencies.uuid
+integrity	package-lock.json	/^      "integrity": "sha512-fmrwR04lsniq\/uSr8yikThDTrM7epXHBAAjH9TbeH3rEA8tdCO7mRzB9hdmdGyJCxF8K/;"	s	object:dependencies.dottie
+integrity	package-lock.json	/^      "integrity": "sha512-g3FeP20LNwhALb\/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J\/fiSf1s/;"	s	object:dependencies.make-dir
+integrity	package-lock.json	/^      "integrity": "sha512-hEJH0s8PXLY\/cdXh66tNEQGndDrIKNqNC5xmrysZy3i5C3oEoLna7YAOad+7u125+zH1/;"	s	object:dependencies.pupa
+integrity	package-lock.json	/^      "integrity": "sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF\/j4osnnQLXBCBFBk\/t/;"	s	object:dependencies.content-type
+integrity	package-lock.json	/^      "integrity": "sha512-hZXc7K2e+PgeI1eDBe\/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI/;"	s	object:dependencies.negotiator
+integrity	package-lock.json	/^      "integrity": "sha512-iCuPHDFgrHX7H2vEI\/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187uf/;"	s	object:dependencies.brace-expansion
+integrity	package-lock.json	/^      "integrity": "sha512-j5EctnkH7amfV\/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI\/lJSl1nMpQ45hVarwNET/;"	s	object:dependencies.mimic-response
+integrity	package-lock.json	/^      "integrity": "sha512-k3bdm2n25tkyxcjSKzB5x8kfVxlMdgsbPr0GkZcwHsLpba6cBjqCt1KlcChKEvxHIcTB1/;"	s	object:dependencies.package-json
+integrity	package-lock.json	/^      "integrity": "sha512-mHJ9O79RqluphRrcw2X\/GTh3k9tVv8YcoyY4Kkh4WDMUYKRZUq0h1o0w2rrrxBqM7Voe/;"	s	object:dependencies.express
+integrity	package-lock.json	/^      "integrity": "sha512-mM8522psRCqzV+6LhomX5wgp25YVibjh8Wj23I5RPkPppSVSjyKD2A2mBJmWGa+KN7f2D/;"	s	object:dependencies.anymatch
+integrity	package-lock.json	/^      "integrity": "sha512-nne9\/IiQ\/hzIhY6pdDnbBtz7DjPTKrY00P\/zvPSm5pOFkl6xuGrGnXn\/VtTNNfNtA/;"	s	object:dependencies.abbrev
+integrity	package-lock.json	/^      "integrity": "sha512-nrXZwwXrD\/T\/JXeygJqdCO6NZZ1L66HrxM\/Z7mIq2oPanoN0F1nLx3lwJMu6AwJY69/;"	s	object:dependencies.undefsafe
+integrity	package-lock.json	/^      "integrity": "sha512-oTQgnd0hblfLsJ6BvJzzSL+Inogp3lq9fGgqRkMB\/ziKMgEUaFl801OncOzUmalfzt14/;"	s	object:dependencies.@types/node
+integrity	package-lock.json	/^      "integrity": "sha512-q0M\/9eZHzmr0AulXyPwNfZjtwZ\/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt/;"	s	object:dependencies.picomatch
+integrity	package-lock.json	/^      "integrity": "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl\/djYSu2OdQ2Pa302N4oq/;"	s	object:dependencies.fill-range
+integrity	package-lock.json	/^      "integrity": "sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLi/;"	s	object:dependencies.@types/color-name
+integrity	package-lock.json	/^      "integrity": "sha512-s73XxOZ4zpt1edZYZzvhqFa6uvQc1vwUa0K0BdtIZgQMAJj9IbebH+JkgKZc9h+B05PKH/;"	s	object:dependencies.p-cancelable
+integrity	package-lock.json	/^      "integrity": "sha512-uNaeirEPvpZWSgzwsPGtU2zVSTrn\/8L5q\/IexZmH0eH6SA73CmAA5U4GwORTxQAZs95/;"	s	object:dependencies.unique-string
+integrity	package-lock.json	/^      "integrity": "sha512-uUQBt3H\/cSIVfch6i1EuPNy\/YsRSOUBXTVfZ+yR7Zjez3qjBz6i9+i4zjNaoqcoFVI4/;"	s	object:dependencies.http-errors
+integrity	package-lock.json	/^      "integrity": "sha512-v1plID3y9r\/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7\/8A9nLPoyvVp3RK\/EPFqn5kEz/;"	s	object:dependencies.crypto-random-string
+integrity	package-lock.json	/^      "integrity": "sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL/;"	s	object:dependencies.iconv-lite
+integrity	package-lock.json	/^      "integrity": "sha512-vF4ZbYdKS8OnoJAWBmMxCQDkiEBkGQYU7UZPtL8flbDRSNkhaXvRJ279ZtI6M+zDaQovV/;"	s	object:dependencies.sqlstring
+integrity	package-lock.json	/^      "integrity": "sha512-wZ8x1js7Ia0kecP\/CHM\/3ABkAmujX7WPvQk6uu3Fly\/Mk44pySulQpnHG46OMjHGXA/;"	s	object:dependencies.is-installed-globally
+integrity	package-lock.json	/^      "integrity": "sha512-weT+r0kTkRQdCdYCNtkMwWXQTMEswKrFBkm4ckQOMVhhqhIMI1UT2hMj+1iigIhgSZm5g/;"	s	object:dependencies.latest-version
+integrity	package-lock.json	/^      "integrity": "sha512-wiFWqxoLL3PGVReSZpjLVxyJ1bRqe+KKJVbr4hGs1KWfTZTQyezHFBbuKj9hsizHyGV2n/;"	s	object:dependencies.named-placeholders
+integrity	package-lock.json	/^      "integrity": "sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc7/;"	s	object:dependencies.mime
+integrity	package-lock.json	/^      "integrity": "sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexC/;"	s	object:dependencies.rc
+integrity	package-lock.json	/^      "integrity": "sha512-y4coMcylgSCdVinjiDBuR8PCC2bLjyGTwEmPb9NHR\/QaNU6EUOXcTY\/s6VjGMD6ENSE/;"	s	object:dependencies.cli-boxes
+integrity	package-lock.json	/^      "integrity": "sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4h/;"	s	object:dependencies.minimatch
+integrity	package-lock.json	/^      "integrity": "sha512-yaOH\/Pk\/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvt/;"	s	object:dependencies.toidentifier
+integrity	package-lock.json	/^      "integrity": "sha512-zUz5JD+tgqtuDjMhwIg5uFVV3dtqZ9yQJlZVfq4I01\/K5Paj5UHj7VyrQOJvzawSVlKp/;"	s	object:dependencies.string-width
+integrity	package-lock.json	/^      "integrity": "sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbz/;"	s	object:dependencies.bytes
+integrity	package-lock.json	/^      "integrity": "sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr\/\/H6V+0DvJ3OQ/;"	s	object:dependencies.typedarray-to-buffer
+ipaddr.js	package-lock.json	/^        "ipaddr.js": "1.9.1"$/;"	s	object:dependencies.proxy-addr.requires
+ipaddr.js	package-lock.json	/^    "ipaddr.js": {$/;"	o	object:dependencies
+is	all.sql	/^	('EN008',1,'Listening AE1','Tiếng anh chuyên ngành 1 (kỹ năng nghe)',2,0,'The course is /;"	p
+is-binary-path	package-lock.json	/^        "is-binary-path": "~2.1.0",$/;"	s	object:dependencies.chokidar.requires
+is-binary-path	package-lock.json	/^    "is-binary-path": {$/;"	o	object:dependencies
+is-ci	package-lock.json	/^        "is-ci": "^2.0.0",$/;"	s	object:dependencies.update-notifier.requires
+is-ci	package-lock.json	/^    "is-ci": {$/;"	o	object:dependencies
+is-extglob	package-lock.json	/^        "is-extglob": "^2.1.1"$/;"	s	object:dependencies.is-glob.requires
+is-extglob	package-lock.json	/^    "is-extglob": {$/;"	o	object:dependencies
+is-fullwidth-code-point	package-lock.json	/^            "is-fullwidth-code-point": "^2.0.0",$/;"	s	object:dependencies.ansi-align.dependencies.string-width.requires
+is-fullwidth-code-point	package-lock.json	/^        "is-fullwidth-code-point": "^3.0.0",$/;"	s	object:dependencies.string-width.requires
+is-fullwidth-code-point	package-lock.json	/^        "is-fullwidth-code-point": {$/;"	o	object:dependencies.string-width.dependencies
+is-fullwidth-code-point	package-lock.json	/^    "is-fullwidth-code-point": {$/;"	o	object:dependencies
+is-glob	package-lock.json	/^        "is-glob": "^4.0.1"$/;"	s	object:dependencies.glob-parent.requires
+is-glob	package-lock.json	/^        "is-glob": "~4.0.1",$/;"	s	object:dependencies.chokidar.requires
+is-glob	package-lock.json	/^    "is-glob": {$/;"	o	object:dependencies
+is-installed-globally	package-lock.json	/^        "is-installed-globally": "^0.3.1",$/;"	s	object:dependencies.update-notifier.requires
+is-installed-globally	package-lock.json	/^    "is-installed-globally": {$/;"	o	object:dependencies
+is-npm	package-lock.json	/^        "is-npm": "^4.0.0",$/;"	s	object:dependencies.update-notifier.requires
+is-npm	package-lock.json	/^    "is-npm": {$/;"	o	object:dependencies
+is-number	package-lock.json	/^        "is-number": "^7.0.0"$/;"	s	object:dependencies.to-regex-range.requires
+is-number	package-lock.json	/^    "is-number": {$/;"	o	object:dependencies
+is-obj	package-lock.json	/^        "is-obj": "^2.0.0"$/;"	s	object:dependencies.dot-prop.requires
+is-obj	package-lock.json	/^    "is-obj": {$/;"	o	object:dependencies
+is-path-inside	package-lock.json	/^        "is-path-inside": "^3.0.1"$/;"	s	object:dependencies.is-installed-globally.requires
+is-path-inside	package-lock.json	/^    "is-path-inside": {$/;"	o	object:dependencies
+is-property	package-lock.json	/^        "is-property": "^1.0.2"$/;"	s	object:dependencies.generate-function.requires
+is-property	package-lock.json	/^    "is-property": {$/;"	o	object:dependencies
+is-typedarray	package-lock.json	/^        "is-typedarray": "^1.0.0"$/;"	s	object:dependencies.typedarray-to-buffer.requires
+is-typedarray	package-lock.json	/^        "is-typedarray": "^1.0.0",$/;"	s	object:dependencies.write-file-atomic.requires
+is-typedarray	package-lock.json	/^    "is-typedarray": {$/;"	o	object:dependencies
+is-yarn-global	package-lock.json	/^        "is-yarn-global": "^0.3.0",$/;"	s	object:dependencies.update-notifier.requires
+is-yarn-global	package-lock.json	/^    "is-yarn-global": {$/;"	o	object:dependencies
+isAssigned	controllers/program.js	/^      const isAssigned = await program.hasCourse(course);$/;"	C	class:module.exports.assignCourse
+isAssigned	controllers/program.js	/^      const isAssigned = await program.hasCourse(course);$/;"	C	class:module.exports.deleteCourse
+isAssigned	controllers/program.js	/^      const isAssigned = await program.hasCourse(course);$/;"	C	class:module.exports.updateCourse
+isAssigned	controllers/syllabus.js	/^        const isAssigned = await Table.CourseProgramPathway.findOne({$/;"	C	class:module.exports.assignCourse
+isAssigned	controllers/syllabus.js	/^        const isAssigned = await Table.CourseProgramPathway.findOne({$/;"	C	class:module.exports.deleteCourse
+isDeleted	controllers/course.js	/^            const isDeleted = await Table.AssessmentTool.destroy({$/;"	C	class:module.exports.deleteAssessmentTool
+isDeleted	controllers/course.js	/^        const isDeleted = await Table.CourseCourse.destroy({$/;"	C	class:module.exports.deleteRelationship
+isInProgram	controllers/syllabus.js	/^        const isInProgram = await program.hasCourse(course);$/;"	C	class:module.exports.assignCourse
+isRelated	controllers/course.js	/^      const isRelated = await Table.CourseCourse.findAll({$/;"	C	class:module.exports.relateCourse
+isRelated	controllers/course.js	/^      const isRelated = await Table.CourseCourse.findAll({$/;"	C	class:module.exports.updateRelationship
+isRelated	controllers/course.js	/^      const isRelated = await Table.CourseCourse.findOne({$/;"	C	class:module.exports.deleteRelationship
+json-buffer	package-lock.json	/^        "json-buffer": "3.0.0"$/;"	s	object:dependencies.keyv.requires
+json-buffer	package-lock.json	/^    "json-buffer": {$/;"	o	object:dependencies
+keyv	package-lock.json	/^        "keyv": "^3.0.0",$/;"	s	object:dependencies.cacheable-request.requires
+keyv	package-lock.json	/^    "keyv": {$/;"	o	object:dependencies
+latest-version	package-lock.json	/^        "latest-version": "^5.0.0",$/;"	s	object:dependencies.update-notifier.requires
+latest-version	package-lock.json	/^    "latest-version": {$/;"	o	object:dependencies
+learningOutcomes	controllers/course.js	/^        const learningOutcomes = await course.getLearningOutcomes();$/;"	C	class:module.exports.getLearningOutcomes
+license	package.json	/^  "license": "ISC",$/;"	s
+lo	controllers/course.js	/^          const lo = await Table.LearningOutcome.findByPk(loutcome_id);$/;"	C	class:module.exports.deleteAssessmentTool
+lo	controllers/course.js	/^        const lo = await Table.LearningOutcome.findByPk(loId);$/;"	C	class:module.exports.deleteLearningOutcome
+lo	controllers/course.js	/^        const lo = await Table.LearningOutcome.findByPk(loId);$/;"	C	class:module.exports.updateLearningOutcome
+lo	controllers/course.js	/^      const lo = await Table.LearningOutcome.findByPk(loId);$/;"	C	class:module.exports.createAssessmentTool
+lockfileVersion	package-lock.json	/^  "lockfileVersion": 1,$/;"	n
+lodash	package-lock.json	/^        "lodash": "^4.17.15",$/;"	s	object:dependencies.sequelize.requires
+lodash	package-lock.json	/^    "lodash": {$/;"	o	object:dependencies
+long	package-lock.json	/^        "long": "^4.0.0",$/;"	s	object:dependencies.mysql2.requires
+long	package-lock.json	/^    "long": {$/;"	o	object:dependencies
+lowercase-keys	package-lock.json	/^        "lowercase-keys": "^1.0.0"$/;"	s	object:dependencies.responselike.requires
+lowercase-keys	package-lock.json	/^        "lowercase-keys": "^1.0.1",$/;"	s	object:dependencies.got.requires
+lowercase-keys	package-lock.json	/^        "lowercase-keys": "^2.0.0",$/;"	s	object:dependencies.cacheable-request.requires
+lowercase-keys	package-lock.json	/^        "lowercase-keys": {$/;"	o	object:dependencies.cacheable-request.dependencies
+lowercase-keys	package-lock.json	/^    "lowercase-keys": {$/;"	o	object:dependencies
+lru-cache	package-lock.json	/^        "lru-cache": "^4.1.3"$/;"	s	object:dependencies.named-placeholders.requires
+lru-cache	package-lock.json	/^        "lru-cache": "^6.0.0",$/;"	s	object:dependencies.mysql2.requires
+lru-cache	package-lock.json	/^        "lru-cache": {$/;"	o	object:dependencies.named-placeholders.dependencies
+lru-cache	package-lock.json	/^    "lru-cache": {$/;"	o	object:dependencies
+main	package.json	/^  "main": "index.js",$/;"	s
+make-dir	package-lock.json	/^        "make-dir": "^3.0.0",$/;"	s	object:dependencies.configstore.requires
+make-dir	package-lock.json	/^    "make-dir": {$/;"	o	object:dependencies
+media-typer	package-lock.json	/^        "media-typer": "0.3.0",$/;"	s	object:dependencies.type-is.requires
+media-typer	package-lock.json	/^    "media-typer": {$/;"	o	object:dependencies
+merge-descriptors	package-lock.json	/^        "merge-descriptors": "1.0.1",$/;"	s	object:dependencies.express.requires
+merge-descriptors	package-lock.json	/^    "merge-descriptors": {$/;"	o	object:dependencies
+methods	package-lock.json	/^        "methods": "~1.1.2",$/;"	s	object:dependencies.express.requires
+methods	package-lock.json	/^    "methods": {$/;"	o	object:dependencies
+mime	package-lock.json	/^        "mime": "1.6.0",$/;"	s	object:dependencies.send.requires
+mime	package-lock.json	/^    "mime": {$/;"	o	object:dependencies
+mime-db	package-lock.json	/^        "mime-db": "1.44.0"$/;"	s	object:dependencies.mime-types.requires
+mime-db	package-lock.json	/^    "mime-db": {$/;"	o	object:dependencies
+mime-types	package-lock.json	/^        "mime-types": "~2.1.24"$/;"	s	object:dependencies.type-is.requires
+mime-types	package-lock.json	/^        "mime-types": "~2.1.24",$/;"	s	object:dependencies.accepts.requires
+mime-types	package-lock.json	/^    "mime-types": {$/;"	o	object:dependencies
+mimic-response	package-lock.json	/^        "mimic-response": "^1.0.0"$/;"	s	object:dependencies.clone-response.requires
+mimic-response	package-lock.json	/^        "mimic-response": "^1.0.0"$/;"	s	object:dependencies.decompress-response.requires
+mimic-response	package-lock.json	/^        "mimic-response": "^1.0.1",$/;"	s	object:dependencies.got.requires
+mimic-response	package-lock.json	/^    "mimic-response": {$/;"	o	object:dependencies
+minimatch	package-lock.json	/^        "minimatch": "^3.0.4",$/;"	s	object:dependencies.nodemon.requires
+minimatch	package-lock.json	/^    "minimatch": {$/;"	o	object:dependencies
+minimist	package-lock.json	/^        "minimist": "^1.2.0",$/;"	s	object:dependencies.rc.requires
+minimist	package-lock.json	/^    "minimist": {$/;"	o	object:dependencies
+moment	package-lock.json	/^        "moment": ">= 2.9.0"$/;"	s	object:dependencies.moment-timezone.requires
+moment	package-lock.json	/^        "moment": "^2.26.0",$/;"	s	object:dependencies.sequelize.requires
+moment	package-lock.json	/^    "moment": {$/;"	o	object:dependencies
+moment-timezone	package-lock.json	/^        "moment-timezone": "^0.5.31",$/;"	s	object:dependencies.sequelize.requires
+moment-timezone	package-lock.json	/^    "moment-timezone": {$/;"	o	object:dependencies
+ms	package-lock.json	/^            "ms": "2.1.2"$/;"	s	object:dependencies.sequelize.dependencies.debug.requires
+ms	package-lock.json	/^            "ms": "^2.1.1"$/;"	s	object:dependencies.nodemon.dependencies.debug.requires
+ms	package-lock.json	/^        "ms": "2.0.0"$/;"	s	object:dependencies.debug.requires
+ms	package-lock.json	/^        "ms": "2.1.1",$/;"	s	object:dependencies.send.requires
+ms	package-lock.json	/^        "ms": {$/;"	o	object:dependencies.nodemon.dependencies
+ms	package-lock.json	/^        "ms": {$/;"	o	object:dependencies.send.dependencies
+ms	package-lock.json	/^        "ms": {$/;"	o	object:dependencies.sequelize.dependencies
+ms	package-lock.json	/^    "ms": {$/;"	o	object:dependencies
+mysql2	package-lock.json	/^    "mysql2": {$/;"	o	object:dependencies
+mysql2	package.json	/^    "mysql2": "^2.2.2",$/;"	s	object:dependencies
+name	package-lock.json	/^  "name": "server-digit-curriculum",$/;"	s
+name	package.json	/^  "name": "server-digit-curriculum",$/;"	s
+named-placeholders	package-lock.json	/^        "named-placeholders": "^1.1.2",$/;"	s	object:dependencies.mysql2.requires
+named-placeholders	package-lock.json	/^    "named-placeholders": {$/;"	o	object:dependencies
+negotiator	package-lock.json	/^        "negotiator": "0.6.2"$/;"	s	object:dependencies.accepts.requires
+negotiator	package-lock.json	/^    "negotiator": {$/;"	o	object:dependencies
+newAssessmentTool	controllers/course.js	/^          const newAssessmentTool = await Table.AssessmentTool.create({$/;"	C	class:module.exports.createAssessmentTool
+newBook	controllers/book.js	/^        const newBook = await Table.Book.create(req.body);$/;"	C	class:module.exports.createBook
+newCourse	controllers/course.js	/^        const newCourse = await Table.Course.create(req.body);$/;"	C	class:module.exports.createCourse
+newInstructor	controllers/instructor.js	/^        const newInstructor = await Table.Instructor.create(req.body);$/;"	C	class:module.exports.createInstructor
+newLO	controllers/course.js	/^            const newLO = await course.createLearningOutcome(req.body);$/;"	C	class:module.exports.createLearningOutcome
+newLO	controllers/course.js	/^          const newLO = await Table.LearningOutcome.create(req.body)$/;"	C	class:module.exports.createLearningOutcome
+newPathway	controllers/pathway.js	/^        const newPathway = await Table.Pathway.create(req.body);$/;"	C	class:module.exports.createPathway
+newProgram	controllers/program.js	/^        const newProgram = await Table.Program.create(req.body);$/;"	C	class:module.exports.createProgram
+newRelationship	controllers/course.js	/^        const newRelationship = await Table.CourseCourse.create({$/;"	C	class:module.exports.updateRelationship
+newTopic	controllers/course.js	/^        const newTopic = await course.createTopic(req.body);$/;"	C	class:module.exports.createTopic
+newTopicDetail	controllers/course.js	/^        const newTopicDetail = await topic.createTopicDetail(req.body);$/;"	C	class:module.exports.createTopicDetail
+node-fetch	package-lock.json	/^    "node-fetch": {$/;"	o	object:dependencies
+node-fetch	package.json	/^    "node-fetch": "^2.6.1",$/;"	s	object:dependencies
+nodemon	package-lock.json	/^    "nodemon": {$/;"	o	object:dependencies
+nodemon	package.json	/^    "nodemon": "^2.0.4",$/;"	s	object:dependencies
+nopt	package-lock.json	/^        "nopt": "~1.0.10"$/;"	s	object:dependencies.touch.requires
+nopt	package-lock.json	/^    "nopt": {$/;"	o	object:dependencies
+normalize-path	package-lock.json	/^        "normalize-path": "^3.0.0",$/;"	s	object:dependencies.anymatch.requires
+normalize-path	package-lock.json	/^        "normalize-path": "~3.0.0",$/;"	s	object:dependencies.chokidar.requires
+normalize-path	package-lock.json	/^    "normalize-path": {$/;"	o	object:dependencies
+normalize-url	package-lock.json	/^        "normalize-url": "^4.1.0",$/;"	s	object:dependencies.cacheable-request.requires
+normalize-url	package-lock.json	/^    "normalize-url": {$/;"	o	object:dependencies
+object-assign	package-lock.json	/^        "object-assign": "^4",$/;"	s	object:dependencies.cors.requires
+object-assign	package-lock.json	/^    "object-assign": {$/;"	o	object:dependencies
+on-finished	package-lock.json	/^        "on-finished": "~2.3.0",$/;"	s	object:dependencies.body-parser.requires
+on-finished	package-lock.json	/^        "on-finished": "~2.3.0",$/;"	s	object:dependencies.express.requires
+on-finished	package-lock.json	/^        "on-finished": "~2.3.0",$/;"	s	object:dependencies.finalhandler.requires
+on-finished	package-lock.json	/^        "on-finished": "~2.3.0",$/;"	s	object:dependencies.send.requires
+on-finished	package-lock.json	/^    "on-finished": {$/;"	o	object:dependencies
+once	package-lock.json	/^        "once": "^1.3.1"$/;"	s	object:dependencies.pump.requires
+once	package-lock.json	/^        "once": "^1.4.0"$/;"	s	object:dependencies.end-of-stream.requires
+once	package-lock.json	/^    "once": {$/;"	o	object:dependencies
+optional	package-lock.json	/^      "optional": true$/;"	b	object:dependencies.fsevents
+p-cancelable	package-lock.json	/^        "p-cancelable": "^1.0.0",$/;"	s	object:dependencies.got.requires
+p-cancelable	package-lock.json	/^    "p-cancelable": {$/;"	o	object:dependencies
+package-json	package-lock.json	/^        "package-json": "^6.3.0"$/;"	s	object:dependencies.latest-version.requires
+package-json	package-lock.json	/^    "package-json": {$/;"	o	object:dependencies
+parsedRelatedCourses	controllers/course.js	/^        const parsedRelatedCourses = await JSON.parse(JSON.stringify(relatedCourse));$/;"	C	class:module.exports.getRelatedCourses
+parseurl	package-lock.json	/^        "parseurl": "~1.3.3",$/;"	s	object:dependencies.express.requires
+parseurl	package-lock.json	/^        "parseurl": "~1.3.3",$/;"	s	object:dependencies.finalhandler.requires
+parseurl	package-lock.json	/^        "parseurl": "~1.3.3",$/;"	s	object:dependencies.serve-static.requires
+parseurl	package-lock.json	/^    "parseurl": {$/;"	o	object:dependencies
+path-to-regexp	package-lock.json	/^        "path-to-regexp": "0.1.7",$/;"	s	object:dependencies.express.requires
+path-to-regexp	package-lock.json	/^    "path-to-regexp": {$/;"	o	object:dependencies
+pathway	controllers/pathway.js	/^      const pathway = await Table.Pathway.findByPk(id);$/;"	C	class:module.exports.deletePathways
+pathway	controllers/pathway.js	/^      const pathway = await Table.Pathway.findByPk(req.body.id);$/;"	C	class:module.exports.createPathway
+pathwayController	routes/pathway.js	/^const pathwayController = require("..\/controllers\/pathway");$/;"	C
+pathwayRotues	index.js	/^const pathwayRotues = require(".\/routes\/pathway");$/;"	C
+pathways	controllers/pathway.js	/^      const pathways = await Table.Pathway.findAll({});$/;"	C	class:module.exports.getAllPathways
+picomatch	package-lock.json	/^        "picomatch": "^2.0.4"$/;"	s	object:dependencies.anymatch.requires
+picomatch	package-lock.json	/^        "picomatch": "^2.2.1"$/;"	s	object:dependencies.readdirp.requires
+picomatch	package-lock.json	/^    "picomatch": {$/;"	o	object:dependencies
+prepend-http	package-lock.json	/^        "prepend-http": "^2.0.0"$/;"	s	object:dependencies.url-parse-lax.requires
+prepend-http	package-lock.json	/^    "prepend-http": {$/;"	o	object:dependencies
+program	controllers/program.js	/^      const program = Table.Program.findByPk(id);$/;"	C	class:module.exports.deleteProgram
+program	controllers/program.js	/^      const program = await Table.Program.findByPk(id);$/;"	C	class:module.exports.assignCourse
+program	controllers/program.js	/^      const program = await Table.Program.findByPk(id);$/;"	C	class:module.exports.deleteCourse
+program	controllers/program.js	/^      const program = await Table.Program.findByPk(id);$/;"	C	class:module.exports.getAvailableCourses
+program	controllers/program.js	/^      const program = await Table.Program.findByPk(id);$/;"	C	class:module.exports.updateCourse
+program	controllers/program.js	/^      const program = await Table.Program.findByPk(req.body.id);$/;"	C	class:module.exports.createProgram
+program	controllers/syllabus.js	/^      const program = await Table.Program.findByPk(programId);$/;"	C	class:module.exports.assignCourse
+program	controllers/syllabus.js	/^      const program = await Table.Program.findByPk(programId);$/;"	C	class:module.exports.deleteCourse
+program	controllers/syllabus.js	/^      const program = await Table.Program.findByPk(programId);$/;"	C	class:module.exports.getSyllabus
+programController	routes/program.js	/^const programController = require("..\/controllers\/program");$/;"	C
+programRoutes	index.js	/^const programRoutes = require(".\/routes\/program");$/;"	C
+programs	controllers/course.js	/^        const programs = await course.getPrograms();$/;"	C	class:module.exports.getAvailabelPrograms
+programs	controllers/program.js	/^      const programs = await Table.Program.findAll({});$/;"	C	class:module.exports.getAllPrograms
+proxy-addr	package-lock.json	/^        "proxy-addr": "~2.0.5",$/;"	s	object:dependencies.express.requires
+proxy-addr	package-lock.json	/^    "proxy-addr": {$/;"	o	object:dependencies
+pseudomap	package-lock.json	/^            "pseudomap": "^1.0.2",$/;"	s	object:dependencies.named-placeholders.dependencies.lru-cache.requires
+pseudomap	package-lock.json	/^    "pseudomap": {$/;"	o	object:dependencies
+pstree.remy	package-lock.json	/^        "pstree.remy": "^1.1.7",$/;"	s	object:dependencies.nodemon.requires
+pstree.remy	package-lock.json	/^    "pstree.remy": {$/;"	o	object:dependencies
+pump	package-lock.json	/^            "pump": "^3.0.0"$/;"	s	object:dependencies.cacheable-request.dependencies.get-stream.requires
+pump	package-lock.json	/^        "pump": "^3.0.0"$/;"	s	object:dependencies.get-stream.requires
+pump	package-lock.json	/^    "pump": {$/;"	o	object:dependencies
+pupa	package-lock.json	/^        "pupa": "^2.0.1",$/;"	s	object:dependencies.update-notifier.requires
+pupa	package-lock.json	/^    "pupa": {$/;"	o	object:dependencies
+qs	package-lock.json	/^        "qs": "6.7.0",$/;"	s	object:dependencies.body-parser.requires
+qs	package-lock.json	/^        "qs": "6.7.0",$/;"	s	object:dependencies.express.requires
+qs	package-lock.json	/^    "qs": {$/;"	o	object:dependencies
+range-parser	package-lock.json	/^        "range-parser": "~1.2.1",$/;"	s	object:dependencies.express.requires
+range-parser	package-lock.json	/^        "range-parser": "~1.2.1",$/;"	s	object:dependencies.send.requires
+range-parser	package-lock.json	/^    "range-parser": {$/;"	o	object:dependencies
+raw-body	package-lock.json	/^        "raw-body": "2.4.0",$/;"	s	object:dependencies.body-parser.requires
+raw-body	package-lock.json	/^    "raw-body": {$/;"	o	object:dependencies
+rc	package-lock.json	/^        "rc": "^1.2.8"$/;"	s	object:dependencies.registry-auth-token.requires
+rc	package-lock.json	/^        "rc": "^1.2.8"$/;"	s	object:dependencies.registry-url.requires
+rc	package-lock.json	/^    "rc": {$/;"	o	object:dependencies
+readdirp	package-lock.json	/^        "readdirp": "~3.4.0"$/;"	s	object:dependencies.chokidar.requires
+readdirp	package-lock.json	/^    "readdirp": {$/;"	o	object:dependencies
+registry-auth-token	package-lock.json	/^        "registry-auth-token": "^4.0.0",$/;"	s	object:dependencies.package-json.requires
+registry-auth-token	package-lock.json	/^    "registry-auth-token": {$/;"	o	object:dependencies
+registry-url	package-lock.json	/^        "registry-url": "^5.0.0",$/;"	s	object:dependencies.package-json.requires
+registry-url	package-lock.json	/^    "registry-url": {$/;"	o	object:dependencies
+relateCourse	controllers/course.js	/^  relateCourse: async (req,res) => {$/;"	p	class:module.exports
+relatedCourse	controllers/course.js	/^        const relatedCourse = await Table.Course.findOne({$/;"	C	class:module.exports.getRelatedCourses
+relatedCourse	controllers/course.js	/^        const relatedCourse = await Table.CourseCourse.create({$/;"	C	class:module.exports.relateCourse
+relatedCourse	controllers/course.js	/^      const relatedCourse = await Table.Course.findByPk(relatedCourseId);$/;"	C	class:module.exports.deleteRelationship
+relatedCourse	controllers/course.js	/^      const relatedCourse = await Table.Course.findByPk(relatedCourseId);$/;"	C	class:module.exports.relateCourse
+relatedCourse	controllers/course.js	/^      const relatedCourse = await Table.Course.findByPk(relatedCourseId);$/;"	C	class:module.exports.updateRelationship
+relatedCoursesResponse	controllers/course.js	/^      const relatedCoursesResponse = await fetch(`${host}\/courses\/${id}\/relatedCourses`);$/;"	C	class:module.exports.getDetails
+relationshipArray	controllers/course.js	/^        const relationshipArray = await Table.CourseRelationship.findAll({});$/;"	C	class:module.exports.getRelatedCourses
+relationshipMap	controllers/course.js	/^        const relationshipMap = relationshipArray.reduce( (obj,current) => {$/;"	C	class:module.exports.getRelatedCourses
+relationships	controllers/utils.js	/^      const relationships = await Table.CourseRelationship.findAll({});$/;"	C	class:module.exports.getAllCourseRelationships
+requires	package-lock.json	/^          "requires": {$/;"	o	object:dependencies.ansi-align.dependencies.string-width
+requires	package-lock.json	/^          "requires": {$/;"	o	object:dependencies.cacheable-request.dependencies.get-stream
+requires	package-lock.json	/^          "requires": {$/;"	o	object:dependencies.chalk.dependencies.supports-color
+requires	package-lock.json	/^          "requires": {$/;"	o	object:dependencies.mysql2.dependencies.iconv-lite
+requires	package-lock.json	/^          "requires": {$/;"	o	object:dependencies.named-placeholders.dependencies.lru-cache
+requires	package-lock.json	/^          "requires": {$/;"	o	object:dependencies.nodemon.dependencies.debug
+requires	package-lock.json	/^          "requires": {$/;"	o	object:dependencies.sequelize.dependencies.debug
+requires	package-lock.json	/^          "requires": {$/;"	o	object:dependencies.string-width.dependencies.strip-ansi
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.@szmarczak/http-timer
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.@types/mysql
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.accepts
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.ansi-align
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.ansi-styles
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.anymatch
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.body-parser
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.boxen
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.brace-expansion
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.braces
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.cacheable-request
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.chalk
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.chokidar
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.clone-response
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.color-convert
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.configstore
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.content-disposition
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.cors
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.debug
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.decompress-response
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.dot-prop
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.end-of-stream
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.express
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.fill-range
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.finalhandler
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.generate-function
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.get-stream
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.glob-parent
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.global-dirs
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.got
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.http-errors
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.iconv-lite
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.is-binary-path
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.is-ci
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.is-glob
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.is-installed-globally
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.keyv
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.latest-version
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.lru-cache
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.make-dir
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.mime-types
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.minimatch
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.moment-timezone
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.mysql2
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.named-placeholders
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.nodemon
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.nopt
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.on-finished
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.once
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.package-json
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.proxy-addr
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.pump
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.pupa
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.raw-body
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.rc
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.readdirp
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.registry-auth-token
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.registry-url
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.responselike
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.retry-as-promised
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.semver-diff
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.send
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.sequelize
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.serve-static
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.string-width
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.strip-ansi
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.supports-color
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.to-regex-range
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.touch
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.type-is
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.typedarray-to-buffer
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.undefsafe
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.unique-string
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.update-notifier
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.url-parse-lax
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.widest-line
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.wkx
+requires	package-lock.json	/^      "requires": {$/;"	o	object:dependencies.write-file-atomic
+requires	package-lock.json	/^  "requires": true,$/;"	b
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/ansi-regex\/-\/ansi-regex-5.0.0.tgz",$/;"	s	object:dependencies.string-width.dependencies.ansi-regex
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/debug\/-\/debug-3.2.6.tgz",$/;"	s	object:dependencies.nodemon.dependencies.debug
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/debug\/-\/debug-4.2.0.tgz",$/;"	s	object:dependencies.sequelize.dependencies.debug
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/emoji-regex\/-\/emoji-regex-8.0.0.tgz",$/;"	s	object:dependencies.string-width.dependencies.emoji-regex
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/get-stream\/-\/get-stream-5.2.0.tgz",$/;"	s	object:dependencies.cacheable-request.dependencies.get-stream
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/has-flag\/-\/has-flag-4.0.0.tgz",$/;"	s	object:dependencies.chalk.dependencies.has-flag
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/iconv-lite\/-\/iconv-lite-0.6.2.tgz",$/;"	s	object:dependencies.mysql2.dependencies.iconv-lite
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/is-fullwidth-code-point\/-\/is-fullwidth-co/;"	s	object:dependencies.string-width.dependencies.is-fullwidth-code-point
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/lowercase-keys\/-\/lowercase-keys-2.0.0.tgz/;"	s	object:dependencies.cacheable-request.dependencies.lowercase-keys
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/lru-cache\/-\/lru-cache-4.1.5.tgz",$/;"	s	object:dependencies.named-placeholders.dependencies.lru-cache
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/ms\/-\/ms-2.1.1.tgz",$/;"	s	object:dependencies.send.dependencies.ms
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/ms\/-\/ms-2.1.2.tgz",$/;"	s	object:dependencies.nodemon.dependencies.ms
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/ms\/-\/ms-2.1.2.tgz",$/;"	s	object:dependencies.sequelize.dependencies.ms
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/semver\/-\/semver-5.7.1.tgz",$/;"	s	object:dependencies.nodemon.dependencies.semver
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/semver\/-\/semver-6.3.0.tgz",$/;"	s	object:dependencies.make-dir.dependencies.semver
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/semver\/-\/semver-6.3.0.tgz",$/;"	s	object:dependencies.package-json.dependencies.semver
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/semver\/-\/semver-6.3.0.tgz",$/;"	s	object:dependencies.semver-diff.dependencies.semver
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/string-width\/-\/string-width-3.1.0.tgz",$/;"	s	object:dependencies.ansi-align.dependencies.string-width
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/strip-ansi\/-\/strip-ansi-6.0.0.tgz",$/;"	s	object:dependencies.string-width.dependencies.strip-ansi
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/supports-color\/-\/supports-color-7.2.0.tgz/;"	s	object:dependencies.chalk.dependencies.supports-color
+resolved	package-lock.json	/^          "resolved": "https:\/\/registry.npmjs.org\/yallist\/-\/yallist-2.1.2.tgz",$/;"	s	object:dependencies.named-placeholders.dependencies.yallist
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/@sindresorhus\/is\/-\/is-0.14.0.tgz",$/;"	s	object:dependencies.@sindresorhus/is
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/@szmarczak\/http-timer\/-\/http-timer-1.1.2.tgz/;"	s	object:dependencies.@szmarczak/http-timer
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/@types\/color-name\/-\/color-name-1.1.1.tgz",$/;"	s	object:dependencies.@types/color-name
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/@types\/mysql\/-\/mysql-2.15.15.tgz",$/;"	s	object:dependencies.@types/mysql
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/@types\/node\/-\/node-14.11.1.tgz",$/;"	s	object:dependencies.@types/node
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/abbrev\/-\/abbrev-1.1.1.tgz",$/;"	s	object:dependencies.abbrev
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/accepts\/-\/accepts-1.3.7.tgz",$/;"	s	object:dependencies.accepts
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/ansi-align\/-\/ansi-align-3.0.0.tgz",$/;"	s	object:dependencies.ansi-align
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/ansi-regex\/-\/ansi-regex-4.1.0.tgz",$/;"	s	object:dependencies.ansi-regex
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/ansi-styles\/-\/ansi-styles-4.2.1.tgz",$/;"	s	object:dependencies.ansi-styles
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/any-promise\/-\/any-promise-1.3.0.tgz",$/;"	s	object:dependencies.any-promise
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/anymatch\/-\/anymatch-3.1.1.tgz",$/;"	s	object:dependencies.anymatch
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/array-flatten\/-\/array-flatten-1.1.1.tgz",$/;"	s	object:dependencies.array-flatten
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/balanced-match\/-\/balanced-match-1.0.0.tgz",$/;"	s	object:dependencies.balanced-match
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/binary-extensions\/-\/binary-extensions-2.1.0.t/;"	s	object:dependencies.binary-extensions
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/body-parser\/-\/body-parser-1.19.0.tgz",$/;"	s	object:dependencies.body-parser
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/boxen\/-\/boxen-4.2.0.tgz",$/;"	s	object:dependencies.boxen
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/brace-expansion\/-\/brace-expansion-1.1.11.tgz"/;"	s	object:dependencies.brace-expansion
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/braces\/-\/braces-3.0.2.tgz",$/;"	s	object:dependencies.braces
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/bytes\/-\/bytes-3.1.0.tgz",$/;"	s	object:dependencies.bytes
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/cacheable-request\/-\/cacheable-request-6.1.0.t/;"	s	object:dependencies.cacheable-request
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/camelcase\/-\/camelcase-5.3.1.tgz",$/;"	s	object:dependencies.camelcase
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/chalk\/-\/chalk-3.0.0.tgz",$/;"	s	object:dependencies.chalk
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/chokidar\/-\/chokidar-3.4.2.tgz",$/;"	s	object:dependencies.chokidar
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/ci-info\/-\/ci-info-2.0.0.tgz",$/;"	s	object:dependencies.ci-info
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/cli-boxes\/-\/cli-boxes-2.2.1.tgz",$/;"	s	object:dependencies.cli-boxes
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/clone-response\/-\/clone-response-1.0.2.tgz",$/;"	s	object:dependencies.clone-response
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/color-convert\/-\/color-convert-2.0.1.tgz",$/;"	s	object:dependencies.color-convert
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/color-name\/-\/color-name-1.1.4.tgz",$/;"	s	object:dependencies.color-name
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/concat-map\/-\/concat-map-0.0.1.tgz",$/;"	s	object:dependencies.concat-map
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/configstore\/-\/configstore-5.0.1.tgz",$/;"	s	object:dependencies.configstore
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/content-disposition\/-\/content-disposition-0.5/;"	s	object:dependencies.content-disposition
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/content-type\/-\/content-type-1.0.4.tgz",$/;"	s	object:dependencies.content-type
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/cookie-signature\/-\/cookie-signature-1.0.6.tgz/;"	s	object:dependencies.cookie-signature
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/cookie\/-\/cookie-0.4.0.tgz",$/;"	s	object:dependencies.cookie
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/cors\/-\/cors-2.8.5.tgz",$/;"	s	object:dependencies.cors
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/crypto-random-string\/-\/crypto-random-string-2/;"	s	object:dependencies.crypto-random-string
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/debug\/-\/debug-2.6.9.tgz",$/;"	s	object:dependencies.debug
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/decompress-response\/-\/decompress-response-3.3/;"	s	object:dependencies.decompress-response
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/deep-extend\/-\/deep-extend-0.6.0.tgz",$/;"	s	object:dependencies.deep-extend
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/defer-to-connect\/-\/defer-to-connect-1.1.3.tgz/;"	s	object:dependencies.defer-to-connect
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/denque\/-\/denque-1.4.1.tgz",$/;"	s	object:dependencies.denque
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/depd\/-\/depd-1.1.2.tgz",$/;"	s	object:dependencies.depd
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/destroy\/-\/destroy-1.0.4.tgz",$/;"	s	object:dependencies.destroy
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/dot-prop\/-\/dot-prop-5.3.0.tgz",$/;"	s	object:dependencies.dot-prop
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/dotenv\/-\/dotenv-8.2.0.tgz",$/;"	s	object:dependencies.dotenv
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/dottie\/-\/dottie-2.0.2.tgz",$/;"	s	object:dependencies.dottie
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/duplexer3\/-\/duplexer3-0.1.4.tgz",$/;"	s	object:dependencies.duplexer3
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/ee-first\/-\/ee-first-1.1.1.tgz",$/;"	s	object:dependencies.ee-first
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/emoji-regex\/-\/emoji-regex-7.0.3.tgz",$/;"	s	object:dependencies.emoji-regex
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/encodeurl\/-\/encodeurl-1.0.2.tgz",$/;"	s	object:dependencies.encodeurl
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/end-of-stream\/-\/end-of-stream-1.4.4.tgz",$/;"	s	object:dependencies.end-of-stream
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/escape-goat\/-\/escape-goat-2.1.1.tgz",$/;"	s	object:dependencies.escape-goat
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/escape-html\/-\/escape-html-1.0.3.tgz",$/;"	s	object:dependencies.escape-html
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/etag\/-\/etag-1.8.1.tgz",$/;"	s	object:dependencies.etag
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/express\/-\/express-4.17.1.tgz",$/;"	s	object:dependencies.express
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/fill-range\/-\/fill-range-7.0.1.tgz",$/;"	s	object:dependencies.fill-range
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/finalhandler\/-\/finalhandler-1.1.2.tgz",$/;"	s	object:dependencies.finalhandler
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/forwarded\/-\/forwarded-0.1.2.tgz",$/;"	s	object:dependencies.forwarded
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/fresh\/-\/fresh-0.5.2.tgz",$/;"	s	object:dependencies.fresh
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/fsevents\/-\/fsevents-2.1.3.tgz",$/;"	s	object:dependencies.fsevents
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/generate-function\/-\/generate-function-2.3.1.t/;"	s	object:dependencies.generate-function
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/get-stream\/-\/get-stream-4.1.0.tgz",$/;"	s	object:dependencies.get-stream
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/glob-parent\/-\/glob-parent-5.1.1.tgz",$/;"	s	object:dependencies.glob-parent
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/global-dirs\/-\/global-dirs-2.0.1.tgz",$/;"	s	object:dependencies.global-dirs
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/got\/-\/got-9.6.0.tgz",$/;"	s	object:dependencies.got
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/graceful-fs\/-\/graceful-fs-4.2.4.tgz",$/;"	s	object:dependencies.graceful-fs
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/has-flag\/-\/has-flag-3.0.0.tgz",$/;"	s	object:dependencies.has-flag
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/has-yarn\/-\/has-yarn-2.1.0.tgz",$/;"	s	object:dependencies.has-yarn
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/http-cache-semantics\/-\/http-cache-semantics-4/;"	s	object:dependencies.http-cache-semantics
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/http-errors\/-\/http-errors-1.7.2.tgz",$/;"	s	object:dependencies.http-errors
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/iconv-lite\/-\/iconv-lite-0.4.24.tgz",$/;"	s	object:dependencies.iconv-lite
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/ignore-by-default\/-\/ignore-by-default-1.0.1.t/;"	s	object:dependencies.ignore-by-default
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/import-lazy\/-\/import-lazy-2.1.0.tgz",$/;"	s	object:dependencies.import-lazy
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/imurmurhash\/-\/imurmurhash-0.1.4.tgz",$/;"	s	object:dependencies.imurmurhash
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/inflection\/-\/inflection-1.12.0.tgz",$/;"	s	object:dependencies.inflection
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/inherits\/-\/inherits-2.0.3.tgz",$/;"	s	object:dependencies.inherits
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/ini\/-\/ini-1.3.5.tgz",$/;"	s	object:dependencies.ini
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/ipaddr.js\/-\/ipaddr.js-1.9.1.tgz",$/;"	s	object:dependencies.ipaddr.js
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-binary-path\/-\/is-binary-path-2.1.0.tgz",$/;"	s	object:dependencies.is-binary-path
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-ci\/-\/is-ci-2.0.0.tgz",$/;"	s	object:dependencies.is-ci
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-extglob\/-\/is-extglob-2.1.1.tgz",$/;"	s	object:dependencies.is-extglob
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-fullwidth-code-point\/-\/is-fullwidth-code-p/;"	s	object:dependencies.is-fullwidth-code-point
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-glob\/-\/is-glob-4.0.1.tgz",$/;"	s	object:dependencies.is-glob
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-installed-globally\/-\/is-installed-globally/;"	s	object:dependencies.is-installed-globally
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-npm\/-\/is-npm-4.0.0.tgz",$/;"	s	object:dependencies.is-npm
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-number\/-\/is-number-7.0.0.tgz",$/;"	s	object:dependencies.is-number
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-obj\/-\/is-obj-2.0.0.tgz",$/;"	s	object:dependencies.is-obj
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-path-inside\/-\/is-path-inside-3.0.2.tgz",$/;"	s	object:dependencies.is-path-inside
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-property\/-\/is-property-1.0.2.tgz",$/;"	s	object:dependencies.is-property
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-typedarray\/-\/is-typedarray-1.0.0.tgz",$/;"	s	object:dependencies.is-typedarray
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/is-yarn-global\/-\/is-yarn-global-0.3.0.tgz",$/;"	s	object:dependencies.is-yarn-global
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/json-buffer\/-\/json-buffer-3.0.0.tgz",$/;"	s	object:dependencies.json-buffer
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/keyv\/-\/keyv-3.1.0.tgz",$/;"	s	object:dependencies.keyv
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/latest-version\/-\/latest-version-5.1.0.tgz",$/;"	s	object:dependencies.latest-version
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/lodash\/-\/lodash-4.17.20.tgz",$/;"	s	object:dependencies.lodash
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/long\/-\/long-4.0.0.tgz",$/;"	s	object:dependencies.long
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/lowercase-keys\/-\/lowercase-keys-1.0.1.tgz",$/;"	s	object:dependencies.lowercase-keys
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/lru-cache\/-\/lru-cache-6.0.0.tgz",$/;"	s	object:dependencies.lru-cache
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/make-dir\/-\/make-dir-3.1.0.tgz",$/;"	s	object:dependencies.make-dir
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/media-typer\/-\/media-typer-0.3.0.tgz",$/;"	s	object:dependencies.media-typer
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/merge-descriptors\/-\/merge-descriptors-1.0.1.t/;"	s	object:dependencies.merge-descriptors
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/methods\/-\/methods-1.1.2.tgz",$/;"	s	object:dependencies.methods
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/mime-db\/-\/mime-db-1.44.0.tgz",$/;"	s	object:dependencies.mime-db
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/mime-types\/-\/mime-types-2.1.27.tgz",$/;"	s	object:dependencies.mime-types
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/mime\/-\/mime-1.6.0.tgz",$/;"	s	object:dependencies.mime
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/mimic-response\/-\/mimic-response-1.0.1.tgz",$/;"	s	object:dependencies.mimic-response
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/minimatch\/-\/minimatch-3.0.4.tgz",$/;"	s	object:dependencies.minimatch
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/minimist\/-\/minimist-1.2.5.tgz",$/;"	s	object:dependencies.minimist
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/moment-timezone\/-\/moment-timezone-0.5.31.tgz"/;"	s	object:dependencies.moment-timezone
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/moment\/-\/moment-2.28.0.tgz",$/;"	s	object:dependencies.moment
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/ms\/-\/ms-2.0.0.tgz",$/;"	s	object:dependencies.ms
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/mysql2\/-\/mysql2-2.2.2.tgz",$/;"	s	object:dependencies.mysql2
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/named-placeholders\/-\/named-placeholders-1.1.2/;"	s	object:dependencies.named-placeholders
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/negotiator\/-\/negotiator-0.6.2.tgz",$/;"	s	object:dependencies.negotiator
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/node-fetch\/-\/node-fetch-2.6.1.tgz",$/;"	s	object:dependencies.node-fetch
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/nodemon\/-\/nodemon-2.0.4.tgz",$/;"	s	object:dependencies.nodemon
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/nopt\/-\/nopt-1.0.10.tgz",$/;"	s	object:dependencies.nopt
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/normalize-path\/-\/normalize-path-3.0.0.tgz",$/;"	s	object:dependencies.normalize-path
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/normalize-url\/-\/normalize-url-4.5.0.tgz",$/;"	s	object:dependencies.normalize-url
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/object-assign\/-\/object-assign-4.1.1.tgz",$/;"	s	object:dependencies.object-assign
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/on-finished\/-\/on-finished-2.3.0.tgz",$/;"	s	object:dependencies.on-finished
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/once\/-\/once-1.4.0.tgz",$/;"	s	object:dependencies.once
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/p-cancelable\/-\/p-cancelable-1.1.0.tgz",$/;"	s	object:dependencies.p-cancelable
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/package-json\/-\/package-json-6.5.0.tgz",$/;"	s	object:dependencies.package-json
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/parseurl\/-\/parseurl-1.3.3.tgz",$/;"	s	object:dependencies.parseurl
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/path-to-regexp\/-\/path-to-regexp-0.1.7.tgz",$/;"	s	object:dependencies.path-to-regexp
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/picomatch\/-\/picomatch-2.2.2.tgz",$/;"	s	object:dependencies.picomatch
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/prepend-http\/-\/prepend-http-2.0.0.tgz",$/;"	s	object:dependencies.prepend-http
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/proxy-addr\/-\/proxy-addr-2.0.6.tgz",$/;"	s	object:dependencies.proxy-addr
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/pseudomap\/-\/pseudomap-1.0.2.tgz",$/;"	s	object:dependencies.pseudomap
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/pstree.remy\/-\/pstree.remy-1.1.8.tgz",$/;"	s	object:dependencies.pstree.remy
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/pump\/-\/pump-3.0.0.tgz",$/;"	s	object:dependencies.pump
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/pupa\/-\/pupa-2.0.1.tgz",$/;"	s	object:dependencies.pupa
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/qs\/-\/qs-6.7.0.tgz",$/;"	s	object:dependencies.qs
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/range-parser\/-\/range-parser-1.2.1.tgz",$/;"	s	object:dependencies.range-parser
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/raw-body\/-\/raw-body-2.4.0.tgz",$/;"	s	object:dependencies.raw-body
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/rc\/-\/rc-1.2.8.tgz",$/;"	s	object:dependencies.rc
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/readdirp\/-\/readdirp-3.4.0.tgz",$/;"	s	object:dependencies.readdirp
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/registry-auth-token\/-\/registry-auth-token-4.2/;"	s	object:dependencies.registry-auth-token
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/registry-url\/-\/registry-url-5.1.0.tgz",$/;"	s	object:dependencies.registry-url
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/responselike\/-\/responselike-1.0.2.tgz",$/;"	s	object:dependencies.responselike
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/retry-as-promised\/-\/retry-as-promised-3.2.0.t/;"	s	object:dependencies.retry-as-promised
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/safe-buffer\/-\/safe-buffer-5.1.2.tgz",$/;"	s	object:dependencies.safe-buffer
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/safer-buffer\/-\/safer-buffer-2.1.2.tgz",$/;"	s	object:dependencies.safer-buffer
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/semver-diff\/-\/semver-diff-3.1.1.tgz",$/;"	s	object:dependencies.semver-diff
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/semver\/-\/semver-7.3.2.tgz",$/;"	s	object:dependencies.semver
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/send\/-\/send-0.17.1.tgz",$/;"	s	object:dependencies.send
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/seq-queue\/-\/seq-queue-0.0.5.tgz",$/;"	s	object:dependencies.seq-queue
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/sequelize-pool\/-\/sequelize-pool-6.1.0.tgz",$/;"	s	object:dependencies.sequelize-pool
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/sequelize-to-json\/-\/sequelize-to-json-0.10.4./;"	s	object:dependencies.sequelize-to-json
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/sequelize\/-\/sequelize-6.3.5.tgz",$/;"	s	object:dependencies.sequelize
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/serve-static\/-\/serve-static-1.14.1.tgz",$/;"	s	object:dependencies.serve-static
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/setprototypeof\/-\/setprototypeof-1.1.1.tgz",$/;"	s	object:dependencies.setprototypeof
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/signal-exit\/-\/signal-exit-3.0.3.tgz",$/;"	s	object:dependencies.signal-exit
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/sqlstring\/-\/sqlstring-2.3.2.tgz",$/;"	s	object:dependencies.sqlstring
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/statuses\/-\/statuses-1.5.0.tgz",$/;"	s	object:dependencies.statuses
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/string-width\/-\/string-width-4.2.0.tgz",$/;"	s	object:dependencies.string-width
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/strip-ansi\/-\/strip-ansi-5.2.0.tgz",$/;"	s	object:dependencies.strip-ansi
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/strip-json-comments\/-\/strip-json-comments-2.0/;"	s	object:dependencies.strip-json-comments
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/supports-color\/-\/supports-color-5.5.0.tgz",$/;"	s	object:dependencies.supports-color
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/term-size\/-\/term-size-2.2.0.tgz",$/;"	s	object:dependencies.term-size
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/to-readable-stream\/-\/to-readable-stream-1.0.0/;"	s	object:dependencies.to-readable-stream
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/to-regex-range\/-\/to-regex-range-5.0.1.tgz",$/;"	s	object:dependencies.to-regex-range
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/toidentifier\/-\/toidentifier-1.0.0.tgz",$/;"	s	object:dependencies.toidentifier
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/toposort-class\/-\/toposort-class-1.0.1.tgz",$/;"	s	object:dependencies.toposort-class
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/touch\/-\/touch-3.1.0.tgz",$/;"	s	object:dependencies.touch
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/type-fest\/-\/type-fest-0.8.1.tgz",$/;"	s	object:dependencies.type-fest
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/type-is\/-\/type-is-1.6.18.tgz",$/;"	s	object:dependencies.type-is
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/typedarray-to-buffer\/-\/typedarray-to-buffer-3/;"	s	object:dependencies.typedarray-to-buffer
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/undefsafe\/-\/undefsafe-2.0.3.tgz",$/;"	s	object:dependencies.undefsafe
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/unique-string\/-\/unique-string-2.0.0.tgz",$/;"	s	object:dependencies.unique-string
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/unpipe\/-\/unpipe-1.0.0.tgz",$/;"	s	object:dependencies.unpipe
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/update-notifier\/-\/update-notifier-4.1.1.tgz",$/;"	s	object:dependencies.update-notifier
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/url-parse-lax\/-\/url-parse-lax-3.0.0.tgz",$/;"	s	object:dependencies.url-parse-lax
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/utils-merge\/-\/utils-merge-1.0.1.tgz",$/;"	s	object:dependencies.utils-merge
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/uuid\/-\/uuid-8.3.0.tgz",$/;"	s	object:dependencies.uuid
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/validator\/-\/validator-10.11.0.tgz",$/;"	s	object:dependencies.validator
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/vary\/-\/vary-1.1.2.tgz",$/;"	s	object:dependencies.vary
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/widest-line\/-\/widest-line-3.1.0.tgz",$/;"	s	object:dependencies.widest-line
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/wkx\/-\/wkx-0.5.0.tgz",$/;"	s	object:dependencies.wkx
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/wrappy\/-\/wrappy-1.0.2.tgz",$/;"	s	object:dependencies.wrappy
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/write-file-atomic\/-\/write-file-atomic-3.0.3.t/;"	s	object:dependencies.write-file-atomic
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/xdg-basedir\/-\/xdg-basedir-4.0.0.tgz",$/;"	s	object:dependencies.xdg-basedir
+resolved	package-lock.json	/^      "resolved": "https:\/\/registry.npmjs.org\/yallist\/-\/yallist-4.0.0.tgz",$/;"	s	object:dependencies.yallist
+responselike	package-lock.json	/^        "responselike": "^1.0.2"$/;"	s	object:dependencies.cacheable-request.requires
+responselike	package-lock.json	/^    "responselike": {$/;"	o	object:dependencies
+retry-as-promised	package-lock.json	/^        "retry-as-promised": "^3.2.0",$/;"	s	object:dependencies.sequelize.requires
+retry-as-promised	package-lock.json	/^    "retry-as-promised": {$/;"	o	object:dependencies
+router	index.js	/^const router = require("express").Router()$/;"	C
+router	routes/book.js	/^const router = require('express').Router()$/;"	C
+router	routes/course.js	/^const router = require('express').Router()$/;"	C
+router	routes/department.js	/^const router = require('express').Router()$/;"	C
+router	routes/instructor.js	/^const router = require("express").Router()$/;"	C
+router	routes/pathway.js	/^const router = require("express").Router()$/;"	C
+router	routes/program.js	/^const router = require("express").Router();$/;"	C
+router	routes/syllabus.js	/^const router = require('express').Router();$/;"	C
+safe-buffer	package-lock.json	/^        "safe-buffer": "5.1.2"$/;"	s	object:dependencies.content-disposition.requires
+safe-buffer	package-lock.json	/^        "safe-buffer": "5.1.2",$/;"	s	object:dependencies.express.requires
+safe-buffer	package-lock.json	/^    "safe-buffer": {$/;"	o	object:dependencies
+safer-buffer	package-lock.json	/^            "safer-buffer": ">= 2.1.2 < 3.0.0"$/;"	s	object:dependencies.mysql2.dependencies.iconv-lite.requires
+safer-buffer	package-lock.json	/^        "safer-buffer": ">= 2.1.2 < 3"$/;"	s	object:dependencies.iconv-lite.requires
+safer-buffer	package-lock.json	/^    "safer-buffer": {$/;"	o	object:dependencies
+scripts	package.json	/^  "scripts": {$/;"	o
+semver	package-lock.json	/^        "semver": "^5.7.1",$/;"	s	object:dependencies.nodemon.requires
+semver	package-lock.json	/^        "semver": "^6.0.0"$/;"	s	object:dependencies.make-dir.requires
+semver	package-lock.json	/^        "semver": "^6.2.0"$/;"	s	object:dependencies.package-json.requires
+semver	package-lock.json	/^        "semver": "^6.3.0"$/;"	s	object:dependencies.semver-diff.requires
+semver	package-lock.json	/^        "semver": "^7.3.2",$/;"	s	object:dependencies.sequelize.requires
+semver	package-lock.json	/^        "semver": {$/;"	o	object:dependencies.make-dir.dependencies
+semver	package-lock.json	/^        "semver": {$/;"	o	object:dependencies.nodemon.dependencies
+semver	package-lock.json	/^        "semver": {$/;"	o	object:dependencies.package-json.dependencies
+semver	package-lock.json	/^        "semver": {$/;"	o	object:dependencies.semver-diff.dependencies
+semver	package-lock.json	/^    "semver": {$/;"	o	object:dependencies
+semver-diff	package-lock.json	/^        "semver-diff": "^3.1.1",$/;"	s	object:dependencies.update-notifier.requires
+semver-diff	package-lock.json	/^    "semver-diff": {$/;"	o	object:dependencies
+send	package-lock.json	/^        "send": "0.17.1"$/;"	s	object:dependencies.serve-static.requires
+send	package-lock.json	/^        "send": "0.17.1",$/;"	s	object:dependencies.express.requires
+send	package-lock.json	/^    "send": {$/;"	o	object:dependencies
+seq-queue	package-lock.json	/^        "seq-queue": "^0.0.5",$/;"	s	object:dependencies.mysql2.requires
+seq-queue	package-lock.json	/^    "seq-queue": {$/;"	o	object:dependencies
+sequelize	package-lock.json	/^    "sequelize": {$/;"	o	object:dependencies
+sequelize	package.json	/^    "sequelize": "^6.3.5",$/;"	s	object:dependencies
+sequelize	sequelize.js	/^const sequelize = new Sequelize(DB_NAME,DB_USER,DB_PASSWORD,{$/;"	C
+sequelize-pool	package-lock.json	/^        "sequelize-pool": "^6.0.0",$/;"	s	object:dependencies.sequelize.requires
+sequelize-pool	package-lock.json	/^    "sequelize-pool": {$/;"	o	object:dependencies
+sequelize-to-json	package-lock.json	/^    "sequelize-to-json": {$/;"	o	object:dependencies
+sequelize-to-json	package.json	/^    "sequelize-to-json": "^0.10.4"$/;"	s	object:dependencies
+serve-static	package-lock.json	/^        "serve-static": "1.14.1",$/;"	s	object:dependencies.express.requires
+serve-static	package-lock.json	/^    "serve-static": {$/;"	o	object:dependencies
+setprototypeof	package-lock.json	/^        "setprototypeof": "1.1.1",$/;"	s	object:dependencies.express.requires
+setprototypeof	package-lock.json	/^        "setprototypeof": "1.1.1",$/;"	s	object:dependencies.http-errors.requires
+setprototypeof	package-lock.json	/^    "setprototypeof": {$/;"	o	object:dependencies
+signal-exit	package-lock.json	/^        "signal-exit": "^3.0.2",$/;"	s	object:dependencies.write-file-atomic.requires
+signal-exit	package-lock.json	/^    "signal-exit": {$/;"	o	object:dependencies
+sqlstring	package-lock.json	/^        "sqlstring": "^2.3.2"$/;"	s	object:dependencies.mysql2.requires
+sqlstring	package-lock.json	/^    "sqlstring": {$/;"	o	object:dependencies
+start	package.json	/^    "start": "nodemon start",$/;"	s	object:scripts
+statuses	package-lock.json	/^        "statuses": ">= 1.5.0 < 2",$/;"	s	object:dependencies.http-errors.requires
+statuses	package-lock.json	/^        "statuses": "~1.5.0"$/;"	s	object:dependencies.send.requires
+statuses	package-lock.json	/^        "statuses": "~1.5.0",$/;"	s	object:dependencies.express.requires
+statuses	package-lock.json	/^        "statuses": "~1.5.0",$/;"	s	object:dependencies.finalhandler.requires
+statuses	package-lock.json	/^    "statuses": {$/;"	o	object:dependencies
+string-width	package-lock.json	/^        "string-width": "^3.0.0"$/;"	s	object:dependencies.ansi-align.requires
+string-width	package-lock.json	/^        "string-width": "^4.0.0"$/;"	s	object:dependencies.widest-line.requires
+string-width	package-lock.json	/^        "string-width": "^4.1.0",$/;"	s	object:dependencies.boxen.requires
+string-width	package-lock.json	/^        "string-width": {$/;"	o	object:dependencies.ansi-align.dependencies
+string-width	package-lock.json	/^    "string-width": {$/;"	o	object:dependencies
+strip-ansi	package-lock.json	/^            "strip-ansi": "^5.1.0"$/;"	s	object:dependencies.ansi-align.dependencies.string-width.requires
+strip-ansi	package-lock.json	/^        "strip-ansi": "^6.0.0"$/;"	s	object:dependencies.string-width.requires
+strip-ansi	package-lock.json	/^        "strip-ansi": {$/;"	o	object:dependencies.string-width.dependencies
+strip-ansi	package-lock.json	/^    "strip-ansi": {$/;"	o	object:dependencies
+strip-json-comments	package-lock.json	/^        "strip-json-comments": "~2.0.1"$/;"	s	object:dependencies.rc.requires
+strip-json-comments	package-lock.json	/^    "strip-json-comments": {$/;"	o	object:dependencies
+supports-color	package-lock.json	/^        "supports-color": "^5.5.0",$/;"	s	object:dependencies.nodemon.requires
+supports-color	package-lock.json	/^        "supports-color": "^7.1.0"$/;"	s	object:dependencies.chalk.requires
+supports-color	package-lock.json	/^        "supports-color": {$/;"	o	object:dependencies.chalk.dependencies
+supports-color	package-lock.json	/^    "supports-color": {$/;"	o	object:dependencies
+syllabus	controllers/syllabus.js	/^        const syllabus = [$/;"	C	class:module.exports.getSyllabus
+syllabusController	routes/syllabus.js	/^const syllabusController = require('..\/controllers\/syllabus');$/;"	C
+syllabusRoutes	index.js	/^const syllabusRoutes = require('.\/routes\/syllabus')$/;"	C
+term-size	package-lock.json	/^        "term-size": "^2.1.0",$/;"	s	object:dependencies.boxen.requires
+term-size	package-lock.json	/^    "term-size": {$/;"	o	object:dependencies
+test	package.json	/^    "test": "echo \\"Error: no test specified\\" && exit 1"$/;"	s	object:scripts
+to-readable-stream	package-lock.json	/^        "to-readable-stream": "^1.0.0",$/;"	s	object:dependencies.got.requires
+to-readable-stream	package-lock.json	/^    "to-readable-stream": {$/;"	o	object:dependencies
+to-regex-range	package-lock.json	/^        "to-regex-range": "^5.0.1"$/;"	s	object:dependencies.fill-range.requires
+to-regex-range	package-lock.json	/^    "to-regex-range": {$/;"	o	object:dependencies
+toidentifier	package-lock.json	/^        "toidentifier": "1.0.0"$/;"	s	object:dependencies.http-errors.requires
+toidentifier	package-lock.json	/^    "toidentifier": {$/;"	o	object:dependencies
+topic	controllers/course.js	/^          const topic = await Table.Topic.findByPk(topicId);$/;"	C	class:module.exports.deleteTopic
+topic	controllers/course.js	/^        const topic = await Table.Topic.findByPk(topicId);$/;"	C	class:module.exports.createTopicDetail
+topic	controllers/course.js	/^      const topic = await Table.Topic.findByPk(topicId);$/;"	C	class:module.exports.createTopicDetail
+topicDetail	controllers/course.js	/^          const topicDetail = await Table.TopicDetail.findByPk(topicId);$/;"	C	class:module.exports.deleteTopic
+topicDetails	controllers/course.js	/^            const topicDetails = await topic.getTopicDetails();$/;"	C	class:module.exports.deleteTopic
+topics	controllers/course.js	/^          const topics = await course.getTopics({order:[['id','DESC']]});$/;"	C	class:module.exports.getTopics
+topicsWithDetail	controllers/course.js	/^          const topicsWithDetail = await Table.Topic.findAll({$/;"	C	class:module.exports.getTopics
+toposort-class	package-lock.json	/^        "toposort-class": "^1.0.1",$/;"	s	object:dependencies.sequelize.requires
+toposort-class	package-lock.json	/^    "toposort-class": {$/;"	o	object:dependencies
+touch	package-lock.json	/^        "touch": "^3.1.0",$/;"	s	object:dependencies.nodemon.requires
+touch	package-lock.json	/^    "touch": {$/;"	o	object:dependencies
+type-fest	package-lock.json	/^        "type-fest": "^0.8.1",$/;"	s	object:dependencies.boxen.requires
+type-fest	package-lock.json	/^    "type-fest": {$/;"	o	object:dependencies
+type-is	package-lock.json	/^        "type-is": "~1.6.17"$/;"	s	object:dependencies.body-parser.requires
+type-is	package-lock.json	/^        "type-is": "~1.6.18",$/;"	s	object:dependencies.express.requires
+type-is	package-lock.json	/^    "type-is": {$/;"	o	object:dependencies
+typedarray-to-buffer	package-lock.json	/^        "typedarray-to-buffer": "^3.1.5"$/;"	s	object:dependencies.write-file-atomic.requires
+typedarray-to-buffer	package-lock.json	/^    "typedarray-to-buffer": {$/;"	o	object:dependencies
+types	controllers/utils.js	/^      const types = await Table.CourseType.findAll({});$/;"	C	class:module.exports.getAllCourseTypes
+undefsafe	package-lock.json	/^        "undefsafe": "^2.0.2",$/;"	s	object:dependencies.nodemon.requires
+undefsafe	package-lock.json	/^    "undefsafe": {$/;"	o	object:dependencies
+unique-string	package-lock.json	/^        "unique-string": "^2.0.0",$/;"	s	object:dependencies.configstore.requires
+unique-string	package-lock.json	/^    "unique-string": {$/;"	o	object:dependencies
+unpipe	package-lock.json	/^        "unpipe": "1.0.0"$/;"	s	object:dependencies.raw-body.requires
+unpipe	package-lock.json	/^        "unpipe": "~1.0.0"$/;"	s	object:dependencies.finalhandler.requires
+unpipe	package-lock.json	/^    "unpipe": {$/;"	o	object:dependencies
+update-notifier	package-lock.json	/^        "update-notifier": "^4.0.0"$/;"	s	object:dependencies.nodemon.requires
+update-notifier	package-lock.json	/^    "update-notifier": {$/;"	o	object:dependencies
+updateAssessment	controllers/course.js	/^  updateAssessment: async (req,res) => {$/;"	p	class:module.exports
+updateBook	controllers/book.js	/^  updateBook: async (req,res) => {$/;"	p	class:module.exports
+updateCourse	controllers/course.js	/^  updateCourse: async (req,res) => {$/;"	p	class:module.exports
+updateCourse	controllers/program.js	/^  updateCourse: async (req,res) => {$/;"	p	class:module.exports
+updateInstructor	controllers/instructor.js	/^  updateInstructor: async (req,res) => {$/;"	p	class:module.exports
+updateLearningOutcome	controllers/course.js	/^  updateLearningOutcome: async (req,res) => {$/;"	p	class:module.exports
+updatePathway	controllers/pathway.js	/^  updatePathway: async (req,res) => {$/;"	p	class:module.exports
+updateProgram	controllers/program.js	/^  updateProgram: async (req,res) => {$/;"	p	class:module.exports
+updateRelationship	controllers/course.js	/^  updateRelationship: async (req,res) => {$/;"	p	class:module.exports
+updateTopic	controllers/course.js	/^  updateTopic: async (req,res) => {$/;"	p	class:module.exports
+updatedAssessment	controllers/course.js	/^          const updatedAssessment = await Table.CourseAssessment.update(req.body,{$/;"	C	class:module.exports.updateAssessment
+updatedBook	controllers/book.js	/^      const updatedBook = await Table.Book.update(req.body,{where: {id}});$/;"	C	class:module.exports.updateBook
+updatedCourse	controllers/course.js	/^      const updatedCourse = await Table.Course.update(req.body,{where: {id}});$/;"	C	class:module.exports.updateCourse
+updatedCourse	controllers/program.js	/^        const updatedCourse = await Table.CourseProgram.update(req.body,{$/;"	C	class:module.exports.updateCourse
+updatedDeparment	controllers/department.js	/^      const updatedDeparment = await Table.Department.update(req.body,{where: {id}});$/;"	C
+updatedInstructor	controllers/instructor.js	/^      const updatedInstructor = await Table.Instructor.update(req.body,{where:{id}});$/;"	C	class:module.exports.updateInstructor
+updatedLO	controllers/course.js	/^          const updatedLO = await Table.LearningOutcome.update(req.body,{$/;"	C	class:module.exports.updateLearningOutcome
+updatedPathway	controllers/pathway.js	/^      const updatedPathway = await Table.Pathway.update(req.body,{where: {id}})$/;"	C	class:module.exports.updatePathway
+updatedProgram	controllers/program.js	/^      const updatedProgram = await Table.Program.update(req.body,{where:{id}})$/;"	C	class:module.exports.updateProgram
+updatedRelationship	controllers/course.js	/^        const updatedRelationship = await Table.CourseCourse.update({$/;"	C	class:module.exports.updateRelationship
+updatedTopic	controllers/course.js	/^          const updatedTopic = await Table.Topic.update(req.body,{$/;"	C	class:module.exports.updateTopic
+updatedTopicDetail	controllers/course.js	/^          const updatedTopicDetail = await Table.TopicDetail.update(req.body,{$/;"	C	class:module.exports.updateTopic
+url-parse-lax	package-lock.json	/^        "url-parse-lax": "^3.0.0"$/;"	s	object:dependencies.got.requires
+url-parse-lax	package-lock.json	/^    "url-parse-lax": {$/;"	o	object:dependencies
+utilController	routes/course.js	/^const utilController = require('..\/controllers\/utils');$/;"	C
+utils-merge	package-lock.json	/^        "utils-merge": "1.0.1",$/;"	s	object:dependencies.express.requires
+utils-merge	package-lock.json	/^    "utils-merge": {$/;"	o	object:dependencies
+uuid	package-lock.json	/^        "uuid": "^8.1.0",$/;"	s	object:dependencies.sequelize.requires
+uuid	package-lock.json	/^    "uuid": {$/;"	o	object:dependencies
+validType	controllers/course.js	/^      const validType = ['reference','textbook']$/;"	C	class:module.exports.assignBook
+validator	package-lock.json	/^        "validator": "^10.11.0",$/;"	s	object:dependencies.sequelize.requires
+validator	package-lock.json	/^    "validator": {$/;"	o	object:dependencies
+vary	package-lock.json	/^        "vary": "^1"$/;"	s	object:dependencies.cors.requires
+vary	package-lock.json	/^        "vary": "~1.1.2"$/;"	s	object:dependencies.express.requires
+vary	package-lock.json	/^    "vary": {$/;"	o	object:dependencies
+version	package-lock.json	/^          "version": "0.6.2",$/;"	s	object:dependencies.mysql2.dependencies.iconv-lite
+version	package-lock.json	/^          "version": "2.0.0",$/;"	s	object:dependencies.cacheable-request.dependencies.lowercase-keys
+version	package-lock.json	/^          "version": "2.1.1",$/;"	s	object:dependencies.send.dependencies.ms
+version	package-lock.json	/^          "version": "2.1.2",$/;"	s	object:dependencies.named-placeholders.dependencies.yallist
+version	package-lock.json	/^          "version": "2.1.2",$/;"	s	object:dependencies.nodemon.dependencies.ms
+version	package-lock.json	/^          "version": "2.1.2",$/;"	s	object:dependencies.sequelize.dependencies.ms
+version	package-lock.json	/^          "version": "3.0.0",$/;"	s	object:dependencies.string-width.dependencies.is-fullwidth-code-point
+version	package-lock.json	/^          "version": "3.1.0",$/;"	s	object:dependencies.ansi-align.dependencies.string-width
+version	package-lock.json	/^          "version": "3.2.6",$/;"	s	object:dependencies.nodemon.dependencies.debug
+version	package-lock.json	/^          "version": "4.0.0",$/;"	s	object:dependencies.chalk.dependencies.has-flag
+version	package-lock.json	/^          "version": "4.1.5",$/;"	s	object:dependencies.named-placeholders.dependencies.lru-cache
+version	package-lock.json	/^          "version": "4.2.0",$/;"	s	object:dependencies.sequelize.dependencies.debug
+version	package-lock.json	/^          "version": "5.0.0",$/;"	s	object:dependencies.string-width.dependencies.ansi-regex
+version	package-lock.json	/^          "version": "5.2.0",$/;"	s	object:dependencies.cacheable-request.dependencies.get-stream
+version	package-lock.json	/^          "version": "5.7.1",$/;"	s	object:dependencies.nodemon.dependencies.semver
+version	package-lock.json	/^          "version": "6.0.0",$/;"	s	object:dependencies.string-width.dependencies.strip-ansi
+version	package-lock.json	/^          "version": "6.3.0",$/;"	s	object:dependencies.make-dir.dependencies.semver
+version	package-lock.json	/^          "version": "6.3.0",$/;"	s	object:dependencies.package-json.dependencies.semver
+version	package-lock.json	/^          "version": "6.3.0",$/;"	s	object:dependencies.semver-diff.dependencies.semver
+version	package-lock.json	/^          "version": "7.2.0",$/;"	s	object:dependencies.chalk.dependencies.supports-color
+version	package-lock.json	/^          "version": "8.0.0",$/;"	s	object:dependencies.string-width.dependencies.emoji-regex
+version	package-lock.json	/^      "version": "0.0.1",$/;"	s	object:dependencies.concat-map
+version	package-lock.json	/^      "version": "0.0.5",$/;"	s	object:dependencies.seq-queue
+version	package-lock.json	/^      "version": "0.1.2",$/;"	s	object:dependencies.forwarded
+version	package-lock.json	/^      "version": "0.1.4",$/;"	s	object:dependencies.duplexer3
+version	package-lock.json	/^      "version": "0.1.4",$/;"	s	object:dependencies.imurmurhash
+version	package-lock.json	/^      "version": "0.1.7",$/;"	s	object:dependencies.path-to-regexp
+version	package-lock.json	/^      "version": "0.10.4",$/;"	s	object:dependencies.sequelize-to-json
+version	package-lock.json	/^      "version": "0.14.0",$/;"	s	object:dependencies.@sindresorhus/is
+version	package-lock.json	/^      "version": "0.17.1",$/;"	s	object:dependencies.send
+version	package-lock.json	/^      "version": "0.3.0",$/;"	s	object:dependencies.is-yarn-global
+version	package-lock.json	/^      "version": "0.3.0",$/;"	s	object:dependencies.media-typer
+version	package-lock.json	/^      "version": "0.3.2",$/;"	s	object:dependencies.is-installed-globally
+version	package-lock.json	/^      "version": "0.4.0",$/;"	s	object:dependencies.cookie
+version	package-lock.json	/^      "version": "0.4.24",$/;"	s	object:dependencies.iconv-lite
+version	package-lock.json	/^      "version": "0.5.0",$/;"	s	object:dependencies.wkx
+version	package-lock.json	/^      "version": "0.5.2",$/;"	s	object:dependencies.fresh
+version	package-lock.json	/^      "version": "0.5.3",$/;"	s	object:dependencies.content-disposition
+version	package-lock.json	/^      "version": "0.5.31",$/;"	s	object:dependencies.moment-timezone
+version	package-lock.json	/^      "version": "0.6.0",$/;"	s	object:dependencies.deep-extend
+version	package-lock.json	/^      "version": "0.6.2",$/;"	s	object:dependencies.negotiator
+version	package-lock.json	/^      "version": "0.8.1",$/;"	s	object:dependencies.type-fest
+version	package-lock.json	/^      "version": "1.0.0",$/;"	s	object:dependencies.balanced-match
+version	package-lock.json	/^      "version": "1.0.0",$/;"	s	object:dependencies.is-typedarray
+version	package-lock.json	/^      "version": "1.0.0",$/;"	s	object:dependencies.to-readable-stream
+version	package-lock.json	/^      "version": "1.0.0",$/;"	s	object:dependencies.toidentifier
+version	package-lock.json	/^      "version": "1.0.0",$/;"	s	object:dependencies.unpipe
+version	package-lock.json	/^      "version": "1.0.1",$/;"	s	object:dependencies.ignore-by-default
+version	package-lock.json	/^      "version": "1.0.1",$/;"	s	object:dependencies.lowercase-keys
+version	package-lock.json	/^      "version": "1.0.1",$/;"	s	object:dependencies.merge-descriptors
+version	package-lock.json	/^      "version": "1.0.1",$/;"	s	object:dependencies.mimic-response
+version	package-lock.json	/^      "version": "1.0.1",$/;"	s	object:dependencies.toposort-class
+version	package-lock.json	/^      "version": "1.0.1",$/;"	s	object:dependencies.utils-merge
+version	package-lock.json	/^      "version": "1.0.10",$/;"	s	object:dependencies.nopt
+version	package-lock.json	/^      "version": "1.0.2",$/;"	s	object:dependencies.clone-response
+version	package-lock.json	/^      "version": "1.0.2",$/;"	s	object:dependencies.encodeurl
+version	package-lock.json	/^      "version": "1.0.2",$/;"	s	object:dependencies.is-property
+version	package-lock.json	/^      "version": "1.0.2",$/;"	s	object:dependencies.pseudomap
+version	package-lock.json	/^      "version": "1.0.2",$/;"	s	object:dependencies.responselike
+version	package-lock.json	/^      "version": "1.0.2",$/;"	s	object:dependencies.wrappy
+version	package-lock.json	/^      "version": "1.0.3",$/;"	s	object:dependencies.escape-html
+version	package-lock.json	/^      "version": "1.0.4",$/;"	s	object:dependencies.content-type
+version	package-lock.json	/^      "version": "1.0.4",$/;"	s	object:dependencies.destroy
+version	package-lock.json	/^      "version": "1.0.6",$/;"	s	object:dependencies.cookie-signature
+version	package-lock.json	/^      "version": "1.1.0",$/;"	s	object:dependencies.p-cancelable
+version	package-lock.json	/^      "version": "1.1.1",$/;"	s	object:dependencies.@types/color-name
+version	package-lock.json	/^      "version": "1.1.1",$/;"	s	object:dependencies.abbrev
+version	package-lock.json	/^      "version": "1.1.1",$/;"	s	object:dependencies.array-flatten
+version	package-lock.json	/^      "version": "1.1.1",$/;"	s	object:dependencies.ee-first
+version	package-lock.json	/^      "version": "1.1.1",$/;"	s	object:dependencies.setprototypeof
+version	package-lock.json	/^      "version": "1.1.11",$/;"	s	object:dependencies.brace-expansion
+version	package-lock.json	/^      "version": "1.1.2",$/;"	s	object:dependencies.@szmarczak/http-timer
+version	package-lock.json	/^      "version": "1.1.2",$/;"	s	object:dependencies.depd
+version	package-lock.json	/^      "version": "1.1.2",$/;"	s	object:dependencies.finalhandler
+version	package-lock.json	/^      "version": "1.1.2",$/;"	s	object:dependencies.methods
+version	package-lock.json	/^      "version": "1.1.2",$/;"	s	object:dependencies.named-placeholders
+version	package-lock.json	/^      "version": "1.1.2",$/;"	s	object:dependencies.vary
+version	package-lock.json	/^      "version": "1.1.3",$/;"	s	object:dependencies.defer-to-connect
+version	package-lock.json	/^      "version": "1.1.4",$/;"	s	object:dependencies.color-name
+version	package-lock.json	/^      "version": "1.1.8",$/;"	s	object:dependencies.pstree.remy
+version	package-lock.json	/^      "version": "1.12.0",$/;"	s	object:dependencies.inflection
+version	package-lock.json	/^      "version": "1.14.1",$/;"	s	object:dependencies.serve-static
+version	package-lock.json	/^      "version": "1.19.0",$/;"	s	object:dependencies.body-parser
+version	package-lock.json	/^      "version": "1.2.1",$/;"	s	object:dependencies.range-parser
+version	package-lock.json	/^      "version": "1.2.5",$/;"	s	object:dependencies.minimist
+version	package-lock.json	/^      "version": "1.2.8",$/;"	s	object:dependencies.rc
+version	package-lock.json	/^      "version": "1.3.0",$/;"	s	object:dependencies.any-promise
+version	package-lock.json	/^      "version": "1.3.3",$/;"	s	object:dependencies.parseurl
+version	package-lock.json	/^      "version": "1.3.5",$/;"	s	object:dependencies.ini
+version	package-lock.json	/^      "version": "1.3.7",$/;"	s	object:dependencies.accepts
+version	package-lock.json	/^      "version": "1.4.0",$/;"	s	object:dependencies.once
+version	package-lock.json	/^      "version": "1.4.1",$/;"	s	object:dependencies.denque
+version	package-lock.json	/^      "version": "1.4.4",$/;"	s	object:dependencies.end-of-stream
+version	package-lock.json	/^      "version": "1.44.0",$/;"	s	object:dependencies.mime-db
+version	package-lock.json	/^      "version": "1.5.0",$/;"	s	object:dependencies.statuses
+version	package-lock.json	/^      "version": "1.6.0",$/;"	s	object:dependencies.mime
+version	package-lock.json	/^      "version": "1.6.18",$/;"	s	object:dependencies.type-is
+version	package-lock.json	/^      "version": "1.7.2",$/;"	s	object:dependencies.http-errors
+version	package-lock.json	/^      "version": "1.8.1",$/;"	s	object:dependencies.etag
+version	package-lock.json	/^      "version": "1.9.1",$/;"	s	object:dependencies.ipaddr.js
+version	package-lock.json	/^      "version": "10.11.0",$/;"	s	object:dependencies.validator
+version	package-lock.json	/^      "version": "14.11.1",$/;"	s	object:dependencies.@types/node
+version	package-lock.json	/^      "version": "2.0.0",$/;"	s	object:dependencies.ci-info
+version	package-lock.json	/^      "version": "2.0.0",$/;"	s	object:dependencies.crypto-random-string
+version	package-lock.json	/^      "version": "2.0.0",$/;"	s	object:dependencies.is-ci
+version	package-lock.json	/^      "version": "2.0.0",$/;"	s	object:dependencies.is-fullwidth-code-point
+version	package-lock.json	/^      "version": "2.0.0",$/;"	s	object:dependencies.is-obj
+version	package-lock.json	/^      "version": "2.0.0",$/;"	s	object:dependencies.ms
+version	package-lock.json	/^      "version": "2.0.0",$/;"	s	object:dependencies.prepend-http
+version	package-lock.json	/^      "version": "2.0.0",$/;"	s	object:dependencies.unique-string
+version	package-lock.json	/^      "version": "2.0.1",$/;"	s	object:dependencies.color-convert
+version	package-lock.json	/^      "version": "2.0.1",$/;"	s	object:dependencies.global-dirs
+version	package-lock.json	/^      "version": "2.0.1",$/;"	s	object:dependencies.pupa
+version	package-lock.json	/^      "version": "2.0.1",$/;"	s	object:dependencies.strip-json-comments
+version	package-lock.json	/^      "version": "2.0.2",$/;"	s	object:dependencies.dottie
+version	package-lock.json	/^      "version": "2.0.3",$/;"	s	object:dependencies.inherits
+version	package-lock.json	/^      "version": "2.0.3",$/;"	s	object:dependencies.undefsafe
+version	package-lock.json	/^      "version": "2.0.4",$/;"	s	object:dependencies.nodemon
+version	package-lock.json	/^      "version": "2.0.6",$/;"	s	object:dependencies.proxy-addr
+version	package-lock.json	/^      "version": "2.1.0",$/;"	s	object:dependencies.binary-extensions
+version	package-lock.json	/^      "version": "2.1.0",$/;"	s	object:dependencies.has-yarn
+version	package-lock.json	/^      "version": "2.1.0",$/;"	s	object:dependencies.import-lazy
+version	package-lock.json	/^      "version": "2.1.0",$/;"	s	object:dependencies.is-binary-path
+version	package-lock.json	/^      "version": "2.1.1",$/;"	s	object:dependencies.escape-goat
+version	package-lock.json	/^      "version": "2.1.1",$/;"	s	object:dependencies.is-extglob
+version	package-lock.json	/^      "version": "2.1.2",$/;"	s	object:dependencies.safer-buffer
+version	package-lock.json	/^      "version": "2.1.27",$/;"	s	object:dependencies.mime-types
+version	package-lock.json	/^      "version": "2.1.3",$/;"	s	object:dependencies.fsevents
+version	package-lock.json	/^      "version": "2.15.15",$/;"	s	object:dependencies.@types/mysql
+version	package-lock.json	/^      "version": "2.2.0",$/;"	s	object:dependencies.term-size
+version	package-lock.json	/^      "version": "2.2.1",$/;"	s	object:dependencies.cli-boxes
+version	package-lock.json	/^      "version": "2.2.2",$/;"	s	object:dependencies.mysql2
+version	package-lock.json	/^      "version": "2.2.2",$/;"	s	object:dependencies.picomatch
+version	package-lock.json	/^      "version": "2.28.0",$/;"	s	object:dependencies.moment
+version	package-lock.json	/^      "version": "2.3.0",$/;"	s	object:dependencies.on-finished
+version	package-lock.json	/^      "version": "2.3.1",$/;"	s	object:dependencies.generate-function
+version	package-lock.json	/^      "version": "2.3.2",$/;"	s	object:dependencies.sqlstring
+version	package-lock.json	/^      "version": "2.4.0",$/;"	s	object:dependencies.raw-body
+version	package-lock.json	/^      "version": "2.6.1",$/;"	s	object:dependencies.node-fetch
+version	package-lock.json	/^      "version": "2.6.9",$/;"	s	object:dependencies.debug
+version	package-lock.json	/^      "version": "2.8.5",$/;"	s	object:dependencies.cors
+version	package-lock.json	/^      "version": "3.0.0",$/;"	s	object:dependencies.ansi-align
+version	package-lock.json	/^      "version": "3.0.0",$/;"	s	object:dependencies.chalk
+version	package-lock.json	/^      "version": "3.0.0",$/;"	s	object:dependencies.has-flag
+version	package-lock.json	/^      "version": "3.0.0",$/;"	s	object:dependencies.json-buffer
+version	package-lock.json	/^      "version": "3.0.0",$/;"	s	object:dependencies.normalize-path
+version	package-lock.json	/^      "version": "3.0.0",$/;"	s	object:dependencies.pump
+version	package-lock.json	/^      "version": "3.0.0",$/;"	s	object:dependencies.url-parse-lax
+version	package-lock.json	/^      "version": "3.0.2",$/;"	s	object:dependencies.braces
+version	package-lock.json	/^      "version": "3.0.2",$/;"	s	object:dependencies.is-path-inside
+version	package-lock.json	/^      "version": "3.0.3",$/;"	s	object:dependencies.signal-exit
+version	package-lock.json	/^      "version": "3.0.3",$/;"	s	object:dependencies.write-file-atomic
+version	package-lock.json	/^      "version": "3.0.4",$/;"	s	object:dependencies.minimatch
+version	package-lock.json	/^      "version": "3.1.0",$/;"	s	object:dependencies.bytes
+version	package-lock.json	/^      "version": "3.1.0",$/;"	s	object:dependencies.keyv
+version	package-lock.json	/^      "version": "3.1.0",$/;"	s	object:dependencies.make-dir
+version	package-lock.json	/^      "version": "3.1.0",$/;"	s	object:dependencies.touch
+version	package-lock.json	/^      "version": "3.1.0",$/;"	s	object:dependencies.widest-line
+version	package-lock.json	/^      "version": "3.1.1",$/;"	s	object:dependencies.anymatch
+version	package-lock.json	/^      "version": "3.1.1",$/;"	s	object:dependencies.semver-diff
+version	package-lock.json	/^      "version": "3.1.5",$/;"	s	object:dependencies.typedarray-to-buffer
+version	package-lock.json	/^      "version": "3.2.0",$/;"	s	object:dependencies.retry-as-promised
+version	package-lock.json	/^      "version": "3.3.0",$/;"	s	object:dependencies.decompress-response
+version	package-lock.json	/^      "version": "3.4.0",$/;"	s	object:dependencies.readdirp
+version	package-lock.json	/^      "version": "3.4.2",$/;"	s	object:dependencies.chokidar
+version	package-lock.json	/^      "version": "4.0.0",$/;"	s	object:dependencies.is-npm
+version	package-lock.json	/^      "version": "4.0.0",$/;"	s	object:dependencies.long
+version	package-lock.json	/^      "version": "4.0.0",$/;"	s	object:dependencies.xdg-basedir
+version	package-lock.json	/^      "version": "4.0.0",$/;"	s	object:dependencies.yallist
+version	package-lock.json	/^      "version": "4.0.1",$/;"	s	object:dependencies.is-glob
+version	package-lock.json	/^      "version": "4.1.0",$/;"	s	object:dependencies.ansi-regex
+version	package-lock.json	/^      "version": "4.1.0",$/;"	s	object:dependencies.get-stream
+version	package-lock.json	/^      "version": "4.1.0",$/;"	s	object:dependencies.http-cache-semantics
+version	package-lock.json	/^      "version": "4.1.1",$/;"	s	object:dependencies.object-assign
+version	package-lock.json	/^      "version": "4.1.1",$/;"	s	object:dependencies.update-notifier
+version	package-lock.json	/^      "version": "4.17.1",$/;"	s	object:dependencies.express
+version	package-lock.json	/^      "version": "4.17.20",$/;"	s	object:dependencies.lodash
+version	package-lock.json	/^      "version": "4.2.0",$/;"	s	object:dependencies.boxen
+version	package-lock.json	/^      "version": "4.2.0",$/;"	s	object:dependencies.registry-auth-token
+version	package-lock.json	/^      "version": "4.2.0",$/;"	s	object:dependencies.string-width
+version	package-lock.json	/^      "version": "4.2.1",$/;"	s	object:dependencies.ansi-styles
+version	package-lock.json	/^      "version": "4.2.4",$/;"	s	object:dependencies.graceful-fs
+version	package-lock.json	/^      "version": "4.5.0",$/;"	s	object:dependencies.normalize-url
+version	package-lock.json	/^      "version": "5.0.1",$/;"	s	object:dependencies.configstore
+version	package-lock.json	/^      "version": "5.0.1",$/;"	s	object:dependencies.to-regex-range
+version	package-lock.json	/^      "version": "5.1.0",$/;"	s	object:dependencies.latest-version
+version	package-lock.json	/^      "version": "5.1.0",$/;"	s	object:dependencies.registry-url
+version	package-lock.json	/^      "version": "5.1.1",$/;"	s	object:dependencies.glob-parent
+version	package-lock.json	/^      "version": "5.1.2",$/;"	s	object:dependencies.safe-buffer
+version	package-lock.json	/^      "version": "5.2.0",$/;"	s	object:dependencies.strip-ansi
+version	package-lock.json	/^      "version": "5.3.0",$/;"	s	object:dependencies.dot-prop
+version	package-lock.json	/^      "version": "5.3.1",$/;"	s	object:dependencies.camelcase
+version	package-lock.json	/^      "version": "5.5.0",$/;"	s	object:dependencies.supports-color
+version	package-lock.json	/^      "version": "6.0.0",$/;"	s	object:dependencies.lru-cache
+version	package-lock.json	/^      "version": "6.1.0",$/;"	s	object:dependencies.cacheable-request
+version	package-lock.json	/^      "version": "6.1.0",$/;"	s	object:dependencies.sequelize-pool
+version	package-lock.json	/^      "version": "6.3.5",$/;"	s	object:dependencies.sequelize
+version	package-lock.json	/^      "version": "6.5.0",$/;"	s	object:dependencies.package-json
+version	package-lock.json	/^      "version": "6.7.0",$/;"	s	object:dependencies.qs
+version	package-lock.json	/^      "version": "7.0.0",$/;"	s	object:dependencies.is-number
+version	package-lock.json	/^      "version": "7.0.1",$/;"	s	object:dependencies.fill-range
+version	package-lock.json	/^      "version": "7.0.3",$/;"	s	object:dependencies.emoji-regex
+version	package-lock.json	/^      "version": "7.3.2",$/;"	s	object:dependencies.semver
+version	package-lock.json	/^      "version": "8.2.0",$/;"	s	object:dependencies.dotenv
+version	package-lock.json	/^      "version": "8.3.0",$/;"	s	object:dependencies.uuid
+version	package-lock.json	/^      "version": "9.6.0",$/;"	s	object:dependencies.got
+version	package-lock.json	/^  "version": "1.0.0",$/;"	s
+version	package.json	/^  "version": "1.0.0",$/;"	s
+widest-line	package-lock.json	/^        "widest-line": "^3.1.0"$/;"	s	object:dependencies.boxen.requires
+widest-line	package-lock.json	/^    "widest-line": {$/;"	o	object:dependencies
+wkx	package-lock.json	/^        "wkx": "^0.5.0"$/;"	s	object:dependencies.sequelize.requires
+wkx	package-lock.json	/^    "wkx": {$/;"	o	object:dependencies
+wrappy	package-lock.json	/^        "wrappy": "1"$/;"	s	object:dependencies.once.requires
+wrappy	package-lock.json	/^    "wrappy": {$/;"	o	object:dependencies
+write-file-atomic	package-lock.json	/^        "write-file-atomic": "^3.0.0",$/;"	s	object:dependencies.configstore.requires
+write-file-atomic	package-lock.json	/^    "write-file-atomic": {$/;"	o	object:dependencies
+xdg-basedir	package-lock.json	/^        "xdg-basedir": "^4.0.0"$/;"	s	object:dependencies.configstore.requires
+xdg-basedir	package-lock.json	/^        "xdg-basedir": "^4.0.0"$/;"	s	object:dependencies.update-notifier.requires
+xdg-basedir	package-lock.json	/^    "xdg-basedir": {$/;"	o	object:dependencies
+yallist	package-lock.json	/^            "yallist": "^2.1.2"$/;"	s	object:dependencies.named-placeholders.dependencies.lru-cache.requires
+yallist	package-lock.json	/^        "yallist": "^4.0.0"$/;"	s	object:dependencies.lru-cache.requires
+yallist	package-lock.json	/^        "yallist": {$/;"	o	object:dependencies.named-placeholders.dependencies
+yallist	package-lock.json	/^    "yallist": {$/;"	o	object:dependencies
+year1_sem1	controllers/syllabus.js	/^        const year1_sem1 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus
+year1_sem2	controllers/syllabus.js	/^        const year1_sem2 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus
+year1_sem3	controllers/syllabus.js	/^        const year1_sem3 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus
+year2_sem1	controllers/syllabus.js	/^        const year2_sem1 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus
+year2_sem2	controllers/syllabus.js	/^        const year2_sem2 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus
+year2_sem3	controllers/syllabus.js	/^        const year2_sem3 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus
+year3_sem1	controllers/syllabus.js	/^        const year3_sem1 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus
+year3_sem2	controllers/syllabus.js	/^        const year3_sem2 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus
+year3_sem3	controllers/syllabus.js	/^        const year3_sem3 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus
+year4_sem1	controllers/syllabus.js	/^        const year4_sem1 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus
+year4_sem2	controllers/syllabus.js	/^        const year4_sem2 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus
+year4_sem3	controllers/syllabus.js	/^        const year4_sem3 = await Table.CourseProgramPathway.findAll({$/;"	C	class:module.exports.getSyllabus

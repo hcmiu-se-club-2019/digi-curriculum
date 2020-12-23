@@ -1,12 +1,15 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, compose } from "redux";
 
-import rootReducer from './rootReducer';
+import rootReducer from "./rootReducer";
 
 export default function configureStore(preLoadedState) {
   return createStore(
     rootReducer,
     preLoadedState,
-    compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ ?  window.__REDUX_DEVTOOLS_EXTENSION__() : (func) => func)
+    compose(
+      applyMiddleware(),
+      window.__REDUX_DEVTOOLS_EXTENSION__ &&
+        window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
   );
 }
