@@ -1,26 +1,15 @@
-// import React, { Component } from "react";
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 
 import Header from './Layout/Header';
 import Footer from './Layout/Footer';
-import EditCurriculum from './editCurriculum';
-import ProgramDisplay from './programDisplay';
-import CourseDetail from './courseDetail';
 import Home from './Home';
 import Curriculum from './Curriculum';
-// import CurriculumEdit from "./CurriculumEdit/index";
-import Statistics from './Statistics';
-
 import CurriculumEdit from './CurriculumEdit/_index';
-import UserProvider from './contexts/userProvider';
 
 const isFooterEnabled = (pathname) => {
   switch (pathname) {
     case '/curriculum/edit':
-    case '/statistics':
-    case '/statistics/grading':
-    case '/statistics/courses':
       return false;
     default:
       return true;
@@ -29,23 +18,17 @@ const isFooterEnabled = (pathname) => {
 
 const Main = withRouter(({ location, props }) => (
   <>
+    <Header />
     <Switch>
-      <UserProvider>
-        <Header />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/curriculum" component={Curriculum} />
-        <Route exact path="/curriculum/edit" component={CurriculumEdit} />
-        <Route exact path="/program" component={ProgramDisplay} />
-        <Route exact path="/course/:courseId" component={CourseDetail} />
-        <Route exact path="/curriculum/:curriId/edit" component={EditCurriculum} />
-        <Route path="/statistics" component={Statistics} />
-      </UserProvider>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/curriculum" component={Curriculum} />
+      <Route exact path="/curriculum/edit" component={CurriculumEdit} />
     </Switch>
     {isFooterEnabled(location.pathname) ? <Footer /> : ''}
   </>
 ));
 
-class App extends React.PureComponent {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
