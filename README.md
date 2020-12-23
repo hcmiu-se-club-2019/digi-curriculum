@@ -13,11 +13,11 @@ B. Logic load data cho panel bên phải:
 
   1. Ở file /CurriculumEdit/index.jsx: khi bắt đầu click vô "Edit Curriculum", browser fetch data của "course" và "curriculum" tại constructor(props).
   
-  2. Khi gọi 2 hàm this.props.receiveCourses() và this.props.receiveCurriculums(), tại file /CurriculumEdit/_index.js, mapDispatchToProps sẽ dispatch 2 hàm vừa được nêu trên.
+  2. Khi gọi 2 hàm this.props.receiveCourses() và this.props.receiveCurriculums(), tại file /CurriculumEdit/_index.js, mapDispatchToProps sẽ dispatch 2 hàm vừa được nêu trên. (để ý 2 dòng import "../../redux/courses/action" và "../../redux/curriculums/action";
   
-  3.1. Ở file /redux/courses/action.js, gọi hàm receiveCourses(). Ở file /redux/courses/reducer.js, lấy fake data gắn vào state của nhánh "courses". 
+  3.1. Ở file /redux/courses/action.js, gọi hàm receiveCourses(). Qua bên file /redux/courses/reducer.js, lấy fake data gắn vào state của nhánh "courses". 
   
-  3.2. Ở file /redux/curriculums/action.js, gọi hàm receiveCurriculums(). Ở file /redux/curriculums/reducer.js, lấy fake data gắn vào state của nhánh "curriculums". 
+  3.2. Ở file /redux/curriculums/action.js, gọi hàm receiveCurriculums(). Qua bên file /redux/curriculums/reducer.js, lấy fake data gắn vào state của nhánh "curriculums". 
   
   4. Sau khi update state của "courses" và "curriculums", update component của panel bên phải.
   
