@@ -1,3 +1,0 @@
-let l:bm_file_version = 1
-let l:bm_sessions = {'default': {'/Users/vang/work_space/problems/leetcode/inverse_integer.js': [{'sign_idx': 9500, 'line_nr': 38, 'content': '            var val = Math.ceil(x / Math.pow(10, n - i));', 'annotation': 'Confuse here!'},],}}
-let l:bm_current_session = 'default'

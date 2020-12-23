@@ -1,9 +1,7 @@
-import React, { Component, useContext } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import styled from "styled-components";
-import { Link, Redirect } from "react-router-dom";
-import UserProvider from "../contexts/userProvider";
-import _ from "lodash";
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const EditLinkWrapper = styled.div`
   justify-content: center;
@@ -33,47 +31,20 @@ const Pathway = styled.div`
   background-color: lightgrey;
 `;
 
-// class Home extends Component {
-
-//   render() {
-//     return (
-//       <div>
-//         <EditLinkWrapper>
-//           Warning: This page is under construction
-//           <Link to="/curriculum/edit">
-//             <EditLink>Edit Curriculum</EditLink>
-//           </Link>
-//         </EditLinkWrapper>
-//         <Pathway>Pathway</Pathway>
-//       </div>
-//     );
-//   }
-// }
-
-const CurriculumPage = () => {
-  return (
-    <div>
-      <EditLinkWrapper>
-        Warning: This page is under construction
-        <Link to="/curriculum/edit">
-          <EditLink>Edit Curriculum</EditLink>
-        </Link>
-      </EditLinkWrapper>
-      <Pathway>Pathway</Pathway>
-    </div>
-  );
-};
-
-const RedirectFunction = () => {
-  return <Redirect to="/" />;
-};
-
-const Home = () => {
-  // const userData = useContext(UserProvider.context);
-  // console.log(userData);
-  // if (_.isEmpty(userData)) return <RedirectFunction />;
-  // else return <CurriculumPage />;
-  return <CurriculumPage />
-};
+class Home extends Component {
+  render() {
+    return (
+      <div>
+        <EditLinkWrapper>
+          Warning: This page is under construction
+          <Link to="/curriculum/edit">
+            <EditLink>Edit Curriculum</EditLink>
+          </Link>
+        </EditLinkWrapper>
+        <Pathway>Pathway</Pathway>
+      </div>
+    );
+  }
+}
 
 export default Home;
