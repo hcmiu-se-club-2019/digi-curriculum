@@ -21,7 +21,11 @@ C. Logic khi drag and drop:
 
 D. Vấn đề cần làm: 
 -Clean code.
+
 -Fetch data từ backend và map data.
+
 -Kéo môn học từ danh sách môn học ở bên trái sang bên phải.
+
 -Thay đổi vị trí năm học (có thể thay đổi code UI cho component).
+
 -Update cách thiết kế state (Optional).
