@@ -20,6 +20,7 @@ B. Logic load data cho panel bên phải:
   3.2. Ở file /redux/curriculums/action.js, gọi hàm receiveCurriculums(). Ở file /redux/curriculums/reducer.js, lấy fake data gắn vào state của nhánh "curriculums". 
   
   4. Sau khi update state của "courses" và "curriculums", update component của panel bên phải.
+  
   (Note: ở file /CurriculumEdit/CourseDragSource.jsx, panel bên trái KHÔNG lấy data từ redux, thay vào đó import data trực tiếp từ file /data-courses.js và /data-majors.js
   
 C. Logic khi drag and drop:
