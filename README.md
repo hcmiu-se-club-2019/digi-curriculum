@@ -2,8 +2,11 @@ Drag and drop note:
 
 A. Giới thiệu giao diện drag and drop:
 Tại URL http://localhost:8080/curriculum/edit giao diện chính sẽ được chia làm 2 phần.
+
 -Phần bên trái: chứa danh sách môn học của các khoa, được dùng để add môn học cho chương trình đào tạo.
+
 -Phần bên phải: chưa chương trình đào tạo theo: ngành > chuyên ngành > hệ đào tạo > tiếng anh đầu vào. Phần này sẽ cho phép user thêm, xóa, sửa môn học bằng cách kéo thả. 
+
 -1 CTĐT sẽ có những năm học, mỗi năm học sẽ có 3 học kì, mỗi học kì chứa danh sách các môn cần học. 
 
 B. Logic load data cho panel bên phải:
