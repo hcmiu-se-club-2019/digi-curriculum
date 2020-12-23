@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-
+import UserProvider from '../contexts/userProvider'
+import _ from 'lodash'
 const Container = styled.div`
   padding-top: 350px;
   padding-bottom: 350px;
@@ -12,9 +13,13 @@ const Container = styled.div`
 `;
 
 const Home = () => {
+  const userData = useContext(UserProvider.context);
+  console.log(userData);
   return(
     <div>
-      <Container />
+      <Container>
+        <h1>{_.isEmpty(userData) ? "PLEASE LOGIN!" : "Welcome " + userData.displayName}</h1>
+      </Container>
     </div>
   )
 }

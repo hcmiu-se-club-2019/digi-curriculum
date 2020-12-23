@@ -1,0 +1,69 @@
+.statistic-grading-container {
+  height: 100vh;
+  .grid-item-left {
+    background-color: whitesmoke;
+    padding: 40px;
+    height: 100vh;
+    .road-block-icon {
+      width: 40px;
+      height: 40px;
+      fill: grey;
+      display: block;
+      margin: auto;
+    }
+  }
+  .grid-item-right {
+    padding: 40px;
+    font-size: 10px;
+    background-color: #525659;
+    height: 100vh;
+    .zoom-box {
+      position: relative;
+      overflow-x: auto;
+      background-color: white;
+      height: 100%;
+      box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+      .course-header {
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 1px 0px 1px 0px;
+        padding: 0px 2px;
+        .header-left {
+          display: flex;
+          flex-direction: column;
+          .header-course-average-score {
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            color: #cc0000;
+            font-weight: bold;
+            margin: 1px 0px;
+          }
+        }
+        .course-item {
+          display: flex;
+          align-self: flex-end;
+          padding-top: 50px;
+        }
+      }
+      .student-item {
+        .student-index {
+          font-weight: bold;
+          width: 30px;
+          min-width: 30px;
+          text-align: right;
+          justify-content: flex-end;
+        }
+        .student-name {
+          font-weight: bold;
+          width: 200px;
+          min-width: 200px;
+          padding: 0px 5px;
+          display: inline-flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
