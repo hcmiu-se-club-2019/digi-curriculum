@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Checkbox } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
-import { SortOrder } from './SortOptions.enum';
+import { SortOrder } from '../../SortOptions.enum';
 
-import { ReactComponent as AscendingHorizontalIcon } from '../../icons/ascending-horizontal.svg';
-import { ReactComponent as DescendingHorizontalIcon } from '../../icons/descending-horizontal.svg';
-import { ReactComponent as AscendingVerticalIcon } from '../../icons/ascending-vertical.svg';
-import { ReactComponent as DescendingVerticalIcon } from '../../icons/descending-vertical.svg';
+import { ReactComponent as AscendingHorizontalIcon } from '../../../../icons/ascending-horizontal.svg';
+import { ReactComponent as DescendingHorizontalIcon } from '../../../../icons/descending-horizontal.svg';
+import { ReactComponent as AscendingVerticalIcon } from '../../../../icons/ascending-vertical.svg';
+import { ReactComponent as DescendingVerticalIcon } from '../../../../icons/descending-vertical.svg';
 
-class CourseHeaderItemAll extends Component {
+class CourseHeaderItemAll extends React.PureComponent {
   changeSortMode(headerOptions) {
     this.props.onChangeSortMode(headerOptions);
   }
 
   render() {
-    console.log(this.props)
     return (
       <div
         style={{

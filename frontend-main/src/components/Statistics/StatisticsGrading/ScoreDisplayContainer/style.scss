@@ -1,0 +1,19 @@
+.score-display-content-background {
+  height: 100vh;
+  padding: 40px;
+  font-size: 10px;
+  .score-display-content {
+    position: relative;
+    overflow-x: auto;
+    background-color: white;
+    height: 100%;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+    padding: 40px;
+    .course-header {
+      display: flex;
+      flex-wrap: nowrap;
+      margin: 1px 0px 1px 0px;
+      padding: 0px 2px;
+    }
+  }
+}

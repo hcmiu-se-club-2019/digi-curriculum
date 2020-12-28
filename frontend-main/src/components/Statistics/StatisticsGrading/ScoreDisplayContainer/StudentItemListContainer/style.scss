@@ -1,0 +1,19 @@
+.student-item-list-container {
+  .student-item {
+    .student-index {
+      font-weight: bold;
+      width: 30px;
+      min-width: 30px;
+      text-align: right;
+      justify-content: flex-end;
+    }
+    .student-name {
+      font-weight: bold;
+      width: 200px;
+      min-width: 200px;
+      padding: 0px 5px;
+      display: inline-flex;
+      justify-content: flex-end;
+    }
+  }
+}

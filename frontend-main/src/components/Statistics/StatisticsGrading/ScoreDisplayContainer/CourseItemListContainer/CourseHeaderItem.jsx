@@ -3,10 +3,10 @@ import { Checkbox } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { SortOrder } from './SortOptions.enum';
+import { SortOrder } from '../../SortOptions.enum';
 
-import { ReactComponent as AscendingVerticalIcon } from '../../icons/ascending-vertical.svg';
-import { ReactComponent as DescendingVerticalIcon } from '../../icons/descending-vertical.svg';
+import { ReactComponent as AscendingVerticalIcon } from '../../../../icons/ascending-vertical.svg';
+import { ReactComponent as DescendingVerticalIcon } from '../../../../icons/descending-vertical.svg';
 
 const StyledContainer = styled.div`
   width: 20px;
@@ -42,6 +42,13 @@ const StyledAverageScore = styled.div`
 `;
 
 class CourseHeaderItem extends Component {
+  shouldComponentUpdate(prevProps, prevState) {
+    if (prevProps.index !== this.props.index) return true;
+    if (prevProps.isSelected !== this.props.isSelected) return true;
+    if (prevProps.sortScoreOrder !== this.props.sortScoreOrder) return true;
+    return false;
+  }
+
   changeSortMode(headerOptions, id) {
     this.props.onChangeSortMode(headerOptions, id);
   }
@@ -71,7 +78,7 @@ class CourseHeaderItem extends Component {
             alignItems: 'center',
             margin: '5px 0px -5px 0px',
             cursor: isNaN(averageScore) ? 'auto' : 'pointer',
-            zIndex: 2
+            zIndex: 2,
           }}
           onClick={() => {
             if (isNaN(averageScore)) return;

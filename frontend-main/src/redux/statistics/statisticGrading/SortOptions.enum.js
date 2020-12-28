@@ -8,5 +8,4 @@ export const HeaderOptions = Object.freeze({
 export const SortOrder = Object.freeze({
   ASC: 'ASC',
   DESC: 'DESC',
-  UNSORTED: 'UNSORTED',
 });

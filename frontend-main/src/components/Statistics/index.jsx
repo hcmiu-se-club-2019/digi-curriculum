@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Box from '@material-ui/core/Box';
 
 import StatisticsNavBar from './StatisticsNavBar';
 import StatisticsOverview from './StatisticsOverview';
 import StatisticsCourses from './StatisticsCourses';
-import StatisticsGrading from './StatisticsGrading';
+import StatisticsGrading from './StatisticsGrading/_index';
 import StatisticsLearningProgress from './StatisticsLearningProgress';
-
-import { ReactComponent as RoadBlockIcon } from '../icons/roadblock.svg';
 
 class Statistics extends Component {
   render() {

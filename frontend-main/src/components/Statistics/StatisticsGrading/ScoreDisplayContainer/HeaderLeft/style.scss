@@ -1,0 +1,13 @@
+.header-left {
+  display: flex;
+  flex-direction: column;
+  .header-course-average-score {
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #cc0000;
+    font-weight: bold;
+    margin: 1px 0px;
+  }
+}
