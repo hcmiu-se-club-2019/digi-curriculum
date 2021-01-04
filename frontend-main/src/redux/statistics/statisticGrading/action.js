@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 
 import * as Type from './constants';
 import data from '../../../components/Statistics/StatisticsGrading/en-all-14-18-hash.csv';
-import { SortOrder } from './SortOptions.enum'
+import { SortOrder } from './SortOptions.enum';
 
 export function fetchStatisticGrading() {
   return async (dispatch) => {
@@ -34,7 +34,12 @@ function fetchStatisticGradingError(error) {
   };
 }
 
-export function generateRandomData() {
+export async function loadRandomData(dispatch) {
+  await dispatch(generateRandomData());
+  dispatch(sortGPA(SortOrder.DESC));
+}
+
+function generateRandomData() {
   return {
     type: Type.GENERATE_RANDOM_DATA,
   };

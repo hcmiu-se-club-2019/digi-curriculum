@@ -63,7 +63,7 @@ class StudentItemScoreItem extends Component {
   }
 }
 
-class StudentItem extends React.PureComponent {
+class StudentItem extends React.Component {
   shouldComponentUpdate(prevProps, prevState) {
     if (prevProps.index !== this.props.index) return true;
     if (prevProps.studentData.isChecked !== this.props.studentData.isChecked) return true;

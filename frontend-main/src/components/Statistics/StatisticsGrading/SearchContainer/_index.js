@@ -7,7 +7,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     dispatch: (someFunction) => dispatch(someFunction),
     loadData: () => statisticGradingActions.fetchStatisticGrading(),
-    loadRandomData: () => dispatch(statisticGradingActions.generateRandomData()),
+    loadRandomData: () => statisticGradingActions.loadRandomData(dispatch),
   };
 };
 
