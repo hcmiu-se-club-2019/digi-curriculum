@@ -3,10 +3,10 @@ import * as d3 from 'd3';
 import { Grid, Box } from '@material-ui/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { getGeneratedCourseData, fetchStatisticByCourses } from './FakeCourseOverviewGenerator';
+import { getGeneratedCourseData, fetchStatisticByCourses } from './mockDataGenerator';
 
 import { ReactComponent as RoadBlockIcon } from '../../icons/roadblock.svg';
-import './CourseOverview.scss';
+import './style.scss';
 
 // const getBackgroundColor = d3.scaleThreshold().domain([50, 70, 85, 100]).range(['#D9D9D9', '#99CFA1', '#43925F', '#02371A']);
 const getBackgroundColor = d3.scaleThreshold().domain([50, 70, 85, 100]).range(['#D9D9D9', '#8DB8D9', '#2E8AD0', '#174568']);
@@ -832,9 +832,9 @@ class StatisticsCourses extends Component {
   }
 
   render() {
-    // console.log('RENDER');
-    // console.log('PROPS', this.props);
-    // console.log('STATE', this.state);
+    console.log('RENDER');
+    console.log('PROPS', this.props);
+    console.log('STATE', this.state);
     return (
       <div>
         <Grid container className={'statistic-course-container'}>

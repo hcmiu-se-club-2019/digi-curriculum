@@ -27,14 +27,10 @@ const initState = {
       studentId: null,
     },
   },
-  errorLog: null,
-  isFetching: false,
   isAllCoursesSelected: true,
   isAllStudentsSelected: true,
-  selectedCourses: [],
-  selectedSortCourse: null,
-  selectedStudents: [],
-  selectedHeader: HeaderOptions.GPA,
+  errorLog: null,
+  isFetching: false,
 };
 
 export default function statisticsGrading(state = initState, action) {
@@ -48,6 +44,7 @@ export default function statisticsGrading(state = initState, action) {
       const { allStudents, allStudentIds, allCourses, allCourseIds } = mapDataAfterFetch(action.payload);
       // const maxHeightBoxHighlight = 67 + allStudentIds.length * 22 + Math.ceil(allStudentIds.length / 10) * 10;
       const maxHeightBoxHighlight = 67 + allStudentIds.length * 22 + Math.ceil(allStudentIds.length / 5) * 10;
+
       return Object.assign({}, state, {
         isFetching: false,
         allStudents,
@@ -124,7 +121,7 @@ export default function statisticsGrading(state = initState, action) {
     }
     case Type.SORT_SCORE_BY_ONE_COURSE: {
       const { newSelectedId, order } = action.payload;
-      const { allStudents, allStudentIds, allSortHeaders } = _.cloneDeep(state);
+      const { allStudents, allStudentIds, allCourses, allCourseIds, allSortHeaders } = _.cloneDeep(state);
       allSortHeaders.GPA.order = null;
       allSortHeaders.TOP_STUDENT_SCORE.order = allSortHeaders.TOP_STUDENT_SCORE.courseId !== newSelectedId ? SortOrder.DESC : order;
       allSortHeaders.TOP_STUDENT_SCORE.courseId = newSelectedId;
@@ -143,9 +140,18 @@ export default function statisticsGrading(state = initState, action) {
         });
       }
 
+      allCourseIds.forEach((courseId) => {
+        allCourses[courseId].isChecked = false;
+      });
+
+      allCourses[newSelectedId].isChecked = true;
+
       return Object.assign({}, state, {
         allStudentIds,
+        allStudents,
+        allCourses,
         allSortHeaders,
+        isAllCoursesSelected: false,
       });
     }
     case Type.SORT_TOP_COURSE_BY_ONE_STUDENT: {
@@ -168,11 +174,19 @@ export default function statisticsGrading(state = initState, action) {
           return currentScore - prevScore || isNaN(prevScore) - isNaN(currentScore);
         });
       }
-      // console.log(newSelectedId, allStudents[newSelectedId].courses.map(courseId => allStudents[newSelectedId].courses[courseId].score))
+
+      allStudentIds.forEach((studentId) => {
+        allStudents[studentId].isChecked = false;
+      });
+
+      allStudents[newSelectedId].isChecked = true;
+
       return Object.assign({}, state, {
         allStudentIds,
+        allStudents,
         allCourseIds,
         allSortHeaders,
+        isAllStudentsSelected: false,
       });
     }
     case Type.SELECT_STUDENT: {
@@ -237,7 +251,7 @@ function mapDataAfterFetch(getData) {
 
   allCourseIds = _.uniq(filteredDataByYear.map((d, i) => d.course));
   allStudentIds = _.uniq(filteredDataByYear.map((d, i) => d.id));
-  console.log(allStudentIds);
+  // console.log(allStudentIds);
   const courseCount = allCourseIds.length;
 
   allCourseIds.forEach((courseId, i) => {

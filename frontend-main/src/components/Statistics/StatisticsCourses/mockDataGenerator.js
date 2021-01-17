@@ -2,7 +2,7 @@ import faker from 'faker';
 import * as d3 from 'd3';
 import _ from 'lodash';
 
-import data from './en-all-19-20-hash.csv';
+import data from '../../../data/en-all-19-20-hash.csv';
 
 export function createCourses() {
   let allIds = [];

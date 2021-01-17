@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
 import * as Type from './constants';
-import data from '../../../components/Statistics/StatisticsGrading/en-all-14-18-hash.csv';
+import data from '../../../data/en-all-14-18-hash.csv';
 import { SortOrder } from './SortOptions.enum';
 
 export function fetchStatisticGrading() {

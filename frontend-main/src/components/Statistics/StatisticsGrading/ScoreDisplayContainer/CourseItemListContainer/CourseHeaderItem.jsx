@@ -46,6 +46,7 @@ class CourseHeaderItem extends Component {
     if (prevProps.index !== this.props.index) return true;
     if (prevProps.isSelected !== this.props.isSelected) return true;
     if (prevProps.sortScoreOrder !== this.props.sortScoreOrder) return true;
+    if (prevProps.selectedSortId !== this.props.selectedSortId) return true;
     return false;
   }
 
