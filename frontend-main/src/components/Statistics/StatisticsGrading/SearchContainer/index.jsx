@@ -18,7 +18,7 @@ class ScoreDisplayContainer extends Component {
           <RoadBlockIcon className={'road-block-icon'} />
           <div>This page is under development</div>
           <button onClick={() => loadRandomData()}>Random data</button>
-          <button onClick={() => dispatch(loadData())}>Reset data</button>
+          <button onClick={() => loadData()}>Reset data</button>
         </Box>
       </div>
     );

@@ -6,7 +6,7 @@ import * as statisticGradingActions from '../../../../redux/statistics/statistic
 const mapDispatchToProps = (dispatch) => {
   return {
     dispatch: (someFunction) => dispatch(someFunction),
-    loadData: () => statisticGradingActions.fetchStatisticGrading(),
+    loadData: () => statisticGradingActions.loadData(dispatch),
     loadRandomData: () => statisticGradingActions.loadRandomData(dispatch),
   };
 };

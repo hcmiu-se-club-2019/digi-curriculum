@@ -34,7 +34,13 @@ function fetchStatisticGradingError(error) {
   };
 }
 
+export async function loadData(dispatch) {
+  await dispatch(clearData())
+  await dispatch(fetchStatisticGrading());
+}
+
 export async function loadRandomData(dispatch) {
+  await dispatch(clearData())
   await dispatch(generateRandomData());
   dispatch(sortGPA(SortOrder.DESC));
 }
