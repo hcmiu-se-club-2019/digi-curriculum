@@ -10,6 +10,22 @@ app.use(bodyParser.json())
 app.use(cors());
 app.use("/",router)
 
+// connect to mysql 
+const mysql = require("mysql2");
+var mysqlConnection = mysql.createConnection({
+   host: process.env.DB_HOST,
+   user: process.env.DB_USER,
+   password: process.env.DB_PASSWORD,
+   database: process.env.DB_NAME 
+});
+
+mysqlConnection.connect((err) => {
+    if (!err){
+        console.log("connection success");
+    }
+    else console.log("connection failed");
+})
+
 // Router here!
 const courseRoutes = require("./routes/course");
 const programRoutes = require("./routes/program");
