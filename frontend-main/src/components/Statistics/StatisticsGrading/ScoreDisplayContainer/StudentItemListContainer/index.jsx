@@ -36,7 +36,7 @@ const StudentGPA = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => {
-    return props.isChecked ? getBackgroundColor(props.gpa) : '#EEEEEE';
+    return props.isChecked ? (!isNaN(props.gpa) ? getBackgroundColor(props.gpa) : 'rgba(255,255,255,0)') : props.gpa ? '#EEEEEE' : 'rgba(255,255,255,0)';
   }};
   color: ${(props) => {
     return props.isChecked ? getFontColor(props.gpa) : '#CCCCCC';

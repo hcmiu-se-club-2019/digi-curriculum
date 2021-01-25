@@ -295,9 +295,9 @@ function mapDataAfterFetch(getData) {
 }
 
 function getRandomData() {
-  let studentCount = faker.random.number({ min: 20, max: 200 });
+  let studentCount = faker.random.number({ min: 10, max: 200 });
   // let studentCount = faker.random.number({ min: 20, max: 60 });
-  let courseCount = faker.random.number({ min: 25, max: 60 });
+  let courseCount = faker.random.number({ min: 10, max: 60 });
   // let studentCount = 20;
   // let courseCount = 20;
 
@@ -333,7 +333,7 @@ function getRandomData() {
   }
 
   const getRandomLearningProgress = () => {
-    let learningCount = faker.random.number({ min: courseCount, max: courseCount }),
+    let learningCount = faker.random.number({ min: 0, max: courseCount }),
       // let learningCount = faker.random.number({ min: 0, max: courseCount }),
       // let learningCount = faker.random.number({ min: 0, max: 5 }),
       learntCourses = {},
