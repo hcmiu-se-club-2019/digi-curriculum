@@ -5,19 +5,7 @@ module.exports = (sequelize,DataTypes) => {
       primaryKey: true,
       allowNull: false,
     },
-    discipline: {
-      type: DataTypes.STRING(50),
-      allowNull: true,
-    },
     name: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    major: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    type: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -27,6 +15,14 @@ module.exports = (sequelize,DataTypes) => {
     },
     version:{
       type: DataTypes.STRING(4),
+      allowNull: true,
+    },
+    type: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    major_id: {
+      type: DataTypes.STRING,
       allowNull: true,
     }
   },{
