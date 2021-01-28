@@ -1,3 +1,4 @@
+import Axios from "axios";
 import React, { Component } from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 // import { Field } from 'formik';
@@ -7,6 +8,13 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 
 const TabForm = (props) => {
   const { values } = props;
+  const information = values.data.information;
+  const relatedCourses = values.data.courseRelateCourses.related_courses;
+  const books = values.data.books;
+  console.log(information);
+  console.log(relatedCourses);
+  console.log(books);
+
   return (
     <form onSubmit={function () {}} className="course-general-form border">
       <div className="d-flex justify-content-center">
@@ -22,7 +30,7 @@ const TabForm = (props) => {
                   type="text"
                   name="courseName"
                   id="courseName"
-                  value={values.name}
+                  value={information.name}
                 />
               </FormGroup>
               <FormGroup>
@@ -31,7 +39,7 @@ const TabForm = (props) => {
                   type="text"
                   name="courseId"
                   id="courseName"
-                  value={values.id}
+                  value={information.id}
                 />
               </FormGroup>
               <FormGroup tag="fieldset">
@@ -71,7 +79,7 @@ const TabForm = (props) => {
                   type="number"
                   name="courseCredit"
                   id="courseCredit"
-                  value={values.credit}
+                  value={information.credit_theory}
                 />
               </FormGroup>
               <FormGroup>
@@ -80,7 +88,7 @@ const TabForm = (props) => {
                   type="textarea"
                   name="courseRequired"
                   id="courseRequired"
-                  value={typeof values.prerequisties === 'object' ? values.prerequisties.join('\n') : values.prerequisties}
+                  value={relatedCourses.map(e => e.name + " - " + e.related_course_id).join('\n')}
                 />
               </FormGroup>
             </Form>
@@ -110,10 +118,11 @@ const TabForm = (props) => {
                   type="textarea"
                   name="courseTextbook"
                   id="courseTextbook"
-                  value={values.textbook}
+                  value={books.map(e => e.title).join('\n')}
+                  rows = '15'
                 />
               </FormGroup>
-              <FormGroup>
+              {/* <FormGroup>
                 <Label for="references">Course Other References</Label>
                 <Input
                   type="textarea"
@@ -122,7 +131,7 @@ const TabForm = (props) => {
                   value={typeof values.refs === 'object' ? values.refs.join('\n') : values.refs}
                   rows='10'
                 />
-              </FormGroup>
+              </FormGroup> */}
             </div>
           </div>
         </div>
@@ -139,7 +148,11 @@ export default class CourseGeneralTab extends Component {
   // constructor(props) {
   //   super(props);
   //   // this.state = { initialValues: {} };
-  // }
+  //  }
+  
+  
+
+  
 
   render() {
     const { initialValues } = this.props;

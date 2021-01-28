@@ -7,8 +7,9 @@ import { Table } from "reactstrap";
 
 const TabForm = (props) => {
   const { values } = props;
+  const outcomes = values.data.learningOutcomes;
   return (
-    <form onSubmit={function () {}} className="course-outcome-form border">
+    <form onSubmit={function () { }} className="course-outcome-form border">
       <div className="d-flex justify-content-center">
         <div className="mt-2 ml-3">
           <div>
@@ -20,29 +21,19 @@ const TabForm = (props) => {
                 <tr>
                   <th>Name</th>
                   <th>Course Learning Outcomes</th>
-                  <th>Program Learning Outcomes</th>
                 </tr>
               </thead>
               <tbody>
-                {
-                  typeof values.outcomes === 'object' ? values.outcomes.map(outcome => 
+                  {
+                    outcomes.map(outcome => 
                     <Fragment>
                       <tr>
-                        <th rowSpan={outcome.outs.length}>{outcome.name}</th>
-                        <td>{outcome.outs[0].courseOut}</td>
-                        <td>{outcome.outs[0].programOut}</td>
+                        <td>{outcome.course_id}</td>
+                        <td>{outcome.description}</td>
                       </tr>
-                      {
-                        typeof outcome.outs === 'object' && outcome.outs.slice(1, outcome.outs.length).map(out => 
-                          <tr>
-                            <td>{out.courseOut}</td>
-                            <td>{out.programOut}</td>
-                          </tr>
-                        )
-                      }
                     </Fragment>
-                  ) : null
-                }
+                    )
+                  }
               </tbody>
             </Table>
           </div>

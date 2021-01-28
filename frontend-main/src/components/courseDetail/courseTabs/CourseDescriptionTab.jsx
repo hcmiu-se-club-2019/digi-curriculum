@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Form, FormGroup, Label, Input } from "reactstrap";
+import React, { Component, Fragment } from "react";
+import { Form, FormGroup, Label, Input, Table } from "reactstrap";
 // import { Field } from 'formik';
 
 // import FormModal from '../../common/FormModal'
@@ -7,6 +7,8 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 
 const TabForm = (props) => {
   const { values } = props;
+  const description = values.data.information.description;
+  const topics = values.data.topics;
   return (
     <form onSubmit={function () {}} className="course-general-form border">
       <div className="d-flex justify-content-center">
@@ -22,7 +24,7 @@ const TabForm = (props) => {
                   type="textarea"
                   name="courseDesc"
                   id="courseDesc"
-                  value={typeof values.description === 'object' ? values.description.join('\n+\t') : values.description}
+                  value={typeof description === 'object' ? description.join('\n+\t') : description}
                   rows='16'
                 />
               </FormGroup>
@@ -34,7 +36,7 @@ const TabForm = (props) => {
             <h5>COURSE OBJECTIVES</h5>
           </div>
           <div className="course-detail-fields">
-            <div>
+            {/* <div>
               <Form>
                 <FormGroup>
                   <Label for="required">Upon the successful completion of this course students will be able to:</Label>
@@ -51,7 +53,29 @@ const TabForm = (props) => {
                   />
                 </FormGroup>
               </Form>
-            </div>
+            </div> */}
+            <div className="course-detail-fields">
+            <Table bordered >
+              <thead>
+                <tr>
+                  <th scope='col'>ID</th>
+                  <th scope='col'>Topics</th>
+                </tr>
+              </thead>
+              <tbody style={{fontSize:'12px'}}>
+                {
+                  topics.map((topic) => 
+                    <Fragment>
+                      <tr>
+                        <td>{topic.id}</td>
+                        <td>{topic.name}</td>
+                      </tr>
+                    </Fragment>
+                  )
+                }
+              </tbody>
+            </Table>
+          </div>
           </div>
         </div>
       </div>
@@ -71,6 +95,8 @@ export default class CourseDescriptionTab extends Component {
 
   render() {
     const { initialValues } = this.props;
+    console.log(initialValues);
+
     return (
       <section className="content pb-5">
         <div className="edit-client-detail-form-container container-fluid bg-white">

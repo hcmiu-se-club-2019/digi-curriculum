@@ -8,6 +8,8 @@ import { Table } from "reactstrap";
 
 const TabForm = (props) => {
   const { values } = props;
+  const topics = values.data.topics;
+  console.log(topics);
   return (
     <form onSubmit={function () {}} className="course-outcome-form border">
       <div className="d-flex justify-content-center">
@@ -70,29 +72,19 @@ const TabForm = (props) => {
             <Table bordered >
               <thead>
                 <tr>
-                  <th scope='col'>Week</th>
+                  <th scope='col'>ID</th>
                   <th scope='col'>Topics</th>
                 </tr>
               </thead>
               <tbody style={{fontSize:'12px'}}>
                 {
-                  typeof values.implementation === 'object' 
-                  && typeof values.implementation.outlines === 'object' 
-                  && values.implementation.outlines.map(outline => 
+                  topics.map((topic) => 
                     <Fragment>
                       <tr>
-                        <td rowSpan={outline.topics.length}>{outline.week}</td>
-                        <td>{outline.topics[0]}</td>
+                        <td>{topic.id}</td>
+                        <td>{topic.name}</td>
                       </tr>
-                      {
-                        typeof outline.topics === 'object' && outline.topics.splice(1, outline.topics.length).map(topic =>
-                          <tr>
-                            <td>{topic}</td>
-                          </tr>
-                        )
-                      }
                     </Fragment>
-                    
                   )
                 }
               </tbody>

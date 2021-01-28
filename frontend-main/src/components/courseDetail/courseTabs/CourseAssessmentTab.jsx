@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from 'prop-types';
 import { Table } from "reactstrap";
 // import { Field } from 'formik';
@@ -7,15 +7,38 @@ import { Table } from "reactstrap";
 // import Input from '../../common/FormModal/Input'
 
 const TabForm = (props) => {
-  // const { values } = props;
+  const { values } = props;
+  const assessment = values.data.assessments;
   return (
     <form onSubmit={function () {}} className="course-general-form border">
-      <div className="d-flex">
-        <div className="col-sm-5 mt-2 ml-3">
+      <div className="d-flex justify-content-center">
+        <div className="col-sm-8 mt-2 ml-3">
           <div>
             <h5>ASSESSMENT PLAN</h5>
           </div>
           <div className="course-detail-fields">
+            <Table bordered >
+              <thead>
+                <tr>
+                  <th scope='col'>Type</th>
+                  <th scope='col'>Percentage</th>
+                </tr>
+              </thead>
+              <tbody style={{fontSize:'15px'}}>
+                {
+                  assessment.map((a) => 
+                    <Fragment>
+                      <tr>
+                        <td>{a.type}</td>
+                        <td>{a.CourseAssessment.percentage}</td>
+                      </tr>
+                    </Fragment>
+                  )
+                }
+              </tbody>
+            </Table>
+          </div>
+          {/* <div className="course-detail-fields">
             <Table bordered>
               <caption>
                 <strong>Note: MCQ:</strong> Multiple choice questions ;
@@ -47,7 +70,7 @@ const TabForm = (props) => {
                 </tr>
               </thead>
             </Table>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="mt-3 d-flex justify-content-center">
