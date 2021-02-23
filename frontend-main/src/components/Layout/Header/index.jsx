@@ -143,7 +143,7 @@ const Header = () => {
           <Link to="/program" className="text-white mr-2">
             Program Display
           </Link>
-          <Link to="/course/IT090IU" className="text-white mr-2" >
+          <Link to="/course/IT093" className="text-white mr-2" >
             Sample Course Detail
           </Link>
           <Link to="/statistics" className="text-white mr-2">

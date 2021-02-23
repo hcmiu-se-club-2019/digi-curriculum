@@ -36,6 +36,10 @@ const tabList = [
     id: "6",
     name: "OTHERS",
   },
+  {
+    id: "7",
+    name: "EDIT"
+  }
 ];
 
 export default class CourseDetail extends Component {
@@ -59,7 +63,7 @@ export default class CourseDetail extends Component {
     // });
     // this.setState({course: course});
 
-    const course = await Axios.get("http://localhost:3000/courses/IT093/details");
+    const course = await Axios.get("http://localhost:3000/courses/"+ courseId +"/details");
     console.log(course);
     this.setState({course: course});
   }
