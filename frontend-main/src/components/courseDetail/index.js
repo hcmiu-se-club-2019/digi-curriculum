@@ -9,6 +9,7 @@ import CourseOutcomeTab from "./courseTabs/CourseOutcomeTab";
 import CourseImplementationTab from "./courseTabs/CourseImplementationTab";
 import CourseAssessmentTab from "./courseTabs/CourseAssessmentTab";
 import Axios from "axios";
+import EditCourse from "./courseTabs/EditCourse";
 
 const courseList = state.courses;
 const tabList = [
@@ -107,6 +108,7 @@ export default class CourseDetail extends Component {
           {activeTab === "3" && <CourseOutcomeTab initialValues={course}/>}
           {activeTab === "4" && <CourseAssessmentTab initialValues={course}/>}
           {activeTab === "5" && <CourseImplementationTab initialValues={course}/>}
+          {activeTab === "7" && <EditCourse initialValues = {course}/>}
         </div>
       );
     } 
