@@ -7,12 +7,14 @@ import SearchContainer from './SearchContainer/_index';
 import ScoreDisplayContainer from './ScoreDisplayContainer';
 
 class StatisticsGrading extends Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     const { dispatch, fetchStatisticGrading } = this.props;
     dispatch(fetchStatisticGrading());
+  }
+
+  componentWillUnmount() {
+    const { clearData } = this.props;
+    clearData();
   }
 
   render() {

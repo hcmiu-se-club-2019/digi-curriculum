@@ -9,10 +9,6 @@ const getBackgroundColor = d3.scaleThreshold().domain([50, 70, 85, 100]).range([
 const getFontColor = d3.scaleLinear().domain([49.9, 50]).range(['#808080', '#FFFFFF']).clamp(true);
 
 class StatisticsGrading extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { allCourses, allCourseIds, selectedHeader, allSortHeaders, isAllCoursesSelected } = this.props;
     const { dispatch, handleSelectAllCourses, handleSelectCourse, sortGPA, sortAverageScore, sortScoreByOneCourse } = this.props;

@@ -7,6 +7,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     dispatch: (someFunction) => dispatch(someFunction),
     fetchStatisticGrading: () => statisticGradingActions.fetchStatisticGrading(),
+    clearData: () => dispatch(statisticGradingActions.clearData()),
   };
 };
 

@@ -1,5 +1,4 @@
-// import React, { Component } from "react";
-import React from 'react';
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, withRouter, Redirect } from 'react-router-dom';
 
 import Header from './Layout/Header';
@@ -9,10 +8,10 @@ import ProgramDisplay from './programDisplay';
 import CourseDetail from './courseDetail';
 import Home from './Home';
 import Curriculum from './Curriculum';
-// import CurriculumEdit from "./CurriculumEdit/index";
 import Statistics from './Statistics';
 
-import CurriculumEdit from './CurriculumEdit/_index';
+// import CurriculumEdit from './CurriculumEdit/_index';
+import CurriculumEdit from './CurriculumEdit2/_index';
 import UserProvider from './contexts/userProvider';
 
 const isFooterEnabled = (pathname) => {

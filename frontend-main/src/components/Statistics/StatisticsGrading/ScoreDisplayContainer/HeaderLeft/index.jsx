@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Checkbox } from '@material-ui/core';
 import * as d3 from 'd3';
 import styled from 'styled-components';
@@ -23,10 +23,6 @@ const colorNoteValues = ['[Excellent] More than 85', '[Good] >= 70 and < 85', '[
 const colorLegends = d3.scaleOrdinal().domain(colorNoteValues).range(['#174568', '#2E8AD0', '#8DB8D9', '#D9D9D9']);
 
 class StatisticsGrading extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   // shouldComponentUpdate(prevProps, prevState) {
   //   if (prevProps.studentCount !== this.props.studentCount) return true;
   //   if (prevProps.courseCount !== this.props.courseCount) return true;
