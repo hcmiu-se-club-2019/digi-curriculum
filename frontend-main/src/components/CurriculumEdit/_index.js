@@ -1,14 +1,30 @@
-import { connect } from "react-redux";
-// import PropTypes from "prop-types";
+import { connect } from 'react-redux';
 
-import CurriculumEdit from "./index";
-import { receiveCourses } from "../../redux/courses/action";
-import { receiveCurriculums } from "../../redux/curriculums/action";
+import index from './index';
+import * as coursesAction from '../../redux/courses/action';
+import * as curriculumAction from '../../redux/curriculums/action';
 
-const mapDispatchToProps = (dispatch) => ({
-  dispatch,
-  receiveCourses: () => dispatch(receiveCourses()),
-  receiveCurriculums: () => dispatch(receiveCurriculums()),
-});
+const mapStateToProps = (state, ownProps) => {
+  const { errorLog: coursesErrorLog, isFetching: isCoursesFetching } = state.courses;
+  const { errorLog: curriculumErrorLog, isFetching: isCurriculumFetching, allYearIdsOrder } = state.curriculums;
+  const yearCount = allYearIdsOrder.length;
+  return {
+    coursesErrorLog,
+    curriculumErrorLog,
+    isCoursesFetching,
+    isCurriculumFetching,
+    yearCount,
+  };
+};
 
-export default connect(null, mapDispatchToProps)(CurriculumEdit);
+const mapDispatchToProps = (dispatch, getState) => {
+  return {
+    bulkDispatch: () => dispatch(coursesAction.bulkDispatch()),
+    // selectCourses: (courseIds) => dispatch(coursesAction.selectCourses(courseIds)),
+    dragYear: (result, provider) => dispatch(curriculumAction.dragYear(result, provider)),
+    dragCourse: (result, provider) => dispatch(curriculumAction.dragCourse(result, provider)),
+    checkCurriculum: () => dispatch(),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(index);

@@ -1,15 +1,71 @@
-export const RECEIVE_CURRICULUMS = "RECEIVE_CURRICULUMS";
-export const DRAG_COURSE = "DRAG_COURSE";
+import * as Type from './constants';
 
-export function receiveCurriculums() {
+export async function loadRandomData(dispatch, getState) {
+  await dispatch(clearData());
+  const { allCourses, allCourseIds } = getState().courses;
+  await dispatch(generateRandomData(allCourses, allCourseIds));
+}
+
+function clearData() {
   return {
-    type: RECEIVE_CURRICULUMS,
+    type: Type.CLEAR_DATA,
   };
 }
 
-export function dragCourse(result) {
+function generateRandomData(allCourses, allCourseIds) {
   return {
-    type: DRAG_COURSE,
-    payload: result,
+    type: Type.GENERATE_RANDOM_DATA,
+    payload: {
+      allCourses,
+      allCourseIds,
+    },
+  };
+}
+
+export function dragYear(result, provider) {
+  return {
+    type: Type.DRAG_YEAR,
+    payload: {
+      result,
+      provider,
+    },
+  };
+}
+
+export function dragCourse(result, provider) {
+  return {
+    type: Type.DRAG_COURSE,
+    payload: {
+      result,
+      provider,
+    },
+  };
+}
+
+export function addCourses({ yearId, semId, courseIds }) {
+  return {
+    type: Type.ADD_COURSES,
+    payload: {
+      yearId,
+      semId,
+      courseIds,
+    },
+  };
+}
+
+export function removeCourse({ yearId, semId, courseId }) {
+  return {
+    type: Type.REMOVE_COURSE,
+    payload: {
+      yearId,
+      semId,
+      courseId,
+    },
+  };
+}
+
+export function checkCurriculum() {
+  return {
+    type: Type.CHECK_CURRICULUM,
   };
 }

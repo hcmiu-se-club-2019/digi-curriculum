@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import Box from '@material-ui/core/Box';
 
 import Header from './Layout/Header';
 import Footer from './Layout/Footer';
@@ -10,8 +11,7 @@ import Home from './Home';
 import Curriculum from './Curriculum';
 import Statistics from './Statistics';
 
-// import CurriculumEdit from './CurriculumEdit/_index';
-import CurriculumEdit from './CurriculumEdit2/_index';
+import CurriculumEdit from './CurriculumEdit/_index';
 import UserProvider from './contexts/userProvider';
 
 const isFooterEnabled = (pathname) => {
@@ -47,11 +47,11 @@ const Main = withRouter(({ location, props }) => (
 class App extends React.PureComponent {
   render() {
     return (
-      <div className="App">
+      <Box height={`100vh`} display={`flex`} flexDirection={`column`}>
         <Router>
           <Main />
         </Router>
-      </div>
+      </Box>
     );
   }
 }

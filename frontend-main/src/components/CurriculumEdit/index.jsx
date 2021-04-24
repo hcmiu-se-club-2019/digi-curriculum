@@ -1,50 +1,73 @@
-import React, { Component } from "react";
-import { Container, Row, Col, Navbar } from "react-bootstrap";
-// import { DragDropContext } from "react-beautiful-dnd";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import Box from '@material-ui/core/Box';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { DragDropContext } from 'react-beautiful-dnd';
+// import PropTypes from 'prop-types';
 
-import CurriculumActionFilter from "./CurriculumActionFilter";
-import CourseDragSource from "./CourseDragSource";
-import CurriculumDropDestination from "./_CurriculumDropDestination";
+import CourseDragSource from './CourseDragSource/_index';
+import YearList from './common/YearList/_index';
+import YearHeaderList from './common/YearHeaderList';
 
-const DragSourceContainer = styled.div`
-  background-color: whitesmoke;
-`;
+const useStyles = (theme) => ({
+  root: {
+    overflowX: 'auto',
+    flexGrow: 1,
+  },
+});
+
+// const useStyle2 = makeStyles((theme) => ({
+//   root: {
+//     display: 'flex',
+//     flexFlow: 'column',
+//     height: '100vh',
+//   },
+// }));
 
 class CurriculumEdit extends Component {
-  constructor(props) {
-    super(props);
-
-    // Pre fetch
-    this.props.receiveCourses();
-    this.props.receiveCurriculums();
+  componentDidMount() {
+    const { bulkDispatch } = this.props;
+    bulkDispatch();
   }
 
+  handleDragYear = (result, provided) => {
+    const { source, destination } = result;
+    const { dragYear, dragCourse } = this.props;
+    if (!destination) return;
+    if (source.droppableId === destination.droppableId && source.index === destination.index) return;
+
+    switch (result.type) {
+      case 'all-years': {
+        dragYear(result, provided);
+        return;
+      }
+      case 'all-courses': {
+        dragCourse(result, provided);
+        return;
+      }
+      default: {
+        return;
+      }
+    }
+  };
+
   render() {
+    const { classes } = this.props;
+    const { yearCount } = this.props;
     return (
-      <Container fluid style={{ padding: "0px" }}>
-        <Navbar bsPrefix="div" fixed="top" sticky="top">
-          <CurriculumActionFilter />
-        </Navbar>
-        {/* <DragDropContext onDragEnd={this.onDragEnd}> */}
-        <Row noGutters>
-          <Col sm={3} md={3} lg={3} xl={3} as={DragSourceContainer}>
-            <CourseDragSource />
-          </Col>
-          <Col sm={9} md={9} lg={9} xl={9}>
-            <CurriculumDropDestination />
-          </Col>
-        </Row>
-        {/* </DragDropContext> */}
-      </Container>
+      <Box className={classes.root} bgcolor={`whitesmoke`}>
+        <CourseDragSource />
+        <YearHeaderList yearCount={yearCount} />
+        <DragDropContext onDragEnd={this.handleDragYear}>
+          <YearList />
+        </DragDropContext>
+      </Box>
     );
   }
 }
 
-CurriculumEdit.propTypes = {
-  receiveCourses: PropTypes.func.isRequired,
-  receiveCurriculums: PropTypes.func.isRequired,
-};
+// CurriculumEdit.propTypes = {
+//   receiveCourses: PropTypes.func.isRequired,
+//   receiveCurriculums: PropTypes.func.isRequired,
+// };
 
-export default CurriculumEdit;
+export default withStyles(useStyles)(CurriculumEdit);
