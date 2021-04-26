@@ -1,20 +1,11 @@
-import React, { Component, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import Box from '@material-ui/core/Box';
-// import Paper from '@material-ui/core/Paper';
 import { Typography } from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { Droppable } from 'react-beautiful-dnd';
-// import isEqual from 'lodash/isEqual'
 
 import CourseTile from '../../CourseTile/_index';
 import CourseTileAdd from '../../CourseTileAdd';
-
-const useStyles = (theme) => ({
-  semList: {
-    // padding: theme.spacing(2),
-    // margin: theme.spacing(3),
-  },
-});
 
 const useStyle2 = makeStyles((theme) => ({
   courseListContainer: {
@@ -35,12 +26,11 @@ const CourseListContainer = React.forwardRef((props, ref) => {
   );
 });
 
-class Semester extends PureComponent {
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   console.log(isEqual(this.props, nextProps))
-  //   return true;
-  // }
+const TypographyCreditCount = withStyles((theme) => ({
+  root: (props) => (props.color === 'success' ? { color: theme.palette.success.dark } : {}),
+}))(Typography);
 
+class Semester extends PureComponent {
   showDialog = ({ yearId, semId }) => {
     const { openDialog } = this.props;
     openDialog({ yearId, semId });
@@ -54,9 +44,7 @@ class Semester extends PureComponent {
   };
 
   render() {
-    // const classes = useStyles();
-    // const { classes } = this.props;
-    const { yearId, semId, index, courseIds } = this.props;
+    const { yearId, semId, index, courseIds, creditCount } = this.props;
 
     return (
       <Box>
@@ -76,7 +64,6 @@ class Semester extends PureComponent {
                 isdraggingover={snapshot.isDraggingOver.toString()}
               >
                 {courseIds.map((courseId, index) => {
-                  // const course = allCourses[courseId];
                   return <CourseTile key={courseId} courseId={courseId} index={index} yearId={yearId} semId={semId} />;
                 })}
                 {provided.placeholder}
@@ -85,6 +72,9 @@ class Semester extends PureComponent {
             );
           }}
         </Droppable>
+        <TypographyCreditCount variant={`body2`} align={`center`} color={creditCount <= 24 ? `success` : `error`}>
+          <Box fontWeight={`fontWeightBold`}>{`${creditCount} / ${24}`}</Box>
+        </TypographyCreditCount>
       </Box>
     );
   }
@@ -95,4 +85,4 @@ class Semester extends PureComponent {
 //   receiveCurriculums: PropTypes.func.isRequired,
 // };
 
-export default withStyles(useStyles)(Semester);
+export default Semester;
