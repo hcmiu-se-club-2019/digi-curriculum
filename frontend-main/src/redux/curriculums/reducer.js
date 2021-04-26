@@ -1,5 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 import isEqual from 'lodash/isEqual';
+import faker from 'faker';
 
 import * as Type from './constants';
 import { getRandomData } from './mockCurriculumGenerator';
@@ -16,7 +17,7 @@ const initState = {
   isFetching: false,
 };
 
-export default function curriculums2(state = initState, action) {
+export default function curriculums(state = initState, action) {
   switch (action.type) {
     case Type.CLEAR_DATA: {
       return Object.assign({}, state, initState);
@@ -79,6 +80,42 @@ export default function curriculums2(state = initState, action) {
         allYears[yearId].allSems[semId].courseIds.splice(courseIndex, 1);
         return Object.assign({}, state, { allYears });
       }
+    }
+    case Type.ADD_YEAR: {
+      const { allYears, allYearIdsOrder } = cloneDeep(state);
+      const newYearId = 'year' + allYearIdsOrder.length.toString() + faker.random.uuid();
+      allYearIdsOrder.push(newYearId);
+      allYears[newYearId] = {
+        id: newYearId,
+        allSems: {},
+        allSemIdsOrder: [],
+      };
+
+      const currentYear = allYears[newYearId];
+
+      for (let j = 0; j < 3; ++j) {
+        const semId = 'sem' + (j + 1).toString();
+        currentYear.allSemIdsOrder.push(semId);
+        currentYear.allSems[semId] = {
+          id: semId,
+          courseIds: [],
+        };
+      }
+      return Object.assign({}, state, { allYears, allYearIdsOrder });
+    }
+    case Type.REMOVE_YEAR: {
+      const { allYears } = state;
+      const { yearId, yearIndex } = action.payload;
+
+      const allYearIdsOrder = cloneDeep(state.allYearIdsOrder);
+      allYearIdsOrder.splice(yearIndex, 1);
+
+      const {
+        [yearId]: {},
+        ...otherYears
+      } = allYears;
+
+      return Object.assign({}, state, { allYearIdsOrder, allYears: { ...otherYears } });
     }
     default:
       return state;

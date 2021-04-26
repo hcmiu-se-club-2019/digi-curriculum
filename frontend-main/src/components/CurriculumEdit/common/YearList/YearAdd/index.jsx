@@ -52,7 +52,7 @@ const YearAdd = (props) => {
   const classes = useStyles();
   // const { index, yearId, allSemIdsOrder } = props;
   return (
-    <StyledButton2 variant="contained" endIcon={<AddIcon />}>
+    <StyledButton2 variant="contained" endIcon={<AddIcon />} onClick={() => props.onClick()}>
       Add year
     </StyledButton2>
   );

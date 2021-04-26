@@ -64,8 +64,18 @@ export function removeCourse({ yearId, semId, courseId }) {
   };
 }
 
-export function checkCurriculum() {
+export function addYear() {
   return {
-    type: Type.CHECK_CURRICULUM,
+    type: Type.ADD_YEAR,
+  };
+}
+
+export function removeYear({ yearId, yearIndex }) {
+  return {
+    type: Type.REMOVE_YEAR,
+    payload: {
+      yearId,
+      yearIndex,
+    },
   };
 }

@@ -46,6 +46,12 @@ const YearHeaderList = (props) => {
           </Typography>
         </Box>
       ))}
+      {/* Header for YearAdd */}
+      <Box className={classes.year}>
+        <Typography variant={`h5`} align={`center`}>
+          Year {yearCount + 1}
+        </Typography>
+      </Box>
     </Box>
   );
 };

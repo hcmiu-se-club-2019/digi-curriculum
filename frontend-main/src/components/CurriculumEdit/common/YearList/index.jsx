@@ -16,9 +16,10 @@ const useStyles = makeStyles((theme) => ({
 const YearList = (props) => {
   const classes = useStyles();
   const { allYearIdsOrder } = props;
+  const { addYear } = props;
 
-  const addYear = () => {
-
+  const handleAddYear = () => {
+    addYear();
   }
 
   return (
@@ -37,7 +38,7 @@ const YearList = (props) => {
               return <Year key={yearId} yearId={yearId} index={index} />;
             })}
             {provided.placeholder}
-            <YearAdd onClick={() => addYear()} />
+            <YearAdd onClick={() => handleAddYear()} />
           </Box>
         )}
       </Droppable>
