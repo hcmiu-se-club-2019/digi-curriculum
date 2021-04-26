@@ -27,7 +27,7 @@ const CourseListContainer = React.forwardRef((props, ref) => {
 });
 
 const TypographyCreditCount = withStyles((theme) => ({
-  root: (props) => (props.color === 'success' ? { color: theme.palette.success.dark } : {}),
+  root: (props) => (props.color === 'initial' ? { color: theme.palette.success.dark } : {}),
 }))(Typography);
 
 class Semester extends PureComponent {
@@ -72,7 +72,7 @@ class Semester extends PureComponent {
             );
           }}
         </Droppable>
-        <TypographyCreditCount variant={`body2`} align={`center`} color={creditCount <= 24 ? `success` : `error`}>
+        <TypographyCreditCount variant={`body2`} align={`center`} component={`div`} color={creditCount <= 24 ? `initial` : `error`}>
           <Box fontWeight={`fontWeightBold`}>{`${creditCount} / ${24}`}</Box>
         </TypographyCreditCount>
       </Box>
