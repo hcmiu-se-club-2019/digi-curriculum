@@ -17,11 +17,8 @@ const initState = {
 
 export default function courses(state = initState, action) {
   switch (action.type) {
-    case Type.CLEAR_REDUCER_COURSE: {
-      return Object.assign({}, state, {
-        allCourses: {},
-        allCourseIds: [],
-      });
+    case Type.CLEAR_DATA: {
+      return initState;
     }
     case Type.GENERATE_RANDOM_COURSE_DATA: {
       const { allMajors, allMajorIds, allCourses, allCourseIds } = getRandomData();

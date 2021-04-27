@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import index from './index';
-import * as coursesAction from '../../redux/courses/action';
+// import * as coursesAction from '../../redux/courses/action';
 import * as curriculumAction from '../../redux/curriculums/action';
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,8 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, getState) => {
   return {
-    bulkDispatch: () => dispatch(coursesAction.bulkDispatch()),
-    // selectCourses: (courseIds) => dispatch(coursesAction.selectCourses(courseIds)),
+    bulkDispatch: () => dispatch(curriculumAction.bulkDispatch()),
     dragYear: (result, provider) => dispatch(curriculumAction.dragYear(result, provider)),
     dragCourse: (result, provider) => dispatch(curriculumAction.dragCourse(result, provider)),
     checkCurriculum: () => dispatch(),

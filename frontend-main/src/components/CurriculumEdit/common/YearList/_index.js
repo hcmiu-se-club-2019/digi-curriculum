@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import * as curriculumAction from '../../../../redux/curriculums/action';
 import index from './index';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   const { allYearIdsOrder } = state.curriculums;
   return {
     allYearIdsOrder,
   };
 };
 
-const mapDispatchToProps = (dispatch, getState) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     addYear: () => dispatch(curriculumAction.addYear()),
   };

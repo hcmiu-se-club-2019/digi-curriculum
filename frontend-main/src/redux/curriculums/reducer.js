@@ -20,7 +20,7 @@ const initState = {
 export default function curriculums(state = initState, action) {
   switch (action.type) {
     case Type.CLEAR_DATA: {
-      return Object.assign({}, state, initState);
+      return initState;
     }
     case Type.GENERATE_RANDOM_DATA: {
       const { allCourses, allCourseIds } = action.payload;

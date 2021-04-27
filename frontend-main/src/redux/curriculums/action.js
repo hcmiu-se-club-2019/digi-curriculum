@@ -1,4 +1,40 @@
 import * as Type from './constants';
+import * as coursesAction from '../courses/action';
+
+export function bulkDispatch() {
+  return async (dispatch, getState) => {
+    const actions1 = () => {
+      dispatch(coursesAction.clearData());
+      dispatch(clearData());
+    };
+    await actions1();
+
+    const actions2 = async () => {
+      await dispatch(coursesAction.generateRandomData());
+      const { allCourses, allCourseIds } = getState().courses;
+      await dispatch(generateRandomData(allCourses, allCourseIds));
+    };
+    await actions2();
+
+    const action3 = () => {
+      const { allYears, allYearIdsOrder } = getState().curriculums;
+      let courseIdsPlaceholder = [];
+
+      allYearIdsOrder.forEach((yearId) => {
+        const year = allYears[yearId];
+        const { allSems, allSemIdsOrder } = year;
+
+        allSemIdsOrder.forEach((semId) => {
+          const semester = allSems[semId];
+          courseIdsPlaceholder.push(...semester.courseIds);
+        });
+      });
+      dispatch(coursesAction.selectCourses(courseIdsPlaceholder));
+      dispatch(coursesAction.addCourses());
+    };
+    await action3();
+  };
+}
 
 export async function loadRandomData(dispatch, getState) {
   await dispatch(clearData());
@@ -6,7 +42,7 @@ export async function loadRandomData(dispatch, getState) {
   await dispatch(generateRandomData(allCourses, allCourseIds));
 }
 
-function clearData() {
+export function clearData() {
   return {
     type: Type.CLEAR_DATA,
   };

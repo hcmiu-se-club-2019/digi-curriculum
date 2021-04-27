@@ -37,9 +37,7 @@ class CourseDragSource extends Component {
   handleConfirm = () => {
     const { classes, isOpen, closeDialog, yearId, semId, allCourses, allCourseIds, addCoursesToCourseList, addCoursesToSemester } = this.props;
     let courseIdsTemp = allCourseIds.filter((courseId) => allCourses[courseId].isSelectedTemp === true);
-    // console.log(courseIdsTemp, allCourses);
     closeDialog();
-    console.log(semId);
     addCoursesToSemester({ yearId, semId, courseIds: courseIdsTemp });
     addCoursesToCourseList();
   };

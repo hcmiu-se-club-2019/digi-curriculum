@@ -6,7 +6,7 @@ export function getRandomData({ allCourses, allCourseIds }) {
   let allYears = {},
     allYearIdsOrder = [];
 
-  const yearCount = faker.random.number({ min: 3, max: 4 });
+  const yearCount = faker.random.number({ min: 0, max: 4 });
   const semCount = 3;
 
   // generate empty year + sem
