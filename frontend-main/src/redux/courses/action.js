@@ -30,6 +30,15 @@ export function removeSelectedCourse(courseId) {
   };
 }
 
+export function removeSelectedCourses(courseIds) {
+  return {
+    type: Type.REMOVE_SELECTED_COURSES,
+    payload: {
+      courseIds,
+    },
+  };
+}
+
 export function selectCourses(courseIds) {
   return {
     type: Type.SELECT_COURSES,

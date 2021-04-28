@@ -1,5 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
-import isEqual from 'lodash/isEqual';
+import pick from 'lodash/pick';
+// import isEqual from 'lodash/isEqual';
 
 import * as Type from './constants';
 import { getRandomData } from './mockCourseGenerator';
@@ -45,7 +46,6 @@ export default function courses(state = initState, action) {
         course.isSelectedTemp = false;
       }
 
-      // console.log(courseId);
       const newState = {
         selectedCourseIdsPlaceholder,
         allCourses: {
@@ -73,7 +73,6 @@ export default function courses(state = initState, action) {
 
       selectedCourseIdsPlaceholder.splice(courseIndex, 1);
 
-      // console.log(courseId);
       const newState = {
         selectedCourseIdsPlaceholder,
         allCourses: {
@@ -85,11 +84,25 @@ export default function courses(state = initState, action) {
           },
         },
       };
-
-      // console.log(isEqual(state, newState));
-
       return Object.assign({}, state, {
         ...newState,
+      });
+    }
+    case Type.REMOVE_SELECTED_COURSES: {
+      const { allCourses } = state;
+      const { courseIds } = action.payload;
+
+      const filteredCourses = cloneDeep(pick(allCourses, courseIds));
+      courseIds.forEach((courseId) => {
+        filteredCourses[courseId].isSelected = false;
+        filteredCourses[courseId].isSelectedTemp = false;
+      });
+      
+      return Object.assign({}, state, {
+        allCourses: {
+          ...allCourses,
+          ...filteredCourses,
+        },
       });
     }
     case Type.SELECT_COURSES: {
