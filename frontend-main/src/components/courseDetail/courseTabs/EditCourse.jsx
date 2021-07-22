@@ -5,15 +5,7 @@ import EditAssessmentTable from "./EditWidgets/EditAssessmentTable"
 import EditObjectivesTable from "./EditWidgets/EditObjectivesTable"
 import EditLearningOutcomes from "./EditWidgets/EditLearningOutcomes"
 
-const TabForm = (props) => {
-    const {data, 
-           AddRowAssessment, 
-           RemoveRowAssessment, 
-           AddRowObjectives, 
-           RemoveRowObjectives,
-           AddRowOutcome,
-           RemoveRowOutcome
-            } = props;
+const TabForm = () => {
     return(
         <div className="container border">
 
@@ -67,13 +59,13 @@ const TabForm = (props) => {
             </div>
 
             {/* INPUT ASSESSMENT PLANS */}
-            <EditAssessmentTable data={data.assessmentData} AddRowAssessment={AddRowAssessment} RemoveRowAssessment={RemoveRowAssessment}/>
+            <EditAssessmentTable />
 
             {/* INPUT COURSE OBJECTIVES */}
-            <EditObjectivesTable data={data.objectivesData} AddRowObjectives={AddRowObjectives} RemoveRowObjectives={RemoveRowObjectives}/>
+            <EditObjectivesTable />
 
             {/* INPUT COURSE OUTCOMES */}
-            <EditLearningOutcomes data={data.outcomeData} AddRowOutcome={AddRowOutcome} RemoveRowOutcome={RemoveRowOutcome}/>
+            <EditLearningOutcomes />
             
         </div>
         
@@ -85,79 +77,12 @@ export default class EditCourse extends Component {
 
     constructor(){
         super()
-        this.AddRowAssessment = this.AddRowAssessment.bind(this);
-        this.RemoveRowAssessment = this.RemoveRowAssessment.bind(this);
-        this.AddRowObjectives = this.AddRowObjectives.bind(this);
-        this.RemoveRowObjectives = this.RemoveRowObjectives.bind(this);
-        this.AddRowOutcome = this.AddRowOutcome.bind(this);
-        this.RemoveRowOutcome = this.RemoveRowOutcome.bind(this);
-
     }
-
-    state =  {
-        assessmentData: [{type: "Quiz", percentage:"5%"}],
-        objectivesData: [{ID: "1", topic: "first topic"}],
-        outcomeData: [{name: "#1", outcome: "Excellence in ..."}]
-};
-
-    // Handle onClick for Assessment Table
-    AddRowAssessment(assessType, assessPercentage) {
-        const nextElement = {type: assessType, percentage: assessPercentage}
-        if (assessType && assessPercentage)
-        {
-            var newArray = this.state.assessmentData.concat(nextElement)
-            this.setState({assessmentData: newArray});
-        }
-    }
-
-    RemoveRowAssessment(index) {
-        console.log(index);
-        const newArray = this.state.assessmentData.splice(index,1);
-        this.setState({assessmentData: newArray});
-    }
-
-    // Handle onClick for Objectives Table
-
-    AddRowObjectives(ObjId, ObjTopic) {
-        const nextElement = {ID: ObjId, topic: ObjTopic}
-        if (ObjId && ObjTopic)
-        {
-            var newArray = this.state.objectivesData.concat(nextElement);
-            this.setState({objectivesData: newArray});
-        }
-    }
-
-    RemoveRowObjectives(index) {
-        const newArray = this.state.objectivesData.splice(index,1);
-        this.setState({objectivesData: newArray});
-    }
-
-    AddRowOutcome(name, outcome) {
-        const nextElement = {name: name, outcome: outcome}
-        if (name && outcome)
-        {
-            var newArray = this.state.outcomeData.concat(nextElement);
-            this.setState({outcomeData: newArray});
-        }
-    }
-
-    RemoveRowOutcome(index) {
-        const newArray = this.state.outcomeData.splice(index,1);
-        this.setState({outcomeData: newArray});
-    }
-
     render() {
         
         
         return(
-            <TabForm data={this.state} 
-                    AddRowAssessment={this.AddRowAssessment}
-                    RemoveRowAssessment={this.RemoveRowAssessment}
-                    AddRowObjectives={this.AddRowObjectives}
-                    RemoveRowObjectives={this.RemoveRowObjectives}
-                    AddRowOutcome={this.AddRowOutcome}
-                    RemoveRowOutcome={this.RemoveRowOutcome}
-            />
+            <TabForm/>
         );
     };
 }

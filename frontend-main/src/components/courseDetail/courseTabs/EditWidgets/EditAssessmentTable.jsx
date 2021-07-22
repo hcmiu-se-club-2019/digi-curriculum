@@ -1,11 +1,18 @@
 import React, { Component, Fragment, useState } from "react";
 import {Table} from "reactstrap";
-export default function EditAssessmentTable(props) {
+import {useSelector, useDispatch} from 'react-redux'
+import { AddRowAssessment, DeleteRowAssessment } from "../../../../redux/courseDetail/Actions";
+export default function EditAssessmentTable() {
     
 
-    const {data} = props;
     const [assessType, setType] = useState();
     const [assessPercentage, setPercentage] = useState();
+    
+    // Redux
+    const AssessmentTable = useSelector(state => state.courseDetail.AssessmentTable);
+    const dispatch = useDispatch();
+
+    console.log(AssessmentTable);
 
 
     return(
@@ -22,12 +29,12 @@ export default function EditAssessmentTable(props) {
                         <label htmlFor="Percentage">Percentage</label>
                         <input value={assessPercentage} type="text" className="form-control" onChange={(event) => setPercentage(event.target.value)}/>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-4">
                         <br/>
-                        <div className="d-flex justify-content-center">
+                        <div className="d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary" 
                             onClick={() => {
-                                props.AddRowAssessment(assessType, assessPercentage)
+                                dispatch(AddRowAssessment(assessType, assessPercentage));
                                 setType("");
                                 setPercentage("");
                                 }}>
@@ -48,12 +55,16 @@ export default function EditAssessmentTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map( (data, index) =>  
+                    {AssessmentTable.map((data, index) =>  
                         <Fragment>
                             <tr>
                                 <th>{data.type}</th>
                                 <td>{data.percentage}</td>
-                                <td><button type="submit" class="btn btn-primary" onClick={() => props.RemoveRowAssessment(index)}> REMOVE </button></td>
+                                <td>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-primary" onClick={() => dispatch(DeleteRowAssessment(index))}> REMOVE </button>
+                                    </div>    
+                                </td>
                             </tr>
                         </Fragment>
                     )}

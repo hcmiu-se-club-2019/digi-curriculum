@@ -1,10 +1,15 @@
 import React, { Component, Fragment, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AddRowObjectives, DeleteRowObjectives } from "../../../../redux/courseDetail/Actions";
 import {Table} from "reactstrap";
 
-export default function EditObjectivesTable(props) {
-    const {data} = props;
+export default function EditObjectivesTable() {
     const [ID, setID] = useState();
     const [topic, setTopic] = useState();
+
+    // Redux
+    const dispatch = useDispatch();
+    const CourseObjectives = useSelector(state => state.courseDetail.ObjectivesTable);
 
     return(
         <div className="section">
@@ -22,10 +27,10 @@ export default function EditObjectivesTable(props) {
                     </div>
                     <div className="col-md-4">
                         <br/>
-                            <div className="d-flex justify-content-center">
+                            <div className="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary" 
                                 onClick={() => {
-                                    props.AddRowObjectives(ID, topic)
+                                    dispatch(AddRowObjectives(ID,topic));
                                     setID("");
                                     setTopic("");
                                     }}>
@@ -45,13 +50,18 @@ export default function EditObjectivesTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((data, index) => 
+                    {CourseObjectives.map((data, index) => 
                         <Fragment>
                             <tr>
                                 <td>{data.ID}</td>
                                 <td>{data.topic}</td>
-                                <td><button type="submit" class="btn btn-primary" 
-                                    onClick={() => props.RemoveRowObjectives(index)}> REMOVE </button></td>
+                                <td>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-primary" 
+                                        onClick={() => dispatch(DeleteRowObjectives(index))}> REMOVE </button>
+                                    </div>
+                                </td>
+                                    
                             </tr>
                         </Fragment>
                         )}

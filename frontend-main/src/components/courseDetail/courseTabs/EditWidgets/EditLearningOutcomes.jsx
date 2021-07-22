@@ -1,11 +1,15 @@
 import React, { Component, Fragment, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {Table} from "reactstrap";
-export default function EditAssessmentTable(props) {
-    const {data} = props;
+import { AddRowOutcome, DeleteRowOutcome } from "../../../../redux/courseDetail/Actions";
+export default function EditAssessmentTable() {
     const [name, setName] = useState();
     const [outcome, setOutcome] = useState();
 
-    console.log(props);
+    // Redux
+    const OutcomeTable = useSelector(state => state.courseDetail.OutcomeTable);
+    const dispatch = useDispatch();
+    
 
     return(
         <div className="section">
@@ -14,19 +18,20 @@ export default function EditAssessmentTable(props) {
             <div className="form-group">
                 <div className="row">
                     <div className="col-md-4">
-                        <label htmlFor="ID">name</label>
+                        <label htmlFor="ID">Name</label>
                         <input value={name} type="text" className="form-control" onChange={(event) => setName(event.target.value)}/>
                     </div>
                     <div className="col-md-4">
-                        <label htmlFor="Topics">Course Learning Outcome</label>
+                        <label htmlFor="Topics">Learning Outcome</label>
                         <input value={outcome} type="text" className="form-control" onChange={(event) => setOutcome(event.target.value)}/>
                     </div>
                     <div className="col-md-4">
                         <br/>
-                            <div className="d-flex justify-content-center">
+                            <div className="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary" 
                                 onClick={() => {
-                                    props.AddRowOutcome(name, outcome)
+                                    
+                                    dispatch(AddRowOutcome(name, outcome));
                                     setName("");
                                     setOutcome("");
                                     }}>
@@ -46,13 +51,17 @@ export default function EditAssessmentTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((data, index) => 
+                    {OutcomeTable.map((data, index) => 
                         <Fragment>
                             <tr>
                                 <td>{data.name}</td>
                                 <td>{data.outcome}</td>
-                                <td><button type="submit" class="btn btn-primary" 
-                                    onClick={() => props.RemoveRowOutcome(index)}> REMOVE </button></td>
+                                <td>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-primary " 
+                                        onClick={() => dispatch(DeleteRowOutcome(index))}> REMOVE </button>
+                                    </div>
+                                </td>
                             </tr>
                         </Fragment>
                         )}

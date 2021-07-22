@@ -7,7 +7,7 @@ import { combineReducers } from "redux";
 // import englishEntrances from "../containers/EnglishEntrances/reducer";
 import curriculums from "./curriculums/reducer";
 import courses from "./courses/reducer";
-
+import courseDetail from "./courseDetail/Reducer";
 // const components = combineReducers({
 //   home,
 // })
@@ -19,6 +19,7 @@ const rootReducer = combineReducers({
   // englishEntrances,
   curriculums,
   courses,
+  courseDetail
   // components
 });
 
