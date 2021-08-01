@@ -11,9 +11,9 @@ const TabForm = (props) => {
   const information = values.data.information;
   const relatedCourses = values.data.courseRelateCourses.related_courses;
   const books = values.data.books;
-  console.log(information);
-  console.log(relatedCourses);
-  console.log(books);
+  // console.log(information);
+  // console.log(relatedCourses);
+  // console.log(books);
 
   return (
     <form onSubmit={function () {}} className="course-general-form border">

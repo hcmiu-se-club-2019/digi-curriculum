@@ -1,38 +1,39 @@
 import React, { Component, Fragment, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { AddRowObjectives, DeleteRowObjectives } from "../../../../redux/courseDetail/Actions";
 import {Table} from "reactstrap";
-
-export default function EditObjectivesTable() {
+import { AddRowTextbook, DeleteRowTextbook } from "../../../../redux/courseDetail/Actions";
+export default function EditTextbookTable() {
     const [id, setId] = useState();
-    const [name, setName] = useState();
+    const [title, setTitle] = useState();
 
     // Redux
+    const TextbookTable = useSelector(state => state.courseDetail.TextbookTable);
     const dispatch = useDispatch();
-    const CourseObjectives = useSelector(state => state.courseDetail.ObjectivesTable);
+    
 
     return(
         <div className="section">
-            <label htmlFor="objectivesTitle"><b>Course Objectives</b></label>
+            <label htmlFor="textbook"><b>Textbook Preferences</b></label>
             <br/>
             <div className="form-group">
                 <div className="row">
                     <div className="col-md-4">
-                        <label htmlFor="id">ID</label>
+                        <label htmlFor="ID">ID</label>
                         <input value={id} type="text" className="form-control" onChange={(event) => setId(event.target.value)}/>
                     </div>
                     <div className="col-md-4">
-                        <label htmlFor="name">Name</label>
-                        <input value={name} type="text" className="form-control" onChange={(event) => setName(event.target.value)}/>
+                        <label htmlFor="Title">Title</label>
+                        <input value={title} type="text" className="form-control" onChange={(event) => setTitle(event.target.value)}/>
                     </div>
                     <div className="col-md-4">
                         <br/>
                             <div className="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary" 
                                 onClick={() => {
-                                    dispatch(AddRowObjectives(id,name));
+                                    
+                                    dispatch(AddRowTextbook(id, title));
                                     setId("");
-                                    setName("");
+                                    setTitle("");
                                     }}>
                                         Add
                                 </button>
@@ -45,32 +46,29 @@ export default function EditObjectivesTable() {
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Title</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {CourseObjectives.map((data, index) => 
+                    {TextbookTable.map((data, index) => 
                         <Fragment>
                             <tr>
                                 <td>{data.id}</td>
-                                <td>{data.name}</td>
+                                <td>{data.title}</td>
                                 <td>
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary" 
-                                        onClick={() => dispatch(DeleteRowObjectives(index))}> REMOVE </button>
+                                        <button type="submit" class="btn btn-primary " 
+                                        onClick={() => dispatch(DeleteRowTextbook(index))}> REMOVE </button>
                                     </div>
                                 </td>
-                                    
                             </tr>
                         </Fragment>
                         )}
                 </tbody>
 
             </Table>
+
         </div>
-
-
     )
-
 }

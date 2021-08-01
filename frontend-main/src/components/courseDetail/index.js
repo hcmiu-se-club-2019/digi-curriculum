@@ -46,16 +46,18 @@ const tabList = [
 export default class CourseDetail extends Component {
   constructor(props) {
     super(props);
+    const { courseId } = this.props.match.params;
     this.state = {
       activeTab: "1",
       course: null,
       isOpeningModal: false,
+      courseId
     };
   }
 
-  async componentDidMount() {
-    const { courseId } = this.props.match.params;
-    await this.fetchCourse(courseId); // Axios later
+  async componentDidMount() { 
+    this.setState(this.props.match.params); 
+    await this.fetchCourse(this.state.courseId); // Axios later
   }
 
   async fetchCourse(courseId) {
@@ -73,7 +75,8 @@ export default class CourseDetail extends Component {
     // Check if data is loaded, need loading image
     if (this.state.course)
     {
-      const { activeTab, course } = this.state;
+      const { activeTab, course, courseId } = this.state;
+      console.log(courseId);
       return (
         <div className="container_wrap mt-4">
           <section className="content-header">
@@ -108,7 +111,7 @@ export default class CourseDetail extends Component {
           {activeTab === "3" && <CourseOutcomeTab initialValues={course}/>}
           {activeTab === "4" && <CourseAssessmentTab initialValues={course}/>}
           {activeTab === "5" && <CourseImplementationTab initialValues={course}/>}
-          {activeTab === "7" && <EditCourse initialValues = {course}/>}
+          {activeTab === "7" && <EditCourse initialValues={this.state}/>}
         </div>
       );
     } 
