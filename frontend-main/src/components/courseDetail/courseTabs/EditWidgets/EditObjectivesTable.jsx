@@ -18,10 +18,6 @@ export default function EditObjectivesTable() {
             <div className="form-group">
                 <div className="row">
                     <div className="col-md-4">
-                        <label htmlFor="id">ID</label>
-                        <input value={id} type="text" className="form-control" onChange={(event) => setId(event.target.value)}/>
-                    </div>
-                    <div className="col-md-4">
                         <label htmlFor="name">Name</label>
                         <input value={name} type="text" className="form-control" onChange={(event) => setName(event.target.value)}/>
                     </div>
@@ -31,7 +27,7 @@ export default function EditObjectivesTable() {
                                 <button type="submit" class="btn btn-primary" 
                                 onClick={() => {
                                     dispatch(AddRowObjectives(id,name));
-                                    setId("");
+                                    setId();
                                     setName("");
                                     }}>
                                         Add

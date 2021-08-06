@@ -28,10 +28,6 @@ export default function EditRelatedCoursesTable() {
                         <label htmlFor="CourseID">Course ID</label>
                         <input value={courseID} type="text" className="form-control" onChange={(event) => setCourseID(event.target.value)}/>
                     </div>
-                    <div className="col-md-4">
-                        <label htmlFor="Name">Course Name</label>
-                        <input value={courseName} type="text" className="form-control" onChange={(event) => setCourseName(event.target.value)}/>
-                    </div>
                     <div className="col-md-3">
                         <label htmlFor="Relationship">Relationship</label>
                         <select id="Relationship-form" className="form-control"
@@ -49,7 +45,7 @@ export default function EditRelatedCoursesTable() {
                             onClick={() => {
                                 dispatch(AddRowRelatedCourse(courseID, courseName, relationship));
                                 setCourseID("");
-                                setCourseName("");
+                                setCourseName();
                                 setRelationship("");
                                 }}>
                                     Add

@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const courseBO = require('../bo/courseBO');
 const courseController = require("../controllers/course");
 const utilController = require('../controllers/utils');
 
@@ -53,9 +54,12 @@ router.get('/relationships',utilController.getAllCourseRelationships);
 
 // ==> Course
 router.get("/:id",courseController.getCourseById);
-router.put("/:id",courseController.updateCourse);
+//router.put("/:id",courseController.updateCourse);
 router.delete("/:id",courseController.deleteCourse);
 router.get("/", courseController.getAllCourse);
 router.post("/",courseController.createCourse);
+
+// ==> CourseBO
+router.put("/:id",courseBO.updateCourse);
 
 module.exports = router;

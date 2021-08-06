@@ -4,6 +4,8 @@ module.exports = (sequelize,DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
+      autoIncrement: true, 
+      defaultValue: null
     },
     name: {
       type: DataTypes.STRING(510),
@@ -11,6 +13,7 @@ module.exports = (sequelize,DataTypes) => {
     },
     teaching_activities:{
       type: DataTypes.STRING,
+      defaultValue: 'none'
     },
     learning_activities:{
       type: DataTypes.STRING,

@@ -8,7 +8,7 @@ import EditRelatedCoursesTable from "./EditWidgets/EditRelatedCoursesTable";
 import { useDispatch } from "react-redux";
 import { SetAssessment, SetObjectives, SetOutcome, SetRelatedCourse, SetTextbook } from "../../../redux/courseDetail/Actions";
 import { store } from "/Users/longtran/Desktop/Code/digi-curriculum/frontend-main/src/index.js";
-import Axios from "axios";
+import axios from "axios";
 
 const TabForm = (props) => {
   
@@ -25,49 +25,47 @@ const TabForm = (props) => {
     dispatch(SetRelatedCourse(values.data.courseRelateCourses.related_courses));
 
     async function onFormSubmit() {
-      // Submit assessment plans
-      console.log(store.getState());  
+      const host = 'http://localhost:3000'
+      // console.log(store.getState());  
 
       // Get course detail updates
-      const Assessments = store.getState().courseDetail.AssessmentTable;
-      const Books = store.getState().courseDetail.TextbookTable;
-      const Objectives = store.getState().courseDetail.ObjectivesTable;
+      const assessments = store.getState().courseDetail.AssessmentTable;
+      const books = store.getState().courseDetail.TextbookTable;
+      const objectives = store.getState().courseDetail.ObjectivesTable;
+      const outcome = store.getState().courseDetail.OutcomeTable;
+      const RelatedCourses = store.getState().courseDetail.RelatedCourseTable;
+      const coursedescription = store.getState().courseDetail.CourseDescription;
+      const CourseID = store.getState().courseDetail.CourseID;
+      const CourseName = store.getState().courseDetail.CourseName;
+      const NumberofCredits = store.getState().courseDetail.NumberofCredits;
 
+      axios.put(`${host}/courses/${courseId}`,
+      {
+        assessments,
+        books,
+        courseRelateCourses: RelatedCourses,
+        information: {
+          id: CourseID,
+          course_level_id: 'test',
+          credit_theory: NumberofCredits,
+          credit_lab: -1,
+          description: coursedescription,
+          name: CourseName,
+          name_vn: CourseName,
+          level: "string"
+        },
+        learningOutcomes: outcome,
+        tools: "",
+        topics: objectives,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error.response.data);
+      });
 
-      // Updating
-      // Assessment Plans
-      for (let i = 0; i < Assessments.length; i++) {
-        const a = Assessments[i];
-        const submitAssessment = await Axios.put("http://localhost:3000/courses/"+ courseId +"/assessments/"+ a.id, {
-          "id": a.id,
-          "type": a.type
-        });
-        console.log(submitAssessment);
-      }
-      // Assign Books
-      // for (let i = 0; i < Books.length; i++){
-      //   const a = Books[i];
-      //   const submitBooks = await Axios.get("http://localhost:3000/courses/"+ courseId+"/assignBook",{
-      //     "courseId": courseId,
-      //     "bookId": a.id
-      //   });
-      // }
-
-      // Objectives Table
-      for (let i = 0; i < Objectives.length; i++){
-        const a = Objectives[i];
-        const submitObjectives = await Axios.post("http://localhost:3000/courses/"+ courseId + "/topics", {
-          "course_id": courseId,
-          "id": 0,
-          "teaching_activities": "null",
-          "learning_activities": "null",
-          "name": a.topic,
-          "topic_type_id": 0
-        });
-        console.log(submitObjectives);
-      }
-      
-
+      window.location.reload(false);
     }
 
     return(
@@ -166,9 +164,9 @@ const TabForm = (props) => {
             
             {/* FORM SUBMIT BUTTON */}
             <div class='d-flex justify-content-end'>
-              <button type='button' class='btn btn-success'
+              <button type='submit' class='btn btn-success'
                 onClick={onFormSubmit}>SUBMIT</button>
-              <button type='button' class='btn btn-danger'>DELETE THIS COURSE</button>
+              <button type='submit' class='btn btn-danger'>DELETE THIS COURSE</button>
             </div>
         </div>
         

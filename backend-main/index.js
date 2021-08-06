@@ -33,7 +33,8 @@ const departmentRoutes = require("./routes/department");
 const pathwayRotues = require("./routes/pathway");
 const instructorRoutes = require("./routes/instructor");
 const bookRoutes = require('./routes/book');
-const syllabusRoutes = require('./routes/syllabus')
+const syllabusRoutes = require('./routes/syllabus');
+const assessmentRoutes = require('./routes/assessment');
 
 // Route
 router.use('/courses',courseRoutes);
@@ -43,6 +44,9 @@ router.use('/pathways',pathwayRotues);
 router.use('/instructors',instructorRoutes);
 router.use('/books',bookRoutes);
 router.use('/syllabus',syllabusRoutes);
+router.use('/assessment', assessmentRoutes);
 
 
 app.listen(PORT,() => console.log(`App is running on ${PORT}`));
+
+

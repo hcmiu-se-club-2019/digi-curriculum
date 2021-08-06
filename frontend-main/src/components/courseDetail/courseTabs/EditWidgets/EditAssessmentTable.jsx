@@ -19,10 +19,6 @@ export default function EditAssessmentTable() {
             <br/>
             <div className="form-group">
                 <div className="row">
-                <div className="col-md-3">
-                        <label htmlFor="id">ID</label>
-                        <input value={ID} type="text" className="form-control" onChange={(event) => setID(event.target.value)}/>
-                    </div>
                     <div className="col-md-3">
                         <label htmlFor="Type">Type</label>
                         <input value={assessType} type="text" className="form-control" onChange={(event) => setType(event.target.value)}/>
@@ -37,7 +33,6 @@ export default function EditAssessmentTable() {
                             <button type="submit" class="btn btn-primary" 
                             onClick={() => {
                                 dispatch(AddRowAssessment(ID, assessType, assessPercentage));
-                                setID("");
                                 setType("");
                                 setPercentage("");
                                 }}>

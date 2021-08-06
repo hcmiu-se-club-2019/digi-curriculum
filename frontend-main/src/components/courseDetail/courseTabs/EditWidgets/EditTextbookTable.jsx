@@ -18,10 +18,6 @@ export default function EditTextbookTable() {
             <div className="form-group">
                 <div className="row">
                     <div className="col-md-4">
-                        <label htmlFor="ID">ID</label>
-                        <input value={id} type="text" className="form-control" onChange={(event) => setId(event.target.value)}/>
-                    </div>
-                    <div className="col-md-4">
                         <label htmlFor="Title">Title</label>
                         <input value={title} type="text" className="form-control" onChange={(event) => setTitle(event.target.value)}/>
                     </div>
@@ -32,7 +28,6 @@ export default function EditTextbookTable() {
                                 onClick={() => {
                                     
                                     dispatch(AddRowTextbook(id, title));
-                                    setId("");
                                     setTitle("");
                                     }}>
                                         Add
