@@ -246,7 +246,8 @@ function mapDataAfterFetch(getData) {
     allCourseIds = [];
 
   const filteredDataByYear = getData.filter((d, i) => {
-    return d.class.substring(4, 6) === '14';
+    
+    return d.enrollment === '15';
     // return d.class.substring(4, 6) === '14' && (d.class.substring(0, 2) === 'IT' || d.class.substring(2, 4) === 'IT');
   });
 

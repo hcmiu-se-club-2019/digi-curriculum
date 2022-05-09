@@ -141,11 +141,16 @@ export async function fetchStatisticByCourses() {
     const allCourses = {};
 
     allCourseDataIds.forEach((id) => {
-      const studentYear1 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) === 0).map((d) => +d.score);
-      const studentYear2 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) === 1).map((d) => +d.score);
-      const studentYear3 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) === 2).map((d) => +d.score);
-      const studentYear4 = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) === 3).map((d) => +d.score);
-      const studentYearOther = allCourseData[id].filter((d) => !isNaN(+d.score) && year - +d.class.substring(4, 6) > 3).map((d) => +d.score);
+      const studentYear1 = allCourseData[id].filter(
+        (d) => !isNaN(+d.score) && (+d.score > 0) && year - +d.class.substring(4, 6) === 0).map((d) => +d.score);
+      const studentYear2 = allCourseData[id].filter(
+        (d) => !isNaN(+d.score) && (+d.score > 0) && year - +d.enrollment === 1).map((d) => +d.score);
+      const studentYear3 = allCourseData[id].filter(
+        (d) => !isNaN(+d.score) && (+d.score > 0) && year - +d.enrollment === 2).map((d) => +d.score);
+      const studentYear4 = allCourseData[id].filter(
+        (d) => !isNaN(+d.score) && (+d.score > 0) && year - +d.enrollment === 3).map((d) => +d.score);
+      const studentYearOther = allCourseData[id].filter(
+        (d) => !isNaN(+d.score) && (+d.score > 0) && year - +d.enrollment > 3).map((d) => +d.score);
       const { allLecturers, allLecturerIds } = randomLecturer();
       allCourses[id] = {
         id,

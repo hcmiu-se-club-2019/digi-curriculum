@@ -83,7 +83,8 @@ class StatisticsCourses extends Component {
     const updateData = d3
       .select('.statistics-courses-middle')
       .selectAll('div')
-      .data(allSemIds, (d) => d.key);
+      .data(allSemIds, (d) => d);
+      
     const Semester = updateData
       .enter()
       .append('svg')
@@ -99,7 +100,7 @@ class StatisticsCourses extends Component {
       .style('font-weight', 'bold')
       .attr('x', 0)
       .attr('y', semTitleHeight)
-      .text((d, i) => `Semester ${i + 1}`);
+      .text((d, i) => `Semester ${d}`);
 
     const SemesterHeader = Semester.append('svg')
       .classed('sem-header', true)
